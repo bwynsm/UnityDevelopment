@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TextBoxManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="85" Column="91" />
+      <File FileName="Assets\Scripts\NPC_Movement.cs" Line="193" Column="85" />
+      <File FileName="Assets\Scripts\TextBoxManager.cs" Line="12" Column="99" />
+      <File FileName="Assets\Scripts\SortObjects.cs" Line="13" Column="72" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\ben\Documents\2DTestProject\Assets\Scripts\TextBoxManager.cs" line="147" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Dialogue>
+	<Speeches>
+		<Speech name="NPC_Rogue">
+			<SpeechText>
+Hello
+How are you
+			</SpeechText>
+		</Speech>
+
+
+		<Speech name="Player">
+			<SpeechText>
+Fine, thanks. What are you up to today?
+			</SpeechText>
+		</Speech>
+
+
+		<Speech name="NPC_Rogue">
+			<SpeechText>
+Oh, just a little stealing
+And some other stuff
+			</SpeechText>
+		</Speech>
+
+
+		<Speech  name="NPC_Rogue" type="text">
+			<SpeechText>
+The usual
+			</SpeechText>
+		</Speech>
+    
+    <Speech name="Player">
+			<SpeechText>
+...
+			</SpeechText>
+		</Speech>
+    
+        <Speech name="Player">
+			<SpeechText>
+...
+			</SpeechText>
+		</Speech>
+
+		<Speech  name="NPC_Rogue" type="options">
+			<SpeechText>
+Honestly!
+			</SpeechText>
+		</Speech>
+	</Speeches>
+</Dialogue>
+

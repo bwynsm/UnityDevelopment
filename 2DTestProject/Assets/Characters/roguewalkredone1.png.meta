@@ -1,0 +1,489 @@
+fileFormatVersion: 2
+guid: 0268426a78afc2e4b9397c85017caae0
+timeCreated: 1457926568
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: roguewalkredone1_0
+    21300002: roguewalkredone1_1
+    21300004: roguewalkredone1_2
+    21300006: roguewalkredone1_3
+    21300008: roguewalkredone1_4
+    21300010: roguewalkredone1_5
+    21300012: roguewalkredone1_6
+    21300014: roguewalkredone1_7
+    21300016: roguewalkredone1_8
+    21300018: roguewalkredone1_9
+    21300020: roguewalkredone1_10
+    21300022: roguewalkredone1_11
+    21300024: roguewalkredone1_12
+    21300026: roguewalkredone1_13
+    21300028: roguewalkredone1_14
+    21300030: roguewalkredone1_15
+    21300032: roguewalkredone1_16
+    21300034: roguewalkredone1_17
+    21300036: roguewalkredone1_18
+    21300038: roguewalkredone1_19
+    21300040: roguewalkredone1_20
+    21300042: roguewalkredone1_21
+    21300044: roguewalkredone1_22
+    21300046: roguewalkredone1_23
+    21300048: roguewalkredone1_24
+    21300050: roguewalkredone1_25
+    21300052: roguewalkredone1_26
+    21300054: roguewalkredone1_27
+    21300056: roguewalkredone1_28
+    21300058: roguewalkredone1_29
+    21300060: roguewalkredone1_30
+    21300062: roguewalkredone1_31
+    21300064: roguewalkredone1_32
+    21300066: roguewalkredone1_33
+    21300068: roguewalkredone1_34
+    21300070: roguewalkredone1_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: roguewalkredone1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 187
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 186
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 185
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 186
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 187
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 186
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 185
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 186
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_9
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 122
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 122
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 123
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_12
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 123
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_13
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 122
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_14
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 122
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_15
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 122
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_16
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 122
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 122
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 58
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 57
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 56
+        width: 29
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 57
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 58
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 57
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_25
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 56
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 57
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_27
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_28
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_29
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_30
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_31
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_32
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_33
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_34
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 0
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: roguewalkredone1_35
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
