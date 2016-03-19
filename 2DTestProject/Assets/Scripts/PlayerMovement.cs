@@ -13,10 +13,11 @@ public class PlayerMovement : CharacterConversable
 
 	Rigidbody2D rbody;
 	Animator anim;
-	float movementSpeed = 2.0f;
+	float movementSpeed = 1.2f;
 
 	float timer = 3.0f;
-	//SpriteRenderer s;
+
+	private float runMultiplier;
 
 	// Use this for initialization
 	void Start () 
@@ -32,6 +33,7 @@ public class PlayerMovement : CharacterConversable
 	{
 
 		timer -= Time.deltaTime;
+		runMultiplier = 1.0f;
 		//int pos = Mathf.RoundToInt(this.transform.parent.transform.position.z);
 		//pos /= 5; //Remember division of an INT and the modulus operator %? This isn't a float. We WANT to get rid of the remainder.
 		//spriteRenderer.sortingOrder = (pos * -1) + OrderOffset;
@@ -41,7 +43,13 @@ public class PlayerMovement : CharacterConversable
 		if (!freeze) 
 		{
 			Vector2 movementVector = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-			movementVector = movementVector * movementSpeed;
+
+			// we're going to assume for the sake of argument that running is twice the speed of walking.
+			if (Input.GetKey (KeyCode.LeftShift))
+			{
+				runMultiplier = 2.0f;
+			}
+			movementVector = movementVector * movementSpeed * runMultiplier;
 			anim.SetBool ("isFrozen", false);
 
 			// movement in the x direction or y direction

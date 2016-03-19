@@ -24,6 +24,7 @@ public class ActivateTextAtLine : MonoBehaviour
 	public CharacterConversable player; // a character that can hold a conversation
 
 
+	public string dialogueID = "1";
 
 
 	// Use this for initialization
@@ -44,7 +45,7 @@ public class ActivateTextAtLine : MonoBehaviour
 		// we also have to have text..
 		if (waitForPress && Input.GetKeyDown (KeyCode.Z) && theTextBox.isActive != true) 
 		{
-			theTextBox.reloadScript (theText);
+			theTextBox.reloadScript (theText, dialogueID);
 
 
 			if (destroyWhenActivated) 
@@ -72,7 +73,7 @@ public class ActivateTextAtLine : MonoBehaviour
 		if (other.name == "Player") 
 		{
 			theTextBox.setPlayer (player);
-			theTextBox.reloadScript (theText);
+			theTextBox.reloadScript (theText, dialogueID);
 			theTextBox.EnableTextBox ();
 
 			// if we want an NPC to shout only once

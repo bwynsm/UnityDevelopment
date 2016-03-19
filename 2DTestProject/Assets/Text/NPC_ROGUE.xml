@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Dialogue>
-	<Speeches>
+	<Speeches id="1">
 		<Speech name="NPC_Rogue">
 			<SpeechText>
 Hello
@@ -39,14 +39,46 @@ The usual
     
         <Speech name="Player">
 			<SpeechText>
-...
+..........
 			</SpeechText>
 		</Speech>
 
 		<Speech  name="NPC_Rogue" type="options">
+        <Options>
+          <option>Shorts</option>
+          <option>Pants</option>
+          <option>Socks</option>
+        </Options>
+		</Speech>
+	</Speeches>
+
+
+	<Speeches id="2">
+		<Speech name="NPC_Rogue">
 			<SpeechText>
-Honestly!
-			</SpeechText>
+				Just me talking this time
+			</SpeechText>			
+		</Speech>
+
+		<Speech name="Player">
+			<SpeechText>
+				Me too.
+			</SpeechText>			
+		</Speech>
+	</Speeches>
+
+
+	<Speeches id="3">
+		<Speech name="NPC_Rogue">
+			<SpeechText>
+				Third Conversation
+			</SpeechText>			
+		</Speech>
+
+		<Speech name="Player">
+			<SpeechText>
+				Victory.
+			</SpeechText>			
 		</Speech>
 	</Speeches>
 </Dialogue>

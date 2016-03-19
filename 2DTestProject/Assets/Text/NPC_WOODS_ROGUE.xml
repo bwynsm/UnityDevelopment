@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Dialogue>
-	<Speeches>
+	<Speeches id="1">
 		<Speech name="NPC_Woods_Rogue">
 			<SpeechText>
 What are you doing here? There be monsters!

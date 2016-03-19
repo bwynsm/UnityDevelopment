@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 
@@ -18,6 +19,8 @@ public class TextBoxManager : MonoBehaviour
 	public Text theText;
 
 	public TextAsset textFile;
+
+	public GameObject prefabButton;
 
 
 	// the other items.
@@ -45,7 +48,7 @@ public class TextBoxManager : MonoBehaviour
 		DisableTextBox ();
 
 		// load our dialogue tree object
-		dialogueTree = new Conversation(textFile);
+		dialogueTree = new Conversation(textFile, "1");
 
 	}
 
@@ -87,11 +90,13 @@ public class TextBoxManager : MonoBehaviour
 				Speech nextText = dialogueTree.getItem ();
 
 				// get object by name now that we have it
-				playerName = dialogueTree.getItem().name;
+				playerName = nextText.name;
 				player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
 			
 				theText.text = nextText.SpeechText.Trim();
 				speakerText.text = player.playerName.Trim();
+
+
 				EnableTextBox ();
 			}
 				
@@ -112,7 +117,25 @@ public class TextBoxManager : MonoBehaviour
 					playerName = dialogueTree.getItem().name;
 					player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
 
-					theText.text = nextText.SpeechText.Trim();
+					if (nextText.SpeechText != null && nextText.SpeechText != "")
+					{
+						theText.text = nextText.SpeechText.Trim ();
+					}
+
+
+
+					// not over yet
+					//string optionsText = "";
+
+					// get the type
+					if (nextText.type == "options")
+					{
+						// loop over options and display
+						setupOptions(nextText.options);
+
+						//theText.text = optionsText;
+					}
+
 					speakerText.text = player.playerName.Trim();
 					EnableTextBox ();
 				}
@@ -216,9 +239,8 @@ public class TextBoxManager : MonoBehaviour
 	/// This is most often done in activatetextatline.
 	/// </summary>
 	/// <param name="theNewText">The new text.</param>
-	public void reloadScript(TextAsset theNewText)
+	public void reloadScript(TextAsset theNewText, string conversationID)
 	{
-
 
 
 		// if we have a new text file that exists
@@ -230,11 +252,12 @@ public class TextBoxManager : MonoBehaviour
 
 			// load our dialogue tree object
 			textFile = theNewText;
-			Conversation temp = new Conversation(textFile);
+			Conversation temp = new Conversation(textFile, conversationID);
 			dialogueTree = temp;
 
 			isActive = true;
 		}
+
 	}
 
 
@@ -247,6 +270,36 @@ public class TextBoxManager : MonoBehaviour
 	public void setPlayer(CharacterConversable talkToPlayer)
 	{
 		player = talkToPlayer;
+	}
+
+
+
+	public void setupOptions(List<string> options)
+	{
+
+		int indexNum = 1;
+		// for each of our options, create some sort of button
+		// in our panel and put it at the right spot
+		foreach (string option in options)
+		{
+			GameObject goButton = (GameObject)Instantiate (prefabButton);
+			goButton.transform.SetParent (theText.transform, false);
+			goButton.transform.localScale = new Vector3(10, 10, 1);
+			goButton.GetComponentInChildren<Text>().text = "Option : " + option;
+			//goButton.GetComponent<Text>().text = "OPTION : " + option;
+
+			// also add in the resulting function call
+			Button tempButton = goButton.GetComponent<Button>();
+			tempButton.onClick.AddListener(() => ButtonClicked(indexNum));
+			indexNum++;
+		}
+
+
+	}
+
+	public void ButtonClicked(int number)
+	{
+		Debug.Log ("BUTTON CLICKED :: " + number);
 	}
 
 }

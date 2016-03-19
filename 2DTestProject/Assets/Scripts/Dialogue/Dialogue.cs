@@ -1,49 +1,39 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
-using System.Xml.Serialization;
-using System.IO;
 
-
- [XmlRoot("Dialogue")]
  public class Dialogue 
  {    
      /* ======================================== *\
       *               ATTRIBUTES                 *
      \* ======================================== */
+	public List<Speech> speechList;
 
 
-	[XmlArray("Speeches"), XmlArrayItem("Speech")]
-	public Speech[] Speeches;
-     
- 
-     /// <summary>
-     /// Gets or sets the options.
-     /// </summary>
-     /// <value>The options.</value>
-     [XmlArray("Options")]
-     [XmlArrayItem("Option")]
-     public List<string> Options
-     {
-         get ;
-         set ;
-     }
-		
+	// dialogue takes in an xmlreader and textfile
 
-	/**
-	 * This getData simply creates our serializer and returns it over the
-	* text asset text file that we sent in (xml file)
-	*/
-	public static Dialogue GetData(TextAsset textFile)
+	// get the next speech
+	public int index = 0;
+
+	// get dialogues
+
+
+	public bool hasNext()
 	{
-		var serializer = new XmlSerializer(typeof(Dialogue));
-		using (var reader = new System.IO.StringReader (textFile.text))
+		// check length
+		if (speechList.Count >= index)
 		{
-			return serializer.Deserialize (reader) as Dialogue;
+			return true;
 		}
+
+		return false;
 	}
-     
-     // You can define other constructors if you want too
+
+	public Speech getNext()
+	{
+		index++;
+
+		return speechList [index];
+	}
 
  }

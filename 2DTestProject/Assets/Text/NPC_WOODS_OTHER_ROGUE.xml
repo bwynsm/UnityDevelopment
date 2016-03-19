@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Dialogue>
-	<Speeches>
+	<Speeches  id="1">
 		<Speech name="NPC_Woods_Other_Rogue">
 			<SpeechText>
 I'm the sneaky rogue!
@@ -20,6 +20,20 @@ I doubt that very much
 			<SpeechText>
 ...
 			</SpeechText>
+		</Speech>
+
+		<Speech name="NPC_Woods_Other_Rogue">
+			<SpeechText>
+What sorts of clothing does one normally wear in the woods?
+			</SpeechText>
+		</Speech>
+
+		<Speech name="Player" type="options">
+			<Options>
+				<option>I like shirts! They are comfy and easy to wear!</option>
+				<option>Second Option</option>
+				<option>Third Option</option>
+			</Options>
 		</Speech>
 
 	</Speeches>

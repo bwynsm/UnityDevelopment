@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
-using System.Xml.Serialization;
+//using System.Xml;
+//using System.Xml.Serialization;
 
 
 
@@ -16,15 +16,22 @@ using System.Xml.Serialization;
  */
 public class Speech
 {
-	[XmlAttribute("name")]
+	//[XmlAttribute("name")]
 	public string name;
 
-	[XmlAttribute("type")]
+	//[XmlAttribute("type")]
 	public string type;
 
 	public string SpeechText;
 
 
-	public List<string> options;
+	public List<string> options = new List<string>();
+	public string command;
+
+
+	public string toString()
+	{
+		return "Name : " + name + " Type : " + type + " SpeechText : " + SpeechText;
+	}
 
 }

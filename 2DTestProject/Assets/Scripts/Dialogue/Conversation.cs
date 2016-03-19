@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
@@ -9,7 +10,7 @@ using System.IO;
 public class Conversation 
 {
 	public int numberOfConversations = 0;
-	TextAsset textFile;
+	//TextAsset textFile;
 
 
 	// how are we going to provide options? We're going to have a current "Character Say" tag, and take that in stages.
@@ -17,10 +18,17 @@ public class Conversation
 	// if just basic text, just display it.
 	// if choice, walk through the choice options
 	// if some sort of command, do something
-	Dialogue dialogue;
+	List<Speech> dialogue;
+
 
 	int index = 0;
 
+
+
+	// just keep track of our reader.
+	XmlReader reader;
+
+	bool isReading;
 
 
 	/**
@@ -29,12 +37,111 @@ public class Conversation
 	 * Takes in a file to read
 	 * Sets up a Dialogue so that we can read an XML file
 	 */
-	public Conversation(TextAsset textFileToRead)
+	public Conversation(TextAsset textFileToRead, string conversationID)
 	{
-		textFile = textFileToRead;
-
-		dialogue = Dialogue.GetData (textFile);
+		isReading = true;
+		//dialogue = Dialogue.GetData (textFile);
 		index = 0;
+		XmlReaderSettings settings = new XmlReaderSettings();
+		//settings.ConformanceLevel = ConformanceLevel.Auto;
+		settings.IgnoreWhitespace = true;
+		dialogue = new List<Speech>();
+
+
+
+		// read in our file into our XML reader thing
+		using (reader = XmlReader.Create (new StringReader (textFileToRead.text), settings))
+		{
+			
+
+
+			// if our attribute is current, we are there!
+			// if not, move on
+
+			// the first thing we do is move to our first attribute
+			// we're really just moving to the first speech here
+			isReading = true;
+			while (isReading)
+			{
+
+				// if we read something and get null back, we are false
+				// first we move to attribute
+				if (reader.Read ())
+				{
+
+
+					// if we have an element, debug it
+					// if that element has attributes, debug that
+					if (reader.NodeType == XmlNodeType.Element && reader.Name == "Speeches" && reader.GetAttribute (0) == conversationID)
+					{
+						
+
+						
+						XmlReader inner = reader.ReadSubtree ();
+
+						// jump to the first speech item
+						inner.ReadToDescendant("Speeches");
+
+						//
+
+
+						// next we read over and make our SPEECH item
+						while (inner.Read())
+						{
+
+
+							// if we have an element of type speech
+							if (reader.NodeType == XmlNodeType.Element && inner.Name == "Speech")
+							{
+								
+								// create a new speech element and get all of our parts
+								dialogue.Add(new Speech());
+								dialogue [dialogue.Count -1].name = inner.GetAttribute ("name");
+								dialogue[dialogue.Count -1].type = inner.GetAttribute("type");
+
+
+							}
+							else if (inner.NodeType == XmlNodeType.Element && inner.Name == "SpeechText")
+							{
+
+								// get our speech text for our current element
+								dialogue[dialogue.Count -1].SpeechText = inner.ReadElementContentAsString();
+							}
+							else if (inner.NodeType == XmlNodeType.Element && inner.Name == "Options")
+							{
+								dialogue [dialogue.Count - 1].type = "options";
+
+
+								while (inner.ReadToFollowing ("option"))
+								{
+									string textItem = inner.ReadString ();
+									dialogue [dialogue.Count - 1].options.Add (textItem);
+
+								}
+							}
+
+						}
+
+						inner.Close ();
+
+
+
+					} 
+					else
+					{
+						//reader.Skip ();
+					}
+				} 
+				else
+				{
+					isReading = false;
+				}
+			}
+							
+		}
+
+		reader.Close ();
+
 
 	}
 
@@ -43,8 +150,11 @@ public class Conversation
 	/**
 	 * getDialogue simply returns our Dialogue object - not sure if we'll need this or not
 	 */
-	public Dialogue getDialogue()
+	public List<Speech> getDialogue()
 	{
+
+
+
 		return dialogue;
 	}
 
@@ -57,7 +167,10 @@ public class Conversation
 	 */
 	public Speech getItem()
 	{
-		return dialogue.Speeches [index];
+		// the get item that is next - we won't even have to do anything here
+		// but get an item based on a number
+
+		return dialogue[index];
 	}
 
 
@@ -77,8 +190,8 @@ public class Conversation
 	 */
 	public bool hasNextItem()
 	{
-		
-		if ((index + 1) < dialogue.Speeches.Length)
+
+		if ((index + 1) < dialogue.Count)
 		{
 			return true;
 		} 
@@ -97,37 +210,6 @@ public class Conversation
 	{
 		return index;
 	}
-
-	// let's just go line to line at the moment. We don't even need anything else
-	// player name
-	// file
-	// current line
-	// end dialog (do we want to offer a button for running away from conversation?)
-
-	// Mostly, everything here is done in secret. If we hit a collider, then we want to
-	// activate a whole process to start and finish a conversation almost as simply as
-	// "Start Conversation" 
-	// and then updating the speech bubble if we meet parameters on the other end.
-	// We are going to let the character decide if those items are met by determining
-	// buttons and states etc. (this doesn't know anything about anything but the
-	// conversation and trying to display the conversation bubble - which is player
-	// locations and who is talking and the xml and how to parse
-
-	// functions: (public)
-	//// update display bubble (this is basically a read line - but we might have other options)
-	//// 
-	//// - show display bubble
-	//// - hide display bubble
-	//// - parse xml
-	//// - display options (this is down the road - I want to display a different type of bubble
-	//// if there are going to be text options in the text - character needs to decide something
-	//// - get person talking
-	//// - get current line
-	//// - is finished with conversation? Because if we've already had this and only want to have
-	//// this once, perhaps we read a different section? There can also be routes to a conversation
-	//// that we can dive into here.... but how do we keep track of that? I think simply a sign
-	//// that we are done with a conversation and won't have it again, and then also perhaps something
-	//// to prevent the trigger from happening again? Destroy when activated?
 
 
 
