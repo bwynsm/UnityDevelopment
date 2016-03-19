@@ -1,0 +1,290 @@
+fileFormatVersion: 2
+guid: e853c70ae2e061e4ab9d84d6b5118ca8
+timeCreated: 1457732220
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: $princess_0
+    21300002: $princess_1
+    21300004: $princess_2
+    21300006: $princess_3
+    21300008: $princess_4
+    21300010: $princess_5
+    21300012: $princess_6
+    21300014: $princess_7
+    21300016: $princess_8
+    21300018: $princess_9
+    21300020: $princess_10
+    21300022: $princess_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: $princess_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 26}
+        - {x: -15, y: 19}
+        - {x: -15, y: -26}
+        - {x: -11, y: -28}
+        - {x: 14, y: -28}
+        - {x: 15, y: -26}
+        - {x: 15, y: 22}
+        - {x: 14, y: 26}
+    - name: $princess_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 27}
+        - {x: -16, y: 18}
+        - {x: -16, y: -19}
+        - {x: -11, y: -27}
+        - {x: 16, y: -27}
+        - {x: 16, y: 27}
+    - name: $princess_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 26}
+        - {x: -15, y: 23}
+        - {x: -15, y: -28}
+        - {x: 15, y: -28}
+        - {x: 15, y: 21}
+        - {x: 10, y: 26}
+    - name: $princess_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 26}
+        - {x: -14, y: 21}
+        - {x: -14, y: -27}
+        - {x: 15, y: -27}
+        - {x: 15, y: 24}
+        - {x: 10, y: 26}
+    - name: $princess_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 27}
+        - {x: -14, y: 27}
+        - {x: -15, y: 23}
+        - {x: -15, y: -27}
+        - {x: 12, y: -27}
+        - {x: 15, y: -24}
+        - {x: 15, y: 21}
+    - name: $princess_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 26}
+        - {x: -6, y: 26}
+        - {x: -15, y: 24}
+        - {x: -15, y: -28}
+        - {x: 14, y: -28}
+        - {x: 15, y: -27}
+        - {x: 15, y: 18}
+    - name: $princess_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 26}
+        - {x: -15, y: 19}
+        - {x: -15, y: -25}
+        - {x: -10, y: -27}
+        - {x: 13, y: -27}
+        - {x: 14, y: -24}
+        - {x: 14, y: 19}
+        - {x: 5, y: 26}
+    - name: $princess_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 27}
+        - {x: -15, y: 25}
+        - {x: -15, y: -10}
+        - {x: -13, y: -27}
+        - {x: 13, y: -27}
+        - {x: 15, y: -24}
+        - {x: 15, y: 23}
+        - {x: 6, y: 27}
+    - name: $princess_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 26}
+        - {x: -16, y: 24}
+        - {x: -16, y: -18}
+        - {x: -12, y: -28}
+        - {x: 9, y: -28}
+        - {x: 14, y: -25}
+        - {x: 14, y: 19}
+        - {x: 11, y: 26}
+    - name: $princess_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 26}
+        - {x: -16, y: 25}
+        - {x: -16, y: -26}
+        - {x: -15, y: -27}
+        - {x: 14, y: -27}
+        - {x: 15, y: -22}
+        - {x: 15, y: 24}
+        - {x: 13, y: 26}
+    - name: $princess_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 27}
+        - {x: -16, y: 24}
+        - {x: -16, y: -15}
+        - {x: -14, y: -22}
+        - {x: -12, y: -26}
+        - {x: 11, y: -26}
+        - {x: 16, y: -25}
+        - {x: 16, y: 25}
+        - {x: 8, y: 27}
+    - name: $princess_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 26}
+        - {x: -16, y: 18}
+        - {x: -16, y: -26}
+        - {x: -14, y: -27}
+        - {x: 14, y: -27}
+        - {x: 15, y: -23}
+        - {x: 15, y: 23}
+        - {x: 9, y: 26}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

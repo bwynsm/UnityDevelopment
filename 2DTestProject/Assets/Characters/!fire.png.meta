@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 305c586e952a0084c801dd3bfbe427e3
+timeCreated: 1457925279
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: '!fire_0'
+    21300002: '!fire_1'
+    21300004: '!fire_2'
+    21300006: '!fire_3'
+    21300008: '!fire_4'
+    21300010: '!fire_5'
+    21300012: '!fire_6'
+    21300014: '!fire_7'
+    21300016: '!fire_8'
+    21300018: '!fire_9'
+    21300020: '!fire_10'
+    21300022: '!fire_11'
+    21300024: '!fire_12'
+    21300026: '!fire_13'
+    21300028: '!fire_14'
+    21300030: '!fire_15'
+    21300032: '!fire_16'
+    21300034: '!fire_17'
+    21300036: '!fire_18'
+    21300038: '!fire_19'
+    21300040: '!fire_20'
+    21300042: '!fire_21'
+    21300044: '!fire_22'
+    21300046: '!fire_23'
+    21300048: '!fire_24'
+    21300050: '!fire_25'
+    21300052: '!fire_26'
+    21300054: '!fire_27'
+    21300056: '!fire_28'
+    21300058: '!fire_29'
+    21300060: '!fire_30'
+    21300062: '!fire_31'
+    21300064: '!fire_32'
+    21300066: '!fire_33'
+    21300068: '!fire_34'
+    21300070: '!fire_35'
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: '!fire_0'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 477
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_1'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 477
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_2'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 477
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_3'
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 477
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_4'
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 477
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_5'
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 477
+        width: 223
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_6'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 413
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_7'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 413
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_8'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 413
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_9'
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 413
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_10'
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 413
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_11'
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 413
+        width: 223
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_12'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 349
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_13'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 349
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_14'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 349
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_15'
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 349
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_16'
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 349
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_17'
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 349
+        width: 223
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_18'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 285
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_19'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 285
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_20'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 285
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_21'
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 285
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_22'
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 285
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_23'
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 285
+        width: 223
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_24'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 221
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_25'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 221
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_26'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 221
+        width: 127
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 17.5}
+        - {x: -34.5, y: 10.5}
+        - {x: -34.5, y: 12.5}
+        - {x: -38.5, y: 15.5}
+        - {x: -54.5, y: 17.5}
+        - {x: -63.5, y: 17.5}
+        - {x: -63.5, y: -17.5}
+        - {x: 9.5, y: -17.5}
+        - {x: 62.5, y: -13.5}
+        - {x: 63.5, y: -11.5}
+        - {x: 63.5, y: 17.5}
+    - name: '!fire_27'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 157
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_28'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 157
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_29'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 157
+        width: 127
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 17.5}
+        - {x: -34.5, y: 10.5}
+        - {x: -34.5, y: 12.5}
+        - {x: -38.5, y: 15.5}
+        - {x: -54.5, y: 17.5}
+        - {x: -63.5, y: 17.5}
+        - {x: -63.5, y: -17.5}
+        - {x: 9.5, y: -17.5}
+        - {x: 62.5, y: -13.5}
+        - {x: 63.5, y: -11.5}
+        - {x: 63.5, y: 17.5}
+    - name: '!fire_30'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 93
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_31'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 93
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_32'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 93
+        width: 127
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 17.5}
+        - {x: -34.5, y: 10.5}
+        - {x: -34.5, y: 12.5}
+        - {x: -38.5, y: 15.5}
+        - {x: -54.5, y: 17.5}
+        - {x: -63.5, y: 17.5}
+        - {x: -63.5, y: -17.5}
+        - {x: 9.5, y: -17.5}
+        - {x: 62.5, y: -13.5}
+        - {x: 63.5, y: -11.5}
+        - {x: 63.5, y: 17.5}
+    - name: '!fire_33'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 29
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_34'
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 29
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: '!fire_35'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 29
+        width: 127
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 17.5}
+        - {x: -34.5, y: 10.5}
+        - {x: -34.5, y: 12.5}
+        - {x: -38.5, y: 15.5}
+        - {x: -54.5, y: 17.5}
+        - {x: -63.5, y: 17.5}
+        - {x: -63.5, y: -17.5}
+        - {x: 9.5, y: -17.5}
+        - {x: 62.5, y: -13.5}
+        - {x: 63.5, y: -11.5}
+        - {x: 63.5, y: 17.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

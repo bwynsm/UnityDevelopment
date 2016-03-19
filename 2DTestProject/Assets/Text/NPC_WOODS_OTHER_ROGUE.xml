@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Dialogue>
+	<Speeches>
+		<Speech name="NPC_Woods_Other_Rogue">
+			<SpeechText>
+I'm the sneaky rogue!
+			</SpeechText>
+		</Speech>
+
+
+		<Speech name="Player">
+			<SpeechText>
+I doubt that very much
+			</SpeechText>
+		</Speech>
+
+
+		<Speech name="NPC_Woods_Other_Rogue">
+			<SpeechText>
+...
+			</SpeechText>
+		</Speech>
+
+	</Speeches>
+</Dialogue>
+
+
