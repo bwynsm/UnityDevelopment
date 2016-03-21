@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 /// <summary>
@@ -15,13 +16,16 @@ using UnityEngine.UI;
 public class TextBoxManager : MonoBehaviour 
 {
 	public GameObject textBox;
+	public GameObject optionsBox;
+
+	public Canvas canvasItem;
 
 	public Text theText;
 
 	public TextAsset textFile;
 
 	public GameObject prefabButton;
-
+	public bool inConversation = false;
 
 	// the other items.
 	public Text speakerText;
@@ -36,6 +40,8 @@ public class TextBoxManager : MonoBehaviour
 
 	Conversation dialogueTree;
 
+	private bool firstLoad = true;
+
 	// what if the character is already talking?
 	// we don't want to start another box collider...
 
@@ -44,11 +50,14 @@ public class TextBoxManager : MonoBehaviour
 	void Start () 
 	{
 
+		firstLoad = true;
+
 		// at the moment we don't have a textbox visible on the start of the game
 		DisableTextBox ();
+		DisableOptionsBox ();
 
 		// load our dialogue tree object
-		dialogueTree = new Conversation(textFile, "1");
+		//dialogueTree = new Conversation(textFile, "1");
 
 	}
 
@@ -79,25 +88,14 @@ public class TextBoxManager : MonoBehaviour
 			waitingForKey = true;
 			// the first thing that we have to do is to get which player is talking
 			// player name = ....
-			string playerName;
-
-
 
 
 			// if we have no text, then set in our first item
-			if (theText.text == null || theText.text == "")
+			if (firstLoad)
 			{
-				Speech nextText = dialogueTree.getItem ();
+				firstLoad = false;
+				getBoxes ();
 
-				// get object by name now that we have it
-				playerName = nextText.name;
-				player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
-			
-				theText.text = nextText.SpeechText.Trim();
-				speakerText.text = player.playerName.Trim();
-
-
-				EnableTextBox ();
 			}
 				
 
@@ -108,43 +106,7 @@ public class TextBoxManager : MonoBehaviour
 
 				// if we have another item, show that
 				// otherwise, we can close the textbox if we are done talking
-				if (dialogueTree.hasNextItem ())
-				{
-					dialogueTree.incrementIndex ();
-					Speech nextText = dialogueTree.getItem ();
-
-					// get object by name now that we have the updated item
-					playerName = dialogueTree.getItem().name;
-					player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
-
-					if (nextText.SpeechText != null && nextText.SpeechText != "")
-					{
-						theText.text = nextText.SpeechText.Trim ();
-					}
-
-
-
-					// not over yet
-					//string optionsText = "";
-
-					// get the type
-					if (nextText.type == "options")
-					{
-						// loop over options and display
-						setupOptions(nextText.options);
-
-						//theText.text = optionsText;
-					}
-
-					speakerText.text = player.playerName.Trim();
-					EnableTextBox ();
-				}
-
-				// we are done talking
-				else
-				{
-					DisableTextBox ();
-				}
+				getBoxes();
 			}
 
 
@@ -155,22 +117,53 @@ public class TextBoxManager : MonoBehaviour
 
 
 
-	/// <summary>
-	/// Moves the text box.
-	/// </summary>
-	//void moveTextBox()
-	//{
-		// get where the player is
-		//Transform playerPosition = player.whereAmI ();
 
-		// do some math to determine where the text box will need to sit on the screen
-		// no matter what the screen size
-		//Vector3 goScreenPos = Camera.main.WorldToScreenPoint (playerPosition.position);
+	public void getBoxes()
+	{
+		string playerName;
+
+		if (dialogueTree.hasNextItem ())
+		{
+			dialogueTree.incrementIndex ();
+			Speech nextText = dialogueTree.getItem ();
+
+			// get object by name now that we have the updated item
+			playerName = dialogueTree.getItem().name;
+			//Debug.Log ("Player name : " + playerName);
+			player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
+			speakerText.text = player.playerName.Trim();
+
+			if (nextText.SpeechText != null && nextText.SpeechText != "")
+			{
+				theText.text = nextText.SpeechText.Trim ();
+				EnableTextBox ();
+			}
 
 
-		// get our text box in place
-		//textBox.transform.position = new Vector3(goScreenPos.x + 75, goScreenPos.y + 110, 0.1f);
-	//}
+
+			// not over yet
+			//string optionsText = "";
+
+			// get the type
+			if (nextText.type == "options")
+			{
+				// loop over options and display
+				setupOptions(nextText.options);
+				EnableOptionsBox ();
+			}
+
+
+
+		}
+
+		// we are done talking
+		else
+		{
+			DisableTextBox ();
+			DisableOptionsBox ();
+		}
+	}
+		
 
 
 	/// <summary>
@@ -183,7 +176,7 @@ public class TextBoxManager : MonoBehaviour
 		// true - but also set our currentline?
 		//moveTextBox();
 
-
+		DisableOptionsBox ();
 		textBox.SetActive (true);
 		speakerPanel.SetActive (true);
 		isActive = true;
@@ -217,7 +210,6 @@ public class TextBoxManager : MonoBehaviour
 		textBox.SetActive (false);
 		speakerPanel.SetActive (false);
 		theText.text = "";
-		speakerText.text = "";
 		isActive = false;
 		player.freeze = false;
 
@@ -232,6 +224,44 @@ public class TextBoxManager : MonoBehaviour
 
 
 
+	public void DisableOptionsBox()
+	{
+		cleanOutOptions ();
+		optionsBox.SetActive (false);
+		isActive = false;
+		player.freeze = false;
+		speakerPanel.SetActive (false);
+	}
+
+	public void EnableOptionsBox()
+	{
+		// true - but also set our currentline?
+		//moveTextBox();
+
+		DisableTextBox ();
+		optionsBox.SetActive (true);
+		speakerPanel.SetActive (true);
+		isActive = true;
+
+
+		// if is active, freeze our player. They cannot talk and move at the same time
+		if (isActive) 
+		{
+			// set our player to frozen
+			player.freeze = true;
+
+			// hell, if this does not equal the player, make them stop too
+			if (player.name != "Player") 
+			{
+				GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ().freeze = true;
+
+			}
+		}
+
+	}
+
+
+
 	/// <summary>
 	/// Reloads the script.
 	/// 
@@ -241,7 +271,7 @@ public class TextBoxManager : MonoBehaviour
 	/// <param name="theNewText">The new text.</param>
 	public void reloadScript(TextAsset theNewText, string conversationID)
 	{
-
+		firstLoad = true;
 
 		// if we have a new text file that exists
 		// then we can load our new conversation window
@@ -273,33 +303,82 @@ public class TextBoxManager : MonoBehaviour
 	}
 
 
-
-	public void setupOptions(List<string> options)
+	/// <summary>
+	/// Cleans the out options box - destroys all children buttons that could be selected
+	/// </summary>
+	public void cleanOutOptions()
 	{
+		foreach (Transform child in optionsBox.transform)
+		{
+			GameObject.Destroy (child.gameObject);
+		}
 
-		int indexNum = 1;
+	}
+
+
+
+	public void setupOptions(List<Options> options)
+	{
+		// disable text box
+		//DisableTextBox();
+		cleanOutOptions ();
+		EnableOptionsBox ();
+
+
+
+
+		//goButton.transform.localScale = new Vector3(1, 1, 1);
+
 		// for each of our options, create some sort of button
 		// in our panel and put it at the right spot
-		foreach (string option in options)
+		for (int i = 0; i < options.Count; i++)
 		{
-			GameObject goButton = (GameObject)Instantiate (prefabButton);
-			goButton.transform.SetParent (theText.transform, false);
-			goButton.transform.localScale = new Vector3(10, 10, 1);
-			goButton.GetComponentInChildren<Text>().text = "Option : " + option;
-			//goButton.GetComponent<Text>().text = "OPTION : " + option;
 
-			// also add in the resulting function call
-			Button tempButton = goButton.GetComponent<Button>();
-			tempButton.onClick.AddListener(() => ButtonClicked(indexNum));
-			indexNum++;
+			GameObject goButton = (GameObject)Instantiate (prefabButton);
+			goButton.GetComponentInChildren<Text>().text = "Option : " + options[i].option;
+
+			Options optionItem = new Options ();
+			optionItem = options [i];
+			//goButton.AddComponent(
+			goButton.GetComponent<Button>().onClick.AddListener(
+				() => {  ButtonClicked(optionItem); }
+			);
+			goButton.transform.SetParent (optionsBox.transform, false);
+			//goButton.transform.localScale = new Vector3(1, 1, 1);
+
+
 		}
 
 
 	}
 
-	public void ButtonClicked(int number)
+	public void ButtonClicked(Options tagItem)
 	{
-		Debug.Log ("BUTTON CLICKED :: " + number);
+		// based off of which tag item we selected, we can do a number of things.
+		// if we selected option 1, we can change that players number to something for
+		// activate text at line
+		// we need to get the other person we are talking to though - how do we do that? 
+		// do we store that integer in the command?
+		//Debug.Log("OPTIONS ITEM : Command: " + tagItem.command + " Option: " + tagItem.option + " Player : " + tagItem.playerToAlter + " CurrentPlayer:" + tagItem.currentPlayer);
+
+		if (tagItem.playerToAlter != null)
+		{
+			// get player by tag name
+			//Debug.Log("Player to Alter : " + tagItem.playerToAlter);
+			CharacterConversable playerObject = GameObject.Find (tagItem.playerToAlter).GetComponent<CharacterConversable> ();
+			//Debug.Log ("Player Name? : " + playerObject.playerName);
+			playerObject.GetComponent<ActivateTextAtLine> ().dialogueID = tagItem.command;
+
+		}
+
+		// once the button is clicked, we want to immediately shut down and go to the next item
+
+		// conversation jump possibility?
+		// send in an ID and see our jump
+
+
+		getBoxes();
+
 	}
 
 }

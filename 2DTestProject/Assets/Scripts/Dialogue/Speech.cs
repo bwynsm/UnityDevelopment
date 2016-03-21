@@ -25,7 +25,7 @@ public class Speech
 	public string SpeechText;
 
 
-	public List<string> options = new List<string>();
+	public List<Options> options = new List<Options>();
 	public string command;
 
 

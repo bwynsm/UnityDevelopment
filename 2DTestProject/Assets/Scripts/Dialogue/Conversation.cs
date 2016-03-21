@@ -21,14 +21,17 @@ public class Conversation
 	List<Speech> dialogue;
 
 
-	int index = 0;
+	int index = -1;
 
 
 
 	// just keep track of our reader.
 	XmlReader reader;
 
-	bool isReading;
+
+	public string optionsID = "";
+
+	Dialogue conversationItem;
 
 
 	/**
@@ -39,124 +42,22 @@ public class Conversation
 	 */
 	public Conversation(TextAsset textFileToRead, string conversationID)
 	{
-		isReading = true;
+
 		//dialogue = Dialogue.GetData (textFile);
-		index = 0;
-		XmlReaderSettings settings = new XmlReaderSettings();
-		//settings.ConformanceLevel = ConformanceLevel.Auto;
-		settings.IgnoreWhitespace = true;
+		index = -1;
+
 		dialogue = new List<Speech>();
 
+		//createDialogue (textFileToRead, conversationID);
 
+		conversationItem = new Dialogue (textFileToRead, conversationID);
 
-		// read in our file into our XML reader thing
-		using (reader = XmlReader.Create (new StringReader (textFileToRead.text), settings))
-		{
-			
+		dialogue = conversationItem.getDialogue (conversationID);
 
-
-			// if our attribute is current, we are there!
-			// if not, move on
-
-			// the first thing we do is move to our first attribute
-			// we're really just moving to the first speech here
-			isReading = true;
-			while (isReading)
-			{
-
-				// if we read something and get null back, we are false
-				// first we move to attribute
-				if (reader.Read ())
-				{
-
-
-					// if we have an element, debug it
-					// if that element has attributes, debug that
-					if (reader.NodeType == XmlNodeType.Element && reader.Name == "Speeches" && reader.GetAttribute (0) == conversationID)
-					{
-						
-
-						
-						XmlReader inner = reader.ReadSubtree ();
-
-						// jump to the first speech item
-						inner.ReadToDescendant("Speeches");
-
-						//
-
-
-						// next we read over and make our SPEECH item
-						while (inner.Read())
-						{
-
-
-							// if we have an element of type speech
-							if (reader.NodeType == XmlNodeType.Element && inner.Name == "Speech")
-							{
-								
-								// create a new speech element and get all of our parts
-								dialogue.Add(new Speech());
-								dialogue [dialogue.Count -1].name = inner.GetAttribute ("name");
-								dialogue[dialogue.Count -1].type = inner.GetAttribute("type");
-
-
-							}
-							else if (inner.NodeType == XmlNodeType.Element && inner.Name == "SpeechText")
-							{
-
-								// get our speech text for our current element
-								dialogue[dialogue.Count -1].SpeechText = inner.ReadElementContentAsString();
-							}
-							else if (inner.NodeType == XmlNodeType.Element && inner.Name == "Options")
-							{
-								dialogue [dialogue.Count - 1].type = "options";
-
-
-								while (inner.ReadToFollowing ("option"))
-								{
-									string textItem = inner.ReadString ();
-									dialogue [dialogue.Count - 1].options.Add (textItem);
-
-								}
-							}
-
-						}
-
-						inner.Close ();
-
-
-
-					} 
-					else
-					{
-						//reader.Skip ();
-					}
-				} 
-				else
-				{
-					isReading = false;
-				}
-			}
-							
-		}
-
-		reader.Close ();
-
+		// return dialogues
 
 	}
 
-
-
-	/**
-	 * getDialogue simply returns our Dialogue object - not sure if we'll need this or not
-	 */
-	public List<Speech> getDialogue()
-	{
-
-
-
-		return dialogue;
-	}
 
 
 
@@ -190,7 +91,6 @@ public class Conversation
 	 */
 	public bool hasNextItem()
 	{
-
 		if ((index + 1) < dialogue.Count)
 		{
 			return true;
@@ -211,6 +111,11 @@ public class Conversation
 		return index;
 	}
 
+
+	public void setOptionsID(string optionsIDSet)
+	{
+		optionsID = optionsIDSet;
+	}
 
 
 }

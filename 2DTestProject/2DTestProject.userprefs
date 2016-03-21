@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TextBoxManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialogue\Dialogue.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="85" Column="91" />
-      <File FileName="Assets\Scripts\NPC_Movement.cs" Line="193" Column="85" />
-      <File FileName="Assets\Scripts\TextBoxManager.cs" Line="12" Column="99" />
-      <File FileName="Assets\Scripts\SortObjects.cs" Line="13" Column="72" />
+      <File FileName="Assets\Scripts\Dialogue\Speech.cs" Line="9" Column="13" />
+      <File FileName="Assets\Scripts\Dialogue\Dialogue.cs" Line="138" Column="8" />
+      <File FileName="Assets\Scripts\TextBoxManager.cs" Line="28" Column="37" />
+      <File FileName="Assets\Scripts\ActivateTextAtLine.cs" Line="51" Column="50" />
+      <File FileName="Assets\Text\NPC_WOODS_OTHER_ROGUE.xml" Line="43" Column="3" />
+      <File FileName="Assets\Text\NPC_ROGUE.xml" Line="47" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -18,12 +18,14 @@ public class PlayerMovement : CharacterConversable
 	float timer = 3.0f;
 
 	private float runMultiplier;
+	public string gameObjectPlayerName;
 
 	// Use this for initialization
 	void Start () 
 	{
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		gameObject.name = gameObjectPlayerName;
 		//renderer = GetComponent<SpriteRenderer> ();
 
 	}

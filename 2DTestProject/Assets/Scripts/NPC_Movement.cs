@@ -27,6 +27,8 @@ public class NPC_Movement : CharacterConversable
 	public float distanceY = 0.5f;
 	public Vector2 startLocation;
 
+	public string gameObjectPlayerName;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -35,7 +37,7 @@ public class NPC_Movement : CharacterConversable
 		Transform temp = GetComponent<Transform> ();
 		startLocation.x = temp.position.x;
 		startLocation.y = temp.position.y;
-
+		gameObject.name = gameObjectPlayerName;
 	}
 
 
@@ -198,10 +200,38 @@ public class NPC_Movement : CharacterConversable
 		// we collided with something. set walking to false
 		anim.SetBool("isWalking", false);
 		isMoving = false;
+		//rbody.isKinematic = false;
+
+
+		if (col.gameObject.tag == "PlayerCharacter")
+		{
+			rbody.isKinematic = true;	
+		} 
+
+
+	}
+
+	/*void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "PlayerCharacter")
+		{
+			rbody.isKinematic = true;	
+			Debug.Log ("we are here with player : ");
+		} 
+	}
+
+	void OnTriggerExit2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "PlayerCharacter")
+		{
+			rbody.isKinematic = false;	
+			Debug.Log ("exiting with player : ");
+		} 
+	}*/
+
+	void OnCollisionExit2D(Collision2D col)
+	{
 		rbody.isKinematic = false;
-
-
-
 	}
 
 
@@ -231,6 +261,8 @@ public class NPC_Movement : CharacterConversable
 	{
 		anim.SetBool ("isFrozen", true);
 	}
+
+
 
 
 
