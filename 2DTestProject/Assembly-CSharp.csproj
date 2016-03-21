@@ -47,11 +47,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActivateTextAtLine.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CaptureButtonClick.cs" />
      <Compile Include="Assets\Scripts\CharacterConversable.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Conversation.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Speech.cs" />
+     <Compile Include="Assets\Scripts\EventCatch.cs" />
      <Compile Include="Assets\Scripts\NPC_Movement.cs" />
+     <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\ScreenFader.cs" />
      <Compile Include="Assets\Scripts\SortObjects.cs" />

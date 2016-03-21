@@ -26,6 +26,8 @@ public class ActivateTextAtLine : MonoBehaviour
 
 	public string dialogueID = "1";
 
+	private bool isColliding = false;
+
 
 	// Use this for initialization
 	void Start () 
@@ -43,15 +45,19 @@ public class ActivateTextAtLine : MonoBehaviour
 
 		// also, we don't want to enable if we are already enabled.
 		// we also have to have text..
-		if (waitForPress && Input.GetKeyDown (KeyCode.Z) && theTextBox.isActive != true) 
+		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation) 
 		{
+			theTextBox.inConversation = true;
 			theTextBox.reloadScript (theText, dialogueID);
-
 
 			if (destroyWhenActivated) 
 			{
 				Destroy (gameObject.GetComponent<Collider2D> ());
 			}
+		}
+		else if ( waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding)
+		{
+			theTextBox.inConversation = false;
 		}
 	}
 
@@ -61,26 +67,38 @@ public class ActivateTextAtLine : MonoBehaviour
 	// then we may want to do something to display our text
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (player.isTalking)
+		{
+			return;
+		}
 
 		// if we aren't shouting, but waiting for the player to talk to us
-		if (requireButtonPress || player.isTalking == true) 
+		if (requireButtonPress) 
 		{
+			if (other.name == "Player")
+				isColliding = true;
+
 			waitForPress = true;
 			return;
 		}
 
+		Debug.Log ("we are here");
+
+
 		// if our other person is the player...
 		if (other.name == "Player") 
 		{
+
 			theTextBox.setPlayer (player);
 			theTextBox.reloadScript (theText, dialogueID);
-			theTextBox.EnableTextBox ();
 
 			// if we want an NPC to shout only once
 			if (destroyWhenActivated) 
 			{
 				Destroy (gameObject.GetComponent<Collider2D> ());
 			}
+
+
 
 
 		}
@@ -93,6 +111,7 @@ public class ActivateTextAtLine : MonoBehaviour
 	{
 		if (other.name == "Player") 
 		{
+			isColliding = false;
 			waitForPress = false;
 		}
 	}
