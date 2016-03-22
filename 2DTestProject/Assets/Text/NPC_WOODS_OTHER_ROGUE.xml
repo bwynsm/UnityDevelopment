@@ -30,9 +30,9 @@ What sorts of clothing does one normally wear in the woods?
 
 		<Speech name="Player" type="options">
 			<Options>
-				<option  command="2" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">I like shirts! They are comfy and easy to wear!</option>
-				<option  command="3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Pants</option>
-				<option  command="3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Socks</option>
+				<option  command="id#2" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">I like shirts! They are comfy and easy to wear!</option>
+				<option  command="id#3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Pants</option>
+				<option  command="id#3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Socks</option>
 			</Options>
 		</Speech>
 

@@ -19,6 +19,7 @@ public class TextBoxManager : MonoBehaviour
 	public GameObject optionsBox;
 
 	public Canvas canvasItem;
+	Menu optionsMenu;
 
 	public Text theText;
 
@@ -100,15 +101,21 @@ public class TextBoxManager : MonoBehaviour
 				
 
 			// if we want to go the next line of text, update the current line
-			else if (Input.GetKeyDown (KeyCode.X) )
+			else if (Input.GetKeyDown (KeyCode.X) && !optionsBox.activeInHierarchy)
 			{
 				waitingForKey = false;
 
 				// if we have another item, show that
 				// otherwise, we can close the textbox if we are done talking
-				getBoxes();
-			}
+				getBoxes ();
+			} 
+			else if (optionsBox.activeInHierarchy && optionsMenu != null && optionsMenu.menuIsActive() == false)
+			{
+				// disable if menu is no longer active
+				Destroy (optionsMenu);
 
+				getBoxes ();
+			}
 
 		}
 
@@ -220,8 +227,7 @@ public class TextBoxManager : MonoBehaviour
 
 		}
 	}
-
-
+		
 
 
 	public void DisableOptionsBox()
@@ -324,62 +330,23 @@ public class TextBoxManager : MonoBehaviour
 		cleanOutOptions ();
 		EnableOptionsBox ();
 
+		// what if we could send in the options into a menu creator, and just
+		// tell it that we want to get our particular prefab
+		optionsBox.AddComponent<Menu>();
 
-
+		optionsMenu = optionsBox.GetComponent<Menu>();
+		optionsMenu.prefabButton = prefabButton;
+		optionsMenu.optionsBox = optionsBox;
+		optionsMenu.menuOptions = options;
+		optionsMenu.menuType = "conversation";
 
 		//goButton.transform.localScale = new Vector3(1, 1, 1);
+		optionsMenu.loadOptions(options);
 
-		// for each of our options, create some sort of button
-		// in our panel and put it at the right spot
-		for (int i = 0; i < options.Count; i++)
-		{
-
-			GameObject goButton = (GameObject)Instantiate (prefabButton);
-			goButton.GetComponentInChildren<Text>().text = "Option : " + options[i].option;
-			Debug.Log(options[i].toString());
-
-			Options optionItem = new Options ();
-			optionItem = options [i];
-			//goButton.AddComponent(
-			goButton.GetComponent<Button>().onClick.AddListener(
-				() => {  ButtonClicked(optionItem); }
-			);
-			goButton.transform.SetParent (optionsBox.transform, false);
-			//goButton.transform.localScale = new Vector3(1, 1, 1);
-
-
-		}
 
 
 	}
 
-	public void ButtonClicked(Options tagItem)
-	{
-		// based off of which tag item we selected, we can do a number of things.
-		// if we selected option 1, we can change that players number to something for
-		// activate text at line
-		// we need to get the other person we are talking to though - how do we do that? 
-		// do we store that integer in the command?
-		//Debug.Log("OPTIONS ITEM : Command: " + tagItem.command + " Option: " + tagItem.option + " Player : " + tagItem.playerToAlter + " CurrentPlayer:" + tagItem.currentPlayer);
 
-		if (tagItem.playerToAlter != null)
-		{
-			// get player by tag name
-			//Debug.Log("Player to Alter : " + tagItem.playerToAlter);
-			CharacterConversable playerObject = GameObject.Find (tagItem.playerToAlter).GetComponent<CharacterConversable> ();
-			//Debug.Log ("Player Name? : " + playerObject.playerName);
-			playerObject.GetComponent<ActivateTextAtLine> ().dialogueID = tagItem.command;
-
-		}
-
-		// once the button is clicked, we want to immediately shut down and go to the next item
-
-		// conversation jump possibility?
-		// send in an ID and see our jump
-
-
-		getBoxes();
-
-	}
 
 }

@@ -73,6 +73,7 @@ public class ActivateTextAtLine : MonoBehaviour
 		}
 		else if ( waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding)
 		{
+			Debug.Log ("we are getting input here");
 			theTextBox.inConversation = false;
 			startedTalking = false;
 		}

@@ -43,11 +43,11 @@ The usual
 			</SpeechText>
 		</Speech>
 
-		<Speech  name="NPC_Rogue" type="options">
+		<Speech  name="Player" type="options">
         <Options>
-          <option>Shorts</option>
-          <option>Pants</option>
-          <option>Socks</option>
+          <option command="id#3" playerToAlter="NPC_Rogue">Shorts</option>
+          <option command="id#2" playerToAlter="NPC_Rogue">Pants</option>
+          <option command="id#3" playerToAlter="NPC_Rogue">Socks</option>
         </Options>
 		</Speech>
 	</Speeches>

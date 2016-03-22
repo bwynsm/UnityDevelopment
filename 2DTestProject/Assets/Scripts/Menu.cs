@@ -1,99 +1,167 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
-public class Menu : MonoBehaviour {
- 
-     public AudioClip blip;
- 
-     public Texture2D background;
-     //public Texture2D wip3Logo;
- 
-     public GUIStyle mainButton;
- 
-     private string[] mainMenuLabels = { "SINGLE RACE", "CAMPAIGN", "SPLIT SCREN", "STATS", "QUIT" };
-     private bool[] mainMenuButtons;
-     private int mainMenuSelected;
- 
-     void Awake () {
- 
-     }
- 
-     void Start () {
- 
-         mainMenuButtons = new bool[mainMenuLabels.Length];
-         mainMenuSelected = 0;
-     
-     }
-     
-     void Update () {
-         
-         if (Input.GetKeyDown (KeyCode.DownArrow) == true) {
-             if (mainMenuSelected < mainMenuLabels.Length - 1)
-                 mainMenuSelected += 1;
-             else
-                 mainMenuSelected = 0;
-         }
-         
-         if (Input.GetKeyDown (KeyCode.UpArrow) == true) {
-             if (mainMenuSelected > 0)
-                 mainMenuSelected -= 1;
-             else
-                 mainMenuSelected = mainMenuLabels.Length - 1;
-         }
-     }
- 
-     void OnGUI () {
- 
-         float width = Screen.width / 2;
-         float height = Screen.height / 2;
- 
-         // MAIN BACKGROUND
-         GUI.Box (new Rect (width - 960, height - 600, 1920, 1200), background);
- 
-         // MAIN MENU
-         GUI.BeginGroup (new Rect (width - 512, height - 384, 1024, 768));
-         
-         //GUI.Label (new Rect (64, 96, 416, 48), wip3Logo);
-		GUIStyle newStyle = new GUIStyle();
-		newStyle.normal.textColor = Color.blue;
-         
-         for (int i = 0; i < mainMenuLabels.Length; i++) {
-             
+public class Menu : MonoBehaviour 
+{
 
-             GUI.SetNextControlName (mainMenuLabels[i]);
-			if (mainMenuSelected == i) {
-				mainMenuButtons [i] = GUI.Button (new Rect (64, 160 + i * 64, 416, 48), mainMenuLabels [i], newStyle);
-				//Debug.Log ("Main Menu Color ?");
-			} else {
-				mainMenuButtons [i] = GUI.Button (new Rect (64, 160 + i * 64, 416, 48), mainMenuLabels [i], mainButton);
-				//Debug.Log ("Main Menu Color Normal");
+	public Texture2D background;
+
+	public GameObject optionsBox;
+	public GameObject prefabButton;
+	//public Texture2D wip3Logo;
+
+
+	public List<Options> menuOptions;
+	public string menuType;
+	private bool isActive = true;
+
+
+	private string commands;
+	public bool selectionMade = false;
+	private int indexSelected = 0;
+
+	void Start () 
+	{
+		selectionMade = false;
+		isActive = true;
+		indexSelected = 0;
+	}
+
+	public bool menuIsActive()
+	{
+		return isActive;
+	}
+
+	void Update () 
+	{
+
+		if (!selectionMade && isActive == true && Input.anyKey)
+		{
+			Debug.Log (menuOptions.Count);
+			if (Input.GetKeyDown (KeyCode.DownArrow) == true)
+			{
+				if (indexSelected < menuOptions.Count - 1)
+				{
+					indexSelected += 1;
+				} else
+				{
+					indexSelected = 0;
+				}
 			}
 
-         }
-         
-         GUI.EndGroup ();
-         
-         GUI.FocusControl (mainMenuLabels[mainMenuSelected]);
-         
-         if (mainMenuButtons[0]) {
-             
-             Debug.Log ("SINGLE RACE");
-             //GameManager.Instance.SetRaceType (GameManager.RaceType.SingleRace);
-         }
-         
-         if (mainMenuButtons[1]) {}
-         
-         if (mainMenuButtons[2]) {}
-         
-         if (mainMenuButtons[3]) {}
-         
-         if (mainMenuButtons[4]) {
-             
-             Application.Quit ();
-         }
-         
-         if (Input.GetKey (KeyCode.Return)) {
-             mainMenuButtons[mainMenuSelected] = true;
-         }
-     }
- }
+			if (Input.GetKeyDown (KeyCode.UpArrow) == true)
+			{
+				if (indexSelected > 0)
+				{
+					indexSelected -= 1;
+				} else
+				{
+					indexSelected = menuOptions.Count - 1;
+				}
+			}
+
+			if (Input.GetKey (KeyCode.Return))
+			{
+				selectionMade = true;
+				ButtonClicked (menuOptions [indexSelected]);
+			}
+
+			if (Input.GetKey (KeyCode.X))
+			{
+				selectionMade = true;
+				ButtonClicked (menuOptions [indexSelected]);
+			}
+				
+		}
+
+
+
+
+
+	}
+
+
+
+
+	public void loadOptions(List<Options> options)
+	{
+		Debug.Log (menuOptions.Count);
+		if (menuOptions.Count == 0)
+		{
+			menuOptions.AddRange (options);
+		}
+		Debug.Log ("length of list : " + menuOptions.Count);
+		isActive = true;
+
+
+		//goButton.transform.localScale = new Vector3(1, 1, 1);
+
+
+
+		// for each of our options, create some sort of button
+		// in our panel and put it at the right spot
+		for (int i = 0; i < options.Count; i++)
+		{
+			GameObject goButton = (GameObject)Instantiate (prefabButton);
+			goButton.GetComponentInChildren<Text>().text = "Option : " + menuOptions[i].option;
+			Debug.Log(menuOptions[i].toString());
+
+			Options optionItem = new Options ();
+			optionItem = menuOptions [i];
+
+			// if we have no selected buttons, set our first to selected
+			if (i == 0 && indexSelected <= 0)
+			{
+				goButton.GetComponent<Button> ().Select ();
+			}
+			//goButton.AddComponent(
+			goButton.GetComponent<Button>().onClick.AddListener(
+				() => {  ButtonClicked(optionItem); }
+			);
+			goButton.transform.SetParent (optionsBox.transform, false);
+			//goButton.transform.localScale = new Vector3(1, 1, 1);
+
+
+		}
+
+		Debug.Log ("Menu OPTIONS LENGTH : " + menuOptions.Count);
+			
+	}
+
+	void ButtonClicked(Options buttonCommand)
+	{
+		isActive = false;
+
+		if (selectionMade)
+		{
+			Debug.Log ("Selection Made");
+
+
+			/// what type of options list do we have? conversation or more main menu?
+			if (menuType == "conversation")
+			{
+				// if we have a number, just go to that number
+				if (buttonCommand.command.Contains ("id#"))
+				{
+					string command = (buttonCommand.command.Split ('#')) [1];
+
+					// change conversation id to that?
+					// get player by tag name
+					//Debug.Log("Player to Alter : " + tagItem.playerToAlter);
+					CharacterConversable playerObject = GameObject.Find (buttonCommand.playerToAlter).GetComponent<CharacterConversable> ();
+					//Debug.Log ("Player Name? : " + playerObject.playerName);
+					playerObject.GetComponent<ActivateTextAtLine> ().dialogueID = command;
+				}
+
+
+			}
+
+
+
+
+		}
+
+	}
+}
