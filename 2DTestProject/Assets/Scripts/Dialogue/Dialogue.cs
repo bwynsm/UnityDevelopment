@@ -107,7 +107,12 @@ using System.Xml.Linq;
 								}
 								if (words.Name == "option")
 								{
-									
+
+									if (words.Value != null && words.Value != "")
+									{
+										optionsSet.option = words.Value;
+									}
+
 									// if we have a command
 									if (words.HasAttributes)
 									{
@@ -115,10 +120,6 @@ using System.Xml.Linq;
 										if (words.Attribute ("command") != null)
 										{
 											optionsSet.command = words.Attribute ("command").Value;
-										}
-										if (words.Value != null && words.Value != "")
-										{
-											optionsSet.option = words.Value;
 										}
 										if (words.Attribute ("playerToAlter") != null)
 										{

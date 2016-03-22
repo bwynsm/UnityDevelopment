@@ -336,6 +336,7 @@ public class TextBoxManager : MonoBehaviour
 
 			GameObject goButton = (GameObject)Instantiate (prefabButton);
 			goButton.GetComponentInChildren<Text>().text = "Option : " + options[i].option;
+			Debug.Log(options[i].toString());
 
 			Options optionItem = new Options ();
 			optionItem = options [i];

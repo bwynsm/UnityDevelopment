@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 3/17/2016 2:56:51 PM-->
+<!--Last exported: 3/21/2016 10:38:18 AM-->
 <Tiled2Unity version="1.0.4.2">
   <AssignMaterial mesh="mesh_0001" material="terrain" />
   <AssignMaterial mesh="mesh_0002" material="Outside_A5" />
@@ -22,12 +22,12 @@
   <AssignMaterial mesh="mesh_0017" material="RED" />
   <Prefab name="Lake" numTilesWide="12" numTilesHigh="12" tileWidth="32" tileHeight="32" exportScale="0.01" mapWidthInPixels="384" mapHeightInPixels="384">
     <GameObject name="Ground" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0001" sortingLayerName="" sortingOrder="0" opacity="1" />
-      <GameObject name="Outside_A5" copy="mesh_0002" sortingLayerName="" sortingOrder="0" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0001" sortingLayerName="Ground" sortingOrder="0" opacity="1" />
+      <GameObject name="Outside_A5" copy="mesh_0002" sortingLayerName="Ground" sortingOrder="0" opacity="1" />
     </GameObject>
     <GameObject name="Water" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0003" sortingLayerName="" sortingOrder="1" opacity="1" />
-      <GameObject name="Outside_A3" copy="mesh_0004" sortingLayerName="" sortingOrder="1" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0003" sortingLayerName="Water" sortingOrder="1" opacity="1" />
+      <GameObject name="Outside_A3" copy="mesh_0004" sortingLayerName="Water" sortingOrder="1" opacity="1" />
       <GameObject name="Collision">
         <PolygonCollider2D>
           <Path>1.59,-1.28 1.36,-1.59 1.59,-1.59</Path>
@@ -50,14 +50,14 @@
       </GameObject>
     </GameObject>
     <GameObject name="AboveWater" x="0" y="0">
-      <GameObject name="Outside_A4" copy="mesh_0005" sortingLayerName="" sortingOrder="2" opacity="1" />
-      <GameObject name="terrain" copy="mesh_0006" sortingLayerName="" sortingOrder="2" opacity="1" />
-      <GameObject name="Outside_A3" copy="mesh_0007" sortingLayerName="" sortingOrder="2" opacity="1" />
-      <GameObject name="Outside_B" copy="mesh_0008" sortingLayerName="" sortingOrder="2" opacity="1" />
+      <GameObject name="Outside_A4" copy="mesh_0005" sortingLayerName="Shin High" sortingOrder="2" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0006" sortingLayerName="Shin High" sortingOrder="2" opacity="1" />
+      <GameObject name="Outside_A3" copy="mesh_0007" sortingLayerName="Shin High" sortingOrder="2" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0008" sortingLayerName="Shin High" sortingOrder="2" opacity="1" />
     </GameObject>
     <GameObject name="Walkable" x="0" y="0">
-      <GameObject name="Outside_B" copy="mesh_0009" sortingLayerName="" sortingOrder="3" opacity="1" />
-      <GameObject name="terrain" copy="mesh_0010" sortingLayerName="" sortingOrder="3" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0009" sortingLayerName="Shin High" sortingOrder="3" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0010" sortingLayerName="Shin High" sortingOrder="3" opacity="1" />
       <GameObject name="Collision">
         <PolygonCollider2D>
           <Path>0.63,-1.59 0.31,-1.59 0.31,-1.8 0.63,-1.8</Path>
@@ -66,16 +66,16 @@
       </GameObject>
     </GameObject>
     <GameObject name="PlayerLayer" x="0" y="0">
-      <GameObject name="Outside_B" copy="mesh_0011" sortingLayerName="" sortingOrder="4" opacity="1" />
-      <GameObject name="terrain" copy="mesh_0012" sortingLayerName="" sortingOrder="4" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0011" sortingLayerName="Player" sortingOrder="4" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0012" sortingLayerName="Player" sortingOrder="4" opacity="1" />
     </GameObject>
     <GameObject name="Blocking" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0013" sortingLayerName="" sortingOrder="5" opacity="1" />
-      <GameObject name="Outside_B" copy="mesh_0014" sortingLayerName="" sortingOrder="5" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0013" sortingLayerName="Knee High" sortingOrder="5" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0014" sortingLayerName="Knee High" sortingOrder="5" opacity="1" />
     </GameObject>
     <GameObject name="AbovePlayer" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0015" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outside_B" copy="mesh_0016" sortingLayerName="" sortingOrder="6" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0015" sortingLayerName="TreeTops" sortingOrder="6" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0016" sortingLayerName="TreeTops" sortingOrder="6" opacity="1" />
     </GameObject>
     <GameObject name="Collisions" x="0" y="0">
       <GameObject name="RED" copy="mesh_0017" sortingLayerName="" sortingOrder="7" opacity="0.2" />

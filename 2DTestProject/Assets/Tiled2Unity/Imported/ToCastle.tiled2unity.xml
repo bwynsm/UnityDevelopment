@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 3/18/2016 11:25:08 AM-->
+<!--Last exported: 3/21/2016 10:36:42 AM-->
 <Tiled2Unity version="1.0.4.2">
   <AssignMaterial mesh="mesh_0001" material="terrain" />
   <AssignMaterial mesh="mesh_0002" material="terrain" />
@@ -14,15 +14,15 @@
   <AssignMaterial mesh="mesh_0009" material="RED" />
   <Prefab name="ToCastle" numTilesWide="38" numTilesHigh="38" tileWidth="32" tileHeight="32" exportScale="0.01" mapWidthInPixels="1216" mapHeightInPixels="1216">
     <GameObject name="Ground" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0001" sortingLayerName="" sortingOrder="0" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0001" sortingLayerName="Ground" sortingOrder="0" opacity="1" />
     </GameObject>
     <GameObject name="Stones" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0002" sortingLayerName="" sortingOrder="1" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0002" sortingLayerName="Water" sortingOrder="1" opacity="1" />
     </GameObject>
     <GameObject name="Blockable" x="0" y="0">
-      <GameObject name="terrain" copy="mesh_0003" sortingLayerName="" sortingOrder="2" opacity="1" />
-      <GameObject name="Outside_B" copy="mesh_0004" sortingLayerName="" sortingOrder="2" opacity="1" />
-      <GameObject name="plant repack" copy="mesh_0005" sortingLayerName="" sortingOrder="2" opacity="1" />
+      <GameObject name="terrain" copy="mesh_0003" sortingLayerName="Knee High" sortingOrder="2" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0004" sortingLayerName="Knee High" sortingOrder="2" opacity="1" />
+      <GameObject name="plant repack" copy="mesh_0005" sortingLayerName="Knee High" sortingOrder="2" opacity="1" />
       <GameObject name="Collision">
         <PolygonCollider2D>
           <Path>8,-1.27 8,-3.83 7.99,-3.83 7.99,-4.16 8.16,-4.16 8.16,-3.83 8.15,-3.83 8.15,-1.27</Path>
@@ -30,12 +30,11 @@
       </GameObject>
     </GameObject>
     <GameObject name="PlayerLayer" x="0" y="0">
-      <GameObject name="Outside_B" copy="mesh_0006" sortingLayerName="" sortingOrder="3" opacity="1" />
+      <GameObject name="Outside_B" copy="mesh_0006" sortingLayerName="Player" sortingOrder="3" opacity="1" />
     </GameObject>
     <GameObject name="TreeTops" x="0" y="0">
-      <GameObject name="Outside_B" copy="mesh_0007" sortingLayerName="" sortingOrder="4" opacity="1" />
-      <GameObject name="plant repack" copy="mesh_0008" sortingLayerName="" sortingOrder="4" opacity="1" />
-      <Property name="Sorting Order" value="Tree Tops" />
+      <GameObject name="Outside_B" copy="mesh_0007" sortingLayerName="TreeTops" sortingOrder="4" opacity="1" />
+      <GameObject name="plant repack" copy="mesh_0008" sortingLayerName="TreeTops" sortingOrder="4" opacity="1" />
     </GameObject>
     <GameObject name="Collision" x="0" y="0">
       <GameObject name="RED" copy="mesh_0009" sortingLayerName="" sortingOrder="5" opacity="1" />

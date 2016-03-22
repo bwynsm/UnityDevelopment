@@ -23,10 +23,16 @@ public class ActivateTextAtLine : MonoBehaviour
 	private bool waitForPress; // waiting for a button press to initiate talking
 	public CharacterConversable player; // a character that can hold a conversation
 
+	public PolygonCollider2D interactionTriggerCollider;
+
+
+	// other character we are looking at - their location
+	private PlayerMovement mainPlayer;
 
 	public string dialogueID = "1";
 
 	private bool isColliding = false;
+	private bool startedTalking = false;
 
 
 	// Use this for initialization
@@ -34,6 +40,14 @@ public class ActivateTextAtLine : MonoBehaviour
 	{
 		// get our text box
 		theTextBox = FindObjectOfType<TextBoxManager> ();
+		mainPlayer = GameObject.Find ("Player").GetComponent<PlayerMovement> ();
+		interactionTriggerCollider = gameObject.AddComponent<PolygonCollider2D> ();
+		interactionTriggerCollider.pathCount = 1;
+
+		Vector2[] polygon = new Vector2[]{ new Vector2(0.00f, 0.25f), new Vector2(-0.25f, -0.1f), new Vector2(0.00f, -0.25f), new Vector2(0.25f, -0.1f) };
+		interactionTriggerCollider.points = polygon;
+		interactionTriggerCollider.isTrigger = true;
+
 	}
 
 
@@ -47,6 +61,8 @@ public class ActivateTextAtLine : MonoBehaviour
 		// we also have to have text..
 		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation) 
 		{
+			
+			Debug.Log ("Player Transform After : " + player.transform.position.ToString());
 			theTextBox.inConversation = true;
 			theTextBox.reloadScript (theText, dialogueID);
 
@@ -58,9 +74,39 @@ public class ActivateTextAtLine : MonoBehaviour
 		else if ( waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding)
 		{
 			theTextBox.inConversation = false;
+			startedTalking = false;
 		}
 	}
 
+	void LateUpdate()
+	{
+		if (theTextBox.inConversation == true && !startedTalking && isColliding)
+		{
+			startedTalking = true;
+			Animator anim = player.GetComponent<Animator> ();
+			Debug.Log (player.name);
+			Vector2 direction = new Vector2 (mainPlayer.transform.position.x - 
+											player.transform.position.x, 
+											mainPlayer.transform.position.y - 
+											player.transform.position.y);
+			Debug.Log ("DIRECTION : " + direction);
+			anim.SetBool ("isWalking", true);
+			anim.SetFloat ("input_x", direction.x);
+			anim.SetFloat ("input_y", direction.y);
+			anim.SetBool ("isWalking", false);
+			//rbody.MovePosition(rbody.position + direction * 0.01f);
+
+			// do the same change for the main player in reverse
+			anim = mainPlayer.GetComponent<Animator> ();
+			//Debug.Log ("Transforms : " + otherTransform.x + ", " + otherTransform.y);
+			direction = new Vector2 (player.transform.position.x - mainPlayer.transform.position.x, player.transform.position.y - mainPlayer.transform.position.y);
+			Debug.Log (player.name);
+			anim.SetBool ("isWalking", true);
+			anim.SetFloat ("input_x", direction.x);
+			anim.SetFloat ("input_y", direction.y);
+			anim.SetBool ("isWalking", false);
+		}
+	}
 
 	// if something walks into our zone, then we want to see if we are waiting
 	// for something more. If the type of other is our player, (and not just another NPC)
@@ -75,14 +121,17 @@ public class ActivateTextAtLine : MonoBehaviour
 		// if we aren't shouting, but waiting for the player to talk to us
 		if (requireButtonPress) 
 		{
-			if (other.name == "Player")
+			//Debug.Log ("we are in here setting the name of the player");
+			if (other.name == "Player") 
+			{
 				isColliding = true;
+			}
 
 			waitForPress = true;
 			return;
 		}
 
-		Debug.Log ("we are here");
+
 
 
 		// if our other person is the player...
@@ -113,6 +162,7 @@ public class ActivateTextAtLine : MonoBehaviour
 		{
 			isColliding = false;
 			waitForPress = false;
+
 		}
 	}
 }

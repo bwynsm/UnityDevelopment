@@ -142,7 +142,9 @@ public class NPC_Movement : CharacterConversable
 
 
 				// if we are moving... then we want to move our rigid body
-				if (isMoving) 
+				// for now, we won't move if the player is in our space.
+				// we'll kinda just stand there and let them chat with us
+				if (isMoving && !rbody.isKinematic) 
 				{
 					
 					// take steps every couple seconds
