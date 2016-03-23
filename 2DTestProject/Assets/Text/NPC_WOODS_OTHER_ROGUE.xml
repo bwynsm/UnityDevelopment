@@ -30,9 +30,9 @@ What sorts of clothing does one normally wear in the woods?
 
 		<Speech name="Player" type="options">
 			<Options>
-				<option  command="id#2" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">I like shirts! They are comfy and easy to wear!</option>
-				<option  command="id#3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Pants</option>
-				<option  command="id#3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Socks</option>
+				<option  command="id#2;optionNumber#1" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">I like shirts! They are comfy and easy to wear!</option>
+				<option  command="id#3;goto#3;optionNumber#2" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Pants</option>
+				<option  command="id#1;goto#3;optionNumber#3" playerToAlter="NPC_Woods_Other_Rogue" currentPlayer="Player">Boring Socks</option>
 			</Options>
 		</Speech>
 
@@ -56,7 +56,7 @@ I can't imagine your sprite wearing shirts.
 		<Speeches id="3">
 		<Speech name="NPC_Woods_Other_Rogue">
 			<SpeechText>
-Princesses are so boring.
+Princesses are so boring. Why would you ever want to wear anything boring?
 			</SpeechText>
 		</Speech>
 

@@ -18,6 +18,12 @@ public class WaitingForTime : MonoBehaviour
 
 
 
+	/// <summary>
+	/// Pauses the script before we try and receive input to prevent
+	/// too quickly proceeding past something without seeing what it was
+	/// in the first place
+	/// </summary>
+	/// <returns>The before input.</returns>
 	public IEnumerator PauseBeforeInput()
 	{
 		Debug.Log ("paused for input");
@@ -25,6 +31,10 @@ public class WaitingForTime : MonoBehaviour
 		Debug.Log ("unpaused for input");
 	}
 
+	/// <summary>
+	/// Waits for key down - any key
+	/// </summary>
+	/// <returns>The for key down.</returns>
 	public IEnumerator WaitForKeyDown()
 	{
 
