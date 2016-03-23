@@ -45,21 +45,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ActivateTextAtLine.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\CaptureButtonClick.cs" />
-     <Compile Include="Assets\Scripts\CharacterConversable.cs" />
+     <Compile Include="Assets\Scripts\ConversationControl\ActivateTextAtLine.cs" />
+     <Compile Include="Assets\Scripts\ConversationControl\TextBoxManager.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\CharacterConversable.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Conversation.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\Options.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Speech.cs" />
-     <Compile Include="Assets\Scripts\EventCatch.cs" />
-     <Compile Include="Assets\Scripts\NPC_Movement.cs" />
-     <Compile Include="Assets\Scripts\Options.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Menus\Commands.cs" />
+     <Compile Include="Assets\Scripts\Menus\Menu.cs" />
+     <Compile Include="Assets\Scripts\Movement\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Movement\EnemyCharacter.cs" />
+     <Compile Include="Assets\Scripts\Movement\NPC_Movement.cs" />
+     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\SortObjects.cs" />
+     <Compile Include="Assets\Scripts\Movement\Warp.cs" />
+     <Compile Include="Assets\Scripts\MusicChanger.cs" />
      <Compile Include="Assets\Scripts\ScreenFader.cs" />
-     <Compile Include="Assets\Scripts\SortObjects.cs" />
-     <Compile Include="Assets\Scripts\TextBoxManager.cs" />
-     <Compile Include="Assets\Scripts\Warp.cs" />
+     <Compile Include="Assets\Scripts\WaitingForTime.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />

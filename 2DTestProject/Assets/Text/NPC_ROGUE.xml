@@ -43,11 +43,11 @@ The usual
 			</SpeechText>
 		</Speech>
 
-		<Speech  name="NPC_Rogue" type="options">
+		<Speech  name="Player" type="options">
         <Options>
-          <option>Shorts</option>
-          <option>Pants</option>
-          <option>Socks</option>
+          <option command="id#1" playerToAlter="NPC_Rogue">Shall we have this conversation again?</option>
+          <option command="id#2" playerToAlter="NPC_Rogue">I don't think I should trust you.</option>
+          <option command="id#3" playerToAlter="NPC_Rogue">Want to be thieving buddies?</option>
         </Options>
 		</Speech>
 	</Speeches>
@@ -56,7 +56,7 @@ The usual
 	<Speeches id="2">
 		<Speech name="NPC_Rogue">
 			<SpeechText>
-				Just me talking this time
+				Just me talking to myself then
 			</SpeechText>			
 		</Speech>
 
@@ -71,13 +71,13 @@ The usual
 	<Speeches id="3">
 		<Speech name="NPC_Rogue">
 			<SpeechText>
-				Third Conversation
+				Most definitely.
 			</SpeechText>			
 		</Speech>
 
 		<Speech name="Player">
 			<SpeechText>
-				Victory.
+				Excellent.
 			</SpeechText>			
 		</Speech>
 	</Speeches>

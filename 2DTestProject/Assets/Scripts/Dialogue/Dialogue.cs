@@ -14,6 +14,12 @@ using System.Xml.Linq;
 	public string conversationID;
 	private TextAsset xmlText;
 
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Dialogue"/> class.
+	/// </summary>
+	/// <param name="textToRead">Text to read.</param>
+	/// <param name="conversationNumber">Conversation number.</param>
 	public Dialogue(TextAsset textToRead, string conversationNumber)
 	{
 		conversationID = conversationNumber;
@@ -24,17 +30,30 @@ using System.Xml.Linq;
 
 	}
 
+
+	/// <summary>
+	/// Gets the dialogue based on a string identifier
+	/// </summary>
+	/// <returns>The dialogue.</returns>
+	/// <param name="conversationNumber">Conversation number.</param>
 	public List<Speech> getDialogue(string conversationNumber)
 	{
 		return Speeches [conversationNumber];
 	}
 
+	/// <summary>
+	/// Sets the conversation ID so that we can switch things
+	/// </summary>
+	/// <param name="conversationNumber">Conversation number.</param>
 	public void setConversationID(string conversationNumber)
 	{
 		conversationID = conversationNumber;
 	}
 
 
+	/// <summary>
+	/// Setups the conversation - parse the XML
+	/// </summary>
 	// other than that, we simply read everything in and start to store it
 	public void setupConversation()
 	{
@@ -87,6 +106,9 @@ using System.Xml.Linq;
 							{
 								speechObject.name = speechItem.Attribute ("name").Value;
 							}
+
+							// if we have a type of the conversation - use that. I think most of the time
+							// this won't matter a whole bunch. We will just have basic text
 							if (speechItem.Attribute ("type") != null)
 							{
 								speechObject.type = speechItem.Attribute ("type").Value;
@@ -107,7 +129,13 @@ using System.Xml.Linq;
 								}
 								if (words.Name == "option")
 								{
-									
+									// if words value has a text component
+									// set it to our string
+									if (words.Value != null && words.Value != "")
+									{
+										optionsSet.option = words.Value;
+									}
+
 									// if we have a command
 									if (words.HasAttributes)
 									{
@@ -116,14 +144,15 @@ using System.Xml.Linq;
 										{
 											optionsSet.command = words.Attribute ("command").Value;
 										}
-										if (words.Value != null && words.Value != "")
-										{
-											optionsSet.option = words.Value;
-										}
+
+										// if we have the playerToAlter attribute, add that into our
+										// options set so that we can alter this player based on the command
 										if (words.Attribute ("playerToAlter") != null)
 										{
 											optionsSet.playerToAlter = words.Attribute ("playerToAlter").Value;
 										}
+
+										// this is just in case we have a player swap
 										if (words.Attribute ("currentPlayer") != null)
 										{
 											optionsSet.currentPlayer = words.Attribute ("currentPlayer").Value;

@@ -60,6 +60,19 @@ public class Conversation
 
 
 
+	/// <summary>
+	/// Changes the dialogue id and loads the new conversation based off of that
+	/// which also resets the index
+	/// </summary>
+	/// <param name="newConversationID">New conversation I.</param>
+	public void changeDialogue(string newConversationID)
+	{
+		conversationItem.setConversationID (newConversationID);
+
+		Debug.Log ("we are here" + newConversationID);
+		dialogue = conversationItem.getDialogue (newConversationID);
+		index = -1;
+	}
 
 	/**
 	 * getItem returns our Speeches item from where we are at in our list in Dialogue
@@ -112,10 +125,6 @@ public class Conversation
 	}
 
 
-	public void setOptionsID(string optionsIDSet)
-	{
-		optionsID = optionsIDSet;
-	}
 
 
 }
