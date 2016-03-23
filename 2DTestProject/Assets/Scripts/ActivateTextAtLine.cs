@@ -62,7 +62,6 @@ public class ActivateTextAtLine : MonoBehaviour
 		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation) 
 		{
 			
-			Debug.Log ("Player Transform After : " + player.transform.position.ToString());
 			theTextBox.inConversation = true;
 			theTextBox.reloadScript (theText, dialogueID);
 
@@ -73,7 +72,6 @@ public class ActivateTextAtLine : MonoBehaviour
 		}
 		else if ( waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding)
 		{
-			Debug.Log ("we are getting input here");
 			theTextBox.inConversation = false;
 			startedTalking = false;
 		}
@@ -90,7 +88,6 @@ public class ActivateTextAtLine : MonoBehaviour
 											player.transform.position.x, 
 											mainPlayer.transform.position.y - 
 											player.transform.position.y);
-			Debug.Log ("DIRECTION : " + direction);
 			anim.SetBool ("isWalking", true);
 			anim.SetFloat ("input_x", direction.x);
 			anim.SetFloat ("input_y", direction.y);
@@ -99,9 +96,7 @@ public class ActivateTextAtLine : MonoBehaviour
 
 			// do the same change for the main player in reverse
 			anim = mainPlayer.GetComponent<Animator> ();
-			//Debug.Log ("Transforms : " + otherTransform.x + ", " + otherTransform.y);
 			direction = new Vector2 (player.transform.position.x - mainPlayer.transform.position.x, player.transform.position.y - mainPlayer.transform.position.y);
-			Debug.Log (player.name);
 			anim.SetBool ("isWalking", true);
 			anim.SetFloat ("input_x", direction.x);
 			anim.SetFloat ("input_y", direction.y);

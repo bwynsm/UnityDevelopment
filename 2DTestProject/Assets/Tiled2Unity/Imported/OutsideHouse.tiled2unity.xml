@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 3/21/2016 10:24:31 AM-->
+<!--Last exported: 3/22/2016 10:27:56 AM-->
 <Tiled2Unity version="1.0.4.2">
   <AssignMaterial mesh="mesh_0001" material="Outside_B" />
   <AssignMaterial mesh="mesh_0002" material="terrain" />

@@ -1,14 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Text\NPC_ROGUE.xml">
     <Files>
-      <File FileName="Assets\Scripts\ActivateTextAtLine.cs" Line="150" Column="4" />
-      <File FileName="Assets\Scripts\TextBoxManager.cs" Line="114" Column="43" />
-      <File FileName="Assets\Scripts\Menu.cs" Line="29" Column="21" />
-      <File FileName="Assets\Scripts\Dialogue\Options.cs" Line="9" Column="30" />
-      <File FileName="Assets\Text\NPC_WOODS_OTHER_ROGUE.xml" Line="65" Column="1" />
-      <File FileName="Assets\Text\NPC_WOODS_ROGUE.xml" Line="29" Column="1" />
-      <File FileName="Assets\Text\NPC_ROGUE.xml" Line="76" Column="12" />
+      <File FileName="Assets\Scripts\Dialogue\Options.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TextBoxManager.cs" Line="138" Column="45" />
+      <File FileName="Assets\Scripts\Menu.cs" Line="49" Column="38" />
+      <File FileName="Assets\Scripts\WaitingForTime.cs" Line="24" Column="40" />
+      <File FileName="Assets\Scripts\ActivateTextAtLine.cs" Line="98" Column="48" />
+      <File FileName="Assets\Text\NPC_WOODS_OTHER_ROGUE.xml" Line="39" Column="1" />
+      <File FileName="Assets\Text\NPC_WOODS_ROGUE.xml" Line="1" Column="1" />
+      <File FileName="Assets\Text\NPC_ROGUE.xml" Line="80" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

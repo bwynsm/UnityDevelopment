@@ -136,7 +136,6 @@ public class TextBoxManager : MonoBehaviour
 
 			// get object by name now that we have the updated item
 			playerName = dialogueTree.getItem().name;
-			//Debug.Log ("Player name : " + playerName);
 			player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
 			speakerText.text = player.playerName.Trim();
 
@@ -340,7 +339,7 @@ public class TextBoxManager : MonoBehaviour
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "conversation";
 
-		//goButton.transform.localScale = new Vector3(1, 1, 1);
+		//optionsMenu.transform.localScale = new Vector3(1, 1, 1);
 		optionsMenu.loadOptions(options);
 
 
