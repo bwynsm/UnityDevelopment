@@ -24,6 +24,9 @@ public class CameraFollow : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		//Cursor.lockState =  CursorLockMode.Locked;
+		//Cursor.visible = false;
+
 		mycam = GetComponent<Camera> ();
 
 		// if the camera has a target, update to move towards it
@@ -41,6 +44,8 @@ public class CameraFollow : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+
+
 		// some simple math
 		// set the sze of the camera
 		// 32 pixels on camera is 32 pixels on scene

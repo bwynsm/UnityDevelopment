@@ -63,6 +63,7 @@
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
      <None Include="Assets\Text\NPC_ROGUE.xml" />
      <None Include="Assets\Tiled2Unity\Imported\ToCastle.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\FancyMap.tiled2unity.xml" />
      <None Include="Assets\Text\NPC_WOODS_OTHER_ROGUE.xml" />
      <None Include="Assets\Tiled2Unity\Imported\OutsideHouse.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />

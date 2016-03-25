@@ -44,6 +44,8 @@ public class PlayerMovement : CharacterConversable
 		// if we are frozen, we do not want to be walking.
 		if (!freeze) 
 		{
+			
+
 			Vector2 movementVector = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 
 			// we're going to assume for the sake of argument that running is twice the speed of walking.

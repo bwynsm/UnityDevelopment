@@ -54,7 +54,7 @@ public class ActivateTextAtLine : MonoBehaviour
 
 		// also, we don't want to enable if we are already enabled.
 		// we also have to have text..
-		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation) 
+		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation  && GameObject.Find("Player").GetComponent<PlayerMovement>().isFrozen() == false) 
 		{
 			
 			theTextBox.inConversation = true;
@@ -129,9 +129,8 @@ public class ActivateTextAtLine : MonoBehaviour
 
 
 		// if our other person is the player...
-		if (other.name == "Player") 
+		if (other.name == "Player" && GameObject.Find(other.name).GetComponent<PlayerMovement>().isFrozen() == false ) 
 		{
-
 			theTextBox.setPlayer (player);
 			theTextBox.reloadScript (theText, dialogueID);
 

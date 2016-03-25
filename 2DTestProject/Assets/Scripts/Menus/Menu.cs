@@ -35,24 +35,32 @@ public class Menu : MonoBehaviour
 	/// 
 	/// This just runs a loop that we only need to run once before we destroy the object.
 	/// The Menu comes and goes and waits for input and gives options and highlights and
-	/// then does commands based on input
+	/// then does commands based on inputit
 	/// </summary>
-	IEnumerator Start () 
+	public IEnumerator Start ()
 	{
+		yield return StartCoroutine (Initialize ());
+	}
+
+	public IEnumerator Initialize()
+	{
+
+
 		selectionMade = false;
 		isActive = true;
 		indexSelected = 0;
 
-
 		optionsBox.AddComponent<WaitingForTime> ();
 		waitingObject = optionsBox.GetComponent<WaitingForTime> ();
 
-		yield return StartCoroutine (waitingObject.PauseBeforeInput());
+		if (menuType != "PauseMenu")
+		{
+			yield return StartCoroutine (waitingObject.PauseBeforeInput ());
+		}
+
 
 		// check and see which item is highlighted here before we enter and make that
 		// our indexselected
-
-
 		for (var i = 0; i < menuOptions.Count; i++) 
 		{
 			// if the item is highlighted, set our value to that
@@ -62,14 +70,19 @@ public class Menu : MonoBehaviour
 		
 		}
 
-		while (selectionMade == false) 
+		while (selectionMade == false && optionsBox.activeInHierarchy) 
 		{
-
 			yield return StartCoroutine (waitingObject.WaitForKeyDown ());
+
 
 			if (EventSystem.current.currentSelectedGameObject == null)
 			{
-				if (indexSelected >= 0 && indexSelected <= menuOptions.Count - 1)
+				// if we have no more object
+				if (optionsBox.activeInHierarchy == false)
+				{
+					yield return null;
+				}
+				else if (indexSelected >= 0 && indexSelected <= menuOptions.Count - 1)
 				{
 					optionsBox.GetComponentsInChildren<Button> () [indexSelected].Select ();
 				}
@@ -121,7 +134,11 @@ public class Menu : MonoBehaviour
 				}
 
 			}
+
+
 		}
+
+
 
 	}
 		
@@ -138,7 +155,7 @@ public class Menu : MonoBehaviour
 
 	public void loadOptions(List<Options> options)
 	{
-		if (menuOptions.Count == 0)
+		if (menuOptions == null || menuOptions.Count == 0)
 		{
 			menuOptions.AddRange (options);
 		}
@@ -182,6 +199,9 @@ public class Menu : MonoBehaviour
 			
 	}
 
+
+
+
 	void ButtonClicked(Options buttonCommand)
 	{
 		isActive = false;
@@ -202,7 +222,14 @@ public class Menu : MonoBehaviour
 
 			// if we have a main menu, we can send those commands over to commands as well
 			// and just run our functions for that.
+			else if (menuType == "PauseMenu")
+			{
+				Debug.Log ("Pause Menu Button Clicked! : " + buttonCommand);
 
+				Commands command = new Commands ();
+				command.resolvePauseMenuCommands (buttonCommand);
+				// what is our command? 
+			}
 
 
 

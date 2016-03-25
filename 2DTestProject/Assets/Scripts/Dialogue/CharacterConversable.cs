@@ -32,6 +32,8 @@ public class CharacterConversable : MonoBehaviour
 	{
 		return freeze;
 	}
+
+
 		
 
 }

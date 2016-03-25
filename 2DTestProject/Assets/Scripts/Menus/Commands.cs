@@ -30,6 +30,12 @@ public class Commands
 
 
 
+	// for now, let's just resolve everything with a closure
+	public void resolvePauseMenuCommands(Options optionItem)
+	{
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<PauseMenu> ().unpauseGame();
+	}
+
 	/// <summary>
 	/// Resolves the commands sent from options in a conversation
 	/// </summary>
@@ -47,7 +53,6 @@ public class Commands
 		// to parse it out. We'll split it by semicolon
 		string[] commandsList = commandsString.Split(';');
 
-		Debug.Log ("SIZE OF SPLIT : " + commandsList.Length);
 
 
 		// now that we have everything split up, we want to loop over that list
@@ -74,7 +79,7 @@ public class Commands
 			// unrecognized command
 			else
 			{
-				Debug.Log ("We have an unrecognized command : " + commandItem);
+				Debug.Log ("We have an unrecognized command : " + commandItem + " " + currentPlayer);
 			}
 		}
 
