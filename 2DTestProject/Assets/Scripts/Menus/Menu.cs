@@ -11,6 +11,9 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Menu : MonoBehaviour 
 {
+	public AudioClip sting;
+	public AudioSource stingSource;
+
 
 	public Texture2D background;		// unused at the moment - texture background for menu
 
@@ -30,6 +33,8 @@ public class Menu : MonoBehaviour
 
 	public WaitingForTime waitingObject; // object to pause the game for something
 
+
+
 	/// <summary>
 	/// Start this instance.
 	/// 
@@ -40,6 +45,8 @@ public class Menu : MonoBehaviour
 	public IEnumerator Start ()
 	{
 		yield return StartCoroutine (Initialize ());
+
+
 	}
 
 	public IEnumerator Initialize()
@@ -107,6 +114,14 @@ public class Menu : MonoBehaviour
 						indexSelected = 0;
 						optionsBox.GetComponentsInChildren<Button> () [0].Select ();
 					}
+
+
+					/// if we have stings and we are in a pause menu
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (sting);
+					}
+
 				}
 
 				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
@@ -119,6 +134,13 @@ public class Menu : MonoBehaviour
 					{
 						indexSelected = menuOptions.Count - 1;
 						optionsBox.GetComponentsInChildren<Button> () [indexSelected].Select ();
+					}
+
+
+					/// if we have stings and we are in a pause menu
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (sting);
 					}
 				}
 
@@ -236,6 +258,10 @@ public class Menu : MonoBehaviour
 		}
 
 	}
+
+
+
+
 
 
 

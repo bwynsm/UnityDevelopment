@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyCharacter : CharacterConversable 
 {
@@ -222,6 +223,13 @@ public class EnemyCharacter : CharacterConversable
 		if (col.gameObject.tag == "PlayerCharacter")
 		{
 			rbody.isKinematic = true;	
+
+			// start battle sequence
+			//GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().positionInLastScene = gameObject.transform.position;
+			DontDestroyOnLoad(this);
+			DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("PlayerCharacter"));
+
+			SceneManager.LoadScene("BattleScene");
 		} 
 
 

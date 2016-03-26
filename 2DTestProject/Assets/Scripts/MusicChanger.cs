@@ -41,6 +41,12 @@ public class MusicChanger : MonoBehaviour {
 		}
 	}
 
+	public void transitionOut()
+	{
+		//AudioMixerSnapshot.TransitionTo(m_TransitionOut);
+		GameObject.FindGameObjectWithTag("MainCamera").GetComponentsInChildren<AudioSource>()[0].Play();
+	}
+
 
 	/// <summary>
 	/// Raises the trigger exit2 d event.

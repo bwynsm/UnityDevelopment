@@ -19,6 +19,8 @@ public class CameraFollow : MonoBehaviour
 	// reference to the camera object - not public
 	Camera mycam;
 
+	public float orthographicSize;
+
 
 
 	// Use this for initialization
@@ -39,6 +41,11 @@ public class CameraFollow : MonoBehaviour
 
 		// set the camera back to its original speed
 		camSpeed = tempCamSpeed;
+
+		if (orthographicSize == 0) 
+		{
+			orthographicSize = 3.0f;
+		}
 	}
 	
 	// Update is called once per frame
@@ -51,7 +58,7 @@ public class CameraFollow : MonoBehaviour
 		// 32 pixels on camera is 32 pixels on scene
 
 		// screen height divided by 100 float and divided by arbitrary number
-		mycam.orthographicSize = (Screen.height / 100f) / 3f;
+		mycam.orthographicSize = (Screen.height / 100f) / orthographicSize;
 
 		followTarget ();
 	}

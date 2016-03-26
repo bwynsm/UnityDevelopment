@@ -51,9 +51,6 @@ public class PauseMenu : Menu
 		{
 			unpauseGame ();
 		} 
-		else
-		{
-		}
 			
 	}
 
@@ -85,13 +82,17 @@ public class PauseMenu : Menu
 	{
 		Time.timeScale = 1;
 		gamePaused = false;
-		GameObject.Find ("Player").GetComponent<PlayerMovement> ().freeze = false;
+		GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerMovement> ().freeze = false;
 		optionsBox.SetActive (false);
 
 		Destroy (optionsBox.GetComponent<WaitingForTime> ());
 		//Destroy (optionsMenu);
 
 		cleanOutOptions ();
+
+
+		// try and restart the music
+		//GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<MusicChanger>().transitionOut();
 	}
 
 	/// <summary>
