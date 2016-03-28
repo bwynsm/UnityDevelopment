@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// Text box manager.
 /// 
-/// This class is a bit bloated at the moment. It controls everything text box
+/// This class is a bit bloated at the moment. It controls everythfing text box
 /// for the dialogues. It has a text, textbox, and a file that is sent to it
 /// from the activation. 
 /// I haven't done any good polymorphism to take some of the load off of this class, but I should.

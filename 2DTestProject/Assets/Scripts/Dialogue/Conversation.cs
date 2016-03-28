@@ -69,7 +69,7 @@ public class Conversation
 	{
 		conversationItem.setConversationID (newConversationID);
 
-		Debug.Log ("we are here" + newConversationID);
+		Debug.Log ("changing dialogue in conversation" + newConversationID);
 		dialogue = conversationItem.getDialogue (newConversationID);
 		index = -1;
 	}

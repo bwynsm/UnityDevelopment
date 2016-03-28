@@ -262,6 +262,7 @@ public class Menu : MonoBehaviour
 			} 
 			else if (menuType == "BattleMenu")
 			{
+				Debug.Log ("We are here creating a new command");
 				// let's resolve our battle commands
 				Commands command = new Commands();
 				buttonCommand.playerToAlter = "Player";

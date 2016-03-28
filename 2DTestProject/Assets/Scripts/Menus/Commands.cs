@@ -64,21 +64,31 @@ public class Commands
 			// if we have a number, just go to that number
 			if (commandItem.Contains ("id#"))
 			{
+				Debug.Log ("ID NUMBER FOUND ");
 				// split our command our and send it to our function
 				string command = (commandItem.Split ('#')) [1];
-				changeDialogueID (command, playerToAlter);
+				changeBattleDialogueID (command, playerToAlter);
+
+
 			} 
 
 			// otherwise, if we are doing an immediate branching, branch out immediately
 			// to the other branch
 			else if (commandItem.Contains ("goto#"))
 			{
+				Debug.Log ("GO TO ");
 				// split our command our and send it to our function
 				string command = (commandItem.Split ('#')) [1];
 				branchBattle (command, playerToAlter);
 			} 
 
 			// unrecognized command
+			else if (commandItem.Contains ("attack"))
+			{
+				Debug.Log ("ATTACK : " + commandItem + " " + currentPlayer);
+				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (10);
+
+			} 
 			else
 			{
 				Debug.Log ("We have an unrecognized command : " + commandItem + " " + currentPlayer);
@@ -159,6 +169,24 @@ public class Commands
 		playerObject.GetComponent<ActivateTextAtLine> ().dialogueID = command;
 	}
 
+	/// <summary>
+	/// Changes the dialogue ID for the next time we talk to this character
+	/// </summary>
+	/// <param name="command">Command.</param>
+	/// <param name="playerToAlter">Player to alter.</param>
+	private void changeBattleDialogueID(string command, string playerToAlter)
+	{
+		Debug.Log ("COMMAND : " + command);
+		// change conversation id to that?
+		// get player by tag name
+		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
+		Debug.Log ("we are getting our new dialogue");
+		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue(command);
+		Debug.Log ("we have moved past getting our new dialogue towards getting boxes");
+		playerObject.GetComponent<BattleMenu> ().getBoxes ();
+		Debug.Log ("we are at our get boxes");
+	}
+
 
 
 	/// <summary>
@@ -189,6 +217,7 @@ public class Commands
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
 		Debug.Log ("command" + command + " Player to alter : " + playerToAlter);
 		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue (command);
+		playerObject.GetComponent<BattleMenu> ().getBoxes ();
 	}
 
 
