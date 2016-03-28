@@ -44,6 +44,7 @@ public class Menu : MonoBehaviour
 	/// </summary>
 	public IEnumerator Start ()
 	{
+		Debug.Log ("we are here 4");
 		yield return StartCoroutine (Initialize ());
 
 
@@ -56,6 +57,11 @@ public class Menu : MonoBehaviour
 		selectionMade = false;
 		isActive = true;
 		indexSelected = 0;
+
+		if (optionsBox == null)
+		{
+			yield return null;
+		}
 
 		optionsBox.AddComponent<WaitingForTime> ();
 		waitingObject = optionsBox.GetComponent<WaitingForTime> ();
@@ -229,6 +235,8 @@ public class Menu : MonoBehaviour
 		isActive = false;
 		Destroy (waitingObject);
 
+		Debug.Log ("button clicked : " + buttonCommand.command);
+
 		if (selectionMade)
 		{
 
@@ -251,8 +259,14 @@ public class Menu : MonoBehaviour
 				Commands command = new Commands ();
 				command.resolvePauseMenuCommands (buttonCommand);
 				// what is our command? 
+			} 
+			else if (menuType == "BattleMenu")
+			{
+				// let's resolve our battle commands
+				Commands command = new Commands();
+				buttonCommand.playerToAlter = "Player";
+				command.resolveBattleCommands (buttonCommand);
 			}
-
 
 
 		}

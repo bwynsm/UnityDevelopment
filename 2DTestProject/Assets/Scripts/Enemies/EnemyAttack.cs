@@ -4,11 +4,11 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
-    public int attackDamage = 10;               // The amount of health taken away per attack.
+    public float timeBetweenAttacks = 8.0f;     // The time in seconds between each attack.
+    public int attackDamage = 14;               // The amount of health taken away per attack.
 
 
-    Animator anim;                              // Reference to the animator component.
+    //Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag ("PlayerCharacter");
         playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent<EnemyHealth>();
-        anim = GetComponent <Animator> ();
+        //anim = GetComponent <Animator> ();
 		playerInRange = true;
     }
 

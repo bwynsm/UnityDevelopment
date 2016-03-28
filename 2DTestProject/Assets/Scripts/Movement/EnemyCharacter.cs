@@ -26,6 +26,14 @@ public class EnemyCharacter : CharacterConversable
 	public Vector2[] polygon;
 
 
+	void Awake()
+	{
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy (gameObject);
+		}
+	}
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -225,7 +233,11 @@ public class EnemyCharacter : CharacterConversable
 			rbody.isKinematic = true;	
 
 			// start battle sequence
-			//GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().positionInLastScene = gameObject.transform.position;
+			//Debug.Log (gameObject.transform.position);
+			Toolbox toolboxInstance = Toolbox.Instance;
+			toolboxInstance.battlePosition = gameObject.transform.position;
+
+
 			DontDestroyOnLoad(this);
 			DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("PlayerCharacter"));
 

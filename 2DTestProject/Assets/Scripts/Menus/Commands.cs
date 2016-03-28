@@ -40,6 +40,61 @@ public class Commands
 	/// Resolves the commands sent from options in a conversation
 	/// </summary>
 	/// <param name="optionItem">Option item.</param>
+	public void resolveBattleCommands(Options optionItem)
+	{
+		// we are looking at the command
+		string playerToAlter 	= optionItem.playerToAlter;
+		string currentPlayer 	= optionItem.currentPlayer;
+		string commandsString	= optionItem.command;
+
+
+		// if player to alter is blank, debug that
+		Debug.Log("Player to alter : " + currentPlayer);
+
+		// next we need to take that command that we have and we need
+		// to parse it out. We'll split it by semicolon
+		string[] commandsList = commandsString.Split(';');
+
+
+
+		// now that we have everything split up, we want to loop over that list
+		foreach (var commandItem in commandsList)
+		{
+			// now we add that section from options
+			// if we have a number, just go to that number
+			if (commandItem.Contains ("id#"))
+			{
+				// split our command our and send it to our function
+				string command = (commandItem.Split ('#')) [1];
+				changeDialogueID (command, playerToAlter);
+			} 
+
+			// otherwise, if we are doing an immediate branching, branch out immediately
+			// to the other branch
+			else if (commandItem.Contains ("goto#"))
+			{
+				// split our command our and send it to our function
+				string command = (commandItem.Split ('#')) [1];
+				branchBattle (command, playerToAlter);
+			} 
+
+			// unrecognized command
+			else
+			{
+				Debug.Log ("We have an unrecognized command : " + commandItem + " " + currentPlayer);
+			}
+		}
+
+
+
+
+	}
+
+
+	/// <summary>
+	/// Resolves the commands sent from options in a conversation
+	/// </summary>
+	/// <param name="optionItem">Option item.</param>
 	public void resolveConversationCommands(Options optionItem)
 	{
 		// we are looking at the command
@@ -48,6 +103,8 @@ public class Commands
 		string commandsString	= optionItem.command;
 
 
+		// if player to alter is blank, debug that
+		Debug.Log("Player to alter : " + currentPlayer);
 
 		// next we need to take that command that we have and we need
 		// to parse it out. We'll split it by semicolon
@@ -115,7 +172,23 @@ public class Commands
 		// change conversation id to that?
 		// get player by tag name
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
+		Debug.Log ("command" + command + " Player to alter : " + playerToAlter);
 		playerObject.GetComponent<ActivateTextAtLine> ().activateNewText(command);
+	}
+
+	/// <summary>
+	/// Branches the battle to a new XML branch from the activatetextatline object
+	/// </summary>
+	/// <param name="command">Command.</param>
+	/// <param name="playerToAlter">Player to alter.</param>
+	private void branchBattle(string command, string playerToAlter)
+	{
+		// first we'll get the same thing as last line does, except that we'll reload
+		// change conversation id to that?
+		// get player by tag name
+		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
+		Debug.Log ("command" + command + " Player to alter : " + playerToAlter);
+		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue (command);
 	}
 
 

@@ -1,18 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoadBattleScene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\Commands.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyAttack.cs" Line="68" Column="15" />
-      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="100" Column="1" />
-      <File FileName="Assets\Scripts\Movement\EnemyCharacter.cs" Line="230" Column="77" />
-      <File FileName="Assets\Scripts\Menus\PauseMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Movement\PlayerMovement.cs" Line="64" Column="49" />
-      <File FileName="Assets\Scripts\LoadBattleScene.cs" Line="21" Column="29" />
+      <File FileName="Assets\Scripts\Menus\BattleMenu.cs" Line="119" Column="28" />
+      <File FileName="Assets\Scripts\Menus\Menu.cs" Line="268" Column="26" />
+      <File FileName="Assets\Scripts\EventChanges\LoadBattleScene.cs" Line="17" Column="29" />
+      <File FileName="Assets\Scripts\Menus\Commands.cs" Line="84" Column="1" />
+      <File FileName="Assets\BattleOptions.xml" Line="9" Column="39" />
+      <File FileName="Assets\Scripts\Menus\PauseMenu.cs" Line="46" Column="4" />
+      <File FileName="Assets\Scripts\ConversationControl\ActivateTextAtLine.cs" Line="179" Column="3" />
+      <File FileName="Assets\Scripts\Dialogue\Conversation.cs" Line="113" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\ben\Documents\2DTestProject\Assets\Scripts\TextBoxManager.cs" line="147" column="1" />
+      <Breakpoint file="C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Menus\BattleMenu.cs" line="21" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

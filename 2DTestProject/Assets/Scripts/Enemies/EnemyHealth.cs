@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -12,10 +14,12 @@ public class EnemyHealth : MonoBehaviour
 	public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
 	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
+	// let's also update the text field just for fun
+	public Text healthField;
 
-	Animator anim;                                              // Reference to the Animator component.
+	//Animator anim;                                              // Reference to the Animator component.
 	AudioSource playerAudio;                                    // Reference to the AudioSource component.
-	PlayerMovement playerMovement;                              // Reference to the player's movement.
+	//EnemyCharacter playerMovement;                              // Reference to the player's movement.
 	bool isDead;                                                // Whether the player is dead.
 	bool damaged;                                               // True when the player gets damaged.
 
@@ -23,9 +27,9 @@ public class EnemyHealth : MonoBehaviour
 	void Awake ()
 	{
 		// Setting up the references.
-		anim = GetComponent <Animator> ();
+		//anim = GetComponent <Animator> ();
 		//playerAudio = GetComponent <AudioSource> ();
-		playerMovement = GetComponent <PlayerMovement> ();
+		//playerMovement = GetComponent <EnemyCharacter> ();
 
 		// Set the initial health of the player.
 		currentHealth = startingHealth;
@@ -60,10 +64,9 @@ public class EnemyHealth : MonoBehaviour
 		// Reduce the current health by the damage amount.
 		currentHealth -= amount;
 
-		Debug.Log ("HEALTH : " + currentHealth);
-
 		// Set the health bar's value to the current health.
-		//healthSlider.value = currentHealth;
+		healthSlider.value = currentHealth;
+		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
 
 		// Play the hurt sound effect.
 		//playerAudio.Play ();
@@ -71,7 +74,6 @@ public class EnemyHealth : MonoBehaviour
 		// If the player has lost all it's health and the death flag hasn't been set yet...
 		if(currentHealth <= 0 && !isDead)
 		{
-			Debug.Log ("we are dead");
 			// ... it should die.
 			Death ();
 		}
@@ -80,14 +82,13 @@ public class EnemyHealth : MonoBehaviour
 
 	void Death ()
 	{
-		Debug.Log ("setting dead animation");
 
 		// Set the death flag so this function won't be called again.
 		isDead = true;
 
 
 		// Tell the animator that the player is dead.
-		anim.SetTrigger ("Die");
+		//anim.SetTrigger ("Die");
 
 		// Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
 		//playerAudio.clip = deathClip;
@@ -95,5 +96,16 @@ public class EnemyHealth : MonoBehaviour
 
 		// Turn off the movement and shooting scripts.
 		//playerMovement.enabled = false;
+
+		Toolbox toolboxInstance = Toolbox.Instance;
+		toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
+
+	
+		// spawn at least location?
+		// what if the grue is still there?
+		// we'll get this in a moment.
+		SceneManager.LoadScene("OpeningScene");
+
+		toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
 	}       
 }

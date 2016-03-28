@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<Dialogue>
+	<Speeches id="PlayerBasic">
+
+		<Speech  name="Player" type="options">
+        <Options>
+          <option command="id#1;attack" >Attack</option>
+          <option command="id#1;defend" >Defend</option>
+          <option command="goto#PlayerSpells;" >Spells</option>
+          <option command="goto#PlayerItems" >Items</option>
+        </Options>
+		</Speech>
+	</Speeches>
+
+	<Speeches id="PlayerSpells">
+		<Speech  name="Player" type="options">
+        <Options>
+          <option command="fire" >Ice</option>
+          <option command="ice" >Fire</option>
+          <option command="water" >Water</option>
+          <option command="goto#1" >Back</option>
+        </Options>
+		</Speech>
+	</Speeches>
+
+	<Speeches id="PlayerItems">
+		<Speech  name="Player" type="options">
+        <Options>
+          <option command="wand" >Wand</option>
+          <option command="health#40" >Potion</option>
+          <option command="damage#40" >Fire Bomb</option>
+          <option command="goto#1" >Back</option>
+        </Options>
+		</Speech>
+	</Speeches>
+
+
+
+</Dialogue>
+

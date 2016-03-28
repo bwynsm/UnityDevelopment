@@ -16,9 +16,9 @@ public class PlayerHealth : MonoBehaviour
 	// let's also update the text field just for fun
 	public Text healthField;
 
-    Animator anim;                                              // Reference to the Animator component.
+    //Animator anim;                                              // Reference to the Animator component.
     //AudioSource playerAudio;                                    // Reference to the AudioSource component.
-    PlayerMovement playerMovement;                              // Reference to the player's movement.
+    //PlayerMovement playerMovement;                              // Reference to the player's movement.
     bool isDead;                                                // Whether the player is dead.
     bool damaged;                                               // True when the player gets damaged.
 
@@ -26,13 +26,18 @@ public class PlayerHealth : MonoBehaviour
     void Awake ()
     {
         // Setting up the references.
-        anim = GetComponent <Animator> ();
+        //anim = GetComponent <Animator> ();
         //playerAudio = GetComponent <AudioSource> ();
-        playerMovement = GetComponent <PlayerMovement> ();
+        //playerMovement = GetComponent <PlayerMovement> ();
 
         // Set the initial health of the player.
         currentHealth = startingHealth;
-		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+
+		// check for current scene? 
+		if (SceneManager.GetActiveScene().name == "BattleScene")
+		{
+			healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+		}
     }
 
 
@@ -97,7 +102,7 @@ public class PlayerHealth : MonoBehaviour
         //playerMovement.enabled = false;
 
 
-		GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().positionInLastScene = new Vector2 (-3.0f, -12.0f);
+		//Toolbox toolboxInstance = Toolbox.Instance;
 
 
 		// spawn at least location?
