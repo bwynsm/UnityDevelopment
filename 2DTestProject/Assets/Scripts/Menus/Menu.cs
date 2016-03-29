@@ -11,6 +11,9 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Menu : MonoBehaviour 
 {
+	public AudioClip sting;
+	public AudioSource stingSource;
+
 
 	public Texture2D background;		// unused at the moment - texture background for menu
 
@@ -30,29 +33,58 @@ public class Menu : MonoBehaviour
 
 	public WaitingForTime waitingObject; // object to pause the game for something
 
+
+
 	/// <summary>
 	/// Start this instance.
 	/// 
 	/// This just runs a loop that we only need to run once before we destroy the object.
 	/// The Menu comes and goes and waits for input and gives options and highlights and
-	/// then does commands based on input
+	/// then does commands based on inputit
 	/// </summary>
-	IEnumerator Start () 
+	public IEnumerator Start ()
 	{
+		
+
+		if (optionsBox != null) 
+		{
+
+			yield return StartCoroutine (Initialize ());
+		} 
+
+
+
+
+	}
+
+
+	public IEnumerator Initialize()
+	{
+
+
 		selectionMade = false;
 		isActive = true;
-		indexSelected = 0;
 
+		if (indexSelected <= 0 || indexSelected >= 4)
+			indexSelected = 0;
+
+		if (optionsBox == null)
+		{
+			yield return null;
+		}
+			
 
 		optionsBox.AddComponent<WaitingForTime> ();
 		waitingObject = optionsBox.GetComponent<WaitingForTime> ();
 
-		yield return StartCoroutine (waitingObject.PauseBeforeInput());
+		if (menuType != "PauseMenu")
+		{
+			yield return StartCoroutine (waitingObject.PauseBeforeInput ());
+		}
+
 
 		// check and see which item is highlighted here before we enter and make that
 		// our indexselected
-
-
 		for (var i = 0; i < menuOptions.Count; i++) 
 		{
 			// if the item is highlighted, set our value to that
@@ -62,14 +94,19 @@ public class Menu : MonoBehaviour
 		
 		}
 
-		while (selectionMade == false) 
+		while (selectionMade == false && optionsBox.activeInHierarchy) 
 		{
-
 			yield return StartCoroutine (waitingObject.WaitForKeyDown ());
+
 
 			if (EventSystem.current.currentSelectedGameObject == null)
 			{
-				if (indexSelected >= 0 && indexSelected <= menuOptions.Count - 1)
+				// if we have no more object
+				if (optionsBox.activeInHierarchy == false)
+				{
+					yield return null;
+				}
+				else if (indexSelected >= 0 && indexSelected <= menuOptions.Count - 1)
 				{
 					optionsBox.GetComponentsInChildren<Button> () [indexSelected].Select ();
 				}
@@ -94,6 +131,14 @@ public class Menu : MonoBehaviour
 						indexSelected = 0;
 						optionsBox.GetComponentsInChildren<Button> () [0].Select ();
 					}
+
+
+					/// if we have stings and we are in a pause menu
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (sting);
+					}
+
 				}
 
 				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
@@ -107,6 +152,13 @@ public class Menu : MonoBehaviour
 						indexSelected = menuOptions.Count - 1;
 						optionsBox.GetComponentsInChildren<Button> () [indexSelected].Select ();
 					}
+
+
+					/// if we have stings and we are in a pause menu
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (sting);
+					}
 				}
 
 				if (Input.GetKey (KeyCode.Return)) {
@@ -115,13 +167,18 @@ public class Menu : MonoBehaviour
 				}
 
 				if (Input.GetKey (KeyCode.X)) {
+
 					selectionMade = true;
 
 					ButtonClicked (menuOptions [indexSelected]);
 				}
 
 			}
+
+
 		}
+
+
 
 	}
 		
@@ -132,13 +189,59 @@ public class Menu : MonoBehaviour
 	}
 
 
+	public void renameOptions(List<Options> options)
+	{
+		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
+		{
+			
+			// get buttons from children
+			Button[] panelButtons = optionsBox.GetComponentsInChildren<Button>(true);
 
+			for (int i = 0; i < panelButtons.Length; i++)
+			{
+
+				// check if we can update the button
+				// get the i number of our option
+				panelButtons [i].GetComponentInChildren<Text> ().text = options [i].option;
+
+
+				// if we have no selected buttons, set our first to selected
+				if (i == 0 && (indexSelected <= 0 || indexSelected >= panelButtons.Length))
+				{
+					panelButtons [i].Select ();
+				}
+				else if (i == indexSelected)
+				{
+					panelButtons [i].Select ();
+				}
+
+				panelButtons [i].interactable = false; 
+
+				//goButton.AddComponent(
+				panelButtons [i].onClick.AddListener(
+					() => {  ButtonClicked(options[i]); }
+				);
+
+			}
+
+
+
+
+		}
+		else 
+		{
+			Debug.Log ("we are here in the loading options section function");
+			loadOptions (options);
+		}
+
+
+	}
 
 	// yields to a coroutine
 
 	public void loadOptions(List<Options> options)
 	{
-		if (menuOptions.Count == 0)
+		if (menuOptions == null || menuOptions.Count == 0)
 		{
 			menuOptions.AddRange (options);
 		}
@@ -182,6 +285,9 @@ public class Menu : MonoBehaviour
 			
 	}
 
+
+
+
 	void ButtonClicked(Options buttonCommand)
 	{
 		isActive = false;
@@ -202,13 +308,29 @@ public class Menu : MonoBehaviour
 
 			// if we have a main menu, we can send those commands over to commands as well
 			// and just run our functions for that.
+			else if (menuType == "PauseMenu")
+			{
 
-
+				Commands command = new Commands ();
+				command.resolvePauseMenuCommands (buttonCommand);
+				// what is our command? 
+			} 
+			else if (menuType == "BattleMenu")
+			{
+				// let's resolve our battle commands
+				Commands command = new Commands();
+				buttonCommand.playerToAlter = "Player";
+				command.resolveBattleCommands (buttonCommand);
+			}
 
 
 		}
 
 	}
+
+
+
+
 
 
 

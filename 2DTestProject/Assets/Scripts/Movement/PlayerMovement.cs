@@ -20,6 +20,15 @@ public class PlayerMovement : CharacterConversable
 	private float runMultiplier;
 	public string gameObjectPlayerName;
 
+	// if we are awake, check for another of this type and delete
+	void Awake()
+	{
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy (gameObject);
+		}
+	}
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -44,6 +53,8 @@ public class PlayerMovement : CharacterConversable
 		// if we are frozen, we do not want to be walking.
 		if (!freeze) 
 		{
+			
+
 			Vector2 movementVector = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 
 			// we're going to assume for the sake of argument that running is twice the speed of walking.

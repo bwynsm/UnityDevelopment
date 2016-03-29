@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: f1a4d2c02073a3f498b1f936dd6490d2
+timeCreated: 1459207166
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: lightning_0
+    21300002: lightning_1
+    21300004: lightning_2
+    21300006: lightning_3
+    21300008: lightning_4
+    21300010: lightning_5
+    21300012: lightning_6
+    21300014: lightning_7
+    21300016: lightning_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: lightning_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 64}
+        - {x: -32, y: 62}
+        - {x: -32, y: -33}
+        - {x: -31, y: -52}
+        - {x: -20, y: -56}
+        - {x: 22, y: -56}
+        - {x: 27, y: -54}
+        - {x: 32, y: -46}
+        - {x: 32, y: 64}
+    - name: lightning_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: -34}
+        - {x: 5, y: -33}
+        - {x: 2, y: -28}
+        - {x: 5, y: -33}
+        - {x: 5, y: -34}
+        - {x: 8, y: -50}
+        - {x: 13, y: -56}
+        - {x: 28, y: -56}
+        - {x: 32, y: -54}
+        - {x: 32, y: 64}
+        - {x: -32, y: 64}
+        - {x: -32, y: -20}
+        - {x: -25, y: -55}
+        - {x: -16, y: -56}
+        - {x: -15, y: -56}
+        - {x: -14, y: -53}
+        - {x: -14, y: -47}
+        - {x: -13, y: -40}
+        - {x: -13, y: -42}
+        - {x: -8, y: -55}
+        - {x: -4, y: -56}
+        - {x: 2, y: -56}
+        - {x: 2, y: -54}
+        - {x: 3, y: -49}
+        - {x: 2, y: -42}
+    - name: lightning_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 64}
+        - {x: -32, y: 62}
+        - {x: -32, y: -33}
+        - {x: -31, y: -52}
+        - {x: -20, y: -56}
+        - {x: 22, y: -56}
+        - {x: 27, y: -54}
+        - {x: 32, y: -46}
+        - {x: 32, y: 64}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

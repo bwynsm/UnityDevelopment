@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// Text box manager.
 /// 
-/// This class is a bit bloated at the moment. It controls everything text box
+/// This class is a bit bloated at the moment. It controls everythfing text box
 /// for the dialogues. It has a text, textbox, and a file that is sent to it
 /// from the activation. 
 /// I haven't done any good polymorphism to take some of the load off of this class, but I should.
@@ -197,7 +197,10 @@ public class TextBoxManager : MonoBehaviour
 			// hell, if this does not equal the player, make them stop too
 			if (player.name != "Player") 
 			{
-				GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ().freeze = true;
+				PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+
+				mainPlayer.freeze = true;
+				mainPlayer.isTalking = true;
 
 			}
 		}
@@ -222,7 +225,10 @@ public class TextBoxManager : MonoBehaviour
 		// hell, if this does not equal the player, make them stop too
 		if (player.name != "Player") 
 		{
-			GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ().freeze = false;
+			PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+
+			mainPlayer.freeze = false;
+			mainPlayer.isTalking = false;
 
 		}
 	}
@@ -258,7 +264,9 @@ public class TextBoxManager : MonoBehaviour
 			// hell, if this does not equal the player, make them stop too
 			if (player.name != "Player") 
 			{
-				GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ().freeze = true;
+				PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+				mainPlayer.freeze = true;
+				mainPlayer.isTalking = false;
 
 			}
 		}

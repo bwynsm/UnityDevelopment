@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyCharacter : CharacterConversable 
 {
@@ -24,6 +25,14 @@ public class EnemyCharacter : CharacterConversable
 	public PolygonCollider2D interactionTriggerCollider;
 	public Vector2[] polygon;
 
+
+	void Awake()
+	{
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy (gameObject);
+		}
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -222,6 +231,17 @@ public class EnemyCharacter : CharacterConversable
 		if (col.gameObject.tag == "PlayerCharacter")
 		{
 			rbody.isKinematic = true;	
+
+			// start battle sequence
+			//Debug.Log (gameObject.transform.position);
+			Toolbox toolboxInstance = Toolbox.Instance;
+			toolboxInstance.battlePosition = gameObject.transform.position;
+
+
+			DontDestroyOnLoad(this);
+			DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("PlayerCharacter"));
+
+			SceneManager.LoadScene("BattleScene");
 		} 
 
 

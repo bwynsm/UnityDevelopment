@@ -19,11 +19,16 @@ public class CameraFollow : MonoBehaviour
 	// reference to the camera object - not public
 	Camera mycam;
 
+	public float orthographicSize;
+
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		//Cursor.lockState =  CursorLockMode.Locked;
+		//Cursor.visible = false;
+
 		mycam = GetComponent<Camera> ();
 
 		// if the camera has a target, update to move towards it
@@ -36,17 +41,24 @@ public class CameraFollow : MonoBehaviour
 
 		// set the camera back to its original speed
 		camSpeed = tempCamSpeed;
+
+		if (orthographicSize == 0) 
+		{
+			orthographicSize = 3.0f;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+
+
 		// some simple math
 		// set the sze of the camera
 		// 32 pixels on camera is 32 pixels on scene
 
 		// screen height divided by 100 float and divided by arbitrary number
-		mycam.orthographicSize = (Screen.height / 100f) / 3f;
+		mycam.orthographicSize = (Screen.height / 100f) / orthographicSize;
 
 		followTarget ();
 	}

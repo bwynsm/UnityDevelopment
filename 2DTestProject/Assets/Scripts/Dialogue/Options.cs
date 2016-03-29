@@ -18,6 +18,14 @@ public class Options {
 	}
 
 
+	public Options(string commandString, string optionString, string playerToAlterString, string currentPlayerString)
+	{
+		command = commandString;
+		option = optionString;
+		playerToAlter = playerToAlterString;
+		currentPlayer = currentPlayerString;
+	}
+
 	/// <summary>
 	/// Returns a string list of this item that is just easier to read for debugging
 	/// purposes if necessary
