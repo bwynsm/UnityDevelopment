@@ -27,9 +27,9 @@
 	<Speeches id="PlayerItems">
 		<Speech  name="Player" type="options">
         <Options>
+          <option command="damage#40" >Fire Bomb</option>
           <option command="wand" >Wand</option>
           <option command="health#40" >Potion</option>
-          <option command="damage#40" >Fire Bomb</option>
           <option command="goto#PlayerBasic" >Back</option>
         </Options>
 		</Speech>

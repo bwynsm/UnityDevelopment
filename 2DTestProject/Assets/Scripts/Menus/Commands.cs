@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 
 /// <summary>
@@ -49,7 +50,6 @@ public class Commands
 
 
 		// if player to alter is blank, debug that
-		Debug.Log("Player to alter : " + currentPlayer);
 
 		// next we need to take that command that we have and we need
 		// to parse it out. We'll split it by semicolon
@@ -64,7 +64,6 @@ public class Commands
 			// if we have a number, just go to that number
 			if (commandItem.Contains ("id#"))
 			{
-				Debug.Log ("ID NUMBER FOUND ");
 				// split our command our and send it to our function
 				string command = (commandItem.Split ('#')) [1];
 				changeBattleDialogueID (command, playerToAlter);
@@ -76,7 +75,6 @@ public class Commands
 			// to the other branch
 			else if (commandItem.Contains ("goto#"))
 			{
-				Debug.Log ("GO TO ");
 				// split our command our and send it to our function
 				string command = (commandItem.Split ('#')) [1];
 				branchBattle (command, playerToAlter);
@@ -85,16 +83,32 @@ public class Commands
 			// unrecognized command
 			else if (commandItem.Contains ("attack"))
 			{
-				Debug.Log ("ATTACK : " + commandItem + " " + currentPlayer);
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (10);
-
 			} 
+			else if (commandItem.Contains ("ice") || commandItem.Contains ("fire") || commandItem.Contains ("water"))
+			{
+				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (15);
+			} 
+			else if (commandItem.Contains ("damage#"))
+			{
+				// get the number of damage
+				string command = (commandItem.Split ('#')) [1];
+				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage(Convert.ToInt16(command));
+			}
+			else if (commandItem.Contains ("health#"))
+			{
+				// get the number of damage
+				string command = (commandItem.Split ('#')) [1];
+				GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerHealth> ().HealCharacter(Convert.ToInt16(command));
+			}
 			else
 			{
 				Debug.Log ("We have an unrecognized command : " + commandItem + " " + currentPlayer);
 			}
 		}
 
+		GameObject playerObject = GameObject.FindGameObjectWithTag ("PlayerCharacter");
+		playerObject.GetComponent<BattleMenu> ().updatingItems = true;
 
 
 
@@ -182,9 +196,7 @@ public class Commands
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
 		Debug.Log ("we are getting our new dialogue");
 		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue(command);
-		Debug.Log ("we have moved past getting our new dialogue towards getting boxes");
-		playerObject.GetComponent<BattleMenu> ().getBoxes ();
-		Debug.Log ("we are at our get boxes");
+
 	}
 
 
@@ -215,9 +227,7 @@ public class Commands
 		// change conversation id to that?
 		// get player by tag name
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
-		Debug.Log ("command" + command + " Player to alter : " + playerToAlter);
 		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue (command);
-		playerObject.GetComponent<BattleMenu> ().getBoxes ();
 	}
 
 

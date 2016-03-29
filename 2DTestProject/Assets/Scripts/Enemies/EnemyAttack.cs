@@ -4,11 +4,11 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float timeBetweenAttacks = 8.0f;     // The time in seconds between each attack.
-    public int attackDamage = 14;               // The amount of health taken away per attack.
+    public float timeBetweenAttacks = 5.0f;     // The time in seconds between each attack.
+    public int attackDamage = 15;               // The amount of health taken away per attack.
 
 
-    //Animator anim;                              // Reference to the animator component.
+    Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag ("PlayerCharacter");
         playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent<EnemyHealth>();
-        //anim = GetComponent <Animator> ();
+		anim = GameObject.FindGameObjectWithTag("Spell").GetComponent <Animator> ();
 		playerInRange = true;
     }
 
@@ -70,7 +70,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
 
-    void Attack ()
+	IEnumerator Attack ()
     {
         // Reset the timer.
         timer = 0f;
@@ -81,5 +81,10 @@ public class EnemyAttack : MonoBehaviour
             // ... damage the player.
             playerHealth.TakeDamage (attackDamage);
         }
+
+		SpellAnimator sf = GameObject.FindGameObjectWithTag("Spell").GetComponent<SpellAnimator>();
+		yield return StartCoroutine (sf.CastSpell());
+
+		sf.StopSpell ();
     }
 }

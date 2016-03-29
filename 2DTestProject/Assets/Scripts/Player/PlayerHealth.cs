@@ -61,6 +61,20 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+	public void HealCharacter(int amount)
+	{
+		currentHealth += amount;
+
+		if (currentHealth >= startingHealth)
+			currentHealth = startingHealth;
+
+		// Set the health bar's value to the current health.
+		healthSlider.value = currentHealth;
+		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+
+
+	}
+
     public void TakeDamage (int amount)
     {
         // Set the damaged flag so the screen will flash.
@@ -103,7 +117,8 @@ public class PlayerHealth : MonoBehaviour
 
 
 		//Toolbox toolboxInstance = Toolbox.Instance;
-
+		// get the battle panel and destroy
+		Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
 
 		// spawn at least location?
 		// what if the grue is still there?

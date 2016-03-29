@@ -64,6 +64,11 @@ public class EnemyHealth : MonoBehaviour
 		// Reduce the current health by the damage amount.
 		currentHealth -= amount;
 
+		if (currentHealth <= 0)
+		{
+			currentHealth = 0;
+		}
+
 		// Set the health bar's value to the current health.
 		healthSlider.value = currentHealth;
 		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
@@ -82,10 +87,13 @@ public class EnemyHealth : MonoBehaviour
 
 	void Death ()
 	{
+		Debug.Log ("ENEMY IS DEAD");
 
 		// Set the death flag so this function won't be called again.
 		isDead = true;
 
+		Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
+		GameObject.Find ("BattlePanel").SetActive (false);
 
 		// Tell the animator that the player is dead.
 		//anim.SetTrigger ("Die");
@@ -100,12 +108,12 @@ public class EnemyHealth : MonoBehaviour
 		Toolbox toolboxInstance = Toolbox.Instance;
 		toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
 
-	
+		toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
 		// spawn at least location?
 		// what if the grue is still there?
 		// we'll get this in a moment.
 		SceneManager.LoadScene("OpeningScene");
 
-		toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
+
 	}       
 }

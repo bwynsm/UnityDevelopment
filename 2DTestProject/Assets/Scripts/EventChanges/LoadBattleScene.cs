@@ -47,7 +47,7 @@ public class LoadBattleScene : MonoBehaviour
 		enemy.AddComponent<EnemyAttack>();
 
 		// give all players their health bar
-		currentPlayer.GetComponent<PlayerHealth>().healthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
+		currentPlayer.GetComponent<PlayerHealth>().healthSlider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
 		enemy.GetComponent<EnemyHealth> ().healthSlider = GameObject.Find ("EnemyHealth").GetComponent<Slider> ();
 		enemy.GetComponent<EnemyHealth> ().healthField = GameObject.Find ("EnemyHealthStats").GetComponent<Text>();
 		enemy.tag = "Enemy";
@@ -78,4 +78,6 @@ public class LoadBattleScene : MonoBehaviour
 	void Update () {
 	
 	}
+
+
 }

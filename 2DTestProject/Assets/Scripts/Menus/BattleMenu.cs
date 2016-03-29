@@ -12,9 +12,12 @@ public class BattleMenu : MonoBehaviour
 	public TextAsset battleXML;
 	public GameObject battlePanel;
 	public GameObject prefabButton;
-	private Menu optionsMenu;
+	public Menu optionsMenu;
 	public Conversation battleOptionsManager;
-	public bool waitingForKey = true;
+
+
+	public bool updatingItems = false;
+	public bool doneWaitingForClear = false;
 
 	void Start()
 	{
@@ -25,25 +28,47 @@ public class BattleMenu : MonoBehaviour
 			// get the xml
 			battleOptionsManager = new Conversation (battleXML, "PlayerBasic");
 
-			// get first set of options
-			battleOptionsManager.incrementIndex ();
-			Speech nextItem = battleOptionsManager.getItem ();
-
-			showBattleMenu (nextItem.options);
+			updatingItems = true;
 		}
+	}
+
+	void Update()
+	{
+		// what we'll do in here is keep track of some variables to prevent us from attacking too often
+		// so once we make a selection, we'll clean things out
+		// then once we've cleaned things out, we can start 
+		if (updatingItems && battlePanel != null) 
+		{
+			// then we do nothing.
+			if (!doneWaitingForClear ) {
+				
+				cleanOutOptions ();
+
+			} 
+			else if (doneWaitingForClear && battlePanel.activeInHierarchy) {
+				doneWaitingForClear = false;
+				updatingItems = false;
+
+				getBoxes ();
+			}
+		} 
+		else if (battlePanel == null)
+		{
+			Destroy (this);
+		}
+
+
 	}
 		
 
 	public void getBoxes()
 	{
 		
-		if (battleOptionsManager.hasNextItem ())
-		{
+		if (battleOptionsManager.hasNextItem ()) {
 			battleOptionsManager.incrementIndex ();
 			Speech nextText = battleOptionsManager.getItem ();
-			Debug.Log ("GET BOXES A ");
 
-			// loop over options and display
+			// loop over 		options and display
 			showBattleMenu (nextText.options);
 
 
@@ -57,8 +82,6 @@ public class BattleMenu : MonoBehaviour
 
 			// loop over options and display
 			showBattleMenu (nextText.options);
-
-			Debug.Log ("GET BOXES B ");
 		}
 
 
@@ -67,24 +90,35 @@ public class BattleMenu : MonoBehaviour
 	public void showBattleMenu(List<Options> options)
 	{
 
-		// get the xml and make a document from it
-		// disable text box
-		//DisableTextBox();
-		cleanOutOptions ();
 
 		// what if we could send in the options into a menu creator, and just
 		// tell it that we want to get our particular prefab
-		battlePanel.AddComponent<Menu>();
+		Debug.Log("in show battle menu");
 
+		if (optionsMenu == null && battlePanel.GetComponent<Menu> () == null) 
+		{
+			battlePanel.AddComponent<Menu> ();
+
+		} 
+
+			
+
+		// let's get the player character their menu back
 		optionsMenu = battlePanel.GetComponent<Menu>();
+
 		optionsMenu.prefabButton = prefabButton;
 		optionsMenu.optionsBox = battlePanel;
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "BattleMenu";
-		Debug.Log ("we are battlemenu showbattlemenu with 3 and a count of : " + options.Count);
+
+
 
 		//optionsMenu.transform.localScale = new Vector3(1, 1, 1);
-		optionsMenu.loadOptions(options);
+		optionsMenu.renameOptions(options);
+
+
+
+
 	}
 		
 		
@@ -94,14 +128,16 @@ public class BattleMenu : MonoBehaviour
 	/// </summary>
 	public void cleanOutOptions()
 	{
-		foreach (Transform child in battlePanel.transform)
-		{
-			GameObject.Destroy (child.gameObject);
+
+		optionsMenu = null;
+
+			
+		foreach (var waitingObject in battlePanel.GetComponents<WaitingForTime>()) {
+			Destroy (waitingObject);
 		}
-
 		Destroy (battlePanel.GetComponent<Menu> ());
-		Destroy (battlePanel.GetComponent<WaitingForTime> ());
 
+		doneWaitingForClear = true;
 
 	}
 }

@@ -44,11 +44,19 @@ public class Menu : MonoBehaviour
 	/// </summary>
 	public IEnumerator Start ()
 	{
-		Debug.Log ("we are here 4");
-		yield return StartCoroutine (Initialize ());
+		
+
+		if (optionsBox != null) 
+		{
+
+			yield return StartCoroutine (Initialize ());
+		} 
+
+
 
 
 	}
+
 
 	public IEnumerator Initialize()
 	{
@@ -56,12 +64,15 @@ public class Menu : MonoBehaviour
 
 		selectionMade = false;
 		isActive = true;
-		indexSelected = 0;
+
+		if (indexSelected <= 0 || indexSelected >= 4)
+			indexSelected = 0;
 
 		if (optionsBox == null)
 		{
 			yield return null;
 		}
+			
 
 		optionsBox.AddComponent<WaitingForTime> ();
 		waitingObject = optionsBox.GetComponent<WaitingForTime> ();
@@ -156,6 +167,7 @@ public class Menu : MonoBehaviour
 				}
 
 				if (Input.GetKey (KeyCode.X)) {
+
 					selectionMade = true;
 
 					ButtonClicked (menuOptions [indexSelected]);
@@ -177,7 +189,53 @@ public class Menu : MonoBehaviour
 	}
 
 
+	public void renameOptions(List<Options> options)
+	{
+		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
+		{
+			
+			// get buttons from children
+			Button[] panelButtons = optionsBox.GetComponentsInChildren<Button>(true);
 
+			for (int i = 0; i < panelButtons.Length; i++)
+			{
+
+				// check if we can update the button
+				// get the i number of our option
+				panelButtons [i].GetComponentInChildren<Text> ().text = options [i].option;
+
+
+				// if we have no selected buttons, set our first to selected
+				if (i == 0 && (indexSelected <= 0 || indexSelected >= panelButtons.Length))
+				{
+					panelButtons [i].Select ();
+				}
+				else if (i == indexSelected)
+				{
+					panelButtons [i].Select ();
+				}
+
+				panelButtons [i].interactable = false; 
+
+				//goButton.AddComponent(
+				panelButtons [i].onClick.AddListener(
+					() => {  ButtonClicked(options[i]); }
+				);
+
+			}
+
+
+
+
+		}
+		else 
+		{
+			Debug.Log ("we are here in the loading options section function");
+			loadOptions (options);
+		}
+
+
+	}
 
 	// yields to a coroutine
 
@@ -235,8 +293,6 @@ public class Menu : MonoBehaviour
 		isActive = false;
 		Destroy (waitingObject);
 
-		Debug.Log ("button clicked : " + buttonCommand.command);
-
 		if (selectionMade)
 		{
 
@@ -254,7 +310,6 @@ public class Menu : MonoBehaviour
 			// and just run our functions for that.
 			else if (menuType == "PauseMenu")
 			{
-				Debug.Log ("Pause Menu Button Clicked! : " + buttonCommand);
 
 				Commands command = new Commands ();
 				command.resolvePauseMenuCommands (buttonCommand);
@@ -262,7 +317,6 @@ public class Menu : MonoBehaviour
 			} 
 			else if (menuType == "BattleMenu")
 			{
-				Debug.Log ("We are here creating a new command");
 				// let's resolve our battle commands
 				Commands command = new Commands();
 				buttonCommand.playerToAlter = "Player";
