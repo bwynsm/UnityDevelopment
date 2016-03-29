@@ -12,7 +12,7 @@ public class SpellAnimator : MonoBehaviour {
 	void Start () 
 	{
 		anim = GetComponent<Animator> ();
-
+		GameObject.FindGameObjectWithTag ("Spell").GetComponent<SpriteRenderer>().enabled = false;
 	}
 
 
@@ -22,9 +22,10 @@ public class SpellAnimator : MonoBehaviour {
 	/// <returns>Returns nothing until we are done fading in. Then returns that we are done</returns>
 	public IEnumerator CastSpell()
 	{
+		GameObject.FindGameObjectWithTag ("Spell").GetComponent<SpriteRenderer>().enabled = true;
 		Debug.Log ("casting spell");
 		isCastingSpell = true;
-		anim.SetBool ("isCastingSpell", true);
+		anim.SetBool ("IsCastingSpell", true);
 
 		while (isCastingSpell)
 			yield return null;
@@ -37,7 +38,8 @@ public class SpellAnimator : MonoBehaviour {
 	/// <returns>Returns nothing until we are done fading to black. Then is done</returns>
 	public void StopSpell()
 	{
-		anim.SetBool ("isCastingSpell", false);
+		anim.SetBool ("IsCastingSpell", false);
+		GameObject.FindGameObjectWithTag ("Spell").GetComponent<SpriteRenderer>().enabled = false;
 	}
 
 

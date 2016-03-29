@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 15;               // The amount of health taken away per attack.
 
 
-    Animator anim;                              // Reference to the animator component.
+    //Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
@@ -22,7 +22,6 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag ("PlayerCharacter");
         playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent<EnemyHealth>();
-		anim = GameObject.FindGameObjectWithTag("Spell").GetComponent <Animator> ();
 		playerInRange = true;
     }
 
@@ -57,8 +56,9 @@ public class EnemyAttack : MonoBehaviour
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
         {
+			Debug.Log ("we are here attacking");
             // ... attack.
-            Attack ();
+			StartCoroutine( Attack ());
         }
 
         // If the player has zero or less health...
@@ -82,7 +82,11 @@ public class EnemyAttack : MonoBehaviour
             playerHealth.TakeDamage (attackDamage);
         }
 
-		SpellAnimator sf = GameObject.FindGameObjectWithTag("Spell").GetComponent<SpellAnimator>();
+		Debug.Log ("enemy is attacking!");
+
+		GameObject spellObject = GameObject.FindGameObjectWithTag("Spell");
+		spellObject.GetComponent<SpriteRenderer> ().enabled = false;
+		SpellAnimator sf = spellObject.GetComponent<SpellAnimator> ();
 		yield return StartCoroutine (sf.CastSpell());
 
 		sf.StopSpell ();
