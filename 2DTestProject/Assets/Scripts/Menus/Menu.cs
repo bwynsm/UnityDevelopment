@@ -257,7 +257,7 @@ public class Menu : MonoBehaviour
 		for (int i = 0; i < options.Count; i++)
 		{
 			GameObject goButton = (GameObject)Instantiate (prefabButton);
-			goButton.GetComponentInChildren<Text>().text = "Option : " + menuOptions[i].option;
+			goButton.GetComponentInChildren<Text>().text = menuOptions[i].option;
 
 			RectTransform rect = goButton.GetComponentInChildren<Text> ().GetComponent<RectTransform>();
 			rect.offsetMax = new Vector2 (-10f, -10f);

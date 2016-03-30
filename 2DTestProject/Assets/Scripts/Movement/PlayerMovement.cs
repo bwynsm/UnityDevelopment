@@ -20,6 +20,7 @@ public class PlayerMovement : CharacterConversable
 	private float runMultiplier;
 	public string gameObjectPlayerName;
 
+
 	// if we are awake, check for another of this type and delete
 	void Awake()
 	{

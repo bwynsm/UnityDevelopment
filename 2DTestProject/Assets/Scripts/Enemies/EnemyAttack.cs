@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
-    float timer;                                // Timer for counting up to the next attack.
+    //float timer;                                // Timer for counting up to the next attack.
 
 
     void Awake ()
@@ -48,7 +48,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
 
-    void Update ()
+    /*void Update ()
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
@@ -67,13 +67,13 @@ public class EnemyAttack : MonoBehaviour
             // ... tell the animator the player is dead.
             //anim.SetTrigger ("PlayerDead");
         }
-    }
+    }*/
 
 
-	IEnumerator Attack ()
+	public IEnumerator Attack ()
     {
         // Reset the timer.
-        timer = 0f;
+        //timer = 0f;
 
         // If the player has health to lose...
         if(playerHealth.currentHealth > 0)
@@ -90,5 +90,12 @@ public class EnemyAttack : MonoBehaviour
 		yield return StartCoroutine (sf.CastSpell());
 
 		sf.StopSpell ();
+
+		// tell our battle manager that we are done
+		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
+		batMan.turnFinished = true;
+		batMan.attackDone = "casts Lightning on the Princess";
+		Toolbox.Instance.isLocked = false;
+
     }
 }

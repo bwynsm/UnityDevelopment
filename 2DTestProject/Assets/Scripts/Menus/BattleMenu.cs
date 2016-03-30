@@ -19,6 +19,8 @@ public class BattleMenu : MonoBehaviour
 	public bool updatingItems = false;
 	public bool doneWaitingForClear = false;
 
+	public bool isMyTurn = false;
+
 	void Start()
 	{
 		// let's only do this once
@@ -34,27 +36,42 @@ public class BattleMenu : MonoBehaviour
 
 	void Update()
 	{
-		// what we'll do in here is keep track of some variables to prevent us from attacking too often
-		// so once we make a selection, we'll clean things out
-		// then once we've cleaned things out, we can start 
-		if (updatingItems && battlePanel != null) 
+		if (isMyTurn)
 		{
-			// then we do nothing.
-			if (!doneWaitingForClear ) {
-				
-				cleanOutOptions ();
+			battlePanel.SetActive (true);
 
-			} 
-			else if (doneWaitingForClear && battlePanel.activeInHierarchy) {
-				doneWaitingForClear = false;
-				updatingItems = false;
+			// what we'll do in here is keep track of some variables to prevent us from attacking too often
+			// so once we make a selection, we'll clean things out
+			// then once we've cleaned things out, we can start 
+			if (updatingItems && battlePanel != null)
+			{
+				// then we do nothing.
+				if (!doneWaitingForClear)
+				{
+					
+					cleanOutOptions ();
 
-				getBoxes ();
+				}
+				else if (doneWaitingForClear && battlePanel.activeInHierarchy)
+				{
+					doneWaitingForClear = false;
+					updatingItems = false;
+
+					getBoxes ();
+				}
 			}
-		} 
-		else if (battlePanel == null)
+			else if (battlePanel == null)
+			{
+				Destroy (this);
+			}
+		}
+		else if (!isMyTurn && battlePanel == null)
 		{
 			Destroy (this);
+		}
+		else
+		{
+			battlePanel.SetActive (false);
 		}
 
 

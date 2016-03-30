@@ -72,6 +72,7 @@ public class Conversation
 		Debug.Log ("changing dialogue in conversation" + newConversationID);
 		dialogue = conversationItem.getDialogue (newConversationID);
 		index = -1;
+		Debug.Log ("Failing Index here?");
 	}
 
 	/**

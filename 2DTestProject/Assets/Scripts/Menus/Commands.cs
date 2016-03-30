@@ -47,8 +47,9 @@ public class Commands
 		string playerToAlter 	= optionItem.playerToAlter;
 		string currentPlayer 	= optionItem.currentPlayer;
 		string commandsString	= optionItem.command;
+		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
 
-
+		bool finalSelection = false;
 		// if player to alter is blank, debug that
 
 		// next we need to take that command that we have and we need
@@ -84,22 +85,39 @@ public class Commands
 			else if (commandItem.Contains ("attack"))
 			{
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (10);
+				finalSelection = true;
+				batMan.attackDone = "attacks Grue!";
 			} 
 			else if (commandItem.Contains ("ice") || commandItem.Contains ("fire") || commandItem.Contains ("water"))
 			{
+				string spellcast = "";
+				if (commandItem.Contains ("ice"))
+					spellcast = "ice";
+				else if (commandItem.Contains ("fire"))
+					spellcast = "fire";
+				else
+					spellcast = "water";
+				
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (15);
+				finalSelection = true;
+				batMan.attackDone = "casts " + spellcast + " on Grue!";
 			} 
 			else if (commandItem.Contains ("damage#"))
 			{
 				// get the number of damage
 				string command = (commandItem.Split ('#')) [1];
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage(Convert.ToInt16(command));
+				finalSelection = true;
+				batMan.attackDone = "uses a firebomb on Grue!";
 			}
 			else if (commandItem.Contains ("health#"))
 			{
 				// get the number of damage
 				string command = (commandItem.Split ('#')) [1];
 				GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerHealth> ().HealCharacter(Convert.ToInt16(command));
+				finalSelection = true;
+
+				batMan.attackDone = "uses a potion!";
 			}
 			else
 			{
@@ -110,6 +128,13 @@ public class Commands
 		GameObject playerObject = GameObject.FindGameObjectWithTag ("PlayerCharacter");
 		playerObject.GetComponent<BattleMenu> ().updatingItems = true;
 
+
+		if (finalSelection)
+		{
+			playerObject.GetComponent<BattleMenu> ().isMyTurn = false;
+			batMan.turnFinished = true;
+			Toolbox.Instance.isLocked = false;
+		}
 
 
 	}
@@ -196,6 +221,7 @@ public class Commands
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
 		Debug.Log ("we are getting our new dialogue");
 		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue(command);
+
 
 	}
 

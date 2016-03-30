@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class LoadBattleScene : MonoBehaviour 
 {
@@ -10,10 +11,18 @@ public class LoadBattleScene : MonoBehaviour
 	public GameObject prefabButton;
 	public TextAsset tempPlayerXML;
 
+
+	public CharacterConversable[] turnOrder;
 	// Use this for initialization
 	void Start () 
 	{
 
+	}
+
+
+	public void LoadBattleSceneItems()
+	{
+		Toolbox.Instance.sceneAlreadyLoaded = false;
 		Debug.Log ("LOADING....");
 
 		// get our player character
@@ -71,12 +80,19 @@ public class LoadBattleScene : MonoBehaviour
 		battleMenu.battlePanel = GameObject.Find ("BattlePanel");
 		battleMenu.prefabButton = prefabButton;
 
-	}
 
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+		// decide turn order
+		turnOrder = FindObjectsOfType(typeof(CharacterConversable)) as CharacterConversable[];
+
+		// get their respective speeds eventually. For now, we'll just hard code
+		Array.Sort(turnOrder);
+
+		// print out sort order
+		foreach (var character in turnOrder)
+		{
+			Debug.Log ("CHARACTER NAME : " + character.name + " " + character.playerName + " AND THEIR SPEED : " + character.speed);
+		}
 	}
 
 

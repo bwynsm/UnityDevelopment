@@ -1,0 +1,1760 @@
+fileFormatVersion: 2
+guid: 227822b6eb7df95419e9b998bbb80dbc
+timeCreated: 1459296355
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: isadora_paladin_axe_0
+    21300002: isadora_paladin_axe_1
+    21300004: isadora_paladin_axe_2
+    21300006: isadora_paladin_axe_3
+    21300008: isadora_paladin_axe_4
+    21300010: isadora_paladin_axe_5
+    21300012: isadora_paladin_axe_6
+    21300014: isadora_paladin_axe_7
+    21300016: isadora_paladin_axe_8
+    21300018: isadora_paladin_axe_9
+    21300020: isadora_paladin_axe_10
+    21300022: isadora_paladin_axe_11
+    21300024: isadora_paladin_axe_12
+    21300026: isadora_paladin_axe_13
+    21300028: isadora_paladin_axe_14
+    21300030: isadora_paladin_axe_15
+    21300032: isadora_paladin_axe_16
+    21300034: isadora_paladin_axe_17
+    21300036: isadora_paladin_axe_18
+    21300038: isadora_paladin_axe_19
+    21300040: isadora_paladin_axe_20
+    21300042: isadora_paladin_axe_21
+    21300044: isadora_paladin_axe_22
+    21300046: isadora_paladin_axe_23
+    21300048: isadora_paladin_axe_24
+    21300050: isadora_paladin_axe_25
+    21300052: isadora_paladin_axe_26
+    21300054: isadora_paladin_axe_27
+    21300056: isadora_paladin_axe_28
+    21300058: isadora_paladin_axe_29
+    21300060: isadora_paladin_axe_30
+    21300062: isadora_paladin_axe_31
+    21300064: isadora_paladin_axe_32
+    21300066: isadora_paladin_axe_33
+    21300068: isadora_paladin_axe_34
+    21300070: isadora_paladin_axe_35
+    21300072: isadora_paladin_axe_36
+    21300074: isadora_paladin_axe_37
+    21300076: isadora_paladin_axe_38
+    21300078: isadora_paladin_axe_39
+    21300080: isadora_paladin_axe_40
+    21300082: isadora_paladin_axe_41
+    21300084: isadora_paladin_axe_42
+    21300086: isadora_paladin_axe_43
+    21300088: isadora_paladin_axe_44
+    21300090: isadora_paladin_axe_45
+    21300092: isadora_paladin_axe_46
+    21300094: isadora_paladin_axe_47
+    21300096: isadora_paladin_axe_48
+    21300098: isadora_paladin_axe_49
+    21300100: isadora_paladin_axe_50
+    21300102: isadora_paladin_axe_51
+    21300104: isadora_paladin_axe_52
+    21300106: isadora_paladin_axe_53
+    21300108: isadora_paladin_axe_54
+    21300110: isadora_paladin_axe_55
+    21300112: isadora_paladin_axe_56
+    21300114: isadora_paladin_axe_57
+    21300116: isadora_paladin_axe_58
+    21300118: isadora_paladin_axe_59
+    21300120: isadora_paladin_axe_60
+    21300122: isadora_paladin_axe_61
+    21300124: isadora_paladin_axe_62
+    21300126: isadora_paladin_axe_63
+    21300128: isadora_paladin_axe_64
+    21300130: isadora_paladin_axe_65
+    21300132: isadora_paladin_axe_66
+    21300134: isadora_paladin_axe_67
+    21300136: isadora_paladin_axe_68
+    21300138: isadora_paladin_axe_69
+    21300140: isadora_paladin_axe_70
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: isadora_paladin_axe_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 513
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 25.5}
+        - {x: -20.5, y: 25.5}
+        - {x: -24.5, y: 20.5}
+        - {x: -24.5, y: -1.5}
+        - {x: -16.5, y: -27.5}
+        - {x: 21.5, y: -27.5}
+        - {x: 25.5, y: -19.5}
+        - {x: 25.5, y: 21.5}
+        - {x: 24.5, y: 23.5}
+    - name: isadora_paladin_axe_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 510
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 27}
+        - {x: -29, y: 8}
+        - {x: -29, y: -23}
+        - {x: -28, y: -25}
+        - {x: -17, y: -26}
+        - {x: 19, y: -26}
+        - {x: 29, y: 0}
+        - {x: 29, y: 21}
+        - {x: -1, y: 27}
+    - name: isadora_paladin_axe_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 511
+        width: 62
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 27.5}
+        - {x: -9, y: 27.5}
+        - {x: -29, y: 13.5}
+        - {x: -29, y: -14.5}
+        - {x: -20, y: -25.5}
+        - {x: 21, y: -25.5}
+        - {x: 31, y: -2.5}
+        - {x: 31, y: 15.5}
+        - {x: 29, y: 22.5}
+    - name: isadora_paladin_axe_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 510
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 20}
+        - {x: 7, y: 27}
+        - {x: -15, y: 27}
+        - {x: -31, y: 5}
+        - {x: -31, y: -12}
+        - {x: -23, y: -25}
+        - {x: 19, y: -25}
+        - {x: 29, y: -24}
+        - {x: 31, y: -19}
+        - {x: 31, y: 13}
+    - name: isadora_paladin_axe_4
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 502
+        width: 58
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 34}
+        - {x: -9, y: 34}
+        - {x: -29, y: 14}
+        - {x: -29, y: -12}
+        - {x: -20, y: -31}
+        - {x: -16, y: -34}
+        - {x: 8, y: -34}
+        - {x: 19, y: -32}
+        - {x: 26, y: -13}
+        - {x: 26, y: 11}
+        - {x: 14, y: 31}
+    - name: isadora_paladin_axe_5
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 504
+        width: 71
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.5, y: -9}
+        - {x: 35.5, y: 20}
+        - {x: 32.5, y: 31}
+        - {x: 30.5, y: 32}
+        - {x: 0.5, y: 32}
+        - {x: -30.5, y: 24}
+        - {x: -32.5, y: 6}
+        - {x: -32.5, y: -12}
+        - {x: -12.5, y: -31}
+        - {x: 24.5, y: -31}
+        - {x: 35.5, y: -21}
+        - {x: 35.5, y: -20}
+        - {x: 31.5, y: -14}
+    - name: isadora_paladin_axe_6
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 498
+        width: 79
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 5}
+        - {x: 39.5, y: 10}
+        - {x: 39.5, y: 15}
+        - {x: 38.5, y: 17}
+        - {x: 10.5, y: 24}
+        - {x: -6.5, y: 19}
+        - {x: -14.5, y: 13}
+        - {x: -13.5, y: 11}
+        - {x: -17.5, y: 12}
+        - {x: -8.5, y: 20}
+        - {x: 16.5, y: 32}
+        - {x: 15.5, y: 36}
+        - {x: -20.5, y: 36}
+        - {x: -39.5, y: 13}
+        - {x: -39.5, y: -12}
+        - {x: -18.5, y: -35}
+        - {x: 24.5, y: -35}
+        - {x: 31.5, y: -23}
+        - {x: 23.5, y: -20}
+        - {x: 27.5, y: -12}
+    - name: isadora_paladin_axe_7
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 506.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: -27.333344}
+        - {x: -31.5, y: -31.333344}
+        - {x: -25.5, y: -31.333344}
+        - {x: -24.5, y: -27.333344}
+        - {x: -27.5, y: -25.333344}
+      - - {x: -31.5, y: -9.3333435}
+        - {x: -31.5, y: -16.333344}
+        - {x: -29.5, y: -16.333344}
+        - {x: -27.5, y: -14.3333435}
+        - {x: -27.5, y: -11.3333435}
+        - {x: -29.5, y: -9.3333435}
+      - - {x: -14.5, y: 11.6666565}
+        - {x: -16.5, y: 13.6666565}
+        - {x: -31.5, y: 13.6666565}
+        - {x: -31.5, y: -9.3333435}
+        - {x: -28.5, y: -8.3333435}
+        - {x: -17.5, y: 1.6666565}
+        - {x: -16.5, y: 3.6666565}
+        - {x: -14.5, y: 6.6666565}
+    - name: isadora_paladin_axe_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 450
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 29.5}
+        - {x: -31, y: 13.5}
+        - {x: -31, y: -1.5}
+        - {x: -25, y: -6.5}
+        - {x: -20, y: -6.5}
+        - {x: -20, y: -11.5}
+        - {x: -15, y: -15.5}
+        - {x: -2, y: -21.5}
+        - {x: 0, y: -21.5}
+        - {x: -9, y: -21.5}
+        - {x: -15, y: -25.5}
+        - {x: -14, y: -30.5}
+        - {x: 26, y: -30.5}
+        - {x: 31, y: -28.5}
+        - {x: 31, y: 22.5}
+        - {x: 18, y: 29.5}
+    - name: isadora_paladin_axe_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 447
+        width: 62
+        height: 63
+      alignment: 9
+      pivot: {x: 0.5100078, y: 0.53084695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.3795166, y: 29.55664}
+        - {x: -12.620483, y: 29.55664}
+        - {x: -27.620483, y: 12.556641}
+        - {x: -27.620483, y: -7.4433594}
+        - {x: -12.620483, y: -27.44336}
+        - {x: 3.3795166, y: -27.44336}
+        - {x: 16.379517, y: -25.44336}
+        - {x: 21.379517, y: -21.44336}
+        - {x: 21.379517, y: 20.55664}
+    - name: isadora_paladin_axe_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 445
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 31.5}
+        - {x: -24, y: 26.5}
+        - {x: -24, y: -25.5}
+        - {x: -22, y: -26.5}
+        - {x: 14, y: -26.5}
+        - {x: 24, y: 2.5}
+        - {x: 24, y: 31.5}
+    - name: isadora_paladin_axe_11
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 448
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: -24.5}
+        - {x: 21, y: -27.5}
+        - {x: 24, y: -31.5}
+        - {x: 26, y: -31.5}
+        - {x: 26, y: -26.5}
+        - {x: 24, y: -24.5}
+      - - {x: -21, y: 28.5}
+        - {x: -25, y: 26.5}
+        - {x: -25, y: -25.5}
+        - {x: -21, y: -29.5}
+        - {x: 17, y: -29.5}
+        - {x: 23, y: -9.5}
+        - {x: 23, y: 28.5}
+    - name: isadora_paladin_axe_12
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 436
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 21.5}
+        - {x: 3, y: 20.5}
+        - {x: 8, y: 21.5}
+        - {x: 14, y: 21.5}
+        - {x: 16, y: 22.5}
+        - {x: 18, y: 18.5}
+        - {x: 23, y: 17.5}
+        - {x: 24, y: 20.5}
+        - {x: 24, y: 28.5}
+        - {x: 22, y: 31.5}
+        - {x: -11, y: 31.5}
+        - {x: -31, y: 0.5}
+        - {x: -31, y: -30.5}
+        - {x: -27, y: -31.5}
+        - {x: 5, y: -31.5}
+        - {x: 23, y: 13.5}
+        - {x: 14, y: 21.5}
+    - name: isadora_paladin_axe_13
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 428
+        width: 51
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.5, y: 12}
+        - {x: 15.5, y: 16}
+        - {x: 3.5, y: 31}
+        - {x: -3.5, y: 38}
+        - {x: -13.5, y: 38}
+        - {x: -20.5, y: 30}
+        - {x: -25.5, y: -7}
+        - {x: -25.5, y: -33}
+        - {x: -22.5, y: -38}
+        - {x: 3.5, y: -38}
+        - {x: 7.5, y: -34}
+        - {x: 23.5, y: -7}
+        - {x: 23.5, y: 6}
+    - name: isadora_paladin_axe_14
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 420
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: -32}
+        - {x: -15.5, y: -40}
+        - {x: 15.5, y: -40}
+        - {x: 16.5, y: -37}
+        - {x: 16.5, y: -36}
+        - {x: 14.5, y: -32}
+      - - {x: 19.5, y: 20}
+        - {x: 5.5, y: 20}
+        - {x: 6.5, y: 20}
+        - {x: 17.5, y: 21}
+        - {x: 22.5, y: 27}
+        - {x: 20.5, y: 40}
+        - {x: 1.5, y: 40}
+        - {x: -31.5, y: 22}
+        - {x: -40.5, y: 2}
+        - {x: -40.5, y: -14}
+        - {x: -38.5, y: -15}
+        - {x: -34.5, y: -15}
+        - {x: -34.5, y: -26}
+        - {x: -5.5, y: -26}
+        - {x: 22.5, y: -20}
+        - {x: 35.5, y: 2}
+        - {x: 35.5, y: 13}
+        - {x: 29.5, y: 15}
+    - name: isadora_paladin_axe_15
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 360
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 28.5}
+        - {x: -26.5, y: 4.5}
+        - {x: -26.5, y: -9.5}
+        - {x: -23.5, y: -21.5}
+        - {x: -14.5, y: -22.5}
+        - {x: 15.5, y: -22.5}
+        - {x: 24.5, y: -1.5}
+        - {x: 24.5, y: 18.5}
+        - {x: 2.5, y: 28.5}
+    - name: isadora_paladin_axe_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 371
+        width: 79
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: -28.5}
+        - {x: -10.5, y: -32.5}
+        - {x: -10.5, y: -33.5}
+        - {x: -5.5, y: -37.5}
+        - {x: 16.5, y: -37.5}
+        - {x: 21.5, y: -33.5}
+        - {x: 21.5, y: -32.5}
+        - {x: 16.5, y: -28.5}
+      - - {x: 33.5, y: 38.5}
+        - {x: 8.5, y: 38.5}
+        - {x: -26.5, y: 25.5}
+        - {x: -22.5, y: 14.5}
+        - {x: -18.5, y: 12.5}
+        - {x: -36.5, y: 3.5}
+        - {x: -38.5, y: -0.5}
+        - {x: -38.5, y: -5.5}
+        - {x: -33.5, y: -12.5}
+        - {x: -29.5, y: -11.5}
+        - {x: -29.5, y: -22.5}
+        - {x: -13.5, y: -22.5}
+        - {x: 23.5, y: -9.5}
+        - {x: 39.5, y: 1.5}
+        - {x: 39.5, y: 16.5}
+        - {x: 36.5, y: 26.5}
+    - name: isadora_paladin_axe_17
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 372
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: -24.5}
+        - {x: -12, y: -33.5}
+        - {x: 15, y: -33.5}
+        - {x: 17, y: -29.5}
+        - {x: 17, y: -28.5}
+        - {x: 15, y: -24.5}
+      - - {x: 28, y: 33.5}
+        - {x: -25, y: 33.5}
+        - {x: -37, y: 8.5}
+        - {x: -37, y: -6.5}
+        - {x: -35, y: -7.5}
+        - {x: -31, y: -7.5}
+        - {x: -31, y: -14.5}
+        - {x: -29, y: -18.5}
+        - {x: -25, y: -18.5}
+        - {x: -16, y: -16.5}
+        - {x: 22, y: -5.5}
+        - {x: 37, y: 7.5}
+        - {x: 37, y: 21.5}
+    - name: isadora_paladin_axe_18
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 380.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: -30.333344}
+        - {x: 25.5, y: -31.333344}
+        - {x: 31.5, y: -31.333344}
+        - {x: 31.5, y: -27.333344}
+        - {x: 29.5, y: -27.333344}
+      - - {x: 19.5, y: 24.666656}
+        - {x: 5.5, y: 15.6666565}
+        - {x: 5.5, y: -3.3333435}
+        - {x: 11.5, y: -15.3333435}
+        - {x: 31.5, y: -15.3333435}
+        - {x: 31.5, y: 24.666656}
+      - - {x: -7.5, y: 21.666656}
+        - {x: -31.5, y: 21.666656}
+        - {x: -31.5, y: -6.3333435}
+        - {x: -24.5, y: -8.3333435}
+        - {x: -9.5, y: -8.3333435}
+        - {x: 3.5, y: 1.6666565}
+        - {x: 3.5, y: 10.6666565}
+        - {x: -0.5, y: 20.666656}
+    - name: isadora_paladin_axe_19
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 374
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 31}
+        - {x: -31, y: 30}
+        - {x: -31, y: -10}
+        - {x: -21, y: -31}
+        - {x: 27, y: -31}
+        - {x: 28, y: -27}
+        - {x: 28, y: 20}
+        - {x: 18, y: 31}
+    - name: isadora_paladin_axe_20
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 373
+        width: 59
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: 4}
+        - {x: -14.5, y: -21}
+        - {x: 25.5, y: -21}
+        - {x: 29.5, y: -20}
+        - {x: 29.5, y: 8}
+        - {x: 21.5, y: 29}
+        - {x: -29.5, y: 29}
+        - {x: -29.5, y: 6}
+    - name: isadora_paladin_axe_21
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 362
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: -8.5}
+        - {x: -8, y: -20.5}
+        - {x: 17, y: -20.5}
+        - {x: 22, y: -19.5}
+        - {x: 22, y: 18.5}
+        - {x: 18, y: 29.5}
+        - {x: -10, y: 29.5}
+        - {x: -21, y: 20.5}
+      - - {x: -21, y: -1.5}
+        - {x: -21, y: 1.5}
+        - {x: -24, y: 2.5}
+        - {x: -24, y: -2.5}
+    - name: isadora_paladin_axe_22
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 357
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 31.5}
+        - {x: -17, y: 18.5}
+        - {x: -17, y: -7.5}
+        - {x: -15, y: -19.5}
+        - {x: 17, y: -19.5}
+        - {x: 19, y: -18.5}
+        - {x: 19, y: 27.5}
+        - {x: 6, y: 31.5}
+    - name: isadora_paladin_axe_23
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 355
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 31.5}
+        - {x: -19.5, y: 21.5}
+        - {x: -19.5, y: -18.5}
+        - {x: 14.5, y: -18.5}
+        - {x: 16.5, y: -17.5}
+        - {x: 16.5, y: 18.5}
+        - {x: 0.5, y: 31.5}
+      - - {x: 19.5, y: 3.5}
+        - {x: 21.5, y: 1.5}
+        - {x: 22.5, y: 1.5}
+        - {x: 22.5, y: 7.5}
+        - {x: 19.5, y: 6.5}
+    - name: isadora_paladin_axe_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 318
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: -10}
+        - {x: 26, y: 4}
+        - {x: 20, y: 24}
+        - {x: 10, y: 26}
+        - {x: -18, y: 26}
+        - {x: -31, y: 8}
+        - {x: -31, y: -17}
+        - {x: -30, y: -23}
+        - {x: 10, y: -23}
+        - {x: 11, y: -22}
+        - {x: 16, y: -16}
+        - {x: 16, y: -13}
+    - name: isadora_paladin_axe_25
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 318
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -27}
+        - {x: -7, y: -25}
+        - {x: -10, y: -24}
+        - {x: -12, y: -27}
+      - - {x: -16, y: 27}
+        - {x: -27, y: 18}
+        - {x: -31, y: 9}
+        - {x: -31, y: -21}
+        - {x: -22, y: -23}
+        - {x: 27, y: -23}
+        - {x: 31, y: -17}
+        - {x: 31, y: 15}
+        - {x: 13, y: 27}
+    - name: isadora_paladin_axe_26
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 318
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 27}
+        - {x: -25, y: -11}
+        - {x: -22, y: -26}
+        - {x: 31, y: -26}
+        - {x: 31, y: 24}
+        - {x: 25, y: 27}
+      - - {x: -31, y: -6}
+        - {x: -29, y: -6}
+        - {x: -24, y: -2}
+        - {x: -25, y: 1}
+        - {x: -31, y: 3}
+    - name: isadora_paladin_axe_27
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 317.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 1.6666565}
+        - {x: -28.5, y: 2.6666565}
+        - {x: -28.5, y: 5.6666565}
+        - {x: -30.5, y: 7.6666565}
+        - {x: -31.5, y: 7.6666565}
+      - - {x: -31.5, y: 32.666656}
+        - {x: -31.5, y: 26.666656}
+        - {x: -10.5, y: 26.666656}
+        - {x: -5.5, y: 30.666656}
+        - {x: -6.5, y: 32.666656}
+    - name: isadora_paladin_axe_28
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 317.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: -22.333344}
+        - {x: -16.5, y: -27.333344}
+        - {x: -17.5, y: -31.333344}
+        - {x: 5.5, y: -31.333344}
+        - {x: 5.5, y: -24.333344}
+        - {x: -0.5, y: -22.333344}
+      - - {x: 15.5, y: 32.666656}
+        - {x: 13.5, y: 30.666656}
+        - {x: 13.5, y: 25.666656}
+        - {x: 22.5, y: 24.666656}
+        - {x: 31.5, y: 24.666656}
+        - {x: 31.5, y: 32.666656}
+    - name: isadora_paladin_axe_29
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 317.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: -16.333344}
+        - {x: -26.5, y: -17.333344}
+        - {x: -26.5, y: -26.333344}
+        - {x: -25.5, y: -29.333344}
+        - {x: -22.5, y: -31.333344}
+        - {x: -11.5, y: -31.333344}
+        - {x: -1.5, y: -22.333344}
+        - {x: -1.5, y: -18.333344}
+        - {x: -2.5, y: -16.333344}
+      - - {x: -6.5, y: 23.666656}
+        - {x: -4.5, y: 20.666656}
+        - {x: 21.5, y: 20.666656}
+        - {x: 25.5, y: 21.666656}
+        - {x: 25.5, y: 32.666656}
+        - {x: -5.5, y: 32.666656}
+        - {x: -7.5, y: 26.666656}
+      - - {x: -31.5, y: 32.666656}
+        - {x: -31.5, y: 24.666656}
+        - {x: -21.5, y: 24.666656}
+        - {x: -16.5, y: 27.666656}
+        - {x: -16.5, y: 29.666656}
+        - {x: -18.5, y: 32.666656}
+    - name: isadora_paladin_axe_30
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 317.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: -17.333344}
+        - {x: -29.5, y: -31.333344}
+        - {x: -10.5, y: -31.333344}
+        - {x: -10.5, y: -19.333344}
+        - {x: -13.5, y: -17.333344}
+      - - {x: 15.5, y: 32.666656}
+        - {x: 12.5, y: 27.666656}
+        - {x: 12.5, y: 19.666656}
+        - {x: 18.5, y: 18.666656}
+        - {x: 31.5, y: 18.666656}
+        - {x: 31.5, y: 32.666656}
+      - - {x: -28.5, y: 32.666656}
+        - {x: -30.5, y: 26.666656}
+        - {x: -30.5, y: 21.666656}
+        - {x: -28.5, y: 19.666656}
+        - {x: -0.5, y: 19.666656}
+        - {x: 4.5, y: 20.666656}
+        - {x: 4.5, y: 32.666656}
+    - name: isadora_paladin_axe_31
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 317.66666
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: -19.333344}
+        - {x: -21.5, y: -31.333344}
+        - {x: -4.5, y: -31.333344}
+        - {x: -3.5, y: -28.333344}
+        - {x: -3.5, y: -21.333344}
+        - {x: -8.5, y: -19.333344}
+      - - {x: -31.5, y: 32.666656}
+        - {x: -31.5, y: 17.666656}
+        - {x: -13.5, y: 17.666656}
+        - {x: -11.5, y: 18.666656}
+        - {x: -11.5, y: 31.666656}
+        - {x: -13.5, y: 32.666656}
+    - name: isadora_paladin_axe_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 265
+        width: 62
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 14.5}
+        - {x: 16, y: 26.5}
+        - {x: -27, y: 26.5}
+        - {x: -27, y: -9.5}
+        - {x: -24, y: -10.5}
+        - {x: -15, y: -26.5}
+        - {x: 20, y: -26.5}
+        - {x: 23, y: -22.5}
+        - {x: 23, y: -19.5}
+        - {x: 31, y: -4.5}
+    - name: isadora_paladin_axe_33
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 263
+        width: 78
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 27.5}
+        - {x: -27, y: -24.5}
+        - {x: 28, y: -24.5}
+        - {x: 39, y: -16.5}
+        - {x: 39, y: 16.5}
+        - {x: 24, y: 23.5}
+        - {x: 11, y: 27.5}
+      - - {x: -39, y: 15.5}
+        - {x: -39, y: 0.5}
+        - {x: -37, y: 0.5}
+        - {x: -29, y: 7.5}
+        - {x: -29, y: 11.5}
+        - {x: -30, y: 14.5}
+    - name: isadora_paladin_axe_34
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 254
+        width: 67
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 31.5}
+        - {x: -33.5, y: 30.5}
+        - {x: -33.5, y: -7.5}
+        - {x: -22.5, y: -22.5}
+        - {x: 26.5, y: -22.5}
+        - {x: 33.5, y: 3.5}
+        - {x: 33.5, y: 31.5}
+    - name: isadora_paladin_axe_35
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 254
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 31.5}
+        - {x: -34, y: 23.5}
+        - {x: -34, y: -5.5}
+        - {x: -27, y: -22.5}
+        - {x: 34, y: -22.5}
+        - {x: 34, y: 31.5}
+    - name: isadora_paladin_axe_36
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 254.66667
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 32.66667}
+        - {x: -31.5, y: -22.333328}
+        - {x: -18.5, y: -22.333328}
+        - {x: -10.5, y: -18.333328}
+        - {x: 7.5, y: -2.3333282}
+        - {x: 7.5, y: 32.66667}
+      - - {x: 22.5, y: 28.666672}
+        - {x: 14.5, y: 19.666672}
+        - {x: 14.5, y: -10.333328}
+        - {x: 31.5, y: -10.333328}
+        - {x: 31.5, y: 25.666672}
+        - {x: 25.5, y: 28.666672}
+    - name: isadora_paladin_axe_37
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 255
+        width: 70
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 31.5}
+        - {x: -6, y: 28.5}
+        - {x: -10, y: 24.5}
+        - {x: -22, y: 27.5}
+        - {x: -23, y: 27.5}
+        - {x: -28, y: 23.5}
+        - {x: -32, y: 17.5}
+        - {x: -33, y: 1.5}
+        - {x: -33, y: -10.5}
+        - {x: -31, y: -13.5}
+        - {x: -21, y: -27.5}
+        - {x: 26, y: -27.5}
+        - {x: 35, y: -14.5}
+        - {x: 35, y: 27.5}
+        - {x: 25, y: 31.5}
+    - name: isadora_paladin_axe_38
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 255
+        width: 66
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 38}
+        - {x: -24, y: 38}
+        - {x: -23, y: 26}
+        - {x: -18, y: 20}
+        - {x: -23, y: 23}
+        - {x: -24, y: 23}
+        - {x: -29, y: 19}
+        - {x: -33, y: 13}
+        - {x: -33, y: -27}
+        - {x: -24, y: -32}
+        - {x: 11, y: -32}
+        - {x: 20, y: -29}
+        - {x: 33, y: -12}
+        - {x: 33, y: 7}
+        - {x: 28, y: 12}
+    - name: isadora_paladin_axe_39
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 255
+        width: 68
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: -4}
+        - {x: 34, y: 6}
+        - {x: 21, y: 9}
+        - {x: -1, y: 36}
+        - {x: -21, y: 36}
+        - {x: -20, y: 24}
+        - {x: -15, y: 18}
+        - {x: -22, y: 23}
+        - {x: -34, y: 22}
+        - {x: -34, y: -34}
+        - {x: 17, y: -34}
+        - {x: 20, y: -30}
+        - {x: 20, y: -27}
+        - {x: 31, y: -9}
+    - name: isadora_paladin_axe_40
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 192
+        width: 70
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 31.5}
+        - {x: -23, y: 25.5}
+        - {x: -26, y: 27.5}
+        - {x: -35, y: 20.5}
+        - {x: -35, y: -23.5}
+        - {x: -22, y: -29.5}
+        - {x: 20, y: -29.5}
+        - {x: 34, y: -0.5}
+        - {x: 34, y: 12.5}
+        - {x: -6, y: 31.5}
+    - name: isadora_paladin_axe_41
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 191
+        width: 74
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 24}
+        - {x: -37, y: -27}
+        - {x: 15, y: -27}
+        - {x: 24, y: -26}
+        - {x: 37, y: -16}
+        - {x: 37, y: 24}
+    - name: isadora_paladin_axe_42
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 189
+        width: 79
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.5, y: 26.5}
+        - {x: -16.5, y: 26.5}
+        - {x: -19.5, y: 25.5}
+        - {x: -38.5, y: 9.5}
+        - {x: -39.5, y: -0.5}
+        - {x: -39.5, y: -6.5}
+        - {x: -36.5, y: -8.5}
+        - {x: -32.5, y: -8.5}
+        - {x: -37.5, y: -23.5}
+        - {x: -30.5, y: -24.5}
+        - {x: 23.5, y: -24.5}
+        - {x: 31.5, y: -18.5}
+        - {x: 38.5, y: -2.5}
+        - {x: 38.5, y: 15.5}
+    - name: isadora_paladin_axe_43
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 191.66667
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 24.666672}
+        - {x: -31.5, y: 23.666672}
+        - {x: -31.5, y: -26.333328}
+        - {x: -2.5, y: -26.333328}
+        - {x: 16.5, y: -8.333328}
+        - {x: 16.5, y: 10.666672}
+        - {x: -1.5, y: 24.666672}
+      - - {x: 22.5, y: 11.666672}
+        - {x: 20.5, y: 9.666672}
+        - {x: 17.5, y: 1.6666718}
+        - {x: 17.5, y: -6.3333282}
+        - {x: 19.5, y: -7.3333282}
+        - {x: 27.5, y: -7.3333282}
+        - {x: 31.5, y: -3.3333282}
+        - {x: 31.5, y: 11.666672}
+    - name: isadora_paladin_axe_44
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 192
+        width: 74
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -10.5}
+        - {x: 37, y: -1.5}
+        - {x: 37, y: 13.5}
+        - {x: 24, y: 28.5}
+        - {x: -30, y: 28.5}
+        - {x: -37, y: 18.5}
+        - {x: -37, y: -11.5}
+        - {x: -27, y: -22.5}
+        - {x: 9, y: -22.5}
+        - {x: 13, y: -20.5}
+        - {x: 10, y: -14.5}
+        - {x: 7, y: -12.5}
+    - name: isadora_paladin_axe_45
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 192
+        width: 84
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 29.5}
+        - {x: -36, y: 10.5}
+        - {x: -38, y: 6.5}
+        - {x: -38, y: -12.5}
+        - {x: -23, y: -20.5}
+        - {x: -20, y: -21.5}
+        - {x: 24, y: -21.5}
+        - {x: 40, y: 0.5}
+        - {x: 40, y: 23.5}
+        - {x: 28, y: 29.5}
+    - name: isadora_paladin_axe_46
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 194
+        width: 76
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 29.5}
+        - {x: -38, y: 14.5}
+        - {x: -38, y: -16.5}
+        - {x: -24, y: -22.5}
+        - {x: 10, y: -22.5}
+        - {x: 38, y: 4.5}
+        - {x: 38, y: 17.5}
+        - {x: 20, y: 29.5}
+    - name: isadora_paladin_axe_47
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 191.66667
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 31.666672}
+        - {x: -31.5, y: 24.666672}
+        - {x: -31.5, y: -16.333328}
+        - {x: -24.5, y: -16.333328}
+        - {x: 9.5, y: 0.66667175}
+        - {x: 9.5, y: 20.666672}
+        - {x: -10.5, y: 31.666672}
+    - name: isadora_paladin_axe_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 62
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5923075, y: 0.2874496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.723064, y: 53.441284}
+        - {x: -35.723064, y: 42.441284}
+        - {x: -35.723064, y: -6.558716}
+        - {x: -29.723064, y: -20.558716}
+        - {x: 13.276936, y: -20.558716}
+        - {x: 22.276936, y: -16.558716}
+        - {x: 22.276936, y: 14.441284}
+        - {x: -2.7230644, y: 53.441284}
+    - name: isadora_paladin_axe_49
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 117
+        width: 62
+        height: 75
+      alignment: 9
+      pivot: {x: 0.45897388, y: 0.2975712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.543617, y: 14.682159}
+        - {x: 19.543617, y: 43.68216}
+        - {x: 10.543617, y: 52.68216}
+        - {x: -13.456383, y: 52.68216}
+        - {x: -28.456383, y: 33.68216}
+        - {x: -28.456383, y: -3.3178406}
+        - {x: -24.456383, y: -22.31784}
+        - {x: 13.543617, y: -22.31784}
+        - {x: 16.543617, y: -19.31784}
+        - {x: 25.543617, y: -9.317841}
+        - {x: 27.543617, y: -6.3178406}
+      - - {x: 29.543617, y: 18.68216}
+        - {x: 29.543617, y: 14.682159}
+        - {x: 32.543617, y: 11.682159}
+        - {x: 33.543617, y: 11.682159}
+        - {x: 33.543617, y: 21.68216}
+        - {x: 32.543617, y: 21.68216}
+    - name: isadora_paladin_axe_50
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 116
+        width: 62
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5205127, y: 0.45951453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.27179, y: 22.212524}
+        - {x: -32.27179, y: 18.212524}
+        - {x: -32.27179, y: -15.787476}
+        - {x: -21.27179, y: -29.787476}
+        - {x: 7.7282104, y: -29.787476}
+        - {x: 13.72821, y: -28.787476}
+        - {x: 25.72821, y: -14.787476}
+        - {x: 25.72821, y: 36.212524}
+        - {x: 3.7282104, y: 36.212524}
+    - name: isadora_paladin_axe_51
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 110
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 31.5}
+        - {x: -31, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 31, y: 10.5}
+        - {x: 31, y: 31.5}
+    - name: isadora_paladin_axe_52
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 115
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: -30.5}
+        - {x: 24, y: -31.5}
+        - {x: 31, y: -31.5}
+        - {x: 31, y: -25.5}
+        - {x: 27, y: -26.5}
+      - - {x: -17, y: 28.5}
+        - {x: -29, y: 23.5}
+        - {x: -29, y: -16.5}
+        - {x: -23, y: -25.5}
+        - {x: 16, y: -25.5}
+        - {x: 30, y: -19.5}
+        - {x: 30, y: 9.5}
+        - {x: 10, y: 28.5}
+    - name: isadora_paladin_axe_53
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 111
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: -21.5}
+        - {x: -31, y: -21.5}
+        - {x: -31, y: -31.5}
+        - {x: -18, y: -31.5}
+        - {x: -16, y: -29.5}
+        - {x: -16, y: -28.5}
+        - {x: -21, y: -22.5}
+      - - {x: -16, y: 31.5}
+        - {x: -29, y: 26.5}
+        - {x: -29, y: -21.5}
+        - {x: -28, y: -28.5}
+        - {x: -19, y: -31.5}
+        - {x: 22, y: -31.5}
+        - {x: 29, y: -28.5}
+        - {x: 29, y: 11.5}
+        - {x: 9, y: 31.5}
+    - name: isadora_paladin_axe_54
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 114
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -29.5}
+        - {x: -7, y: -31.5}
+        - {x: -1, y: -31.5}
+        - {x: -1, y: -29.5}
+        - {x: -3, y: -27.5}
+        - {x: -5, y: -27.5}
+      - - {x: -19, y: 28.5}
+        - {x: -22, y: 26.5}
+        - {x: -29, y: 18.5}
+        - {x: -29, y: -5.5}
+        - {x: -20, y: -25.5}
+        - {x: 22, y: -25.5}
+        - {x: 29, y: -10.5}
+        - {x: 29, y: 17.5}
+        - {x: 8, y: 28.5}
+    - name: isadora_paladin_axe_55
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 113
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: -31.5}
+        - {x: 30, y: -31.5}
+        - {x: 30, y: -30.5}
+        - {x: 26, y: -24.5}
+        - {x: 16, y: -24.5}
+        - {x: 11, y: -27.5}
+      - - {x: 10, y: 29.5}
+        - {x: -19, y: 29.5}
+        - {x: -28, y: 10.5}
+        - {x: -22, y: 9.5}
+        - {x: -18, y: 9.5}
+        - {x: -31, y: 9.5}
+        - {x: -31, y: -7.5}
+        - {x: -23, y: -24.5}
+        - {x: 27, y: -24.5}
+        - {x: 31, y: -13.5}
+        - {x: 31, y: 14.5}
+        - {x: 25, y: 19.5}
+    - name: isadora_paladin_axe_56
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 60
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 27}
+        - {x: -16, y: 27}
+        - {x: -29, y: 24}
+        - {x: -31, y: 23}
+        - {x: -31, y: -22}
+        - {x: -29, y: -27}
+        - {x: 20, y: -27}
+        - {x: 27, y: -11}
+        - {x: 27, y: 8}
+        - {x: 19, y: 17}
+      - - {x: 27, y: 13}
+        - {x: 27, y: 9}
+        - {x: 30, y: 6}
+        - {x: 31, y: 6}
+        - {x: 31, y: 16}
+        - {x: 30, y: 16}
+    - name: isadora_paladin_axe_57
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 61
+        width: 62
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 27}
+        - {x: -31, y: 22}
+        - {x: -31, y: -28}
+        - {x: 16, y: -28}
+        - {x: 26, y: -23}
+        - {x: 26, y: 20}
+        - {x: 25, y: 27}
+      - - {x: 27, y: 6}
+        - {x: 27, y: 2}
+        - {x: 30, y: -1}
+        - {x: 31, y: -1}
+        - {x: 31, y: 9}
+        - {x: 30, y: 9}
+    - name: isadora_paladin_axe_58
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 52
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 10.5}
+        - {x: 21, y: 28.5}
+        - {x: 14, y: 31.5}
+        - {x: -8, y: 31.5}
+        - {x: -26, y: 22.5}
+        - {x: -31, y: 16.5}
+        - {x: -31, y: -29.5}
+        - {x: 11, y: -29.5}
+        - {x: 14, y: -26.5}
+        - {x: 23, y: -16.5}
+        - {x: 25, y: -13.5}
+    - name: isadora_paladin_axe_59
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 65.66667
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 22.666672}
+        - {x: 5.5, y: 22.666672}
+        - {x: 12.5, y: 24.666672}
+        - {x: 12.5, y: 32.66667}
+        - {x: -21.5, y: 32.66667}
+        - {x: -21.5, y: 24.666672}
+    - name: isadora_paladin_axe_60
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 43
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 31.5}
+        - {x: -26, y: 20.5}
+        - {x: -26, y: -23.5}
+        - {x: -24, y: -30.5}
+        - {x: 27, y: -30.5}
+        - {x: 31, y: -18.5}
+        - {x: 31, y: 7.5}
+        - {x: 18, y: 31.5}
+    - name: isadora_paladin_axe_61
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 65.66667
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: -15.333328}
+        - {x: -31.5, y: -15.333328}
+        - {x: -31.5, y: -31.333328}
+        - {x: -15.5, y: -31.333328}
+        - {x: -15.5, y: -25.333328}
+        - {x: -16.5, y: -20.333328}
+      - - {x: -17.5, y: 32.66667}
+        - {x: -17.5, y: -1.3333282}
+        - {x: -14.5, y: -10.333328}
+        - {x: -8.5, y: -31.333328}
+        - {x: 31.5, y: -31.333328}
+        - {x: 31.5, y: 31.666672}
+        - {x: 29.5, y: 32.66667}
+      - - {x: -31.5, y: 24.666672}
+        - {x: -31.5, y: 8.666672}
+        - {x: -16.5, y: 8.666672}
+        - {x: -15.5, y: 9.666672}
+        - {x: -15.5, y: 19.666672}
+        - {x: -20.5, y: 24.666672}
+    - name: isadora_paladin_axe_62
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 49
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 31.5}
+        - {x: -27.5, y: 24.5}
+        - {x: -27.5, y: -20.5}
+        - {x: -26.5, y: -27.5}
+        - {x: 23.5, y: -27.5}
+        - {x: 27.5, y: -18.5}
+        - {x: 27.5, y: 10.5}
+        - {x: 8.5, y: 31.5}
+    - name: isadora_paladin_axe_63
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 47
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 31.5}
+        - {x: -30, y: -14.5}
+        - {x: -22, y: -21.5}
+        - {x: -18, y: -24.5}
+        - {x: 6, y: -24.5}
+        - {x: 17, y: -23.5}
+        - {x: 29, y: -20.5}
+        - {x: 29, y: 31.5}
+    - name: isadora_paladin_axe_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 62
+        height: 58
+      alignment: 9
+      pivot: {x: 0.4076921, y: 0.2874497}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.723089, y: -4.672081}
+        - {x: 20.72309, y: -4.672081}
+        - {x: 34.72309, y: 6.327919}
+        - {x: 34.72309, y: 41.32792}
+        - {x: -23.27691, y: 41.32792}
+        - {x: -23.27691, y: -12.672081}
+        - {x: 12.723089, y: -12.672081}
+        - {x: 16.72309, y: -10.672081}
+        - {x: 14.723089, y: -6.672081}
+        - {x: 12.723089, y: -4.672081}
+        - {x: 8.723089, y: -3.672081}
+    - name: isadora_paladin_axe_65
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 30.5}
+        - {x: -31, y: -22.5}
+        - {x: 3, y: -22.5}
+        - {x: 9, y: -20.5}
+        - {x: 26, y: 0.5}
+        - {x: 26, y: 21.5}
+        - {x: 3, y: 30.5}
+    - name: isadora_paladin_axe_66
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2.666668
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 32.666668}
+        - {x: -25.5, y: 23.666668}
+        - {x: -20.5, y: 20.666668}
+        - {x: 4.5, y: 20.666668}
+        - {x: 8.5, y: 25.666668}
+        - {x: 8.5, y: 32.666668}
+    - name: isadora_paladin_axe_67
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 2.666668
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 32.666668}
+        - {x: -6.5, y: 10.666668}
+        - {x: 25.5, y: 10.666668}
+        - {x: 31.5, y: 11.666668}
+        - {x: 31.5, y: 31.666668}
+        - {x: 30.5, y: 32.666668}
+    - name: isadora_paladin_axe_68
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 40
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 31.5}
+        - {x: -23.5, y: 29.5}
+        - {x: -27.5, y: 18.5}
+        - {x: -27.5, y: -15.5}
+        - {x: -18.5, y: -27.5}
+        - {x: 16.5, y: -27.5}
+        - {x: 20.5, y: -26.5}
+        - {x: 28.5, y: -15.5}
+        - {x: 28.5, y: 6.5}
+        - {x: 12.5, y: 31.5}
+    - name: isadora_paladin_axe_69
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 2.666668
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.5, y: 32.666668}
+        - {x: -9.5, y: 26.666668}
+        - {x: -9.5, y: 20.666668}
+        - {x: -6.5, y: 19.666668}
+        - {x: 22.5, y: 19.666668}
+        - {x: 24.5, y: 22.666668}
+        - {x: 24.5, y: 30.666668}
+        - {x: 22.5, y: 32.666668}
+      - - {x: -31.5, y: 32.666668}
+        - {x: -31.5, y: 23.666668}
+        - {x: -25.5, y: 23.666668}
+        - {x: -19.5, y: 26.666668}
+        - {x: -17.5, y: 32.666668}
+    - name: isadora_paladin_axe_70
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 2.666668
+        width: 62.5
+        height: 63.333332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 32.666668}
+        - {x: -15.5, y: 23.666668}
+        - {x: -10.5, y: 20.666668}
+        - {x: 14.5, y: 20.666668}
+        - {x: 18.5, y: 25.666668}
+        - {x: 18.5, y: 32.666668}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,6 +14,10 @@ public class Toolbox : Singleton<Toolbox> {
 	public GameObject enemyDefeated;
  
 	public Language language = new Language();
+	public bool sceneAlreadyLoaded = false;
+
+
+	public bool isLocked = false;
  
 	void Awake () 
 	{
@@ -30,6 +34,7 @@ public class Toolbox : Singleton<Toolbox> {
 	void OnLevelWasLoaded(int level)
 	{
 		// what if we need to destroy a character? let's do that here
+		Debug.Log("woohoo!");
 
 		// make sure our camera follow is set up to our main camera
 		Camera.main.GetComponent<CameraFollow>().target = playerCharacter.transform;
