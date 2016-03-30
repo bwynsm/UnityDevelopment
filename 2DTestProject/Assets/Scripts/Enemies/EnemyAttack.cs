@@ -105,6 +105,7 @@ public class EnemyAttack : MonoBehaviour
 			else
 				yPos = 0;
 
+
 			Vector2 angle = new Vector2 (xPos, yPos);
 			rbody.MovePosition (rbody.position + (angle * 2.0f * Time.deltaTime));
 		}
@@ -192,6 +193,26 @@ public class EnemyAttack : MonoBehaviour
 			Toolbox.Instance.isLocked = false;
 
 		} 
+
+		// otherwise, we are in here
+		else if (gameObject.name == "Archer")
+		{
+			// there needs to be a way to launch projectile in this game instead of following the traditional set
+			// of animations.
+			// So there should be a way to "skip" attack animation.
+			// because during that, the arrow should just be flying.
+			// in here, we'll charge to attack
+			// we'll transition into projectile status
+			// and then we'll be done.
+			// set our anim to...!
+			anim.SetTrigger("IsCharging");
+
+			// once we are done charging, we fire our array
+			// animation is charging fires off an arrow in the enemy character item for now
+			// then once that is done, we can do the rest of our animations and go back into idle state.
+			// we do not relinquish our turn until the arrow hits
+		}
+
 		else
 		{
 

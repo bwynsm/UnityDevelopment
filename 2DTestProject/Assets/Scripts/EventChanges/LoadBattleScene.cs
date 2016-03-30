@@ -50,10 +50,9 @@ public class LoadBattleScene : MonoBehaviour
 			anim.SetFloat ("input_y", 0);
 
 			enemy.GetComponent<EnemyCharacter> ().freeze = true;
-		
+			Debug.Log ("FREEZING ENEMY");
 		}
-
-
+			
 
 		currentPlayer.GetComponent<PlayerMovement>().freeze = true;
 		currentPlayer.GetComponent<PlayerHealth> ().healthField = GameObject.Find ("HealthStats").GetComponent<Text>();
@@ -63,6 +62,7 @@ public class LoadBattleScene : MonoBehaviour
 
 		// add in attack sequence to all enemies and give them their damage
 		enemy.AddComponent<EnemyAttack>();
+
 
 		EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
 

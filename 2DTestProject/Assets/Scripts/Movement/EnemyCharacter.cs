@@ -317,4 +317,27 @@ public class EnemyCharacter : CharacterConversable
 	}
 
 
+
+	// shoot the projectile
+	public void shootProjectile()
+	{
+		Debug.Log ("we have shot our projectile. go into animation cooldown round");
+		anim.SetTrigger ("ShotProjectile");
+	}
+
+
+	public void returnToIdle()
+	{
+		Debug.Log ("we are done returning back to idle mode");
+
+		anim.SetTrigger ("HasRetreated");
+
+		// for now we'll relinquish our turn here
+		// tell our battle manager that we are done
+		BattleManager batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
+		batMan.turnFinished = true;
+		batMan.attackDone = " Fired an arrow";
+		Toolbox.Instance.isLocked = false;
+	}
+
 }
