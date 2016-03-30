@@ -86,7 +86,7 @@ public class Commands
 			{
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (10);
 				finalSelection = true;
-				batMan.attackDone = "attacks Grue!";
+				batMan.attackDone = "attacks Paladin!";
 			} 
 			else if (commandItem.Contains ("ice") || commandItem.Contains ("fire") || commandItem.Contains ("water"))
 			{
@@ -100,7 +100,7 @@ public class Commands
 				
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (15);
 				finalSelection = true;
-				batMan.attackDone = "casts " + spellcast + " on Grue!";
+				batMan.attackDone = "casts " + spellcast + " on Paladin!";
 			} 
 			else if (commandItem.Contains ("damage#"))
 			{
@@ -108,7 +108,7 @@ public class Commands
 				string command = (commandItem.Split ('#')) [1];
 				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage(Convert.ToInt16(command));
 				finalSelection = true;
-				batMan.attackDone = "uses a firebomb on Grue!";
+				batMan.attackDone = "uses a firebomb on Paladin!";
 			}
 			else if (commandItem.Contains ("health#"))
 			{

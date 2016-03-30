@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
-	Transform basePosition;
+	Vector2 basePosition;
 	Rigidbody2D rbody;
 
 	bool attacking = false;
@@ -45,11 +45,17 @@ public class EnemyAttack : MonoBehaviour
 			// ... the player is in range.
 			playerInRange = true;
 			attacking = false;
-			bool retreating = true;
 
 			anim.SetTrigger ("IsAttacking");
 
 
+
+			// If the player has health to lose...
+			if (playerHealth.currentHealth > 0)
+			{
+				// ... damage the player.
+				playerHealth.TakeDamage (attackDamage);
+			}
 
 
 
@@ -61,7 +67,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
 
-	void OnTriggerExit (Collider other)
+	void OnTriggerExit2D (Collider2D other)
     {
         // If the exiting collider is the player...
         if(other.gameObject == player)
@@ -77,33 +83,71 @@ public class EnemyAttack : MonoBehaviour
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
-		// if our animation trigger is charging.
 
-        // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-       /* if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
-        {
-			Debug.Log ("we are here attacking");
-            // ... attack.
-			StartCoroutine( Attack ());
-        }
 
-        // If the player has zero or less health...
-        if(playerHealth.currentHealth <= 0)
-        {
-            // ... tell the animator the player is dead.
-            //anim.SetTrigger ("PlayerDead");
-        }*/
 
 		if (attacking && !playerInRange)
 		{
-			Vector2 angle = new Vector2 (player.transform.position.x - rbody.position.x, rbody.position.y - player.transform.position.y);
-			rbody.MovePosition (rbody.position + angle * Time.deltaTime);
-		} 
+			float xPos;
+			float yPos;
+
+			if ((player.transform.position.x - rbody.position.x) > 0)
+				xPos = 1;
+			else if ((player.transform.position.x - rbody.position.x) < 0)
+				xPos = -1;
+			else
+				xPos = 0;
+
+			if ((player.transform.position.y - rbody.position.y) > 0)
+				yPos = 1;
+			else if ((player.transform.position.y - rbody.position.y) < 0)
+				yPos = -1;
+			else
+				yPos = 0;
+
+			Vector2 angle = new Vector2 (xPos, yPos);
+			rbody.MovePosition (rbody.position + (angle * 2.0f * Time.deltaTime));
+		}
+		else if (retreating && !(basePosition.Equals (rbody.position)))
+		{
+			float xPos;
+			float yPos;
+
+			if ((basePosition.x - rbody.position.x) > 0)
+				xPos = 1;
+			else if ((basePosition.x - rbody.position.x) < 0)
+				xPos = -1;
+			else
+				xPos = 0;
+
+			if ((basePosition.y - rbody.position.y) > 0)
+				yPos = 1;
+			else if ((basePosition.y - rbody.position.y) < 0)
+				yPos = -1;
+			else
+				yPos = 0;
+
+
+			Vector2 angle = new Vector2 (xPos, yPos);
+			rbody.MovePosition (rbody.position + (angle * 2.0f * Time.deltaTime));
+
+			if (rbody.position.x <= basePosition.x + 0.2 && rbody.position.x >= basePosition.x - 0.2 && rbody.position.y <= basePosition.y + 0.2 && rbody.position.y >= basePosition.y - 0.2)
+			{
+				rbody.MovePosition (basePosition);
+			}
+		}
 		else if (retreating)
 		{
-			Debug.Log (basePosition.position.x + ", " + basePosition.position.y);
-			Vector2 angle = new Vector2 (basePosition.position.x - rbody.position.x, rbody.position.y - basePosition.position.y);
-			rbody.MovePosition (rbody.position + angle * Time.deltaTime);
+			retreating = false;
+			anim.SetTrigger ("HasRetreated");
+			Flip ();
+
+			// tell our battle manager that we are done
+			BattleManager batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
+			batMan.turnFinished = true;
+			batMan.attackDone = "Charged at the Princess and ATTACKED WITH AN AXE";
+			Toolbox.Instance.isLocked = false;
+
 		}
 
     }
@@ -115,16 +159,13 @@ public class EnemyAttack : MonoBehaviour
         //timer = 0f;
 
 		string attackDone = "";
-		basePosition = this.transform;
 
 
 		// if player name is grue, we'll do this
 		// otherwise, let's do this in a moment
 		if (gameObject.name == "Grue")
 		{
-
-
-			Debug.Log ("enemy is attacking!");
+			
 
 			GameObject spellObject = GameObject.FindGameObjectWithTag ("Spell");
 			spellObject.GetComponent<SpriteRenderer> ().enabled = false;
@@ -153,13 +194,12 @@ public class EnemyAttack : MonoBehaviour
 		} 
 		else
 		{
-			Debug.Log ("PLAYER OBJECT NAME : " + gameObject.name);
-			Debug.Log ("WE ATTACKED!");
 
 			// first we want to gallop in that direction.
 			// then we want to attack
 			// then we want to retreat
-			basePosition = transform;
+			basePosition = new Vector2(transform.position.x, transform.position.y);
+
 
 			// set our anim to...!
 			anim.SetTrigger("IsCharging");
@@ -169,20 +209,6 @@ public class EnemyAttack : MonoBehaviour
 			// once we are done setting our trigger, let's keep moving forward until we hit our
 			// collision zone
 
-
-
-			timer = 10.0f;
-
-
-
-
-
-			// If the player has health to lose...
-			if (playerHealth.currentHealth > 0)
-			{
-				// ... damage the player.
-				playerHealth.TakeDamage (attackDamage);
-			}
 
 			attackDone = "NO REAL ATTACKS DONE! MIND GAMES!";
 
@@ -195,13 +221,21 @@ public class EnemyAttack : MonoBehaviour
 
 	void retreat()
 	{
-		Debug.Log ("we are retreating");
-		// return to base position
-		float step = 1.0f * Time.deltaTime;
-		anim.SetTrigger ("Retreat");
+		anim.SetTrigger ("IsRetreating");
 
+		Flip ();
 		retreating = true;
 
 
 	}
+
+	void Flip()
+	{
+		Vector3 theScale = gameObject.transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
+
+
+
 }

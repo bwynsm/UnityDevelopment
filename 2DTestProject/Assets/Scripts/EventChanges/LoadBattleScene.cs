@@ -68,6 +68,8 @@ public class LoadBattleScene : MonoBehaviour
 
 		// give all players their health bar
 		currentPlayer.GetComponent<PlayerHealth>().healthSlider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
+		Debug.Log ("ENEMY HEALTH? : " + GameObject.Find ("EnemyHealth").GetComponent<Slider> ().name);
+		Debug.Log ("Enemy Health ???? : " + enemyHealth.name);
 		enemyHealth.healthSlider = GameObject.Find ("EnemyHealth").GetComponent<Slider> ();
 		enemyHealth.healthField = GameObject.Find ("EnemyHealthStats").GetComponent<Text>();
 		enemyHealth.healthSlider.maxValue = enemyHealth.startingHealth;

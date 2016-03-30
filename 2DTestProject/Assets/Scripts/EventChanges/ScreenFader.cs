@@ -50,6 +50,16 @@ public class ScreenFader : MonoBehaviour {
 			yield return null;
 	}
 
+	public void FlashWhite()
+	{
+		anim.SetTrigger ("FlashWhite");
+	}
+
+	public void NormalState()
+	{
+		anim.SetTrigger ("DoneFlashingWhite");
+	}
+
 
 	/// <summary>
 	/// Animations complete.
