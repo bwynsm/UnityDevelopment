@@ -33,14 +33,15 @@ public class Toolbox : Singleton<Toolbox> {
 
 	void OnLevelWasLoaded(int level)
 	{
-		// what if we need to destroy a character? let's do that here
-		Debug.Log("woohoo!");
 
-		// make sure our camera follow is set up to our main camera
-		Camera.main.GetComponent<CameraFollow>().target = playerCharacter.transform;
+
+
 
 		if (level != 1)
 		{
+			// make sure our camera follow is set up to our main camera
+			Camera.main.GetComponent<CameraFollow>().target = playerCharacter.transform;
+
 			playerCharacter.transform.position = positionInLastScene;
 			playerCharacter.GetComponent<PlayerMovement>().freeze = false;
 		}

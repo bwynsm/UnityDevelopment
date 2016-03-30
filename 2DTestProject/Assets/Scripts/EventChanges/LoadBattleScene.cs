@@ -28,8 +28,8 @@ public class LoadBattleScene : MonoBehaviour
 		// get our player character
 		GameObject currentPlayer = GameObject.FindGameObjectWithTag("PlayerCharacter");
 		GameObject enemy = GameObject.FindGameObjectWithTag ("CombatZone");
-		currentPlayer.transform.position = new Vector2(259.355f, 455.776f); 
-		enemy.transform.position = new Vector2(260.551f, 455.787f); 
+		currentPlayer.transform.position = new Vector2(1.8f, -3.40f); 
+		enemy.transform.position = new Vector2(5.2f, -3.40f); 
 
 		// let's also make them face one another
 		Animator anim = currentPlayer.GetComponent<Animator>();
@@ -38,27 +38,42 @@ public class LoadBattleScene : MonoBehaviour
 		anim.SetFloat ("input_x", 1f);
 		anim.SetFloat ("input_y", 0);
 
-		enemy.GetComponent<EnemyCharacter>().freeze = false;
-		anim = enemy.GetComponent<Animator> ();
-		anim.SetBool ("isWalking", true);
-		anim.SetFloat ("input_x", -1f);
-		anim.SetFloat ("input_y", 0);
+		Debug.Log ("ENEMY NAME : " + enemy.name);
+
+		if (enemy.GetComponent<EnemyCharacter> ())
+		{
+
+			enemy.GetComponent<EnemyCharacter> ().freeze = false;
+			anim = enemy.GetComponent<Animator> ();
+			anim.SetBool ("isWalking", true);
+			anim.SetFloat ("input_x", -1f);
+			anim.SetFloat ("input_y", 0);
+
+			enemy.GetComponent<EnemyCharacter> ().freeze = true;
+		
+		}
+
+
 
 		currentPlayer.GetComponent<PlayerMovement>().freeze = true;
 		currentPlayer.GetComponent<PlayerHealth> ().healthField = GameObject.Find ("HealthStats").GetComponent<Text>();
-		enemy.GetComponent<EnemyCharacter> ().freeze = true;
-
-		Camera.main.GetComponent<CameraFollow> ().target = currentPlayer.transform;
-		Camera.main.transform.position = currentPlayer.transform.position;
+		//Camera.main.GetComponent<CameraFollow> ().target = currentPlayer.transform;
+		//Camera.main.transform.position = currentPlayer.transform.position;
 
 
 		// add in attack sequence to all enemies and give them their damage
 		enemy.AddComponent<EnemyAttack>();
 
+		EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+
 		// give all players their health bar
 		currentPlayer.GetComponent<PlayerHealth>().healthSlider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
-		enemy.GetComponent<EnemyHealth> ().healthSlider = GameObject.Find ("EnemyHealth").GetComponent<Slider> ();
-		enemy.GetComponent<EnemyHealth> ().healthField = GameObject.Find ("EnemyHealthStats").GetComponent<Text>();
+		enemyHealth.healthSlider = GameObject.Find ("EnemyHealth").GetComponent<Slider> ();
+		enemyHealth.healthField = GameObject.Find ("EnemyHealthStats").GetComponent<Text>();
+		enemyHealth.healthSlider.maxValue = enemyHealth.startingHealth;
+		enemyHealth.healthSlider.minValue = 0;
+		enemyHealth.healthSlider.value = enemyHealth.currentHealth;
+		enemyHealth.healthField.text = "<color=yellow>" + enemyHealth.currentHealth + "</color> / <color=white>" + enemyHealth.startingHealth + "</color>";
 		enemy.tag = "Enemy";
 
 

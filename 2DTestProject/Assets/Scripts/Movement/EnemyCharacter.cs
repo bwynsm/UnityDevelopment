@@ -22,15 +22,16 @@ public class EnemyCharacter : CharacterConversable
 
 	public string gameObjectPlayerName;
 
+
 	public PolygonCollider2D interactionTriggerCollider;
 	public Vector2[] polygon;
 
 	void Awake()
 	{
-		if (FindObjectsOfType(GetType()).Length > 1)
-		{
-			Destroy (gameObject);
-		}
+		//if (FindObjectsOfType(GetType()).Length > 100)
+		//{
+		//	Destroy (gameObject);
+		//}
 	}
 
 	// Use this for initialization
@@ -226,6 +227,7 @@ public class EnemyCharacter : CharacterConversable
 		isMoving = false;
 		//rbody.isKinematic = false;
 
+		Debug.Log ("we're colliding");
 
 		if (col.gameObject.tag == "PlayerCharacter")
 		{

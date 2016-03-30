@@ -29,9 +29,7 @@ public class BattleManager : MonoBehaviour {
 	public Text displayAttackText;
 	public GameObject attackTextPanel;
 
-	private bool displayDone = false;
-	private bool characterChosen = false;
-	public bool waiting = false;
+
 
 
 	// Use this for initialization
@@ -67,8 +65,7 @@ public class BattleManager : MonoBehaviour {
 
 		Toolbox.Instance.isLocked = true;
 
-		Debug.Log ("CURRENT STATE : " + currentState.ToString ());
-
+	
 		switch (currentState)
 		{
 
@@ -88,8 +85,6 @@ public class BattleManager : MonoBehaviour {
 			
 
 			currentState = BATTLE_STATES.DECIDE_ATTACK;
-			characterChosen = true;
-			Debug.Log ("Choosing Character" + currentTurn + " CHARACTER CHOSEN : " + characterChosen);
 			currentState = BATTLE_STATES.DECIDE_ATTACK;
 			// pick the turn person
 			currentPlayerTurn = battleTurnOrder [currentTurn];
@@ -113,7 +108,6 @@ public class BattleManager : MonoBehaviour {
 			// Otherwise, perform an attack if we are a bad guy
 			if (!waitingForTurn)
 			{
-				Debug.Log ("PLAYERS TURN! : " + currentPlayerTurn.playerName);
 				waitingForTurn = true;
 				turnFinished = false;
 
@@ -154,7 +148,6 @@ public class BattleManager : MonoBehaviour {
 		// to be destroyed?
 		case BATTLE_STATES.CHECK_CONDITIONS:
 			currentState = BATTLE_STATES.DECIDE_TURN;
-			characterChosen = false;
 			Toolbox.Instance.isLocked = false;
 			break;
 
@@ -185,7 +178,6 @@ public class BattleManager : MonoBehaviour {
 		currentState = BATTLE_STATES.CHECK_CONDITIONS;
 
 		attackTextPanel.SetActive(false);
-		displayDone = true;
 		Toolbox.Instance.isLocked = false;
 	}
 
