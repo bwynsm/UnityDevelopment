@@ -11,7 +11,6 @@ public class EnemyAttack : MonoBehaviour
     Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
-    EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     //float timer;                                // Timer for counting up to the next attack.
 	Vector2 basePosition;
@@ -19,6 +18,8 @@ public class EnemyAttack : MonoBehaviour
 
 	bool attacking = false;
 	bool retreating = false;
+	bool flashedScreen;
+
 	public bool isActive = false; // set this in the instance creation. That way we can move functions into here
 
 
@@ -31,7 +32,6 @@ public class EnemyAttack : MonoBehaviour
         // Setting up the references.
         player = GameObject.FindGameObjectWithTag ("PlayerCharacter");
         playerHealth = player.GetComponent <PlayerHealth> ();
-        enemyHealth = GetComponent<EnemyHealth>();
 		playerInRange = false;
 		anim = this.GetComponent<Animator> ();
 
@@ -46,13 +46,19 @@ public class EnemyAttack : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter2D (Collider2D other)
     {
+		Debug.Log ("TRIGGERED " + other.gameObject.name);
+		
         // If the entering collider is the player...
 		if (other.gameObject == player && attacking == true)
 		{
+			Debug.Log ("attacking" + attacking);
+			
+			attacking = false;
 			Debug.Log ("we are in the trigger phase and are attacking");
 			// ... the player is in range.
 			playerInRange = true;
-			attacking = false;
+
+
 
 			anim.SetTrigger ("IsAttacking");
 
@@ -80,6 +86,7 @@ public class EnemyAttack : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerExit2D (Collider2D other)
     {
+		Debug.Log ("we're exiting");
         // If the exiting collider is the player...
         if(other.gameObject == player)
         {
@@ -173,6 +180,7 @@ public class EnemyAttack : MonoBehaviour
 		else if (retreating && isActive)
 		{
 			retreating = false;
+			flashedScreen = false;
 			anim.SetTrigger ("HasRetreated");
 			Flip ();
 
@@ -285,6 +293,7 @@ public class EnemyAttack : MonoBehaviour
 	/// </summary>
 	void retreat()
 	{
+		Debug.Log ("retreating..... from animation..");
 		anim.SetTrigger ("IsRetreating");
 
 		Flip ();
@@ -323,6 +332,10 @@ public class EnemyAttack : MonoBehaviour
 		ProjectileAnimator sa = GameObject.Find("Arrow").GetComponent<ProjectileAnimator>();
 		yield return StartCoroutine(sa.FireProjectile ());
 
+		// okay let's kill it
+		ShakeCamera();
+		screenFlash ();
+
 
 		GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerHealth> ().TakeDamage (15);
 
@@ -337,6 +350,16 @@ public class EnemyAttack : MonoBehaviour
 	}
 
 
+	public void ShakeCamera()
+	{
+		Debug.Log ("we are here in shaking camera");
+		// set a screen shake
+		Camera.main.GetComponent<CameraShake>().Shake();
+
+		// let's also make it white!
+
+	}
+
 
 	/// <summary>
 	/// Return to battle idle position
@@ -349,5 +372,17 @@ public class EnemyAttack : MonoBehaviour
 
 	}
 
+
+	public void screenFlash()
+	{
+		if (!flashedScreen)
+		{
+			flashedScreen = true;
+			Debug.Log ("we are here in flashing white");
+			// if we are in here, an object collided
+			ScreenFader sf = GameObject.FindGameObjectWithTag ("Fader").GetComponent<ScreenFader> ();
+			sf.FlashWhite ();
+		}
+	}
 
 }

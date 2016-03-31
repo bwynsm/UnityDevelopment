@@ -215,7 +215,7 @@ public class Commands
 	/// <param name="playerToAlter">Player to alter.</param>
 	private void changeBattleDialogueID(string command, string playerToAlter)
 	{
-		Debug.Log ("COMMAND : " + command);
+		Debug.Log ("COMMAND : " + command + " Player To Alter : " + playerToAlter);
 		// change conversation id to that?
 		// get player by tag name
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();

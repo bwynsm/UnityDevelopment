@@ -137,9 +137,6 @@ public class BattleMenu : MonoBehaviour
 
 		// what if we could send in the options into a menu creator, and just
 		// tell it that we want to get our particular prefab
-		Debug.Log("in show battle menu");
-
-
 		// if we don't have a menu right now.... add one
 		if (optionsMenu == null && battlePanel.GetComponent<Menu> () == null) 
 		{

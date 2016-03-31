@@ -295,15 +295,7 @@ public class EnemyCharacter : CharacterConversable
 	}
 
 
-	public void ShakeCamera()
-	{
-		Debug.Log ("we are here in shaking camera");
-		// set a screen shake
-		Camera.main.GetComponent<CameraShake>().Shake();
 
-		// let's also make it white!
-
-	}
 
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -314,13 +306,7 @@ public class EnemyCharacter : CharacterConversable
 	/// it will be turned off until battle engages
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void screenFlash()
-	{
-		Debug.Log ("we are here in flashing white");
-		// if we are in here, an object collided
-		ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
-		sf.FlashWhite ();
-	}
+
 
 
 

@@ -189,6 +189,10 @@ public class Menu : MonoBehaviour
 	}
 
 
+	/// <summary>
+	/// Renames the options without having to delete them all and start over
+	/// </summary>
+	/// <param name="options">Options.</param>
 	public void renameOptions(List<Options> options)
 	{
 		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
@@ -224,13 +228,9 @@ public class Menu : MonoBehaviour
 
 			}
 
-
-
-
 		}
 		else 
 		{
-			Debug.Log ("we are here in the loading options section function");
 			loadOptions (options);
 		}
 
@@ -238,6 +238,11 @@ public class Menu : MonoBehaviour
 	}
 
 
+
+	/// <summary>
+	/// Toggles the options display so we can hide this when it is the enemy's turn
+	/// </summary>
+	/// <param name="isEnabled">If set to <c>true</c> is enabled.</param>
 	public void toggleOptionsDisplay(bool isEnabled)
 	{
 		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
@@ -248,18 +253,21 @@ public class Menu : MonoBehaviour
 
 
 
+			// walk through each of the buttons and either hide or display
+			// the whole set based parameter input
 			for (int i = 0; i < panelButtons.Length; i++)
 			{
-				if (panelButtons [i].enabled)
-				{
-					panelButtons [i].enabled = isEnabled;
-				}
+				panelButtons [i].enabled = isEnabled;
+			
 
+				// if we are activating, set colors and alpha
 				if (isEnabled)
 				{
 					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (255);
 					panelButtons [i].GetComponentInChildren<Text> ().color = Color.red;
 				}
+
+				// otherwise, no alpha and clear button text
 				else
 				{
 					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (0);
@@ -270,9 +278,13 @@ public class Menu : MonoBehaviour
 
 		}
 	}
+		
 
-	// yields to a coroutine
 
+	/// <summary>
+	/// Loads the options for the menu
+	/// </summary>
+	/// <param name="options">Options.</param>
 	public void loadOptions(List<Options> options)
 	{
 		if (menuOptions == null || menuOptions.Count == 0)
@@ -281,8 +293,6 @@ public class Menu : MonoBehaviour
 		}
 		isActive = true;
 
-
-		//goButton.transform.localScale = new Vector3(1, 1, 1);
 
 
 
@@ -321,7 +331,10 @@ public class Menu : MonoBehaviour
 
 
 
-
+	/// <summary>
+	/// When one of our menu buttons is clicked, we go here to deal with the command issued
+	/// </summary>
+	/// <param name="buttonCommand">Button command.</param>
 	void ButtonClicked(Options buttonCommand)
 	{
 		isActive = false;

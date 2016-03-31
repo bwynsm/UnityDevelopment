@@ -220,16 +220,22 @@ public class TextBoxManager : MonoBehaviour
 		speakerPanel.SetActive (false);
 		theText.text = "";
 		isActive = false;
-		player.freeze = false;
 
-		// hell, if this does not equal the player, make them stop too
-		if (player.name != "Player") 
+		// if we have a player
+		if (player != null)
 		{
-			PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
 
-			mainPlayer.freeze = false;
-			mainPlayer.isTalking = false;
+			player.freeze = false;
 
+			// hell, if this does not equal the player, make them stop too
+			if (player.name != "Player")
+			{
+				PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+
+				mainPlayer.freeze = false;
+				mainPlayer.isTalking = false;
+
+			}
 		}
 	}
 		
@@ -240,7 +246,11 @@ public class TextBoxManager : MonoBehaviour
 		cleanOutOptions ();
 		optionsBox.SetActive (false);
 		isActive = false;
-		player.freeze = false;
+
+		if (player != null)
+		{
+			player.freeze = false;
+		}
 		speakerPanel.SetActive (false);
 	}
 

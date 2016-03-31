@@ -96,6 +96,10 @@ public class LoadBattleScene : MonoBehaviour
 		// print out sort order
 		foreach (var character in turnOrder)
 		{
+			// set every character to 
+			character.GetComponent<Animator>().SetBool("IsFighting", true);
+
+
 			Debug.Log ("CHARACTER NAME : " + character.name + " " + character.playerName + " AND THEIR SPEED : " + character.speed);
 		}
 	}

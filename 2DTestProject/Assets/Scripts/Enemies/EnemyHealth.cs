@@ -93,8 +93,12 @@ public class EnemyHealth : MonoBehaviour
 		// Set the death flag so this function won't be called again.
 		isDead = true;
 
+		// for now, win condition
 		Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
 		GameObject.Find ("BattlePanel").SetActive (false);
+
+		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
+		batMan.currentState = BattleManager.BATTLE_STATES.WIN;
 
 		// Tell the animator that the player is dead.
 		//anim.SetTrigger ("Die");
@@ -106,14 +110,7 @@ public class EnemyHealth : MonoBehaviour
 		// Turn off the movement and shooting scripts.
 		//playerMovement.enabled = false;
 
-		Toolbox toolboxInstance = Toolbox.Instance;
-		toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
 
-		toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
-		// spawn at least location?
-		// what if the grue is still there?
-		// we'll get this in a moment.
-		SceneManager.LoadScene("OpeningScene");
 
 
 	}       

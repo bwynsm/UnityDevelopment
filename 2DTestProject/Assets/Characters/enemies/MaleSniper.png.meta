@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ad33017a273e49f4bb8bee587a4f8967
-timeCreated: 1459360770
+timeCreated: 1459402306
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -33,6 +33,7 @@ TextureImporter:
     21300052: MaleSniper_26
     21300054: MaleSniper_27
     21300056: MaleSniper_28
+    21300058: MaleSniper_29
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -652,6 +653,26 @@ TextureImporter:
         - {x: 21.5, y: -18.5}
         - {x: 21.5, y: 20.5}
         - {x: 4.5, y: 30.5}
+    - name: MaleSniper_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 164
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 33}
+        - {x: -17.5, y: 25}
+        - {x: -17.5, y: -19}
+        - {x: -15.5, y: -27}
+        - {x: -13.5, y: -29}
+        - {x: 10.5, y: -29}
+        - {x: 16.5, y: -21}
+        - {x: 16.5, y: 30}
+        - {x: 15.5, y: 33}
     outline: []
   spritePackingTag: 
   userData: 

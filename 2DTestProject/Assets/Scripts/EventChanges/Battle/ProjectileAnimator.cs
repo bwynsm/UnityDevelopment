@@ -74,7 +74,8 @@ public class ProjectileAnimator : MonoBehaviour {
 		// otherwise, if we are done shooting our arrow - it has landed, stop the animation and call it quits
 		else if (isShootingArrow)
 		{
-			StopProjectile ();
+			isShootingArrow = false;
+			StartCoroutine(StopProjectile ());
 		}
 	}
 
@@ -132,9 +133,11 @@ public class ProjectileAnimator : MonoBehaviour {
 	/// Stops the animation and calls it quits. We are done shooting.
 	/// Turn off our sprite and go back to no animation
 	/// </summary>
-	public void StopProjectile()
+	public IEnumerator StopProjectile()
 	{
 		isShootingArrow = false;
+
+		yield return new WaitForSeconds (1.0f);
 		anim.SetBool ("IsCastingSpell", false);
 		GameObject.Find ("Arrow").GetComponent<SpriteRenderer>().enabled = false;
 	}

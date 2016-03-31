@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class BattleManager : MonoBehaviour {
 	};
 
 
-	BATTLE_STATES currentState;
+	public BATTLE_STATES currentState;
 
 	// classes we use
 	LoadBattleScene sceneInit;
@@ -71,7 +72,7 @@ public class BattleManager : MonoBehaviour {
 
 		// lock our toolbox
 		Toolbox.Instance.isLocked = true;
-
+		Toolbox toolboxInstance = Toolbox.Instance;
 	
 		// switch over our battle state
 		switch (currentState)
@@ -161,10 +162,31 @@ public class BattleManager : MonoBehaviour {
 
 		// if the player side has won, hooray! victory conditions and experience
 		case BATTLE_STATES.WIN:
+			changeCharacterStates ();
+
+			// load previous scene
+			toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
+			toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
+
+
+
 			break;
 
 		// if the good side has lost, sad day. Penalties and teleport
 		case BATTLE_STATES.LOSE:
+			changeCharacterStates ();
+
+
+			// enemy defeated
+			toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
+
+
+			// spawn at least location?
+			// what if the grue is still there?
+			// we'll get this in a moment.
+			SceneManager.LoadScene("OpeningScene");
+
+
 			break;
 
 		// if we hit a non-existent case
@@ -175,6 +197,20 @@ public class BattleManager : MonoBehaviour {
 
 
 	}
+
+
+	private void changeCharacterStates()
+	{
+		Debug.Log ("Changing character states");
+
+		// print out sort order
+		foreach (var character in battleTurnOrder)
+		{
+			// set every character to 
+			character.GetComponent<Animator>().SetBool("IsFighting", false);
+		}
+	}
+
 
 	private IEnumerator displayAttack()
 	{
