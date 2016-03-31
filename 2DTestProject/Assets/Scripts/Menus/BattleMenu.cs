@@ -20,7 +20,13 @@ public class BattleMenu : MonoBehaviour
 	public bool doneWaitingForClear = false;
 
 	public bool isMyTurn = false;
+	private bool toggled = false;
 
+
+	/// <summary>
+	/// Start this instance.
+	/// Gets our set of attacks for character
+	/// </summary>
 	void Start()
 	{
 		// let's only do this once
@@ -34,11 +40,14 @@ public class BattleMenu : MonoBehaviour
 		}
 	}
 
+
+	/// <summary>
+	/// If it is our turn, updates the battle panel
+	/// </summary>
 	void Update()
 	{
 		if (isMyTurn)
 		{
-			battlePanel.SetActive (true);
 
 			// what we'll do in here is keep track of some variables to prevent us from attacking too often
 			// so once we make a selection, we'll clean things out
@@ -48,10 +57,11 @@ public class BattleMenu : MonoBehaviour
 				// then we do nothing.
 				if (!doneWaitingForClear)
 				{
-					
 					cleanOutOptions ();
-
 				}
+
+				// if we are done waiting for our clear, and we have a battle panel
+				// then we're going to update our items and not do it more than once
 				else if (doneWaitingForClear && battlePanel.activeInHierarchy)
 				{
 					doneWaitingForClear = false;
@@ -60,27 +70,40 @@ public class BattleMenu : MonoBehaviour
 					getBoxes ();
 				}
 			}
+
+			// if our battle panel is null, destroy our object
 			else if (battlePanel == null)
 			{
 				Destroy (this);
 			}
 		}
+
+		// destroy this if it isn't our turn and we ahve no battle panel
 		else if (!isMyTurn && battlePanel == null)
 		{
 			Destroy (this);
 		}
-		else
+		else if (!isMyTurn && optionsMenu != null && !toggled)
 		{
-			battlePanel.SetActive (false);
+			toggled = true;
+
+			// hide our options buttons
+			optionsMenu.toggleOptionsDisplay(false);
 		}
 
 
 	}
 		
-
+	/// <summary>
+	/// Gets the boxes for selection of attacks
+	/// </summary>
 	public void getBoxes()
 	{
-		
+
+
+
+		// if our conversation has another item, get it
+		// this is if we branched (like went into items or spells etc)
 		if (battleOptionsManager.hasNextItem ()) {
 			battleOptionsManager.incrementIndex ();
 			Speech nextText = battleOptionsManager.getItem ();
@@ -88,10 +111,9 @@ public class BattleMenu : MonoBehaviour
 			// loop over 		options and display
 			showBattleMenu (nextText.options);
 
-
-
-
 		} 
+
+		// otherwise, show our current item
 		else
 		{
 			Speech nextText = battleOptionsManager.getItem ();
@@ -104,6 +126,11 @@ public class BattleMenu : MonoBehaviour
 
 	}
 
+
+	/// <summary>
+	/// Shows the battle menu.
+	/// </summary>
+	/// <param name="options">Options.</param>
 	public void showBattleMenu(List<Options> options)
 	{
 
@@ -112,10 +139,11 @@ public class BattleMenu : MonoBehaviour
 		// tell it that we want to get our particular prefab
 		Debug.Log("in show battle menu");
 
+
+		// if we don't have a menu right now.... add one
 		if (optionsMenu == null && battlePanel.GetComponent<Menu> () == null) 
 		{
 			battlePanel.AddComponent<Menu> ();
-
 		} 
 
 			
@@ -128,6 +156,9 @@ public class BattleMenu : MonoBehaviour
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "BattleMenu";
 
+		// hide our options buttons
+		optionsMenu.toggleOptionsDisplay(true);
+		toggled = false;
 
 
 		//optionsMenu.transform.localScale = new Vector3(1, 1, 1);
@@ -149,6 +180,7 @@ public class BattleMenu : MonoBehaviour
 		optionsMenu = null;
 
 			
+		// for each of our child options, clean them out
 		foreach (var waitingObject in battlePanel.GetComponents<WaitingForTime>()) {
 			Destroy (waitingObject);
 		}

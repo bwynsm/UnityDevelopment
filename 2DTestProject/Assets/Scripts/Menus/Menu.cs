@@ -237,6 +237,40 @@ public class Menu : MonoBehaviour
 
 	}
 
+
+	public void toggleOptionsDisplay(bool isEnabled)
+	{
+		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
+		{
+
+			// get buttons from children
+			Button[] panelButtons = optionsBox.GetComponentsInChildren<Button>(true);
+
+
+
+			for (int i = 0; i < panelButtons.Length; i++)
+			{
+				if (panelButtons [i].enabled)
+				{
+					panelButtons [i].enabled = isEnabled;
+				}
+
+				if (isEnabled)
+				{
+					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (255);
+					panelButtons [i].GetComponentInChildren<Text> ().color = Color.red;
+				}
+				else
+				{
+					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (0);
+					panelButtons [i].GetComponentInChildren<Text> ().color = Color.clear;
+				}
+
+			}
+
+		}
+	}
+
 	// yields to a coroutine
 
 	public void loadOptions(List<Options> options)
