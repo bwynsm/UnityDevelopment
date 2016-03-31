@@ -56,16 +56,24 @@ public class BattleManager : MonoBehaviour {
 		currentState = BATTLE_STATES.START;
 		sceneInit = GameObject.Find ("LoadScene").GetComponent<LoadBattleScene> ();
 	}
-	
+
+
+	/// <summary>
+	/// Update this instance. Controls our state machine. Uses ToolBox
+	/// </summary>
 	// Update is called once per frame
 	void Update () 
 	{
+
+		// if we are locked, can't go forward
 		if (Toolbox.Instance.isLocked)
 			return;
 
+		// lock our toolbox
 		Toolbox.Instance.isLocked = true;
 
 	
+		// switch over our battle state
 		switch (currentState)
 		{
 

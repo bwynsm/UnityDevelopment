@@ -68,11 +68,8 @@ public class Conversation
 	public void changeDialogue(string newConversationID)
 	{
 		conversationItem.setConversationID (newConversationID);
-
-		Debug.Log ("changing dialogue in conversation" + newConversationID);
 		dialogue = conversationItem.getDialogue (newConversationID);
 		index = -1;
-		Debug.Log ("Failing Index here?");
 	}
 
 	/**

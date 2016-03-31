@@ -26,13 +26,8 @@ public class EnemyCharacter : CharacterConversable
 	public PolygonCollider2D interactionTriggerCollider;
 	public Vector2[] polygon;
 
-	void Awake()
-	{
-		//if (FindObjectsOfType(GetType()).Length > 100)
-		//{
-		//	Destroy (gameObject);
-		//}
-	}
+
+
 
 	// Use this for initialization
 	void Start () 
@@ -48,8 +43,8 @@ public class EnemyCharacter : CharacterConversable
 		interactionTriggerCollider.pathCount = 1;
 
 
-		// create a polygon if we don't have one
-		if (polygon == null)
+		// create a polygon if we don't have one for collision triggering
+		/*if (polygon == null)
 		{
 			polygon = new Vector2[] {
 				new Vector2 (0.00f, 1.5f),
@@ -60,7 +55,7 @@ public class EnemyCharacter : CharacterConversable
 		}
 
 		interactionTriggerCollider.points = polygon;
-		interactionTriggerCollider.isTrigger = true;
+		interactionTriggerCollider.isTrigger = true;*/
 	}
 
 
@@ -222,12 +217,15 @@ public class EnemyCharacter : CharacterConversable
 	/// <param name="col">Col.</param>
 	void OnCollisionEnter2D(Collision2D col)
 	{
+		if (anim == null)
+			return;
+		
 		// we collided with something. set walking to false
 		anim.SetBool("isWalking", false);
 		isMoving = false;
 		//rbody.isKinematic = false;
 
-		Debug.Log ("we're colliding");
+		Debug.Log ("we're colliding" + col.gameObject.name);
 
 		if (col.gameObject.tag == "PlayerCharacter")
 		{
@@ -308,6 +306,14 @@ public class EnemyCharacter : CharacterConversable
 	}
 
 
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// EVERYTHING BELOW HERE GETS MOVED
+	/// - screenflash to screenflash object? this isn't a character thing
+	/// - shootProjectile - let's move that to something enemyattack works with
+	/// - I think we'll have enemy attack always attached to a unit that can attack, but
+	/// it will be turned off until battle engages
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public void screenFlash()
 	{
 		Debug.Log ("we are here in flashing white");
@@ -318,26 +324,12 @@ public class EnemyCharacter : CharacterConversable
 
 
 
-	// shoot the projectile
-	public void shootProjectile()
+	// flipping a battle animation is more of a character thing.
+	void Flip()
 	{
-		Debug.Log ("we have shot our projectile. go into animation cooldown round");
-		anim.SetTrigger ("ShotProjectile");
-	}
-
-
-	public void returnToIdle()
-	{
-		Debug.Log ("we are done returning back to idle mode");
-
-		anim.SetTrigger ("HasRetreated");
-
-		// for now we'll relinquish our turn here
-		// tell our battle manager that we are done
-		BattleManager batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
-		batMan.turnFinished = true;
-		batMan.attackDone = " Fired an arrow";
-		Toolbox.Instance.isLocked = false;
+		Vector3 theScale = gameObject.transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 }

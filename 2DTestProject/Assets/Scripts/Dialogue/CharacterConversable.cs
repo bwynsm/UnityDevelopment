@@ -37,6 +37,13 @@ public class CharacterConversable : MonoBehaviour, IComparable
 	}
 
 
+
+	/// <summary>
+	/// Compares the current instance with another object of the same type and returns an integer that indicates whether
+	/// the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+	/// </summary>
+	/// <returns>The to.</returns>
+	/// <param name="obj">Object.</param>
 	public int CompareTo(object obj)
 	{
 		if (obj == null)
@@ -45,9 +52,9 @@ public class CharacterConversable : MonoBehaviour, IComparable
 		CharacterConversable temp = (CharacterConversable)obj;
 
 		if (this.speed < temp.speed)
-			return -1;
-		else if (this.speed > temp.speed)
 			return 1;
+		else if (this.speed > temp.speed)
+			return -1;
 		else
 			return 0;
 		

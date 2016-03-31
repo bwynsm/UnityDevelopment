@@ -82,6 +82,7 @@ C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\Unit
 C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.dll
 C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.pdb
+C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\UnityEditor.dll
@@ -100,6 +101,5 @@ C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\UnityEditor.xml
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Temp\bin\Debug\UnityEngine.Networking.xml
-C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.dll
 C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\obj\Debug\Assembly-CSharp.pdb

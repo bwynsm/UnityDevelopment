@@ -19,6 +19,9 @@ public class Toolbox : Singleton<Toolbox> {
 
 	public bool isLocked = false;
  
+	/// <summary>
+	/// Awake this instance.
+	/// </summary>
 	void Awake () 
 	{
 		// Your initialization code here
@@ -26,16 +29,21 @@ public class Toolbox : Singleton<Toolbox> {
 		playerCharacter = GameObject.FindGameObjectWithTag("PlayerCharacter");
 	}
  
+
 	// (optional) allow runtime registration of global objects
 	static public T RegisterComponent<T> () where T: Component {
 		return Instance.GetOrAddComponent<T>();
 	}
 
+
+
+	/// <summary>
+	/// Raises the level was loaded event. If a level was loaded, see if we need to
+	/// destroy any units or if we need to freeze or move units or camera objects
+	/// </summary>
+	/// <param name="level">Level.</param>
 	void OnLevelWasLoaded(int level)
 	{
-
-
-
 
 		if (level != 1)
 		{
@@ -44,8 +52,11 @@ public class Toolbox : Singleton<Toolbox> {
 
 			playerCharacter.transform.position = positionInLastScene;
 			playerCharacter.GetComponent<PlayerMovement>().freeze = false;
+
 		}
 
+		// if an enemy was defeated, destroy it from the scene.
+		// we'll have to make this persist later.
 		if (enemyDefeated != null)
 		{
 			Destroy (enemyDefeated);
