@@ -95,7 +95,7 @@ public class Commands
 				else if (playerAttacking.GetComponent<PlayerAttack> () == null)
 					Debug.Log ("PLAYERATTACK is null");
 
-				playerAttacking.GetComponent<PlayerAttack> ().Attack ();
+				playerAttacking.GetComponent<PlayerAttack> ().startAttacking = true;
 				finalSelection = true;
 			} 
 
@@ -138,7 +138,6 @@ public class Commands
 		{
 			playerAttacking.GetComponent<BattleMenu> ().isMyTurn = false;
 			batMan.turnFinished = true;
-			//Toolbox.Instance.isLocked = false;
 		}
 
 

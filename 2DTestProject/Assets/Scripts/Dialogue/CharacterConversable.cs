@@ -60,4 +60,6 @@ public class CharacterConversable : MonoBehaviour, IComparable
 		
 	}
 
+
+
 }

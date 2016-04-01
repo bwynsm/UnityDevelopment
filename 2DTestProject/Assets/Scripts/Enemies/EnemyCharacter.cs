@@ -228,7 +228,6 @@ public class EnemyCharacter : MonoBehaviour
 		isMoving = false;
 		//rbody.isKinematic = false;
 
-		Debug.Log ("we're colliding" + col.gameObject.name);
 
 		if (col.gameObject.tag == "PlayerCharacter")
 		{

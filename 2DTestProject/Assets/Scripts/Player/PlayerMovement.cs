@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Player movement.
@@ -143,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		thisPlayerUnit.freeze = true;
 	}
+
 
 
 

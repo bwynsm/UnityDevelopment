@@ -59,7 +59,6 @@ public class NPC_Movement : CharacterConversable
 		}
 			
 
-		Debug.Log ("POLYGON POINTS : " + interactionTriggerCollider.points.Length);
 		interactionTriggerCollider.points = polygon;
 		interactionTriggerCollider.isTrigger = true;
 	}

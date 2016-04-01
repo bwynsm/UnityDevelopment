@@ -1,22 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\Commands.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EventChanges\Battle\LoadBattleScene.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menus\Commands.cs" Line="11" Column="22" />
-      <File FileName="Assets\Scripts\Player\PlayerAttack.cs" Line="318" Column="38" />
-      <File FileName="Assets\Scripts\Player\PlayerHealth.cs" Line="6" Column="42" />
-      <File FileName="Assets\Scripts\Enemies\EnemyAttack.cs" Line="341" Column="26" />
-      <File FileName="Assets\Scripts\Menus\BattleMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EventChanges\Battle\LoadBattleScene.cs" Line="47" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyCharacter.cs" Line="246" Column="1" />
-      <File FileName="Assets\Text\BattleOptions.xml" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menus\Menu.cs" Line="365" Column="1" />
+      <File FileName="Assets\Scripts\Menus\Commands.cs" Line="98" Column="72" />
+      <File FileName="Assets\Scripts\EventChanges\Battle\LoadBattleScene.cs" Line="52" Column="3" />
+      <File FileName="Assets\Scripts\EventChanges\Toolbox.cs" Line="55" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerUnit.cs" Line="36" Column="2" />
+      <File FileName="Assets\Scripts\Dialogue\CharacterConversable.cs" Line="3" Column="14" />
+      <File FileName="Assets\Scripts\Enemies\EnemyCharacter.cs" Line="246" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Menus\Menu.cs" line="205" column="1" />
       <Breakpoint file="C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Menus\Menu.cs" line="204" column="50" />
+      <Breakpoint file="C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Player\PlayerAttack.cs" line="109" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

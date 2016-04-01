@@ -31,6 +31,8 @@ public class PlayerUnit : CharacterConversable
 
 		isPlayerCharacter = true;
 	}
-	
+
+
+
 
 }

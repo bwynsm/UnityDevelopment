@@ -48,11 +48,25 @@ public class Toolbox : Singleton<Toolbox> {
 		if (level != 1)
 		{
 			// make sure our camera follow is set up to our main camera
-			Camera.main.GetComponent<CameraFollow>().target = playerCharacter.transform;
+			Camera.main.GetComponent<CameraFollow> ().target = playerCharacter.transform;
 
 			playerCharacter.transform.position = positionInLastScene;
-			playerCharacter.GetComponent<PlayerUnit>().freeze = false;
+			playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
 
+
+		} 
+		else
+		{
+			// for each enemy and player type tag?
+			foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+			{
+				enemy.GetComponent<Animator> ().SetBool ("IsFighting", true);
+			}
+
+			foreach (GameObject player in GameObject.FindGameObjectsWithTag("PlayerCharacter"))
+			{
+				player.GetComponent<Animator> ().SetBool ("IsFighting", true);
+			}
 		}
 
 		// if an enemy was defeated, destroy it from the scene.

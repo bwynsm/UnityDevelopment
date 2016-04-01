@@ -46,7 +46,6 @@ public class EnemyAttack : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter2D (Collider2D other)
     {
-		Debug.Log ("TRIGGERED " + other.gameObject.name);
 		
         // If the entering collider is the player...
 		if (other.gameObject == target && attacking == true)
@@ -86,7 +85,6 @@ public class EnemyAttack : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerExit2D (Collider2D other)
     {
-		Debug.Log ("we're exiting");
         // If the exiting collider is the player...
 		if(other.gameObject == target)
         {

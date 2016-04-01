@@ -14,10 +14,12 @@ public class PlayerAttack : MonoBehaviour
 	bool targetInRange;                         // Whether player is within the trigger collider and can be attacked.
 	//float timer;                                // Timer for counting up to the next attack.
 	Vector2 basePosition;
-	Rigidbody2D rbody;
+	//Rigidbody2D rbody;
 
+
+	public bool startAttacking = false; // this could be some sort of command..
 	bool attacking = false;
-	bool retreating = false;
+	//bool retreating = false;
 	bool flashedScreen;
 
 	public bool isActive = false; // set this in the instance creation. That way we can move functions into here
@@ -33,7 +35,20 @@ public class PlayerAttack : MonoBehaviour
 		targetInRange = false;
 		anim = this.GetComponent<Animator> ();
 
-		rbody = GetComponent<Rigidbody2D> ();
+		//rbody = GetComponent<Rigidbody2D> ();
+	}
+
+
+	/// <summary>
+	/// Update this instance.
+	/// </summary>
+	void Update ()
+	{
+		if (!attacking && startAttacking)
+		{
+			startAttacking = false;
+			StartCoroutine( Attack ());
+		}
 	}
 
 
@@ -44,7 +59,6 @@ public class PlayerAttack : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		Debug.Log ("TRIGGERED " + other.gameObject.name);
 
 		// If the entering collider is the player...
 		if (other.gameObject == target && attacking == true)
@@ -84,7 +98,6 @@ public class PlayerAttack : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerExit2D (Collider2D other)
 	{
-		Debug.Log ("we're exiting");
 		// If the exiting collider is the player...
 		if(other.gameObject == target)
 		{
@@ -206,17 +219,17 @@ public class PlayerAttack : MonoBehaviour
 		Debug.Log ("retreating..... from animation..");
 		anim.SetTrigger ("IsRetreating");
 
-		Flip ();
-		retreating = true;
+		// while that's not done.
 
-
+		//retreating = true;
+		Flip();
 	}
 
 
 	/// <summary>
 	/// Flip this sprite in the x axis
 	/// </summary>
-	void Flip()
+	public void Flip()
 	{
 		Vector3 theScale = gameObject.transform.localScale;
 		theScale.x *= -1;
@@ -227,7 +240,9 @@ public class PlayerAttack : MonoBehaviour
 
 
 
-
+	/// <summary>
+	/// Shakes the camera.
+	/// </summary>
 	public void ShakeCamera()
 	{
 		Debug.Log ("we are here in shaking camera");
@@ -251,6 +266,9 @@ public class PlayerAttack : MonoBehaviour
 	}
 
 
+	/// <summary>
+	/// Flashes the screen to make attacks more dramatic
+	/// </summary>
 	public void screenFlash()
 	{
 		if (!flashedScreen)
@@ -285,6 +303,8 @@ public class PlayerAttack : MonoBehaviour
 			// teleport home
 			Debug.Log("teleporting home...");
 			this.gameObject.transform.position = basePosition;
+
+			anim.SetTrigger ("HasRetreated");
 		}
 
 		// teleporting to attack
@@ -315,7 +335,8 @@ public class PlayerAttack : MonoBehaviour
 
 		// Reset the timer.
 		//timer = 0f;
-		Debug.Log("we are attacking in here");
+		Debug.Log("we are attacking in here : " + basePosition + " " + targetInRange + " " + attacking);
+
 
 		anim.SetTrigger ("IsCharging");
 
@@ -447,6 +468,11 @@ public class PlayerAttack : MonoBehaviour
 		Toolbox.Instance.isLocked = false;
 	}
 
+
+
+	/// <summary>
+	/// Run when the animation is complete to throw a boolean to indicate our finishing
+	/// </summary>
 	public void AnimationComplete()
 	{
 		targetInRange = true;
