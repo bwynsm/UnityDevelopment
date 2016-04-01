@@ -9,8 +9,8 @@ public class EnemyAttack : MonoBehaviour
 
 
     Animator anim;                              // Reference to the animator component.
-    GameObject player;                          // Reference to the player GameObject.
-    PlayerHealth playerHealth;                  // Reference to the player's health.
+    GameObject target;                          // Reference to the player GameObject.
+    PlayerUnit targetUnit;                  	// Reference to the player's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     //float timer;                                // Timer for counting up to the next attack.
 	Vector2 basePosition;
@@ -30,8 +30,8 @@ public class EnemyAttack : MonoBehaviour
     void Awake ()
     {
         // Setting up the references.
-        player = GameObject.FindGameObjectWithTag ("PlayerCharacter");
-        playerHealth = player.GetComponent <PlayerHealth> ();
+        target = GameObject.FindGameObjectWithTag ("PlayerCharacter");
+		targetUnit = target.GetComponent <PlayerUnit> ();
 		playerInRange = false;
 		anim = this.GetComponent<Animator> ();
 
@@ -49,7 +49,7 @@ public class EnemyAttack : MonoBehaviour
 		Debug.Log ("TRIGGERED " + other.gameObject.name);
 		
         // If the entering collider is the player...
-		if (other.gameObject == player && attacking == true)
+		if (other.gameObject == target && attacking == true)
 		{
 			Debug.Log ("attacking" + attacking);
 			
@@ -65,10 +65,10 @@ public class EnemyAttack : MonoBehaviour
 
 
 			// If the player has health to lose...
-			if (playerHealth.currentHealth > 0)
+			if (targetUnit.playerHealth.currentHealth > 0)
 			{
 				// ... damage the player.
-				playerHealth.TakeDamage (attackDamage);
+				targetUnit.playerHealth.TakeDamage (attackDamage);
 			}
 
 
@@ -88,7 +88,7 @@ public class EnemyAttack : MonoBehaviour
     {
 		Debug.Log ("we're exiting");
         // If the exiting collider is the player...
-        if(other.gameObject == player)
+		if(other.gameObject == target)
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -118,16 +118,16 @@ public class EnemyAttack : MonoBehaviour
 
 
 			// get our movement vector towards the player
-			if ((player.transform.position.x - rbody.position.x) > 0)
+			if ((target.transform.position.x - rbody.position.x) > 0)
 				xPos = 1;
-			else if ((player.transform.position.x - rbody.position.x) < 0)
+			else if ((target.transform.position.x - rbody.position.x) < 0)
 				xPos = -1;
 			else
 				xPos = 0;
 
-			if ((player.transform.position.y - rbody.position.y) > 0)
+			if ((target.transform.position.y - rbody.position.y) > 0)
 				yPos = 1;
-			else if ((player.transform.position.y - rbody.position.y) < 0)
+			else if ((target.transform.position.y - rbody.position.y) < 0)
 				yPos = -1;
 			else
 				yPos = 0;
@@ -205,6 +205,7 @@ public class EnemyAttack : MonoBehaviour
     {
         // Reset the timer.
         //timer = 0f;
+		Debug.Log("we are attacking");
 
 		string attackDone = "";
 
@@ -221,10 +222,10 @@ public class EnemyAttack : MonoBehaviour
 			yield return StartCoroutine (sf.CastSpell ());
 
 			// If the player has health to lose...
-			if (playerHealth.currentHealth > 0)
+			if (targetUnit.playerHealth.currentHealth > 0)
 			{
 				// ... damage the player.
-				playerHealth.TakeDamage (attackDamage);
+				targetUnit.playerHealth.TakeDamage (attackDamage);
 			}
 
 			sf.StopSpell ();
@@ -337,7 +338,7 @@ public class EnemyAttack : MonoBehaviour
 		screenFlash ();
 
 
-		GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerHealth> ().TakeDamage (15);
+		targetUnit.playerHealth.TakeDamage (15);
 
 
 
@@ -345,7 +346,7 @@ public class EnemyAttack : MonoBehaviour
 		// tell our battle manager that we are done
 		BattleManager batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
 		batMan.turnFinished = true;
-		batMan.attackDone = " Fired an arrow";
+		batMan.attackDone = " Fired an arrow at " + targetUnit.playerName;
 		Toolbox.Instance.isLocked = false;
 	}
 

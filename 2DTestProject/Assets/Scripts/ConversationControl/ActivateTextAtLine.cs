@@ -27,7 +27,7 @@ public class ActivateTextAtLine : MonoBehaviour
 
 
 	// other character we are looking at - their location
-	private PlayerMovement mainPlayer;
+	private PlayerUnit mainPlayer;
 
 	public string dialogueID = "1";
 
@@ -40,7 +40,7 @@ public class ActivateTextAtLine : MonoBehaviour
 	{
 		// get our text box
 		theTextBox = FindObjectOfType<TextBoxManager> ();
-		mainPlayer = GameObject.Find ("Player").GetComponent<PlayerMovement> ();
+		mainPlayer = GameObject.Find ("Player").GetComponent<PlayerUnit> ();
 
 
 	}
@@ -54,8 +54,9 @@ public class ActivateTextAtLine : MonoBehaviour
 
 		// also, we don't want to enable if we are already enabled.
 		// we also have to have text..
-		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation  && GameObject.Find("Player").GetComponent<PlayerMovement>().isFrozen() == false) 
+		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation  && mainPlayer.isFrozen() == false) 
 		{
+			Debug.Log ("Input received");
 			
 			theTextBox.inConversation = true;
 			theTextBox.reloadScript (theText, dialogueID);
@@ -116,10 +117,14 @@ public class ActivateTextAtLine : MonoBehaviour
 		// if we aren't shouting, but waiting for the player to talk to us
 		if (requireButtonPress) 
 		{
+			Debug.Log ("we are colliding and require a button press to converse...");
+
 			if (other.name == "Player") 
 			{
 				isColliding = true;
 			}
+
+			theTextBox.setPlayer (mainPlayer);
 
 			waitForPress = true;
 			return;
@@ -129,7 +134,7 @@ public class ActivateTextAtLine : MonoBehaviour
 
 
 		// if our other person is the player...
-		if (other.name == "Player" && GameObject.Find(other.name).GetComponent<PlayerMovement>().isFrozen() == false ) 
+		if (other.name == "Player" && GameObject.Find(other.name).GetComponent<PlayerUnit>().isFrozen() == false ) 
 		{
 			theTextBox.setPlayer (player);
 			theTextBox.reloadScript (theText, dialogueID);

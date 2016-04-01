@@ -38,7 +38,13 @@ public class LoadBattleScene : MonoBehaviour
 
 		// let's also make them face one another
 		Animator anim = currentPlayer.GetComponent<Animator>();
-		currentPlayer.GetComponent<PlayerMovement>().freeze = false;
+
+		if (currentPlayer == null || currentPlayer.Equals (null))
+			Debug.Log ("we are a null player");
+		else if (currentPlayer.GetComponent<PlayerUnit> () == null || currentPlayer.GetComponent<PlayerUnit> ().Equals (null))
+			Debug.Log ("we have a null playerunit");
+
+		currentPlayer.GetComponent<PlayerUnit>().freeze = false;
 		anim.SetBool ("isWalking", true);
 		anim.SetFloat ("input_x", 1f);
 		anim.SetFloat ("input_y", 0);
@@ -46,18 +52,18 @@ public class LoadBattleScene : MonoBehaviour
 
 
 		// make enemy face hero side
-		enemy.GetComponent<EnemyCharacter> ().freeze = false;
+		enemy.GetComponent<EnemyUnit> ().freeze = false;
 		anim = enemy.GetComponent<Animator> ();
 		anim.SetBool ("isWalking", true);
 		anim.SetFloat ("input_x", -1f);
 		anim.SetFloat ("input_y", 0);
 
-		enemy.GetComponent<EnemyCharacter> ().freeze = true;
+		enemy.GetComponent<EnemyUnit> ().freeze = true;
 
 			
 
 		// freeze the hero
-		currentPlayer.GetComponent<PlayerMovement>().freeze = true;
+		currentPlayer.GetComponent<PlayerUnit>().freeze = true;
 		currentPlayer.GetComponent<PlayerHealth> ().healthField = GameObject.Find ("HealthStats").GetComponent<Text>();
 
 

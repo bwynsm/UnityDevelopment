@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyUnit : MonoBehaviour {
+public class EnemyUnit : CharacterConversable {
 
 	// an enemy unit has health, attack, and character items
 	public EnemyHealth enemyHealth;
@@ -12,7 +12,6 @@ public class EnemyUnit : MonoBehaviour {
 	// PUBLIC VARIABLES FOR SETTING INFORMATION ABOUT AN ENEMY
 	public int enemyCurrentHealth;
 	public int enemyMaxHealth;
-	public int enemySpeed;
 	public string enemyName;
 	public int enemyArmor;
 	public int enemySpellResistance;
@@ -30,7 +29,6 @@ public class EnemyUnit : MonoBehaviour {
 
 		enemyHealth.currentHealth = enemyCurrentHealth;
 		enemyHealth.maxHealth = enemyMaxHealth;
-		enemyCharacter.speed = enemySpeed;
 		enemyCharacter.gameObjectPlayerName = enemyName;
 	}
 

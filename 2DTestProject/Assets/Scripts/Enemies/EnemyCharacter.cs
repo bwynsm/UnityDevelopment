@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class EnemyCharacter : CharacterConversable 
+public class EnemyCharacter : MonoBehaviour 
 {
 
 	Animator anim;
@@ -27,6 +27,8 @@ public class EnemyCharacter : CharacterConversable
 	public Vector2[] polygon;
 
 
+	// our player unit
+	EnemyUnit thisEnemyUnit;
 
 
 	// Use this for initialization
@@ -41,6 +43,7 @@ public class EnemyCharacter : CharacterConversable
 
 		interactionTriggerCollider = gameObject.AddComponent<PolygonCollider2D> ();
 		interactionTriggerCollider.pathCount = 1;
+		thisEnemyUnit = gameObject.GetComponent<EnemyUnit> ();
 
 
 		// create a polygon if we don't have one for collision triggering
@@ -78,7 +81,7 @@ public class EnemyCharacter : CharacterConversable
 			int canGoNorth = 2;
 
 			// if our character is not frozen
-			if (!freeze) 
+			if (!thisEnemyUnit.freeze) 
 			{
 
 
@@ -240,6 +243,7 @@ public class EnemyCharacter : CharacterConversable
 				toolboxInstance.sceneAlreadyLoaded = true;
 				toolboxInstance.battlePosition = gameObject.transform.position;
 
+				Debug.Log ("we are here in not destroying on load");
 
 
 

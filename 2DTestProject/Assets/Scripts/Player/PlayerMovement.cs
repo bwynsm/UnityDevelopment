@@ -8,7 +8,7 @@ using System.Collections;
 /// Controls the movement of the main character.
 /// Also helps control the main camera for the character
 /// </summary>
-public class PlayerMovement : CharacterConversable
+public class PlayerMovement : MonoBehaviour
 {
 
 	Rigidbody2D rbody;
@@ -19,6 +19,7 @@ public class PlayerMovement : CharacterConversable
 
 	private float runMultiplier;
 	public string gameObjectPlayerName;
+	PlayerUnit thisPlayerUnit;
 
 
 	// if we are awake, check for another of this type and delete
@@ -35,7 +36,8 @@ public class PlayerMovement : CharacterConversable
 	{
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-		gameObject.name = gameObjectPlayerName;
+		thisPlayerUnit = GetComponent<PlayerUnit> ();
+		//gameObject.name = gameObjectPlayerName;
 		//renderer = GetComponent<SpriteRenderer> ();
 
 	}
@@ -52,7 +54,7 @@ public class PlayerMovement : CharacterConversable
 
 		// what is my FREEEEEEZE?
 		// if we are frozen, we do not want to be walking.
-		if (!freeze) 
+		if (!thisPlayerUnit.freeze) 
 		{
 			
 
@@ -139,7 +141,7 @@ public class PlayerMovement : CharacterConversable
 	/// </summary>
 	public void setFrozen()
 	{
-		freeze = true;
+		thisPlayerUnit.freeze = true;
 	}
 
 

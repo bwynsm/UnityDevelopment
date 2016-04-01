@@ -86,6 +86,7 @@ public class TextBoxManager : MonoBehaviour
 		// if we have an item, we are waiting until the next item
 		if (!waitingForKey )
 		{
+
 			waitingForKey = true;
 			// the first thing that we have to do is to get which player is talking
 			// player name = ....
@@ -124,7 +125,9 @@ public class TextBoxManager : MonoBehaviour
 
 
 
-
+	/// <summary>
+	/// Gets the boxes for our conversation - updates the dialogue tree to get the next item
+	/// </summary>
 	public void getBoxes()
 	{
 		string playerName;
@@ -197,7 +200,7 @@ public class TextBoxManager : MonoBehaviour
 			// hell, if this does not equal the player, make them stop too
 			if (player.name != "Player") 
 			{
-				PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+				PlayerUnit mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerUnit> ();
 
 				mainPlayer.freeze = true;
 				mainPlayer.isTalking = true;
@@ -230,7 +233,7 @@ public class TextBoxManager : MonoBehaviour
 			// hell, if this does not equal the player, make them stop too
 			if (player.name != "Player")
 			{
-				PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+				PlayerUnit mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerUnit> ();
 
 				mainPlayer.freeze = false;
 				mainPlayer.isTalking = false;
@@ -274,7 +277,7 @@ public class TextBoxManager : MonoBehaviour
 			// hell, if this does not equal the player, make them stop too
 			if (player.name != "Player") 
 			{
-				PlayerMovement mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerMovement> ();
+				PlayerUnit mainPlayer = GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerUnit> ();
 				mainPlayer.freeze = true;
 				mainPlayer.isTalking = false;
 
@@ -294,6 +297,7 @@ public class TextBoxManager : MonoBehaviour
 	/// <param name="theNewText">The new text.</param>
 	public void reloadScript(TextAsset theNewText, string conversationID)
 	{
+
 		firstLoad = true;
 
 		// if we have a new text file that exists
@@ -345,6 +349,9 @@ public class TextBoxManager : MonoBehaviour
 	/// <param name="talkToPlayer">Talk to player.</param>
 	public void setPlayer(CharacterConversable talkToPlayer)
 	{
+		// we are in here
+		Debug.Log("we are setting player");
+
 		player = talkToPlayer;
 	}
 

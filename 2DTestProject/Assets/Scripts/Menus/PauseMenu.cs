@@ -42,7 +42,7 @@ public class PauseMenu : Menu
 	// it's not a type of menu, but it uses menu
 	void Update()
 	{
-		if (Input.GetKeyDown (KeyCode.Escape) && gamePaused == false && GameObject.Find ("Player").GetComponent<PlayerMovement> ().isTalking == false)
+		if (Input.GetKeyDown (KeyCode.Escape) && gamePaused == false && GameObject.Find ("Player").GetComponent<PlayerUnit> ().isTalking == false)
 		{
 			
 			pauseGame ();
@@ -82,7 +82,7 @@ public class PauseMenu : Menu
 	{
 		Time.timeScale = 1;
 		gamePaused = false;
-		GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerMovement> ().freeze = false;
+		GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerUnit> ().freeze = false;
 		optionsBox.SetActive (false);
 
 		Destroy (optionsBox.GetComponent<WaitingForTime> ());

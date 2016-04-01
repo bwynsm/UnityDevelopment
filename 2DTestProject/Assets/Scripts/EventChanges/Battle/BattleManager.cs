@@ -120,6 +120,8 @@ public class BattleManager : MonoBehaviour {
 				waitingForTurn = true;
 				turnFinished = false;
 
+				Debug.Log ("Whose turn is it? : " + currentPlayerTurn.name + " " + currentPlayerTurn.isPlayerCharacter);
+
 				if (currentPlayerTurn.isPlayerCharacter)
 				{
 					// get their battle mode and start gaming

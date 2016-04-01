@@ -342,8 +342,6 @@ public class Menu : MonoBehaviour
 
 		if (selectionMade)
 		{
-
-
 			/// what type of options list do we have? conversation or more main menu?
 			if (menuType == "conversation")
 			{
@@ -364,8 +362,15 @@ public class Menu : MonoBehaviour
 			} 
 			else if (menuType == "BattleMenu")
 			{
-				// let's resolve our battle commands
+				// get our command object
 				Commands command = new Commands();
+
+				// for now, let's just set our actions and enemy to attack as static. We can address this shortly
+				command.setAttackingPlayer(GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerUnit>());
+				command.setEnemyUnderAttack(GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyUnit>());
+				command.setPlayerBeingBuffed(GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerUnit>());
+
+				// let's resolve our battle commands
 				buttonCommand.playerToAlter = "Player";
 				command.resolveBattleCommands (buttonCommand);
 			}

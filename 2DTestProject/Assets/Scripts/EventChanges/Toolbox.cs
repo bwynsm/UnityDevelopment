@@ -51,7 +51,7 @@ public class Toolbox : Singleton<Toolbox> {
 			Camera.main.GetComponent<CameraFollow>().target = playerCharacter.transform;
 
 			playerCharacter.transform.position = positionInLastScene;
-			playerCharacter.GetComponent<PlayerMovement>().freeze = false;
+			playerCharacter.GetComponent<PlayerUnit>().freeze = false;
 
 		}
 
