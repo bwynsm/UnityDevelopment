@@ -366,9 +366,9 @@ public class Menu : MonoBehaviour
 				Commands command = new Commands();
 
 				// for now, let's just set our actions and enemy to attack as static. We can address this shortly
-				command.setAttackingPlayer(GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerUnit>());
+				command.setAttackingPlayer(this.gameObject.GetComponent<PlayerUnit>());
 				command.setEnemyUnderAttack(GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyUnit>());
-				command.setPlayerBeingBuffed(GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<PlayerUnit>());
+				command.setPlayerBeingBuffed(this.gameObject.GetComponent<PlayerUnit>());
 
 				// let's resolve our battle commands
 				buttonCommand.playerToAlter = "Player";

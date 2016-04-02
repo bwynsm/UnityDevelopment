@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
 
 
 		// check for current scene? 
-		if (SceneManager.GetActiveScene().name == "BattleScene")
+		if (SceneManager.GetActiveScene().name == "BattleScene" && healthField != null)
 		{
 			healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + maxHealth + "</color>";
 		}

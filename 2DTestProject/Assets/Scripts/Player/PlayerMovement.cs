@@ -25,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
 	// if we are awake, check for another of this type and delete
 	void Awake()
 	{
-		if (FindObjectsOfType(GetType()).Length > 1)
-		{
-			Destroy (gameObject);
-		}
+
 	}
 
 	// Use this for initialization

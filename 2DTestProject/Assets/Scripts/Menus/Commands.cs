@@ -102,7 +102,7 @@ public class Commands
 			// for SPELL attacks
 			else if (commandItem.Contains ("ice") || commandItem.Contains ("fire") || commandItem.Contains ("water"))
 			{
-				playerAttacking.GetComponent<PlayerAttack>().castOffensiveSpell (commandItem);
+				playerAttacking.GetComponent<PlayerAttack> ().castOffensiveSpell (commandItem);
 				finalSelection = true;
 			} 
 
@@ -110,7 +110,7 @@ public class Commands
 			else if (commandItem.Contains ("damage#"))
 			{
 				// get the number of damage
-				playerAttacking.GetComponent<PlayerAttack>().dealDamage (commandItem);
+				playerAttacking.GetComponent<PlayerAttack> ().dealDamage (commandItem);
 				finalSelection = true;
 			}
 
@@ -119,14 +119,20 @@ public class Commands
 			{
 				// get the number of damage
 
-				playerAttacking.GetComponent<PlayerAttack>().buffPlayer (commandItem,unitBeingBuffed);
+				playerAttacking.GetComponent<PlayerAttack> ().buffPlayer (commandItem, unitBeingBuffed);
 				finalSelection = true;
+			}
+			else if (commandItem.Contains ("defend"))
+			{
+				Debug.Log ("we are attacking in commands");
+				playerAttacking.GetComponent<PlayerAttack> ().buffPlayer (commandItem, playerAttacking);
 			}
 
 			// otherwise, we have something we don't recognize
 			else
 			{
 				Debug.Log ("We have an unrecognized command : " + commandItem + " " + currentPlayer);
+				finalSelection = true;
 			}
 		}
 			

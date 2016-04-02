@@ -52,7 +52,6 @@ public class ScreenFader : MonoBehaviour {
 
 	public void FlashWhite()
 	{
-		Debug.Log ("flashing white");
 		anim.SetTrigger ("FlashWhite");
 	}
 

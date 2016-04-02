@@ -50,7 +50,6 @@ public class EnemyAttack : MonoBehaviour
         // If the entering collider is the player...
 		if (other.gameObject == target && attacking == true)
 		{
-			Debug.Log ("attacking" + attacking);
 			
 			attacking = false;
 			Debug.Log ("we are in the trigger phase and are attacking");
@@ -292,7 +291,6 @@ public class EnemyAttack : MonoBehaviour
 	/// </summary>
 	void retreat()
 	{
-		Debug.Log ("retreating..... from animation..");
 		anim.SetTrigger ("IsRetreating");
 
 		Flip ();
@@ -351,7 +349,6 @@ public class EnemyAttack : MonoBehaviour
 
 	public void ShakeCamera()
 	{
-		Debug.Log ("we are here in shaking camera");
 		// set a screen shake
 		Camera.main.GetComponent<CameraShake>().Shake();
 
@@ -377,7 +374,6 @@ public class EnemyAttack : MonoBehaviour
 		if (!flashedScreen)
 		{
 			flashedScreen = true;
-			Debug.Log ("we are here in flashing white");
 			// if we are in here, an object collided
 			ScreenFader sf = GameObject.FindGameObjectWithTag ("Fader").GetComponent<ScreenFader> ();
 			sf.FlashWhite ();

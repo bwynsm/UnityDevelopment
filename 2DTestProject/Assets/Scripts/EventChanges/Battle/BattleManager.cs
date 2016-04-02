@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class BattleManager : MonoBehaviour {
 
@@ -22,7 +23,7 @@ public class BattleManager : MonoBehaviour {
 	// classes we use
 	LoadBattleScene sceneInit;
 	CharacterConversable currentPlayerTurn;
-	CharacterConversable[] battleTurnOrder;
+	List<CharacterConversable> battleTurnOrder;
 	int currentTurn = 0;
 	public bool waitingForTurn = false;
 	public bool turnFinished = false;
@@ -30,7 +31,7 @@ public class BattleManager : MonoBehaviour {
 	public Text displayAttackText;
 	public GameObject attackTextPanel;
 
-
+	private bool turnsLoaded = false;
 
 
 	// Use this for initialization
@@ -81,11 +82,20 @@ public class BattleManager : MonoBehaviour {
 
 		// load our scene and move our battle forward
 		case BATTLE_STATES.START:
-			
-			sceneInit.LoadBattleSceneItems ();
-			currentState = BATTLE_STATES.DECIDE_TURN;
-			battleTurnOrder = sceneInit.turnOrder;
-			Toolbox.Instance.isLocked = false;
+			Debug.Log ("We are in start here" + turnsLoaded);
+			if (!turnsLoaded)
+			{
+				turnsLoaded = true;
+				sceneInit.LoadTurns ();
+				Toolbox.Instance.isLocked = false;
+			}
+			else
+			{
+				sceneInit.LoadBattleSceneItems ();
+				currentState = BATTLE_STATES.DECIDE_TURN;
+				battleTurnOrder = sceneInit.turnOrder;
+				Toolbox.Instance.isLocked = false;
+			}
 				break;
 
 
@@ -101,7 +111,7 @@ public class BattleManager : MonoBehaviour {
 			// update our current turn to the next player in the queue
 			// and cycle if we are at the end.
 			currentTurn++;
-			if (currentTurn >= battleTurnOrder.Length)
+			if (currentTurn >= battleTurnOrder.Count)
 				currentTurn = 0;
 
 			Toolbox.Instance.isLocked = false;
