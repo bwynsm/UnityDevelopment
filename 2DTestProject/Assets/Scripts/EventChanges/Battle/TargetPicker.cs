@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEditor;
 
 
 public class TargetPicker : MonoBehaviour 
@@ -27,7 +28,8 @@ public class TargetPicker : MonoBehaviour
 	private List<CharacterConversable> teammateList;
 	private List<CharacterConversable> opponentList;
 
-
+	private GUIStyle style;
+	private Texture2D boxTexture;
 
 	// once this function is done, we'll have a target. Either it will
 	// be a non-target, or an actual target
@@ -37,7 +39,18 @@ public class TargetPicker : MonoBehaviour
 	public int targetSide = 1; // 1 if enemy, 0 if ally - can be reset as public from player based on commands
 	private Vector2[] targetRect = new Vector2[4]; 
 
+	void Start()
+	{
+		style = new GUIStyle ();
+		style.border.bottom = 3;
+		style.border.top = 3;
+		style.border.left = 3;
+		style.border.right = 3;
+		boxTexture = new Texture2D (1, 1);
+		boxTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Resources/Border.png", typeof(Texture2D));
 
+
+	}
 
 	/// <summary>
 	/// Loads the battle.
@@ -48,7 +61,6 @@ public class TargetPicker : MonoBehaviour
 		// allies and enemies
 		drawBattleLines();
 
-		Debug.Log ("we are here in load battle lines");
 	}
 
 
@@ -184,7 +196,10 @@ public class TargetPicker : MonoBehaviour
 	{
 		if (hasChosenTarget)
 			return;
-		
+
+
+
+
 		// get the current player selected by the index
 		CharacterConversable currentlySelectedTarget;
 
@@ -192,34 +207,59 @@ public class TargetPicker : MonoBehaviour
 		if (targetSide == 0)
 		{
 			currentlySelectedTarget = teammateList [index];
-			Debug.Log ("currently selected ally in here : " + currentlySelectedTarget.playerName + " " + currentlySelectedTarget.transform.position);
 		} 
 		else
 		{
 			currentlySelectedTarget = opponentList [index];
-			Debug.Log ("currently selected enemy in here : " + currentlySelectedTarget.playerName + " " + currentlySelectedTarget.transform.position);
 		}
 
 
 		Bounds bounds = currentlySelectedTarget.gameObject.GetComponent<SpriteRenderer>().bounds;
-		Debug.Log ("CURRENTLY SELECTED UNIT'S TRANFORM AND NAME : " + currentlySelectedTarget.transform.position + " NAME : " + currentlySelectedTarget.playerName + " INDEX : " + index + " BOUNDS : " + bounds.min.x + " " + bounds.min.y);
-		Debug.Log("EXTENTS : " + bounds.center + " " + currentlySelectedTarget.playerName + " " + currentlySelectedTarget.transform.position);
+		//Debug.Log ("CURRENTLY SELECTED UNIT'S TRANFORM AND NAME : " + " BOUNDS : " + bounds.min.x + " " + bounds.min.y  + " , " + bounds.max.x + " , " + bounds.max.y);
+		//Debug.Log("EXTENTS : " + bounds.center + " " + currentlySelectedTarget.playerName + " " + currentlySelectedTarget.transform.position);
+
+		targetRect[0] = Camera.main.WorldToScreenPoint(new Vector3(bounds.center.x + bounds.extents.x, bounds.center.y + bounds.extents.y, 0));
+		targetRect[1] = Camera.main.WorldToScreenPoint(new Vector3(bounds.center.x + bounds.extents.x, bounds.center.y - bounds.extents.y, 0));
+		targetRect[2] = Camera.main.WorldToScreenPoint(new Vector3(bounds.center.x - bounds.extents.x, bounds.center.y + bounds.extents.y, 0));
+		targetRect[3] = Camera.main.WorldToScreenPoint(new Vector3(bounds.center.x - bounds.extents.x, bounds.center.y - bounds.extents.y, 0));
+
+		//Vector3 cameraPoint = Camera.main.WorldToScreenPoint (new Vector3(currentlySelectedTarget.transform.position.x, currentlySelectedTarget.transform.position.y, 0));
+
+		// get into screen height space
+		for (int i = 0; i < targetRect.Length; i++)
+		{
+			targetRect [i].y = Screen.height - targetRect [i].y;
+		}
+
+		// calculate the mins and maxes
+		Vector3 min = targetRect [0];
+		Vector3 max = targetRect [0];
+		for (int i = 1; i < targetRect.Length; i++)
+		{
+			min = Vector3.Min (min, targetRect [i]);
+			max = Vector3.Max (max, targetRect [i]);
+		}
 
 
-		Vector3 cameraPoint = Camera.main.WorldToScreenPoint (new Vector3(bounds.min.x, bounds.max.y, 0));
 
-		Debug.Log ("CAMERA POINT : " + cameraPoint + " " + currentlySelectedTarget.playerName + " " + index);
-		Rect rectanglePlayer = new Rect(;
-		rectanglePlayer.x = cameraPoint.x;
-		rectanglePlayer.y = cameraPoint.y;
-		rectanglePlayer.width = 100;
-		rectanglePlayer.height = 100;
-		     
+
+		//Debug.Log ("CAMERA POINT : " + cameraPoint + " " + currentlySelectedTarget.playerName + " " + index);
+		Rect rectanglePlayer = Rect.MinMaxRect (min.x, min.y, max.x, max.y);
+		//rectanglePlayer.x = cameraPoint.x;
+		//rectanglePlayer.y = cameraPoint.y;
+		//rectanglePlayer.width = 100;
+		//rectanglePlayer.height = 100;
+		//Debug.Log (" MIN : " + min + "  MAX : " + max + " WIDTH AND HEIGHT : " + rectanglePlayer.width + " , " + rectanglePlayer.height);   
+
 	
-		Debug.Log (rectanglePlayer.x + " , " + rectanglePlayer.y + " ");
-
+		//GUI.backgroundColor = Color.clear;
+		//GUI.color = Color.green;
      	//Render the box
-		GUI.Box (rectanglePlayer,"This is a box covering the player");
+		//GUI.Box (rectanglePlayer, boxTexture);
+		GUI.DrawTexture (rectanglePlayer, boxTexture);
+
+
+		//ShadowAndOutline.DrawOutline (rectanglePlayer, "hello this is our text", style, Color.black, Color.blue, rectanglePlayer.height);
 	}
 
 
@@ -301,6 +341,10 @@ public class TargetPicker : MonoBehaviour
 		}
 
 	}
+
+
+
+
 
 
 }

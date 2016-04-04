@@ -142,7 +142,7 @@ public class LoadBattleScene : MonoBehaviour
 			// component anyway
 			else
 			{
-				enemyIndex += 0.5f;
+				enemyIndex += 1.5f;
 
 				if (!combatant.Equals(currentEnemy))
 				{
