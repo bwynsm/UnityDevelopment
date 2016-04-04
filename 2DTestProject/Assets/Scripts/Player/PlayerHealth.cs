@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;                            // The amount of health the player starts the game with.
+    public int maxHealth = 100;                            // The amount of health the player starts the game with.
     public int currentHealth;                                   // The current health the player has.
     public Slider healthSlider;                                 // Reference to the UI's health bar.
     public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
@@ -30,13 +30,11 @@ public class PlayerHealth : MonoBehaviour
         //playerAudio = GetComponent <AudioSource> ();
         //playerMovement = GetComponent <PlayerMovement> ();
 
-        // Set the initial health of the player.
-        currentHealth = startingHealth;
 
 		// check for current scene? 
-		if (SceneManager.GetActiveScene().name == "BattleScene")
+		if (SceneManager.GetActiveScene().name == "BattleScene" && healthField != null)
 		{
-			healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+			healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + maxHealth + "</color>";
 		}
     }
 
@@ -65,12 +63,12 @@ public class PlayerHealth : MonoBehaviour
 	{
 		currentHealth += amount;
 
-		if (currentHealth >= startingHealth)
-			currentHealth = startingHealth;
+		if (currentHealth >= maxHealth)
+			currentHealth = maxHealth;
 
 		// Set the health bar's value to the current health.
 		healthSlider.value = currentHealth;
-		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + maxHealth + "</color>";
 
 
 	}
@@ -85,7 +83,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Set the health bar's value to the current health.
         healthSlider.value = currentHealth;
-		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + maxHealth + "</color>";
 
         // Play the hurt sound effect.
         //playerAudio.Play ();
@@ -104,6 +102,9 @@ public class PlayerHealth : MonoBehaviour
         // Set the death flag so this function won't be called again.
         isDead = true;
 
+
+		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
+		batMan.currentState = BattleManager.BATTLE_STATES.LOSE;
 
         // Tell the animator that the player is dead.
         //anim.SetTrigger ("Die");

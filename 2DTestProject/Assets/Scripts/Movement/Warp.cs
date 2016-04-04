@@ -34,7 +34,7 @@ public class Warp : MonoBehaviour {
 			yield break;
 		}
 
-		PlayerMovement playerObject = other.gameObject.GetComponent<PlayerMovement> ();
+		PlayerUnit playerObject = other.gameObject.GetComponent<PlayerUnit> ();
 		playerObject.freeze = true;
 
 		// fade screen to black on warp
@@ -50,7 +50,7 @@ public class Warp : MonoBehaviour {
 
 		// this is currently to try and make the player face downwards
 		//playerObject.faceForward(); 
-		playerObject.setFrozen();
+		playerObject.freeze = true;
 
 
 		// fade in

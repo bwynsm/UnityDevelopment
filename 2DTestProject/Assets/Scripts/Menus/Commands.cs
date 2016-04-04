@@ -8,7 +8,7 @@ using System;
 /// Commands Class that works with resolving string commands
 /// into actions
 /// </summary>
-public class Commands 
+public class Commands
 {
 
 	// in commands, we are basically receiving a list of options
@@ -19,7 +19,9 @@ public class Commands
 	// updating the playerToAlter with whatever the commands are
 	// on that player to alter.
 	// this won't be damage. That will be triggered elsewhere.
-
+	PlayerUnit playerAttacking;
+	//EnemyUnit enemyUnderAttack;
+	PlayerUnit unitBeingBuffed;
 
 	/// <summary>
 	/// For the moment, just a handle on an object
@@ -47,9 +49,12 @@ public class Commands
 		string playerToAlter 	= optionItem.playerToAlter;
 		string currentPlayer 	= optionItem.currentPlayer;
 		string commandsString	= optionItem.command;
+		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
 
-
+		bool finalSelection = false;
 		// if player to alter is blank, debug that
+
+		Debug.Log ("COMMANDS STRING : " + commandsString);
 
 		// next we need to take that command that we have and we need
 		// to parse it out. We'll split it by semicolon
@@ -64,6 +69,8 @@ public class Commands
 			// if we have a number, just go to that number
 			if (commandItem.Contains ("id#"))
 			{
+				Debug.Log ("CONTAINS ID : " + commandItem);
+
 				// split our command our and send it to our function
 				string command = (commandItem.Split ('#')) [1];
 				changeBattleDialogueID (command, playerToAlter);
@@ -83,35 +90,103 @@ public class Commands
 			// unrecognized command
 			else if (commandItem.Contains ("attack"))
 			{
-				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (10);
+				Debug.Log ("we are attacking");
+
+				if (playerAttacking == null)
+					Debug.Log ("attacking player is null");
+				else if (playerAttacking.GetComponent<PlayerAttack> () == null)
+					Debug.Log ("PLAYERATTACK is null");
+
+
+
+				playerAttacking.GetComponent<PlayerAttack> ().startAttacking = true;
+				finalSelection = true;
 			} 
+
+			// for SPELL attacks
 			else if (commandItem.Contains ("ice") || commandItem.Contains ("fire") || commandItem.Contains ("water"))
 			{
-				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage (15);
+				playerAttacking.GetComponent<PlayerAttack> ().castOffensiveSpell (commandItem);
+				finalSelection = true;
 			} 
+
+			// for damage like in items 
 			else if (commandItem.Contains ("damage#"))
 			{
 				// get the number of damage
-				string command = (commandItem.Split ('#')) [1];
-				GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyHealth> ().TakeDamage(Convert.ToInt16(command));
+				playerAttacking.GetComponent<PlayerAttack> ().dealDamage (commandItem);
+				finalSelection = true;
 			}
+
+			// for healing (or potentially other buffs)
 			else if (commandItem.Contains ("health#"))
 			{
 				// get the number of damage
-				string command = (commandItem.Split ('#')) [1];
-				GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerHealth> ().HealCharacter(Convert.ToInt16(command));
+
+				playerAttacking.GetComponent<PlayerAttack> ().buffPlayer (commandItem, unitBeingBuffed);
+				finalSelection = true;
 			}
+			else if (commandItem.Contains ("defend"))
+			{
+				Debug.Log ("we are attacking in commands");
+				playerAttacking.GetComponent<PlayerAttack> ().buffPlayer (commandItem, playerAttacking);
+			}
+
+			// otherwise, we have something we don't recognize
 			else
 			{
 				Debug.Log ("We have an unrecognized command : " + commandItem + " " + currentPlayer);
+				finalSelection = true;
 			}
 		}
-
-		GameObject playerObject = GameObject.FindGameObjectWithTag ("PlayerCharacter");
-		playerObject.GetComponent<BattleMenu> ().updatingItems = true;
-
+			
+		playerAttacking.GetComponent<BattleMenu> ().updatingItems = true;
 
 
+		// no longer our turn
+		if (finalSelection)
+		{
+			playerAttacking.GetComponent<BattleMenu> ().isMyTurn = false;
+			batMan.turnFinished = true;
+		}
+
+
+	}
+
+
+	/// <summary>
+	/// Sets the attacking player
+	/// </summary>
+	/// <param name="attacker">Attacker.</param>
+	public void setAttackingPlayer(PlayerUnit attacker)
+	{
+		Debug.Log ("We are here in setting player : " + attacker.playerName);
+		playerAttacking = attacker;
+	}
+
+
+	/// <summary>
+	/// Sets the enemy under attack.
+	/// </summary>
+	/// <param name="enemyUnderAttack">Enemy under attack.</param>
+	public void setEnemyUnderAttack(EnemyUnit attacked)
+	{
+		Debug.Log ("Player Unit Null?" + playerAttacking.GetComponent<PlayerAttack> ());
+		Debug.Log ("Enemy Unit Null: " + attacked.name + " " + attacked.gameObject.name);
+		//enemyUnderAttack = attacked;
+		playerAttacking.GetComponent<PlayerAttack> ().enemyUnit = attacked;
+		playerAttacking.GetComponent<PlayerAttack> ().target = attacked.gameObject;
+	}
+
+
+
+	/// <summary>
+	/// Sets the player being buffed.
+	/// </summary>
+	/// <param name="playerUnit">Player unit.</param>
+	public void setPlayerBeingBuffed(PlayerUnit playerUnit)
+	{
+		unitBeingBuffed = playerUnit;
 	}
 
 
@@ -190,12 +265,13 @@ public class Commands
 	/// <param name="playerToAlter">Player to alter.</param>
 	private void changeBattleDialogueID(string command, string playerToAlter)
 	{
-		Debug.Log ("COMMAND : " + command);
+		Debug.Log ("COMMAND : " + command + " Player To Alter : " + playerToAlter);
 		// change conversation id to that?
 		// get player by tag name
 		CharacterConversable playerObject = GameObject.Find (playerToAlter).GetComponent<CharacterConversable> ();
 		Debug.Log ("we are getting our new dialogue");
 		playerObject.GetComponent<BattleMenu> ().battleOptionsManager.changeDialogue(command);
+
 
 	}
 

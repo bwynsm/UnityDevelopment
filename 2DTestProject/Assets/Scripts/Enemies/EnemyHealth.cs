@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
-	public int startingHealth = 100;                            // The amount of health the player starts the game with.
+	public int maxHealth = 100;                            // The amount of health the player starts the game with.
 	public int currentHealth;                                   // The current health the player has.
 	public Slider healthSlider;                                 // Reference to the UI's health bar.
 	public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
@@ -23,17 +23,6 @@ public class EnemyHealth : MonoBehaviour
 	bool isDead;                                                // Whether the player is dead.
 	bool damaged;                                               // True when the player gets damaged.
 
-
-	void Awake ()
-	{
-		// Setting up the references.
-		//anim = GetComponent <Animator> ();
-		//playerAudio = GetComponent <AudioSource> ();
-		//playerMovement = GetComponent <EnemyCharacter> ();
-
-		// Set the initial health of the player.
-		currentHealth = startingHealth;
-	}
 
 
 	void Update ()
@@ -56,6 +45,12 @@ public class EnemyHealth : MonoBehaviour
 	}
 
 
+
+
+	/// <summary>
+	/// Takes the damage given it and updates slider and text
+	/// </summary>
+	/// <param name="amount">Amount.</param>
 	public void TakeDamage (int amount)
 	{
 		// Set the damaged flag so the screen will flash.
@@ -71,7 +66,7 @@ public class EnemyHealth : MonoBehaviour
 
 		// Set the health bar's value to the current health.
 		healthSlider.value = currentHealth;
-		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + startingHealth + "</color>";
+		healthField.text = "<color='yellow'>" + currentHealth + "</color><color='white'> / " + maxHealth + "</color>";
 
 		// Play the hurt sound effect.
 		//playerAudio.Play ();
@@ -85,6 +80,12 @@ public class EnemyHealth : MonoBehaviour
 	}
 
 
+
+
+	/// <summary>
+	/// If this character dies, we want to destroy our panels and change scene
+	/// and also prepare to have this unit deleted
+	/// </summary>
 	void Death ()
 	{
 		Debug.Log ("ENEMY IS DEAD");
@@ -92,8 +93,12 @@ public class EnemyHealth : MonoBehaviour
 		// Set the death flag so this function won't be called again.
 		isDead = true;
 
+		// for now, win condition
 		Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
 		GameObject.Find ("BattlePanel").SetActive (false);
+
+		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
+		batMan.currentState = BattleManager.BATTLE_STATES.WIN;
 
 		// Tell the animator that the player is dead.
 		//anim.SetTrigger ("Die");
@@ -105,14 +110,7 @@ public class EnemyHealth : MonoBehaviour
 		// Turn off the movement and shooting scripts.
 		//playerMovement.enabled = false;
 
-		Toolbox toolboxInstance = Toolbox.Instance;
-		toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
 
-		toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
-		// spawn at least location?
-		// what if the grue is still there?
-		// we'll get this in a moment.
-		SceneManager.LoadScene("OpeningScene");
 
 
 	}       

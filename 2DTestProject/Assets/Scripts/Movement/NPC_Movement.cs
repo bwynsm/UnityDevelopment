@@ -47,8 +47,9 @@ public class NPC_Movement : CharacterConversable
 
 
 		// create a polygon if we don't have one
-		if (polygon == null)
+		if (polygon == null || polygon.Length == 0)
 		{
+			
 			polygon = new Vector2[] {
 				new Vector2 (0.00f, 0.25f),
 				new Vector2 (-0.25f, -0.1f),
@@ -56,6 +57,7 @@ public class NPC_Movement : CharacterConversable
 				new Vector2 (0.25f, -0.1f)
 			};
 		}
+			
 
 		interactionTriggerCollider.points = polygon;
 		interactionTriggerCollider.isTrigger = true;

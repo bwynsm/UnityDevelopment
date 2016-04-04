@@ -25,7 +25,9 @@ public class Menu : MonoBehaviour
 	public List<Options> menuOptions;	// list of all the options in menu
 	public string menuType;				// conversation, main menu, etc
 	private bool isActive = true; 		// if our menu is active
-
+	public PlayerUnit attackingPlayer;
+	public EnemyUnit targetPlayer;
+	public PlayerUnit buffPlayer;
 
 	private string commands;			// string of commands made by choosing something
 	public bool selectionMade = false;	// if we have made a selection of a button
@@ -52,10 +54,12 @@ public class Menu : MonoBehaviour
 			yield return StartCoroutine (Initialize ());
 		} 
 
-
-
-
 	}
+
+
+	// if selection made and we are in battle, we want to update and wait for input until we receive
+	// and new updates from our new class of battle
+
 
 
 	public IEnumerator Initialize()
@@ -91,14 +95,18 @@ public class Menu : MonoBehaviour
 			// set i to max
 			Button currentButton = optionsBox.transform.GetChild(i).gameObject.GetComponent<Button>();
 			currentButton.interactable = true;
-		
+
+			if (i == 0 && indexSelected <= 0)
+				currentButton.Select ();
+			else if (i == indexSelected)
+				currentButton.Select ();
 		}
 
 		while (selectionMade == false && optionsBox.activeInHierarchy) 
 		{
 			yield return StartCoroutine (waitingObject.WaitForKeyDown ());
 
-
+			Debug.Log ("we are in selection made false and options box live");
 			if (EventSystem.current.currentSelectedGameObject == null)
 			{
 				// if we have no more object
@@ -116,9 +124,12 @@ public class Menu : MonoBehaviour
 				}
 			}
 
+			Debug.Log (selectionMade + " " + isActive);
 
-			if (!selectionMade && isActive == true && Input.anyKey) 
+			if (!selectionMade && isActive == true && Input.anyKeyDown) 
 			{
+
+				Debug.Log ("our selection made is false and we are active and have received a key press ");
 
 				if (Input.GetKeyDown (KeyCode.DownArrow) == true) 
 				{
@@ -161,16 +172,18 @@ public class Menu : MonoBehaviour
 					}
 				}
 
-				if (Input.GetKey (KeyCode.Return)) {
+				if (Input.GetKeyDown (KeyCode.Return)) {
 					selectionMade = true;
-					ButtonClicked (menuOptions [indexSelected]);
+					yield return StartCoroutine( ButtonClicked (menuOptions [indexSelected]));
 				}
 
-				if (Input.GetKey (KeyCode.X)) {
+				if (Input.GetKeyDown (KeyCode.X)) 
+				{
 
+					Debug.Log ("we have a keycode x");
 					selectionMade = true;
 
-					ButtonClicked (menuOptions [indexSelected]);
+					yield return StartCoroutine( ButtonClicked (menuOptions [indexSelected]));
 				}
 
 			}
@@ -183,12 +196,21 @@ public class Menu : MonoBehaviour
 	}
 		
 
+
+	/// <summary>
+	/// Returns if the menu is active
+	/// </summary>
+	/// <returns><c>true</c>, if the menu is active, <c>false</c> otherwise.</returns>
 	public bool menuIsActive()
 	{
 		return isActive;
 	}
 
 
+	/// <summary>
+	/// Renames the options without having to delete them all and start over
+	/// </summary>
+	/// <param name="options">Options.</param>
 	public void renameOptions(List<Options> options)
 	{
 		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
@@ -224,21 +246,63 @@ public class Menu : MonoBehaviour
 
 			}
 
-
-
-
 		}
 		else 
 		{
-			Debug.Log ("we are here in the loading options section function");
 			loadOptions (options);
 		}
 
 
 	}
 
-	// yields to a coroutine
 
+
+	/// <summary>
+	/// Toggles the options display so we can hide this when it is the enemy's turn
+	/// </summary>
+	/// <param name="isEnabled">If set to <c>true</c> is enabled.</param>
+	public void toggleOptionsDisplay(bool isEnabled)
+	{
+		if (optionsBox != null && menuOptions != null &&  optionsBox.GetComponentsInChildren<Button>().Length > 0)
+		{
+
+			// get buttons from children
+			Button[] panelButtons = optionsBox.GetComponentsInChildren<Button>(true);
+
+
+
+			// walk through each of the buttons and either hide or display
+			// the whole set based parameter input
+			for (int i = 0; i < panelButtons.Length; i++)
+			{
+				panelButtons [i].enabled = isEnabled;
+			
+
+				// if we are activating, set colors and alpha
+				if (isEnabled)
+				{
+					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (255);
+					panelButtons [i].GetComponentInChildren<Text> ().color = Color.red;
+				}
+
+				// otherwise, no alpha and clear button text
+				else
+				{
+					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (0);
+					panelButtons [i].GetComponentInChildren<Text> ().color = Color.clear;
+				}
+
+			}
+
+		}
+	}
+		
+
+
+	/// <summary>
+	/// Loads the options for the menu
+	/// </summary>
+	/// <param name="options">Options.</param>
 	public void loadOptions(List<Options> options)
 	{
 		if (menuOptions == null || menuOptions.Count == 0)
@@ -248,8 +312,6 @@ public class Menu : MonoBehaviour
 		isActive = true;
 
 
-		//goButton.transform.localScale = new Vector3(1, 1, 1);
-
 
 
 		// for each of our options, create some sort of button
@@ -257,7 +319,7 @@ public class Menu : MonoBehaviour
 		for (int i = 0; i < options.Count; i++)
 		{
 			GameObject goButton = (GameObject)Instantiate (prefabButton);
-			goButton.GetComponentInChildren<Text>().text = "Option : " + menuOptions[i].option;
+			goButton.GetComponentInChildren<Text>().text = menuOptions[i].option;
 
 			RectTransform rect = goButton.GetComponentInChildren<Text> ().GetComponent<RectTransform>();
 			rect.offsetMax = new Vector2 (-10f, -10f);
@@ -287,16 +349,18 @@ public class Menu : MonoBehaviour
 
 
 
-
-	void ButtonClicked(Options buttonCommand)
+	/// <summary>
+	/// When one of our menu buttons is clicked, we go here to deal with the command issued
+	/// </summary>
+	/// <param name="buttonCommand">Button command.</param>
+	IEnumerator ButtonClicked(Options buttonCommand)
 	{
 		isActive = false;
 		Destroy (waitingObject);
+		Debug.Log ("Button Clicked" + buttonCommand.command);
 
 		if (selectionMade)
 		{
-
-
 			/// what type of options list do we have? conversation or more main menu?
 			if (menuType == "conversation")
 			{
@@ -317,14 +381,102 @@ public class Menu : MonoBehaviour
 			} 
 			else if (menuType == "BattleMenu")
 			{
-				// let's resolve our battle commands
+				Debug.Log ("we are here in button clicked : ");
+
+
+				// yield on starting a new 
+				// add targetpicker to this player character, and then use that
+				// to get the list of players from his battlemenu? who has the list of
+				// units to attack?
+				// player -> battle menu -> all combatants shoved into player -> add component -> targetpicker 
+				TargetPicker playerTargetPicker = attackingPlayer.GetOrAddComponent<TargetPicker>();
+				playerTargetPicker.currentPlayer = attackingPlayer;
+				playerTargetPicker.battleList = attackingPlayer.GetComponent<BattleMenu> ().allCombatants;
+				playerTargetPicker.loadBattle ();
+
+
+				// disable button presses
+				// check and see which item is highlighted here before we enter and make that
+				// our indexselected
+				for (var i = 0; i < menuOptions.Count; i++) 
+				{
+					// if the item is highlighted, set our value to that
+					// set i to max
+					Button currentButton = optionsBox.transform.GetChild(i).gameObject.GetComponent<Button>();
+					currentButton.interactable = false;
+
+				}
+
+				// now that we've loaded the battle, we want to do an enumerator that waits
+				// for an input from our user. Either we get a "back up" with a null, or we get
+				// a character to attack (for now let's just assume it will be an enemy)
+				yield return StartCoroutine(playerTargetPicker.selectTarget());
+
+				Debug.Log ("we are here in menu awaiting a response");
+
+				while (!playerTargetPicker.hasChosenTarget)
+					yield return null;
+
+
+
+				Debug.Log ("we are here");
+
+				if (playerTargetPicker.chosenTarget == null)
+				{
+					Destroy (playerTargetPicker);
+					Debug.Log ("we are in here with a null response");
+
+					// if we get a null, make the buttons live again and we'll try again?
+					// disable button presses
+					// check and see which item is highlighted here before we enter and make that
+					// our indexselected
+					// check and see which item is highlighted here before we enter and make that
+					// our indexselected
+					for (var i = 0; i < menuOptions.Count; i++) 
+					{
+						// if the item is highlighted, set our value to that
+						// set i to max
+						Button currentButton = optionsBox.transform.GetChild(i).gameObject.GetComponent<Button>();
+						currentButton.interactable = true;
+
+						if (i == 0 && indexSelected <= 0)
+							currentButton.Select ();
+						else if (i == indexSelected)
+							currentButton.Select ();
+					}
+
+					selectionMade = false;
+					isActive = true;
+						
+					yield break;
+				}
+
+
+				// get our command object
 				Commands command = new Commands();
+
+				GameObject targetObject = playerTargetPicker.chosenTarget.gameObject;
+				command.setAttackingPlayer (attackingPlayer);
+				if (targetObject.GetComponent<PlayerUnit> () != null)
+				{
+					command.setPlayerBeingBuffed (targetObject.GetComponent<PlayerUnit> ());
+				}
+				if (targetObject.GetComponent<EnemyUnit> ())
+				{
+					command.setEnemyUnderAttack (targetObject.GetComponent<EnemyUnit>());
+				}
+
+				Destroy (playerTargetPicker);
+
+				// let's resolve our battle commands
 				buttonCommand.playerToAlter = "Player";
 				command.resolveBattleCommands (buttonCommand);
 			}
 
 
 		}
+
+		yield return new WaitForSeconds (0.01f);
 
 	}
 

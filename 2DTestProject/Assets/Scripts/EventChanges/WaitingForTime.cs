@@ -26,9 +26,7 @@ public class WaitingForTime : MonoBehaviour
 	/// <returns>The before input.</returns>
 	public IEnumerator PauseBeforeInput()
 	{
-		Debug.Log ("paused for input");
 		yield return new WaitForSeconds (0.15f);
-		Debug.Log ("unpaused for input");
 	}
 
 	/// <summary>

@@ -145,6 +145,11 @@ using System.Xml.Linq;
 											optionsSet.command = words.Attribute ("command").Value;
 										}
 
+										if (words.Attribute ("target") != null)
+										{
+											optionsSet.target = words.Attribute ("target").Value;
+										}
+
 										// if we have the playerToAlter attribute, add that into our
 										// options set so that we can alter this player based on the command
 										if (words.Attribute ("playerToAlter") != null)
