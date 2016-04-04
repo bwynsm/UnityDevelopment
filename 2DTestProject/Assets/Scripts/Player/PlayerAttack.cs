@@ -333,7 +333,7 @@ public class PlayerAttack : MonoBehaviour
 
 		basePosition = new Vector2 (this.transform.position.x, this.transform.position.y);
 
-		// Reset the timer.
+		/*// Reset the timer.
 		//timer = 0f;
 		Debug.Log("we are attacking in here : " + basePosition + " " + targetInRange + " " + attacking);
 
@@ -357,12 +357,14 @@ public class PlayerAttack : MonoBehaviour
 
 		// that should be set when animation is complete. Teleport should have been called already
 		// though, so we should be in range.
-
+		*/
 
 		// not even going to go into an animation state for attacking just yet, but we are going to 
 		// try and do a camera shake and a light flash
 		ShakeCamera();
 		screenFlash ();
+
+		enemyUnit.enemyHealth.TakeDamage (10);
 
 
 		// for now we'll relinquish our turn here
@@ -372,7 +374,7 @@ public class PlayerAttack : MonoBehaviour
 		batMan.attackDone = " Attacked " + enemyUnit.playerName;
 		Toolbox.Instance.isLocked = false;
 
-
+		yield return new WaitForSeconds (0.01f);
 	}
 
 	/// <summary>

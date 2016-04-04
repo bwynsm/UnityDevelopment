@@ -209,7 +209,7 @@ public class EnemyAttack : MonoBehaviour
 
 		// if player name is grue, we'll do this
 		// otherwise, let's do this in a moment
-		if (gameObject.name == "Grue")
+		/*if (gameObject.name == "Grue")
 		{
 			
 
@@ -279,9 +279,26 @@ public class EnemyAttack : MonoBehaviour
 			attackDone = "NO REAL ATTACKS DONE! MIND GAMES!";
 
 
+		}*/
+
+		// If the player has health to lose...
+		if (targetUnit.playerHealth.currentHealth > 0)
+		{
+			// ... damage the player.
+			targetUnit.playerHealth.TakeDamage (attackDamage);
+			ShakeCamera ();
 		}
 
+		attackDone = " attacks " + targetUnit.playerName;
 
+
+		// tell our battle manager that we are done
+		BattleManager batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
+		batMan.turnFinished = true;
+		batMan.attackDone = attackDone;
+		Toolbox.Instance.isLocked = false;
+
+		yield return new WaitForSeconds (0.1f);
     }
 
 

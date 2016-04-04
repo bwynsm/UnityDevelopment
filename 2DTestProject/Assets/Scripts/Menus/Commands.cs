@@ -54,6 +54,8 @@ public class Commands
 		bool finalSelection = false;
 		// if player to alter is blank, debug that
 
+		Debug.Log ("COMMANDS STRING : " + commandsString);
+
 		// next we need to take that command that we have and we need
 		// to parse it out. We'll split it by semicolon
 		string[] commandsList = commandsString.Split(';');
@@ -94,6 +96,8 @@ public class Commands
 					Debug.Log ("attacking player is null");
 				else if (playerAttacking.GetComponent<PlayerAttack> () == null)
 					Debug.Log ("PLAYERATTACK is null");
+
+
 
 				playerAttacking.GetComponent<PlayerAttack> ().startAttacking = true;
 				finalSelection = true;
@@ -156,6 +160,7 @@ public class Commands
 	/// <param name="attacker">Attacker.</param>
 	public void setAttackingPlayer(PlayerUnit attacker)
 	{
+		Debug.Log ("We are here in setting player : " + attacker.playerName);
 		playerAttacking = attacker;
 	}
 
@@ -166,6 +171,8 @@ public class Commands
 	/// <param name="enemyUnderAttack">Enemy under attack.</param>
 	public void setEnemyUnderAttack(EnemyUnit attacked)
 	{
+		Debug.Log ("Player Unit Null?" + playerAttacking.GetComponent<PlayerAttack> ());
+		Debug.Log ("Enemy Unit Null: " + attacked.name + " " + attacked.gameObject.name);
 		//enemyUnderAttack = attacked;
 		playerAttacking.GetComponent<PlayerAttack> ().enemyUnit = attacked;
 		playerAttacking.GetComponent<PlayerAttack> ().target = attacked.gameObject;

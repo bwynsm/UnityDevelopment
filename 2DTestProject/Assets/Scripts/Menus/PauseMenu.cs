@@ -15,11 +15,11 @@ public class PauseMenu : Menu
 	{
 		menuOptions = new List<Options> () 
 		{
-			new Options("", "Other", "", "Player"),
-			new Options("", "Stats", "", "Player"),
-			new Options("", "Party", "", "Player"),
-			new Options("", "Settings", "", "Player"),
-			new Options("exit", "Exit", "", "Player")
+			new Options("", "Other", "", "Player", ""),
+			new Options("", "Stats", "", "Player", ""),
+			new Options("", "Party", "", "Player", ""),
+			new Options("", "Settings", "", "Player", ""),
+			new Options("exit", "Exit", "", "Player", "")
 
 		};
 	}

@@ -16,6 +16,9 @@ public class LoadBattleScene : MonoBehaviour
 	public List<CharacterConversable> turnOrder;
 	private List<GameObject> allCombatants;
 
+	private GameObject currentPlayer;
+	private GameObject currentEnemy;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,12 +29,13 @@ public class LoadBattleScene : MonoBehaviour
 	public void LoadTurns()
 	{
 		// get our player character and our enemy character
-		GameObject currentPlayer = GameObject.FindGameObjectWithTag("PlayerCharacter");
-		GameObject enemy = GameObject.FindGameObjectWithTag ("Enemy");
-
+		currentPlayer = GameObject.FindGameObjectWithTag("PlayerCharacter");
+		currentEnemy = GameObject.FindGameObjectWithTag ("Enemy");
+		currentPlayer.transform.position = new Vector2(1.8f, -3.40f);
+		currentEnemy.transform.position = new Vector2 (5.2f, -3.40f);
 
 		// characterconversable[]
-		CharacterConversable[] enemyChildrenTemp = enemy.GetComponentsInChildren<CharacterConversable> (true);
+		CharacterConversable[] enemyChildrenTemp = currentEnemy.GetComponentsInChildren<CharacterConversable> (true);
 		CharacterConversable[] playerChildrenTemp = currentPlayer.GetComponentsInChildren<CharacterConversable> (true);
 		allCombatants = new List<GameObject> ();
 
@@ -46,7 +50,6 @@ public class LoadBattleScene : MonoBehaviour
 			{
 				allCombatants.Add (enemyChildrenTemp [i].gameObject);
 				enemyChildrenTemp [i].gameObject.SetActive (true);
-				//enemyChildrenTemp [i].gameObject.transform.position = new Vector2(5.2f, -3.40f + (i)); 
 			}
 
 			// if we have another player child in our player party
@@ -54,7 +57,6 @@ public class LoadBattleScene : MonoBehaviour
 			{
 				allCombatants.Add (playerChildrenTemp [i].gameObject);
 				playerChildrenTemp [i].gameObject.SetActive (true);
-				//playerChildrenTemp [i].gameObject.transform.position = new Vector2(1.8f, -3.40f  + (i)); 
 			}
 		}
 
@@ -81,21 +83,30 @@ public class LoadBattleScene : MonoBehaviour
 		// now that we have all combatants...
 		// loop over the objects?
 		// we can tell what they are by their tags
-		int playerIndex = 0;
-		int enemyIndex = 0;
+		float playerIndex = 0;
+		float enemyIndex = 0;
 
 		foreach (var combatant in allCombatants)
 		{
-			Debug.Log ("COMBATANT NAME : " + combatant.name + " AND THEIR SPEED : " + combatant.GetComponent<CharacterConversable>().speed);
+			CharacterConversable combatantCharacter = combatant.GetComponent<CharacterConversable> ();
+
+			Debug.Log ("COMBATANT NAME : " + combatant.name + " AND THEIR SPEED : " + combatantCharacter.speed);
 			turnOrder.Add (combatant.GetComponent<CharacterConversable> ());
 
 			// IF THE UNIT IS A PLAYER CHARACTER, PUT IT ON THE PLAYER'S SIDE
 			if (combatant.GetComponent<CharacterConversable>().isPlayerCharacter)
 			{
 
-				// find positions for everyone.
-				combatant.transform.position = new Vector2(1.8f, -3.40f  + (playerIndex)); 
-				playerIndex++;
+				Debug.Log ("COMBATANT " + combatant.name + " BEFORE TRANSFORM : " + combatant.transform.position);
+
+				if (!combatant.Equals (currentPlayer))
+				{
+					// find positions for everyone.
+					combatant.transform.position = new Vector2 (1.8f, -3.40f + (playerIndex)); 
+					playerIndex += 0.8f;
+				}
+
+				Debug.Log ("COMBATANT " + combatant.name + " AFTER TRANSFORM : " + combatant.transform.position);
 
 				// let's also make them face one another
 				Animator anim = combatant.GetComponent<Animator>();
@@ -121,6 +132,7 @@ public class LoadBattleScene : MonoBehaviour
 
 				combatant.AddComponent<BattleMenu> ().battleXML = tempPlayerXML;
 				BattleMenu battleMenu = combatant.GetComponent<BattleMenu> ();
+				battleMenu.allCombatants = turnOrder;
 				battleMenu.battlePanel = GameObject.Find ("BattlePanel");
 				battleMenu.prefabButton = prefabButton;
 
@@ -130,8 +142,15 @@ public class LoadBattleScene : MonoBehaviour
 			// component anyway
 			else
 			{
-				combatant.transform.position = new Vector2(5.2f, -3.40f + enemyIndex); 
-				enemyIndex++;
+				enemyIndex += 0.5f;
+
+				if (!combatant.Equals(currentEnemy))
+				{
+					// find positions for everyone.
+					combatant.transform.position = new Vector2 (5.2f, -3.40f + (enemyIndex)); 
+					Debug.Log ("ENEMY NAME : " + combatant.name + " POSITION : " + combatant.transform.position);
+				}
+
 
 				// let's also make them face one another
 				Animator anim = combatant.GetComponent<Animator>();

@@ -7,7 +7,7 @@ public class Options {
 	public string option;
 	public string playerToAlter;
 	public string currentPlayer;
-
+	public string target;
 
 
 	/// <summary>
@@ -18,12 +18,13 @@ public class Options {
 	}
 
 
-	public Options(string commandString, string optionString, string playerToAlterString, string currentPlayerString)
+	public Options(string commandString, string optionString, string playerToAlterString, string currentPlayerString, string targetString)
 	{
 		command = commandString;
 		option = optionString;
 		playerToAlter = playerToAlterString;
 		currentPlayer = currentPlayerString;
+		target = targetString;
 	}
 
 	/// <summary>
@@ -33,6 +34,6 @@ public class Options {
 	/// <returns>The string.</returns>
 	public string toString()
 	{
-		return "Option : " + option + " - Command : " + command + " - Player To Alter : " + playerToAlter + " - Current Player : " + currentPlayer;
+		return "Option : " + option + " - Command : " + command + " - Player To Alter : " + playerToAlter + " - Current Player : " + currentPlayer + " - Target : " + target;
 	}
 }

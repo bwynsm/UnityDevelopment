@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\EventChanges\Battle\BattleManager.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\LoadBattleScene.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\ProjectileAnimator.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\Battle\TargetPicker.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MonoBehaviourExtended.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MusicChanger.cs" />
      <Compile Include="Assets\Scripts\EventChanges\ScreenFader.cs" />

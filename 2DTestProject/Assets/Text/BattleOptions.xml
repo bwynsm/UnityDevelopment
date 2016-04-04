@@ -5,8 +5,8 @@
 
 		<Speech  name="Player" type="options">
         <Options>
-          <option command="id#PlayerBasic;attack" >Attack</option>
-          <option command="id#PlayerBasic;defend" >Defend</option>
+          <option command="id#PlayerBasic;attack" target="enemy">Attack</option>
+          <option command="id#PlayerBasic;defend"  target="ally">Defend</option>
           <option command="goto#PlayerSpells;" >Spells</option>
           <option command="goto#PlayerItems" >Items</option>
         </Options>
@@ -16,9 +16,9 @@
 	<Speeches id="PlayerSpells">
 		<Speech  name="Player" type="options">
         <Options>
-          <option command="fire" >Ice</option>
-          <option command="ice" >Fire</option>
-          <option command="water" >Water</option>
+          <option command="ice"  target="enemy">Ice</option>
+          <option command="fire"  target="enemy">Fire</option>
+          <option command="water"  target="enemy">Water</option>
           <option command="goto#PlayerBasic" >Back</option>
         </Options>
 		</Speech>
@@ -27,9 +27,9 @@
 	<Speeches id="PlayerItems">
 		<Speech  name="Player" type="options">
         <Options>
-          <option command="damage#40" >Fire Bomb</option>
-          <option command="wand" >Wand</option>
-          <option command="health#40" >Potion</option>
+          <option command="damage#40"  target="enemy">Fire Bomb</option>
+          <option command="wand"  target="self">Wand</option>
+          <option command="health#40"  target="ally">Potion</option>
           <option command="goto#PlayerBasic" >Back</option>
         </Options>
 		</Speech>

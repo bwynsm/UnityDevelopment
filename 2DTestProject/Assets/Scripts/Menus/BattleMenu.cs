@@ -16,6 +16,9 @@ public class BattleMenu : MonoBehaviour
 	public Conversation battleOptionsManager;
 
 
+	// get all of the players in this battle
+	public List<CharacterConversable> allCombatants;
+
 	public bool updatingItems = false;
 	public bool doneWaitingForClear = false;
 
@@ -152,6 +155,9 @@ public class BattleMenu : MonoBehaviour
 		optionsMenu.optionsBox = battlePanel;
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "BattleMenu";
+		optionsMenu.attackingPlayer = gameObject.GetComponent<PlayerUnit> ();
+		optionsMenu.targetPlayer = GameObject.FindGameObjectWithTag ("Enemy").GetComponent<EnemyUnit>();
+
 
 		// hide our options buttons
 		optionsMenu.toggleOptionsDisplay(true);
