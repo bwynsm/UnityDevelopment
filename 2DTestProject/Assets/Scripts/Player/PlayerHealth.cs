@@ -75,6 +75,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage (int amount)
     {
+		// what is the amount of damage that we are taking?
+		gameObject.AddComponent<DamageNumbers>();
+		DamageNumbers damageNumbers = gameObject.GetComponent<DamageNumbers> ();
+		damageNumbers.damageTransform = this.transform;
+		damageNumbers.prefabDamage = (GameObject)Resources.Load("damage", typeof(GameObject));
+		damageNumbers.CreateDamagePopup (amount, gameObject);
+
+
+
         // Set the damaged flag so the screen will flash.
         damaged = true;
 

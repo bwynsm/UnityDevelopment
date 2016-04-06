@@ -53,6 +53,14 @@ public class EnemyHealth : MonoBehaviour
 	/// <param name="amount">Amount.</param>
 	public void TakeDamage (int amount)
 	{
+
+		gameObject.AddComponent<DamageNumbers>();
+		DamageNumbers damageNumbers = gameObject.GetComponent<DamageNumbers> ();
+		damageNumbers.damageTransform = this.transform;
+		damageNumbers.prefabDamage = (GameObject)Resources.Load("damage", typeof(GameObject));
+		damageNumbers.CreateDamagePopup (amount, gameObject);
+		Destroy (damageNumbers, 10f);
+
 		// Set the damaged flag so the screen will flash.
 		damaged = true;
 

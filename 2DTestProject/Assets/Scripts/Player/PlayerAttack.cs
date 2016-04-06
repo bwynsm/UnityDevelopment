@@ -81,6 +81,7 @@ public class PlayerAttack : MonoBehaviour
 			{
 				// ... damage the player.
 				enemyUnit.enemyHealth.TakeDamage (attackDamage);
+
 			}
 
 

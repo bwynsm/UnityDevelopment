@@ -57,6 +57,8 @@
      <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyUnit.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\BattleManager.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\Battle\DamageNumbers.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\Battle\DestroyObjectOnTimer.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\LoadBattleScene.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\ProjectileAnimator.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\ShadowAndOutline.cs" />
