@@ -22,7 +22,7 @@ public class PlayerUnit : CharacterConversable
 	{
 		playerHealth = this.GetOrAddComponent<PlayerHealth> ();
 		playerAttack = this.GetOrAddComponent<PlayerAttack> ();
-		playerCharacter = this.GetOrAddComponent<PlayerMovement> ();
+		playerCharacter = gameObject.AddComponent<PlayerMovement> ();
 		freeze = false;
 
 
@@ -31,6 +31,7 @@ public class PlayerUnit : CharacterConversable
 
 		isPlayerCharacter = true;
 	}
+		
 
 
 

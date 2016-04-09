@@ -78,10 +78,11 @@ public class PlayerHealth : MonoBehaviour
 		// what is the amount of damage that we are taking?
 		gameObject.AddComponent<DamageNumbers>();
 		DamageNumbers damageNumbers = gameObject.GetComponent<DamageNumbers> ();
-		damageNumbers.damageTransform = this.transform;
 		damageNumbers.prefabDamage = (GameObject)Resources.Load("damage", typeof(GameObject));
-		damageNumbers.CreateDamagePopup (amount, gameObject);
+		damageNumbers.CreateDamagePopup (amount, transform.localPosition);
 
+
+		Debug.Log ("GAME OBJECT TRANSFORM : " + gameObject.transform + " DAMAGE TRANSFORM : " + damageNumbers.gameObject.transform);
 
 
         // Set the damaged flag so the screen will flash.
@@ -89,6 +90,9 @@ public class PlayerHealth : MonoBehaviour
 
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
+
+		if (currentHealth <= 0)
+			currentHealth = 0;
 
         // Set the health bar's value to the current health.
         healthSlider.value = currentHealth;
@@ -112,8 +116,6 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
 
 
-		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
-		batMan.currentState = BattleManager.BATTLE_STATES.LOSE;
 
         // Tell the animator that the player is dead.
         //anim.SetTrigger ("Die");
@@ -122,17 +124,8 @@ public class PlayerHealth : MonoBehaviour
         //playerAudio.clip = deathClip;
         //playerAudio.Play ();
 
-        // Turn off the movement and shooting scripts.
-        //playerMovement.enabled = false;
 
 
-		//Toolbox toolboxInstance = Toolbox.Instance;
-		// get the battle panel and destroy
-		Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
 
-		// spawn at least location?
-		// what if the grue is still there?
-		// we'll get this in a moment.
-		SceneManager.LoadScene("OpeningScene");
     }       
 }

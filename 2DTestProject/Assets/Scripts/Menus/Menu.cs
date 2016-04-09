@@ -106,7 +106,6 @@ public class Menu : MonoBehaviour
 		{
 			yield return StartCoroutine (waitingObject.WaitForKeyDown ());
 
-			Debug.Log ("we are in selection made false and options box live");
 			if (EventSystem.current.currentSelectedGameObject == null)
 			{
 				// if we have no more object
@@ -123,13 +122,11 @@ public class Menu : MonoBehaviour
 					optionsBox.GetComponentsInChildren<Button> () [0].Select ();
 				}
 			}
-
-			Debug.Log (selectionMade + " " + isActive);
+				
 
 			if (!selectionMade && isActive == true && Input.anyKeyDown) 
 			{
-
-				Debug.Log ("our selection made is false and we are active and have received a key press ");
+				
 
 				if (Input.GetKeyDown (KeyCode.DownArrow) == true) 
 				{
@@ -179,8 +176,7 @@ public class Menu : MonoBehaviour
 
 				if (Input.GetKeyDown (KeyCode.X)) 
 				{
-
-					Debug.Log ("we have a keycode x");
+					
 					selectionMade = true;
 
 					yield return StartCoroutine( ButtonClicked (menuOptions [indexSelected]));
@@ -357,7 +353,6 @@ public class Menu : MonoBehaviour
 	{
 		isActive = false;
 		Destroy (waitingObject);
-		Debug.Log ("Button Clicked" + buttonCommand.command);
 
 		if (selectionMade)
 		{
@@ -381,8 +376,7 @@ public class Menu : MonoBehaviour
 			} 
 			else if (menuType == "BattleMenu")
 			{
-				Debug.Log ("we are here in button clicked : ");
-
+				
 
 				// yield on starting a new 
 				// add targetpicker to this player character, and then use that
@@ -412,19 +406,16 @@ public class Menu : MonoBehaviour
 				// a character to attack (for now let's just assume it will be an enemy)
 				yield return StartCoroutine(playerTargetPicker.selectTarget());
 
-				Debug.Log ("we are here in menu awaiting a response");
 
 				while (!playerTargetPicker.hasChosenTarget)
 					yield return null;
 
 
 
-				Debug.Log ("we are here");
 
 				if (playerTargetPicker.chosenTarget == null)
 				{
 					Destroy (playerTargetPicker);
-					Debug.Log ("we are in here with a null response");
 
 					// if we get a null, make the buttons live again and we'll try again?
 					// disable button presses

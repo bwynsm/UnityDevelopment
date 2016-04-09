@@ -5,7 +5,7 @@ using System.Collections;
 public class EnemyAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 5.0f;     // The time in seconds between each attack.
-    public int attackDamage = 15;               // The amount of health taken away per attack.
+    public int attackDamage = 45;               // The amount of health taken away per attack.
 
 
     Animator anim;                              // Reference to the animator component.
@@ -281,6 +281,17 @@ public class EnemyAttack : MonoBehaviour
 
 		}*/
 
+		EnemyUnit attackingPlayer = gameObject.GetComponent<EnemyUnit> ();
+		TargetPicker playerTargetPicker = gameObject.AddComponent<TargetPicker>();
+		playerTargetPicker.currentPlayer = attackingPlayer;
+		playerTargetPicker.battleList = GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<BattleMenu> ().allCombatants;
+		playerTargetPicker.loadBattle ();
+		targetUnit = playerTargetPicker.RandomTarget ().gameObject.GetComponent<PlayerUnit> ();
+
+
+		int damageDealt = Mathf.RoundToInt(Random.Range (attackDamage * 0.8f, attackDamage * 1.2f));
+
+
 		// If the player has health to lose...
 		if (targetUnit.playerHealth.currentHealth > 0)
 		{
@@ -291,7 +302,7 @@ public class EnemyAttack : MonoBehaviour
 
 		attackDone = " attacks " + targetUnit.playerName;
 
-
+		Destroy (playerTargetPicker);
 		// tell our battle manager that we are done
 		BattleManager batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
 		batMan.turnFinished = true;
@@ -350,10 +361,18 @@ public class EnemyAttack : MonoBehaviour
 		ShakeCamera();
 		screenFlash ();
 
+		EnemyUnit attackingPlayer = gameObject.GetComponent<EnemyUnit> ();
+		TargetPicker playerTargetPicker = gameObject.AddComponent<TargetPicker>();
+		playerTargetPicker.currentPlayer = attackingPlayer;
+		playerTargetPicker.battleList = gameObject.GetComponent<BattleMenu> ().allCombatants;
+		playerTargetPicker.loadBattle ();
+		targetUnit = playerTargetPicker.RandomTarget ().gameObject.GetComponent<PlayerUnit> ();
 
-		targetUnit.playerHealth.TakeDamage (15);
 
+		int damageDealt = Mathf.RoundToInt(Random.Range (attackDamage * 0.8f, attackDamage * 1.2f));
+		targetUnit.playerHealth.TakeDamage (damageDealt);
 
+		Destroy (playerTargetPicker);
 
 		// for now we'll relinquish our turn here
 		// tell our battle manager that we are done

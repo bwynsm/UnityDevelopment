@@ -19,15 +19,18 @@ public class LoadBattleScene : MonoBehaviour
 	private GameObject currentPlayer;
 	private GameObject currentEnemy;
 
+	BattleManager batMan;
+
 	// Use this for initialization
 	void Start () 
 	{
-
+		batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
 	}
 
 
 	public void LoadTurns()
 	{
+		
 		// get our player character and our enemy character
 		currentPlayer = GameObject.FindGameObjectWithTag("PlayerCharacter");
 		currentEnemy = GameObject.FindGameObjectWithTag ("Enemy");
@@ -50,6 +53,7 @@ public class LoadBattleScene : MonoBehaviour
 			{
 				allCombatants.Add (enemyChildrenTemp [i].gameObject);
 				enemyChildrenTemp [i].gameObject.SetActive (true);
+				batMan.enemies.Add (enemyChildrenTemp [i].gameObject.GetComponent<EnemyUnit> ());
 			}
 
 			// if we have another player child in our player party
@@ -57,10 +61,10 @@ public class LoadBattleScene : MonoBehaviour
 			{
 				allCombatants.Add (playerChildrenTemp [i].gameObject);
 				playerChildrenTemp [i].gameObject.SetActive (true);
+				batMan.teammates.Add (playerChildrenTemp [i].gameObject.GetComponent<PlayerUnit> ());
 			}
 		}
 
-		Debug.Log ("There are no units left?");
 
 	}
 

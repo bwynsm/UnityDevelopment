@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour
 {
 	public float timeBetweenAttacks = 5.0f;     // The time in seconds between each attack.
-	public int attackDamage = 15;               // The amount of health taken away per attack.
+	public int attackDamage = 44;               // The amount of health taken away per attack.
 
 
 	Animator anim;                              // Reference to the animator component.
@@ -365,7 +365,11 @@ public class PlayerAttack : MonoBehaviour
 		ShakeCamera();
 		screenFlash ();
 
-		enemyUnit.enemyHealth.TakeDamage (10);
+
+		// range of 20% more and 20% less
+		float damageGiven = Random.Range(attackDamage * 0.8f, attackDamage * 1.2f);
+
+		enemyUnit.enemyHealth.TakeDamage (Mathf.RoundToInt(damageGiven));
 
 
 		// for now we'll relinquish our turn here

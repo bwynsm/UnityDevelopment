@@ -26,6 +26,11 @@ public class CameraFollow : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		if (target == null)
+		{
+			target = GameObject.FindGameObjectWithTag ("PlayerCharacter").transform;
+		}
+
 		//Cursor.lockState =  CursorLockMode.Locked;
 		//Cursor.visible = false;
 

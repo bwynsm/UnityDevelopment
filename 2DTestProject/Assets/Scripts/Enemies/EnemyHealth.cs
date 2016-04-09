@@ -56,10 +56,8 @@ public class EnemyHealth : MonoBehaviour
 
 		gameObject.AddComponent<DamageNumbers>();
 		DamageNumbers damageNumbers = gameObject.GetComponent<DamageNumbers> ();
-		damageNumbers.damageTransform = this.transform;
-		damageNumbers.prefabDamage = (GameObject)Resources.Load("damage", typeof(GameObject));
-		damageNumbers.CreateDamagePopup (amount, gameObject);
-		Destroy (damageNumbers, 10f);
+		damageNumbers.prefabDamage = (GameObject)Resources.Load("Damage", typeof(GameObject));
+		damageNumbers.CreateDamagePopup (amount, transform.position);
 
 		// Set the damaged flag so the screen will flash.
 		damaged = true;
@@ -102,11 +100,9 @@ public class EnemyHealth : MonoBehaviour
 		isDead = true;
 
 		// for now, win condition
-		Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
-		GameObject.Find ("BattlePanel").SetActive (false);
+		//Destroy(GameObject.Find("BattlePanel").GetComponent<BattleMenu>());
+		//GameObject.Find ("BattlePanel").SetActive (false);
 
-		BattleManager batMan = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleManager>();
-		batMan.currentState = BattleManager.BATTLE_STATES.WIN;
 
 		// Tell the animator that the player is dead.
 		//anim.SetTrigger ("Die");

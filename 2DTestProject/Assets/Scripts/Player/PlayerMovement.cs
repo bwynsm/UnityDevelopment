@@ -22,11 +22,6 @@ public class PlayerMovement : MonoBehaviour
 	PlayerUnit thisPlayerUnit;
 
 
-	// if we are awake, check for another of this type and delete
-	void Awake()
-	{
-
-	}
 
 	// Use this for initialization
 	void Start () 
@@ -36,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 		thisPlayerUnit = GetComponent<PlayerUnit> ();
 		//gameObject.name = gameObjectPlayerName;
 		//renderer = GetComponent<SpriteRenderer> ();
+
+
 
 	}
 	
@@ -80,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
 			else 
 			{
 				anim.SetBool ("isWalking", false);
-
 			}
 			
 
