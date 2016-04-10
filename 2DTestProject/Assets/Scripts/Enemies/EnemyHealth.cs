@@ -17,12 +17,16 @@ public class EnemyHealth : MonoBehaviour
 	// let's also update the text field just for fun
 	public Text healthField;
 
-	//Animator anim;                                              // Reference to the Animator component.
+	Animator anim;                                              // Reference to the Animator component.
 	AudioSource playerAudio;                                    // Reference to the AudioSource component.
 	//EnemyCharacter playerMovement;                              // Reference to the player's movement.
 	bool isDead;                                                // Whether the player is dead.
 	bool damaged;                                               // True when the player gets damaged.
 
+	void Start()
+	{
+		anim = GetComponent <Animator> ();
+	}
 
 
 	void Update ()
@@ -58,7 +62,7 @@ public class EnemyHealth : MonoBehaviour
 		DamageNumbers damageNumbers = gameObject.GetComponent<DamageNumbers> ();
 		damageNumbers.prefabDamage = (GameObject)Resources.Load("Damage", typeof(GameObject));
 		damageNumbers.CreateDamagePopup (amount, transform.position);
-
+		 
 		// Set the damaged flag so the screen will flash.
 		damaged = true;
 
@@ -94,7 +98,6 @@ public class EnemyHealth : MonoBehaviour
 	/// </summary>
 	void Death ()
 	{
-		Debug.Log ("ENEMY IS DEAD");
 
 		// Set the death flag so this function won't be called again.
 		isDead = true;
@@ -105,7 +108,7 @@ public class EnemyHealth : MonoBehaviour
 
 
 		// Tell the animator that the player is dead.
-		//anim.SetTrigger ("Die");
+		anim.SetTrigger ("Die");
 
 		// Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
 		//playerAudio.clip = deathClip;

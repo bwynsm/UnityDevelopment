@@ -44,10 +44,14 @@ public class Toolbox : Singleton<Toolbox> {
 	/// <param name="level">Level.</param>
 	void OnLevelWasLoaded(int level)
 	{
-		if (positionInLastScene == null)
+		if ((positionInLastScene == null || positionInLastScene.Equals(null) || positionInLastScene.Equals(Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
 		{
 			// find the starting point
-			positionInLastScene = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+			positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;
+		} 
+		else
+		{
+			Debug.Log ("we are here with a position that is not null" + positionInLastScene);
 		}
 
 		if (level != 1)
@@ -57,7 +61,18 @@ public class Toolbox : Singleton<Toolbox> {
 
 			playerCharacter.transform.position = positionInLastScene;
 			playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
-			GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<Animator> ().SetBool ("IsFighting", false);
+
+			// just set a basic 1 health if we are a dead character
+			if (playerCharacter.GetComponent<PlayerHealth> ().currentHealth <= 0)
+			{
+				playerCharacter.GetComponent<PlayerHealth> ().currentHealth = 1;
+			}
+
+
+			// if we have a damage numbers script, remove it
+			Destroy(playerCharacter.GetComponent<DamageNumbers>());
+
+			playerCharacter.GetComponent<Animator> ().SetBool ("IsFighting", false);
 			Destroy(playerCharacter.GetComponent<DamageNumbers>());
 
 			foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
@@ -73,14 +88,18 @@ public class Toolbox : Singleton<Toolbox> {
 		else
 		{
 			// for each enemy and player type tag?
-			foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+			foreach (Animator enemy in GameObject.FindGameObjectWithTag("Enemy").GetComponentsInChildren<Animator>(true))
 			{
-				enemy.GetComponent<Animator> ().SetBool ("IsFighting", true);
+				Debug.Log ("we are in here changing status for enemy : " + enemy.name);
+				enemy.gameObject.SetActive (true);
+				enemy.SetBool ("IsFighting", true);
 			}
 
-			foreach (GameObject player in GameObject.FindGameObjectsWithTag("PlayerCharacter"))
+			foreach (Animator player in GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponentsInChildren<Animator>(true))
 			{
-				player.GetComponent<Animator> ().SetBool ("IsFighting", true);
+				Debug.Log ("we are in here changing status for player : " + player.name);
+				player.gameObject.SetActive (true);
+				player.SetBool ("IsFighting", true);
 
 				// set the other characters as not showing
 

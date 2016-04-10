@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 	// let's also update the text field just for fun
 	public Text healthField;
 
-    //Animator anim;                                              // Reference to the Animator component.
+    Animator anim;                                              // Reference to the Animator component.
     //AudioSource playerAudio;                                    // Reference to the AudioSource component.
     //PlayerMovement playerMovement;                              // Reference to the player's movement.
     bool isDead;                                                // Whether the player is dead.
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake ()
     {
         // Setting up the references.
-        //anim = GetComponent <Animator> ();
+        anim = GetComponent <Animator> ();
         //playerAudio = GetComponent <AudioSource> ();
         //playerMovement = GetComponent <PlayerMovement> ();
 
@@ -118,7 +118,7 @@ public class PlayerHealth : MonoBehaviour
 
 
         // Tell the animator that the player is dead.
-        //anim.SetTrigger ("Die");
+        anim.SetTrigger ("Die");
 
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
         //playerAudio.clip = deathClip;
