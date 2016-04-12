@@ -2,10 +2,13 @@
 using System.Collections;
 
 
+/// <summary>
+/// Player attack instance : controls damage and animations
+/// </summary>
 public class PlayerAttack : MonoBehaviour
 {
 	public float timeBetweenAttacks = 5.0f;     // The time in seconds between each attack.
-	public int attackDamage = 44;               // The amount of health taken away per attack.
+	public int attackDamage;               // The amount of health taken away per attack.
 
 
 	Animator anim;                              // Reference to the animator component.

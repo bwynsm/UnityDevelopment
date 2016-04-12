@@ -18,6 +18,14 @@ public class Options {
 	}
 
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Options"/> class.
+	/// </summary>
+	/// <param name="commandString">Command string.</param>
+	/// <param name="optionString">Option string.</param>
+	/// <param name="playerToAlterString">Player to alter string.</param>
+	/// <param name="currentPlayerString">Current player string.</param>
+	/// <param name="targetString">Target string.</param>
 	public Options(string commandString, string optionString, string playerToAlterString, string currentPlayerString, string targetString)
 	{
 		command = commandString;

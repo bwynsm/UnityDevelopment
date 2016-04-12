@@ -14,7 +14,9 @@ public class ScreenFader : MonoBehaviour {
 	bool isFading = false;
 
 
-
+	/// <summary>
+	/// Start this instance.
+	/// </summary>
 	// Use this for initialization
 	void Start () 
 	{
@@ -50,11 +52,17 @@ public class ScreenFader : MonoBehaviour {
 			yield return null;
 	}
 
+	/// <summary>
+	/// Flashes the screen white.
+	/// </summary>
 	public void FlashWhite()
 	{
 		anim.SetTrigger ("FlashWhite");
 	}
 
+	/// <summary>
+	/// Back to normal state
+	/// </summary>
 	public void NormalState()
 	{
 		anim.SetTrigger ("DoneFlashingWhite");

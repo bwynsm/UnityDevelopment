@@ -2,10 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 
+/// <summary>
+/// Enemy attack items such as animations and attacking the player and choosing
+/// which target to attack via TargetPicker 
+/// </summary>
 public class EnemyAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 5.0f;     // The time in seconds between each attack.
-    public int attackDamage = 45;               // The amount of health taken away per attack.
+    public int attackDamage;               // The amount of health taken away per attack.
 
 
     Animator anim;                              // Reference to the animator component.
@@ -383,6 +387,10 @@ public class EnemyAttack : MonoBehaviour
 	}
 
 
+
+	/// <summary>
+	/// Shakes the camera on attack or animation or just for fancyness
+	/// </summary>
 	public void ShakeCamera()
 	{
 		// set a screen shake
@@ -398,13 +406,13 @@ public class EnemyAttack : MonoBehaviour
 	/// </summary>
 	public void returnToIdle()
 	{
-
 		anim.SetTrigger ("HasRetreated");
-
-
 	}
 
 
+	/// <summary>
+	/// Flashes the screen for dramatic magic
+	/// </summary>
 	public void screenFlash()
 	{
 		if (!flashedScreen)

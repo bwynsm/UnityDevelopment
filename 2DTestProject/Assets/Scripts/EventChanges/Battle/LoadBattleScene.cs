@@ -4,6 +4,12 @@ using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 
+
+
+/// <summary>
+/// Load battle scene from battle managers first phase of battle
+/// Gets the player turns and sets them in their positions and starting animations
+/// </summary>
 public class LoadBattleScene : MonoBehaviour 
 {
 
@@ -28,6 +34,10 @@ public class LoadBattleScene : MonoBehaviour
 	}
 
 
+
+	/// <summary>
+	/// Loads the turns for the players in combat
+	/// </summary>
 	public void LoadTurns()
 	{
 		
@@ -87,8 +97,8 @@ public class LoadBattleScene : MonoBehaviour
 		// now that we have all combatants...
 		// loop over the objects?
 		// we can tell what they are by their tags
-		float playerIndex = 0;
-		float enemyIndex = 0;
+		float playerIndex = 0.8f;
+		float enemyIndex = 0.0f;
 
 		foreach (var combatant in allCombatants)
 		{
@@ -146,10 +156,11 @@ public class LoadBattleScene : MonoBehaviour
 			// component anyway
 			else
 			{
-				enemyIndex += 1.5f;
+				
 
 				if (!combatant.Equals(currentEnemy))
 				{
+					enemyIndex += 0.8f;
 					// find positions for everyone.
 					combatant.transform.position = new Vector2 (5.2f, -3.40f + (enemyIndex)); 
 					Debug.Log ("ENEMY NAME : " + combatant.name + " POSITION : " + combatant.transform.position);

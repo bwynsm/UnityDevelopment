@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Projectile animator : works with distance spells and arrows and such
+/// spawning from a player
+/// </summary>
 public class ProjectileAnimator : MonoBehaviour {
 
 	Animator anim;

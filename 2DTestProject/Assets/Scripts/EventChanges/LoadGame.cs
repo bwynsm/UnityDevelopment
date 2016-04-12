@@ -2,6 +2,11 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
+/// <summary>
+/// Load game. Very first initialization step. Right now, just loading player and starting scene
+/// after setting player as an indestructable object
+/// </summary>
 public class LoadGame : MonoBehaviour {
 
 	// this loads all of our prefabs that need to not be destroyed on load
@@ -20,9 +25,6 @@ public class LoadGame : MonoBehaviour {
 		SceneManager.LoadScene("OpeningScene");
 	}
 
-	void Update()
-	{
-		
-	}
+
 
 }

@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEditor;
 
-
+/// <summary>
+/// Target picker : allows a player to select a target or an enemy to randomly
+/// select a target to attack (if one)
+/// </summary>
 public class TargetPicker : MonoBehaviour 
 {
 

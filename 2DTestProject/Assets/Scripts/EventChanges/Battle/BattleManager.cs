@@ -4,6 +4,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// Battle manager : stores the state of the battle
+/// </summary>
 public class BattleManager : MonoBehaviour {
 
 	public enum BATTLE_STATES
@@ -299,9 +303,12 @@ public class BattleManager : MonoBehaviour {
 	}
 
 
+
+	/// <summary>
+	/// Changes the character states.
+	/// </summary>
 	private void changeCharacterStates()
 	{
-		Debug.Log ("Changing character states");
 
 		// print out sort order
 		foreach (var character in battleTurnOrder)
@@ -312,6 +319,10 @@ public class BattleManager : MonoBehaviour {
 	}
 
 
+	/// <summary>
+	/// Displays the attack in the text panel
+	/// </summary>
+	/// <returns>The attack.</returns>
 	private IEnumerator displayAttack()
 	{
 		// wait for a couple of seconds and then we'll change the state

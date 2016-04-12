@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
 
+
+
+/// <summary>
+/// Dialogue class that takes in XML and makes a list of speeches
+/// so that we can run dialogue
+/// </summary>
  public class Dialogue 
  {    
     // dialogue contains a list of possible speeches

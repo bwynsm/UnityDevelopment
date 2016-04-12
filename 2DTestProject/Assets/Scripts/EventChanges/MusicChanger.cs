@@ -2,7 +2,12 @@
 using System.Collections;
 using UnityEngine.Audio;
 
-public class MusicChanger : MonoBehaviour {
+
+/// <summary>
+/// Music changer
+/// </summary>
+public class MusicChanger : MonoBehaviour 
+{
 
 
 	public AudioMixerSnapshot outOfCombat;
@@ -41,6 +46,9 @@ public class MusicChanger : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Transitions the music out
+	/// </summary>
 	public void transitionOut()
 	{
 		//AudioMixerSnapshot.TransitionTo(m_TransitionOut);

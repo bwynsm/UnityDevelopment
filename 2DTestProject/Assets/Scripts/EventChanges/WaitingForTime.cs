@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Waiting for time before doing something: a mini pause
+/// </summary>
 public class WaitingForTime : MonoBehaviour 
 {
 
 	public bool isPaused = true;
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="WaitingForTime"/> class.
+	/// </summary>
 	public WaitingForTime()
 	{
 	}

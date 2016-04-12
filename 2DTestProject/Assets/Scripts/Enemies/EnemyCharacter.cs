@@ -2,6 +2,10 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
+/// <summary>
+/// Enemy character information: analogue of PlayerMovement
+/// </summary>
 public class EnemyCharacter : MonoBehaviour 
 {
 
@@ -34,6 +38,8 @@ public class EnemyCharacter : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+
+
 		anim = GetComponent<Animator> ();
 		rbody = GetComponent<Rigidbody2D> ();
 		Transform temp = GetComponent<Transform> ();
@@ -227,7 +233,7 @@ public class EnemyCharacter : MonoBehaviour
 		anim.SetBool("isWalking", false);
 		isMoving = false;
 		//rbody.isKinematic = false;
-
+		Debug.Log("we are here in collision - but we are not loading? : " + col.gameObject.tag + " " + Toolbox.Instance.sceneAlreadyLoaded);
 
 		if (col.gameObject.tag == "PlayerCharacter")
 		{

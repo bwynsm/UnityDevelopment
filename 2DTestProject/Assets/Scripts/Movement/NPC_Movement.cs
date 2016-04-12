@@ -2,13 +2,13 @@
 using System.Collections;
 
 
-/**
- * NPC_Movement
- * Controls the movement of the NPC character.
- * Determines their speed and direction randomly and has them amble.
- * At some point I'd like to give them a boundary from intitial position... but
- * at the moment the NPC could wander around for a ways. Cannot go through teleports
- */
+///
+/// NPC_Movement
+/// Controls the movement of the NPC character.
+/// Determines their speed and direction randomly and has them amble.
+/// At some point I'd like to give them a boundary from intitial position... but
+/// at the moment the NPC could wander around for a ways. Cannot go through teleports
+///
 public class NPC_Movement : CharacterConversable
 {
 

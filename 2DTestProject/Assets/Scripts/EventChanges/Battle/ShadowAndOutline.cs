@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
  
+
+/// <summary>
+/// Shadow and outline: Used to set a shadow or outline around a textbox
+/// </summary>
 public static class ShadowAndOutline
 {
         public static void DrawOutline(Rect rect, string text, GUIStyle style, Color outColor, Color inColor, float size)

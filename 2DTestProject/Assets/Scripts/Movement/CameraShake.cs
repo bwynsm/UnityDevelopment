@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Camera shake.
+/// </summary>
 public class CameraShake : MonoBehaviour 
 {
 
@@ -31,7 +35,11 @@ public class CameraShake : MonoBehaviour
 	}
  
 
-
+	/// <summary>
+	/// Shake the specified shakeIntensityVal and shakeDecayVal.
+	/// </summary>
+	/// <param name="shakeIntensityVal">Shake intensity value.</param>
+	/// <param name="shakeDecayVal">Shake decay value.</param>
 	public void Shake(float shakeIntensityVal = 0.3f, float shakeDecayVal = 0.025f)
 	{
 		originPosition = transform.position;

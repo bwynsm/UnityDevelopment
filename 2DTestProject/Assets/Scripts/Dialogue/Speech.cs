@@ -14,6 +14,9 @@ using System.Collections.Generic;
  * - speechtext is the text field if type = text
  * - options is the options field if we have type = options
  */
+/// <summary>
+/// Speech Class: mostly just attributes
+/// </summary>
 public class Speech
 {
 	//[XmlAttribute("name")]
@@ -29,6 +32,10 @@ public class Speech
 	public string command;
 
 
+	/// <summary>
+	/// String version of the whole object
+	/// </summary>
+	/// <returns>The string.</returns>
 	public string toString()
 	{
 		return "Name : " + name + " Type : " + type + " SpeechText : " + SpeechText;

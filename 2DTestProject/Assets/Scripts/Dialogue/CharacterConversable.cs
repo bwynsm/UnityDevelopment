@@ -2,12 +2,13 @@
 using System.Collections;
 using System;
 
-/**
- * CharacterConversable
- * This actually isn't an interface.. I thought about it. I probably could still
- * make this an interface and just have everyone do it. 
- * But this determines whether a character can converse or be conversed with
- */
+
+/// <summary>
+/// CharacterConversable
+/// This actually isn't an interface.. I thought about it. I probably could still
+/// make this an interface and just have everyone do it. 
+/// But this determines whether a character can converse or be conversed with
+/// </summary>
 public class CharacterConversable : MonoBehaviour, IComparable
 {
 

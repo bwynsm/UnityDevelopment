@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 
 
-
+/// <summary>
+/// Battle menu.
+/// </summary>
 public class BattleMenu : MonoBehaviour
 {
 

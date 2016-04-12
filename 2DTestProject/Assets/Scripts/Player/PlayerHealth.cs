@@ -23,6 +23,10 @@ public class PlayerHealth : MonoBehaviour
     bool damaged;                                               // True when the player gets damaged.
 
 
+
+	/// <summary>
+	/// Awake this instance.
+	/// </summary>
     void Awake ()
     {
         // Setting up the references.
@@ -39,6 +43,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+	/// <summary>
+	/// Update this instance.
+	/// </summary>
     void Update ()
     {
         // If the player has just been damaged...
@@ -59,6 +66,11 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+
+	/// <summary>
+	/// Heals the character.
+	/// </summary>
+	/// <param name="amount">Amount.</param>
 	public void HealCharacter(int amount)
 	{
 		currentHealth += amount;
@@ -73,6 +85,11 @@ public class PlayerHealth : MonoBehaviour
 
 	}
 
+
+	/// <summary>
+	/// Takes the damage given from the enemies attack
+	/// </summary>
+	/// <param name="amount">Amount.</param>
     public void TakeDamage (int amount)
     {
 		// what is the amount of damage that we are taking?
@@ -110,6 +127,10 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+
+	/// <summary>
+	/// Player dead.
+	/// </summary>
     void Death ()
     {
         // Set the death flag so this function won't be called again.

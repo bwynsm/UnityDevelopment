@@ -6,7 +6,11 @@ using System.Xml.Serialization;
 using System.IO;
 
 
-
+/// <summary>
+/// Conversation : controls the flow of conversation and keeps track of a 
+/// dialogue tree and updates the dialogue tree as necessary and feeds a stream
+/// of text
+/// </summary>
 public class Conversation 
 {
 	public int numberOfConversations = 0;

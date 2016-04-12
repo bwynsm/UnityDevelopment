@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Enemy unit class that holds everything about an enemy unit (all the subclasses)
+/// </summary>
 public class EnemyUnit : CharacterConversable {
 
 	// an enemy unit has health, attack, and character items
@@ -17,6 +21,10 @@ public class EnemyUnit : CharacterConversable {
 	public int enemySpellResistance;
 	public int enemyExperience;
 	public int enemyGold;
+	public int baseDamage;
+	public int weaponDamage;
+
+
 
 
 	// some characteristics about the enemy to start
@@ -25,7 +33,7 @@ public class EnemyUnit : CharacterConversable {
 		enemyHealth = this.GetOrAddComponent<EnemyHealth> ();
 		enemyAttack = this.GetOrAddComponent<EnemyAttack> ();
 		enemyCharacter = this.GetOrAddComponent<EnemyCharacter> ();
-
+		enemyAttack.attackDamage = baseDamage + weaponDamage;
 
 		enemyHealth.currentHealth = enemyCurrentHealth;
 		enemyHealth.maxHealth = enemyMaxHealth;

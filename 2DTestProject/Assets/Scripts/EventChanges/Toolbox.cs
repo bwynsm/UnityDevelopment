@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
 
-
+/// <summary>
+/// Toolbox Instance: controls our data
+/// </summary>
 public class Toolbox : Singleton<Toolbox> {
 	protected Toolbox () {} // guarantee this will be always a singleton only - can't use the constructor!
  
@@ -84,6 +86,9 @@ public class Toolbox : Singleton<Toolbox> {
 				Destroy(player.GetComponent<DamageNumbers>());
 
 			}
+
+			// this has to happen at the end here so that we don't get into multiple fights ideally
+			sceneAlreadyLoaded = false;
 		} 
 		else
 		{
@@ -104,6 +109,9 @@ public class Toolbox : Singleton<Toolbox> {
 				// set the other characters as not showing
 
 			}
+
+			// this has to happen at the end here so that we don't get into multiple fights ideally
+			sceneAlreadyLoaded = true;
 				
 		}
 
@@ -119,8 +127,7 @@ public class Toolbox : Singleton<Toolbox> {
 		}
 
 
-		// this has to happen at the end here so that we don't get into multiple fights ideally
-		sceneAlreadyLoaded = true;
+
 	}
 }
  

@@ -244,6 +244,10 @@ public class TextBoxManager : MonoBehaviour
 		
 
 
+
+	/// <summary>
+	/// Disables the options box.
+	/// </summary>
 	public void DisableOptionsBox()
 	{
 		cleanOutOptions ();
@@ -257,6 +261,10 @@ public class TextBoxManager : MonoBehaviour
 		speakerPanel.SetActive (false);
 	}
 
+
+	/// <summary>
+	/// Enables the options box.
+	/// </summary>
 	public void EnableOptionsBox()
 	{
 		// true - but also set our currentline?
@@ -369,7 +377,10 @@ public class TextBoxManager : MonoBehaviour
 	}
 
 
-
+	/// <summary>
+	/// sets up the options list for the options box
+	/// </summary>
+	/// <param name="options">Options.</param>
 	public void setupOptions(List<Options> options)
 	{
 		// disable text box

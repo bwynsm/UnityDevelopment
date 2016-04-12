@@ -13,6 +13,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
  
 	private static object _lock = new object();
  
+	/// <summary>
+	/// Gets the instance.
+	/// </summary>
+	/// <value>The instance.</value>
 	public static T Instance
 	{
 		get
@@ -60,6 +64,8 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 		}
 	}
  
+
+
 	private static bool applicationIsQuitting = false;
 	/// <summary>
 	/// When Unity quits, it destroys objects in a random order.

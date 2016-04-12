@@ -61,7 +61,9 @@ public class Menu : MonoBehaviour
 	// and new updates from our new class of battle
 
 
-
+	/// <summary>
+	/// Initialize this instance.
+	/// </summary>
 	public IEnumerator Initialize()
 	{
 

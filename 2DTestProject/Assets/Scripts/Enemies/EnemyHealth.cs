@@ -23,12 +23,20 @@ public class EnemyHealth : MonoBehaviour
 	bool isDead;                                                // Whether the player is dead.
 	bool damaged;                                               // True when the player gets damaged.
 
+
+	/// <summary>
+	/// Start this instance.
+	/// </summary>
 	void Start()
 	{
 		anim = GetComponent <Animator> ();
 	}
 
 
+
+	/// <summary>
+	/// Update this instance.
+	/// </summary>
 	void Update ()
 	{
 		// If the player has just been damaged...

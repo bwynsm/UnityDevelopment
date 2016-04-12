@@ -10,7 +10,9 @@ public class PauseMenu : Menu
 
 
 
-
+	/// <summary>
+	/// Start this instance.
+	/// </summary>
 	new void Start()
 	{
 		menuOptions = new List<Options> () 
@@ -25,7 +27,9 @@ public class PauseMenu : Menu
 	}
 
 
-
+	/// <summary>
+	/// Awake this instance.
+	/// </summary>
 	void Awake()
 	{
 		if (!gamePaused)
@@ -55,6 +59,9 @@ public class PauseMenu : Menu
 	}
 
 
+	/// <summary>
+	/// Pauses the game.
+	/// </summary>
 	public void pauseGame()
 	{
 		// pause the game
@@ -78,6 +85,10 @@ public class PauseMenu : Menu
 		//optionsMenu.loadOptions(optionsList);
 	}
 
+
+	/// <summary>
+	/// Unpauses the game.
+	/// </summary>
 	public void unpauseGame()
 	{
 		Time.timeScale = 1;

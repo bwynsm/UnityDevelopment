@@ -2,11 +2,11 @@
 using System.Collections;
 
 
-/**
- * CameraFollow
- * This is the camera that we have for our game
- * This camera follows the player ost of the time.
- */
+///
+/// CameraFollow
+/// This is the camera that we have for our game
+/// This camera follows the player ost of the time.
+///
 public class CameraFollow : MonoBehaviour 
 {
 
