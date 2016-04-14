@@ -46,7 +46,7 @@ public class Toolbox : Singleton<Toolbox> {
 	/// <param name="level">Level.</param>
 	void OnLevelWasLoaded(int level)
 	{
-		if ((positionInLastScene == null || positionInLastScene.Equals(null) || positionInLastScene.Equals(Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
+		if ((positionInLastScene.Equals(null) || positionInLastScene.Equals(Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
 		{
 			// find the starting point
 			positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;

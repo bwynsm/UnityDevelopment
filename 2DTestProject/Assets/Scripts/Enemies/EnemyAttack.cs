@@ -300,7 +300,7 @@ public class EnemyAttack : MonoBehaviour
 		if (targetUnit.playerHealth.currentHealth > 0)
 		{
 			// ... damage the player.
-			targetUnit.playerHealth.TakeDamage (attackDamage);
+			targetUnit.playerHealth.TakeDamage (damageDealt);
 			ShakeCamera ();
 		}
 
