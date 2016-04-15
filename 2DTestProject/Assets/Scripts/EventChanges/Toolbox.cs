@@ -28,7 +28,8 @@ public class Toolbox : Singleton<Toolbox> {
 	{
 		// Your initialization code here
 		// should rarely have to awaken here..
-		playerCharacter = GameObject.FindGameObjectWithTag("PlayerCharacter");
+		this.name = "Toolbox";
+		this.tag = "GameManager";
 	}
  
 
@@ -46,84 +47,90 @@ public class Toolbox : Singleton<Toolbox> {
 	/// <param name="level">Level.</param>
 	void OnLevelWasLoaded(int level)
 	{
-		if ((positionInLastScene.Equals(null) || positionInLastScene.Equals(Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
-		{
-			// find the starting point
-			positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;
-		} 
-		else
-		{
-			Debug.Log ("we are here with a position that is not null" + positionInLastScene);
-		}
 
-		if (level != 1)
+		isLocked = false;
+
+		if (playerCharacter != null)
 		{
-			// make sure our camera follow is set up to our main camera
-			Camera.main.GetComponent<CameraFollow> ().target = playerCharacter.transform;
 
-			playerCharacter.transform.position = positionInLastScene;
-			playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
-
-			// just set a basic 1 health if we are a dead character
-			if (playerCharacter.GetComponent<PlayerHealth> ().currentHealth <= 0)
+			if ((positionInLastScene.Equals (null) || positionInLastScene.Equals (Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
 			{
-				playerCharacter.GetComponent<PlayerHealth> ().currentHealth = 1;
+				// find the starting point
+				positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;
+			} else
+			{
+				Debug.Log ("we are here with a position that is not null" + positionInLastScene);
 			}
 
-
-			// if we have a damage numbers script, remove it
-			Destroy(playerCharacter.GetComponent<DamageNumbers>());
-
-			playerCharacter.GetComponent<Animator> ().SetBool ("IsFighting", false);
-			Destroy(playerCharacter.GetComponent<DamageNumbers>());
-
-			foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+			if (level != 1 && level != 0)
 			{
-				player.SetActive (false);
+				// make sure our camera follow is set up to our main camera
+				Camera.main.GetComponent<CameraFollow> ().target = playerCharacter.transform;
 
-				// set the other characters as not showing
-				// remove components
-				Destroy(player.GetComponent<DamageNumbers>());
+				playerCharacter.transform.position = positionInLastScene;
+				playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
 
-			}
+				// just set a basic 1 health if we are a dead character
+				if (playerCharacter.GetComponent<PlayerHealth> ().currentHealth <= 0)
+				{
+					playerCharacter.GetComponent<PlayerHealth> ().currentHealth = 1;
+				}
 
-			// this has to happen at the end here so that we don't get into multiple fights ideally
-			sceneAlreadyLoaded = false;
-		} 
-		else
-		{
-			// for each enemy and player type tag?
-			foreach (Animator enemy in GameObject.FindGameObjectWithTag("Enemy").GetComponentsInChildren<Animator>(true))
+
+				// if we have a damage numbers script, remove it
+				Destroy (playerCharacter.GetComponent<DamageNumbers> ());
+
+				playerCharacter.GetComponent<Animator> ().SetBool ("IsFighting", false);
+				Destroy (playerCharacter.GetComponent<DamageNumbers> ());
+
+				foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+				{
+					player.SetActive (false);
+
+					// set the other characters as not showing
+					// remove components
+					Destroy (player.GetComponent<DamageNumbers> ());
+
+				}
+
+				// this has to happen at the end here so that we don't get into multiple fights ideally
+				sceneAlreadyLoaded = false;
+			} else if (level != 0)
 			{
-				Debug.Log ("we are in here changing status for enemy : " + enemy.name);
-				enemy.gameObject.SetActive (true);
-				enemy.SetBool ("IsFighting", true);
-			}
+				// for each enemy and player type tag?
+				foreach (Animator enemy in GameObject.FindGameObjectWithTag("Enemy").GetComponentsInChildren<Animator>(true))
+				{
+					Debug.Log ("we are in here changing status for enemy : " + enemy.name);
+					enemy.gameObject.SetActive (true);
+					enemy.SetBool ("IsFighting", true);
+				}
 
-			foreach (Animator player in GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponentsInChildren<Animator>(true))
-			{
-				Debug.Log ("we are in here changing status for player : " + player.name);
-				player.gameObject.SetActive (true);
-				player.SetBool ("IsFighting", true);
+				foreach (Animator player in GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponentsInChildren<Animator>(true))
+				{
+					Debug.Log ("we are in here changing status for player : " + player.name);
+					player.gameObject.SetActive (true);
+					player.SetBool ("IsFighting", true);
 
-				// set the other characters as not showing
+					// set the other characters as not showing
 
-			}
+				}
 
-			// this has to happen at the end here so that we don't get into multiple fights ideally
-			sceneAlreadyLoaded = true;
+				// this has to happen at the end here so that we don't get into multiple fights ideally
+				sceneAlreadyLoaded = true;
 				
-		}
+			}
 
 
 
 
-		// if an enemy was defeated, destroy it from the scene.
-		// we'll have to make this persist later.
-		if (enemyDefeated != null)
-		{
-			Destroy (GameObject.Find(enemyDefeated));
-			enemyDefeated = null;
+			// if an enemy was defeated, destroy it from the scene.
+			// we'll have to make this persist later.
+			if (enemyDefeated != null)
+			{
+				Destroy (GameObject.Find (enemyDefeated));
+				enemyDefeated = null;
+			}
+
 		}
 
 

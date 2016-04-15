@@ -17,7 +17,7 @@ public class PauseMenu : Menu
 	{
 		menuOptions = new List<Options> () 
 		{
-			new Options("", "Other", "", "Player", ""),
+			new Options("save", "Save", "", "Player", ""),
 			new Options("", "Stats", "", "Player", ""),
 			new Options("", "Party", "", "Player", ""),
 			new Options("", "Settings", "", "Player", ""),

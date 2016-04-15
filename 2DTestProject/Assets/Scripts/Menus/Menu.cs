@@ -132,6 +132,12 @@ public class Menu : MonoBehaviour
 
 				if (Input.GetKeyDown (KeyCode.DownArrow) == true) 
 				{
+					/// if we have stings and we are in a pause menu
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (sting);
+					}
+
 					if (indexSelected < menuOptions.Count - 1)
 					{
 						indexSelected += 1;
@@ -143,16 +149,19 @@ public class Menu : MonoBehaviour
 					}
 
 
+
+
+				}
+
+				/// INPUT KEY DOWN : MOVE DOWN THE LIST
+				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
+				{
 					/// if we have stings and we are in a pause menu
 					if (menuType == "PauseMenu" && stingSource != null) 
 					{
 						stingSource.PlayOneShot (sting);
 					}
 
-				}
-
-				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
-				{
 					if (indexSelected > 0) 
 					{
 						indexSelected -= 1;
@@ -164,11 +173,7 @@ public class Menu : MonoBehaviour
 					}
 
 
-					/// if we have stings and we are in a pause menu
-					if (menuType == "PauseMenu" && stingSource != null) 
-					{
-						stingSource.PlayOneShot (sting);
-					}
+
 				}
 
 				if (Input.GetKeyDown (KeyCode.Return)) {

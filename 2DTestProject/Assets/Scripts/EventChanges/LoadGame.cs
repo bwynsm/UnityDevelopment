@@ -23,6 +23,7 @@ public class LoadGame : MonoBehaviour {
 
 		// now we'll just load our opening scene
 		SceneManager.LoadScene("OpeningScene");
+		Toolbox.Instance.playerCharacter = player;
 	}
 
 

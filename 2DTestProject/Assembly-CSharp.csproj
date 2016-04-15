@@ -64,9 +64,13 @@
      <Compile Include="Assets\Scripts\EventChanges\Battle\ProjectileAnimator.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\ShadowAndOutline.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Battle\TargetPicker.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\DestroyGame.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\Game.cs" />
      <Compile Include="Assets\Scripts\EventChanges\LoadGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MonoBehaviourExtended.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MusicChanger.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\NewGame.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\EventChanges\ScreenFader.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Singleton.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Toolbox.cs" />
@@ -75,6 +79,7 @@
      <Compile Include="Assets\Scripts\Menus\Commands.cs" />
      <Compile Include="Assets\Scripts\Menus\Menu.cs" />
      <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Menus\SaveLoadMenu.cs" />
      <Compile Include="Assets\Scripts\Movement\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Movement\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Movement\NPC_Movement.cs" />
@@ -83,6 +88,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerUnit.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />

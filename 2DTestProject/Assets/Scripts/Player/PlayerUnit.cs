@@ -5,6 +5,7 @@ using System.Collections;
 /// <summary>
 /// Player unit : controls the whole instance of player variables
 /// </summary>
+[System.Serializable]
 public class PlayerUnit : CharacterConversable 
 {
 
@@ -31,10 +32,12 @@ public class PlayerUnit : CharacterConversable
 		playerAttack = this.GetOrAddComponent<PlayerAttack> ();
 		playerCharacter = gameObject.AddComponent<PlayerMovement> ();
 		freeze = false;
-		playerAttack.attackDamage = baseDamage + weaponDamage;
+		PlayerStats playerStats = Game.current.playerStats;
+		playerAttack.attackDamage = playerStats.attackDamage;
 
-		playerHealth.currentHealth = playerCurrentHealth;
-		playerHealth.maxHealth = playerMaxHealth;
+		playerHealth.currentHealth = playerStats.currentHealth;
+		playerHealth.maxHealth = playerStats.maxHealth;
+		playerExperience = playerStats.experience;
 
 		isPlayerCharacter = true;
 	}
