@@ -49,7 +49,7 @@ public class CameraFollow : MonoBehaviour
 
 		if (orthographicSize == 0) 
 		{
-			orthographicSize = 3.0f;
+			orthographicSize = 6.0f;
 		}
 	}
 	

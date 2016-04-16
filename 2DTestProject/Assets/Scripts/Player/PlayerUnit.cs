@@ -15,8 +15,6 @@ public class PlayerUnit : CharacterConversable
 
 
 	// PUBLIC VARIABLES FOR SETTING INFORMATION ABOUT AN ENEMY
-	public int playerCurrentHealth;
-	public int playerMaxHealth;
 	public int playerArmor;
 	public int playerSpellResistance;
 	public int playerExperience;

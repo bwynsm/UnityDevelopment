@@ -24,6 +24,10 @@ public class PlayerStats
 	// experience
 	public int experience;
 
+	// transform
+	public float playerLocationX;
+	public float playerLocationY;
+
 	// what have we leveled up?
 	// public list of skills learned at different levels based on class
 

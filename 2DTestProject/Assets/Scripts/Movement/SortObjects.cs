@@ -14,9 +14,12 @@ public class SortObjects : MonoBehaviour
 	/// </summary>
 	void LateUpdate()
 	{
+
 		// if the object is visible, we may change the order of its display
 		if (GetComponent<Renderer> ().isVisible) 
 		{
+			//Debug.Log ("we are changing object location : " + gameObject.name + " " + (int)Camera.main.WorldToScreenPoint (GetComponent<MeshRenderer> ().bounds.min).y * -1);
+
 			GetComponent<Renderer> ().sortingOrder = (int)Camera.main.WorldToScreenPoint (GetComponent<MeshRenderer> ().bounds.min).y * -1;
 		}
 

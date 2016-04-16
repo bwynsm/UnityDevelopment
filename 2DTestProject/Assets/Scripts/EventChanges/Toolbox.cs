@@ -17,6 +17,7 @@ public class Toolbox : Singleton<Toolbox> {
  
 	public Language language = new Language();
 	public bool sceneAlreadyLoaded = false;
+	public int currentSaveSlot;
 
 
 	public bool isLocked = false;

@@ -112,6 +112,7 @@
      <None Include="Assets\Tiled2Unity\Imported\InsideHouse.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\License.txt" />
      <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+     <None Include="Assets\Tiled2Unity\Imported\MainCharacterHouse.tiled2unity.xml" />
      <None Include="Assets\Text\BattleOptions.xml" />
      <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\Lake.tiled2unity.xml" />

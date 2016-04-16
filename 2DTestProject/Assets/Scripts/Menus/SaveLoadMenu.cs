@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class SaveLoadMenu : MonoBehaviour 
 {
@@ -42,6 +44,15 @@ public class SaveLoadMenu : MonoBehaviour
 
 		saveFilesItems = loadGamePanels.GetComponentsInChildren<Button> (true);
 
+
+
+
+		// load saved games
+		SaveLoad.CreatedSavedGamesArray();
+
+		// now, if we already have games, we also want to display them differently. 
+		// so let's do that
+		updateGamePanel();
 	}
 
 
@@ -120,14 +131,14 @@ public class SaveLoadMenu : MonoBehaviour
 		case MENU_STATES.LOAD:
 			Debug.Log ("we are in load");
 
-			LoadKeypress (action);
+			GamePanelKeypress (action);
 
 			break;
 
 		// SAVE GAME STATE
 		case MENU_STATES.NEW_GAME:
 			Debug.Log("we are in new game");
-			NewGameKeypress (action);
+			GamePanelKeypress (action);
 			break;
 
 		// SETTINGS FOR THE GAME STATE
@@ -144,27 +155,12 @@ public class SaveLoadMenu : MonoBehaviour
 	}
 
 
-	/// <summary>
-	/// Loads the panels.
-	/// </summary>
-	public void ShowLoadGamePanel()
-	{
-		// choose which panels are visible
-		loadGamePanels.SetActive (true);
-		mainMenuPanels.SetActive (false);
-
-		// change the state
-		currentState = MENU_STATES.LOAD;
-		selectedItem = 0;
-		instanceItem.isLocked = false;
-		saveFilesItems [0].Select ();
-	}
 
 
 	/// <summary>
 	/// Hides the panels.
 	/// </summary>
-	public void ShowNewGamePanel()
+	public void ShowGamePanel()
 	{
 		// choose which panels are visible
 		loadGamePanels.SetActive (true);
@@ -176,6 +172,18 @@ public class SaveLoadMenu : MonoBehaviour
 		instanceItem.isLocked = false;
 
 		saveFilesItems [0].Select ();
+
+
+		// we also want to update the display in here so that our buttons and stuff is showing some data
+		// about our game
+		// for each of the games, get some information about the player that is being stored in the game
+		foreach (Game gameObject in SaveLoad.savedGames)
+		{
+			
+		}
+
+
+
 	}
 
 	// display panel and allow selection of options for saving a game or 
@@ -201,57 +209,14 @@ public class SaveLoadMenu : MonoBehaviour
 
 
 
-	/// <summary>
-	/// Key was pressed in load menu
-	/// </summary>
-	/// <param name="keyPressed">Key pressed.</param>
-	public void LoadKeypress(string keyPressed)
-	{
-		if (keyPressed.Equals ("up"))
-		{
-			selectedItem--;
 
-			// for now, the item is just 0
-			if (selectedItem < 0)
-			{
-				
-				// set the selected item at the end
-				// right now, we have 2 save files
-				selectedItem = saveFilesItems.Length - 1;
-			}
-
-			saveFilesItems [selectedItem].Select ();
-		} 
-		else if (keyPressed.Equals ("down"))
-		{
-			selectedItem++;
-
-			if (selectedItem >= saveFilesItems.Length)
-			{
-				selectedItem = 0;
-			}
-
-			saveFilesItems [selectedItem].Select ();
-		}
-		else if (keyPressed.Equals ("forward"))
-		{
-
-		} 
-		else if (keyPressed.Equals ("back"))
-		{
-			ShowMainMenu ();
-		}
-
-
-
-	}
 
 
 	/// <summary>
 	/// Key was pressed in new game menu
 	/// </summary>
 	/// <param name="keyPressed">Key pressed.</param>
-	public void NewGameKeypress(string keyPressed)
+	public void GamePanelKeypress(string keyPressed)
 	{
 		if (keyPressed.Equals ("up"))
 		{
@@ -279,7 +244,27 @@ public class SaveLoadMenu : MonoBehaviour
 		} 
 		else if (keyPressed.Equals ("forward"))
 		{
-			
+
+			if (currentState == MENU_STATES.NEW_GAME)
+			{
+				// just overwrite the game here - we'll later on want to do a confirm if we have
+				// a legitimate game at this location
+				// for now, just overwrite.
+				NewGame newGame = new NewGame(selectedItem);
+				newGame.CreateNewGame ();
+			}
+			else if (currentState == MENU_STATES.LOAD)
+			{
+				// load game here
+				SaveLoad.Load(selectedItem);
+
+				// toolbox scene
+				SceneManager.LoadScene ("LoadingScene");
+			}
+
+
+
+
 		} 
 		else if (keyPressed.Equals ("back"))
 		{
@@ -332,10 +317,45 @@ public class SaveLoadMenu : MonoBehaviour
 			// check which number we are on
 			if (selectedItem == 0)
 			{
-				ShowNewGamePanel ();
-			} else if (selectedItem == 1)
+				ShowGamePanel ();
+				currentState = MENU_STATES.NEW_GAME;
+			} 
+
+			else if (selectedItem == 1)
 			{
-				ShowLoadGamePanel ();
+				ShowGamePanel ();
+				currentState = MENU_STATES.LOAD;
+
+			}
+		}
+	}
+
+
+
+
+	private void updateGamePanel()
+	{
+
+		// get our text
+		Text[] textDisplayArray = loadGamePanels.GetComponentsInChildren<Text>();
+
+		// for each of the save files, display a little something in our game panel
+		for (var i = 0; i < 3; i++ )
+		{
+			Text textDisplay = textDisplayArray [i];
+			Game gameItem = SaveLoad.savedGames [i];
+
+			// if our game item is not null, then we want to display something about the player
+
+			if (gameItem != null)
+			{
+				textDisplay.text = "Player Health : " + gameItem.playerStats.currentHealth + "\nPlayer Experience : " + gameItem.playerStats.experience;
+			}
+
+			// if it is null, display that the game is empty
+			else 
+			{
+				textDisplay.text = "Empty Game Slot";
 			}
 		}
 	}

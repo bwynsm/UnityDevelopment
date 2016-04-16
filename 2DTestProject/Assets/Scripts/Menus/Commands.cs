@@ -42,13 +42,18 @@ public class Commands
 		if (optionItem.command.Equals ("save"))
 		{
 			// save our game
-			SaveLoad.Save ();
+			Game.current.UpdateGame();
+			SaveLoad.Save (Toolbox.Instance.currentSaveSlot);
 		} 
 
 		// if we are exiting, we are going back to menu
 		else if (optionItem.command.Equals ("exit"))
 		{
 			SceneManager.LoadScene ("MainMenu");
+
+
+			// remove the current save slot item
+			Toolbox.Instance.currentSaveSlot = 0;
 		}
 
 
