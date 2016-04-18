@@ -15,6 +15,8 @@ public class SortingLayerExposedEditor : UnityEditor.Editor
 {
     public override void OnInspectorGUI()
     {
+		// if we have a sorting layer name of Player, let's try and add something else to this object as well
+
         // Get the renderer from the target object
         var renderer = (target as SortingLayerExposed).gameObject.GetComponent<Renderer>();
 
@@ -33,6 +35,9 @@ public class SortingLayerExposedEditor : UnityEditor.Editor
         int newSortingLayerIndex = EditorGUILayout.Popup(new GUIContent("Sorting Layer"), sortLayerSelection, sortingLayerContexts);
         if (newSortingLayerIndex == sortingLayerContexts.Length - 1)
         {
+			// if we have a sorting layer name of Player, let's try and add something else to this object as well
+			Debug.LogError("we are in here with sorting layer of " + newSortingLayerIndex);
+
             EditorApplication.ExecuteMenuItem("Edit/Project Settings/Tags and Layers");
         }
         else if (newSortingLayerIndex != sortLayerSelection)
@@ -43,6 +48,10 @@ public class SortingLayerExposedEditor : UnityEditor.Editor
             Undo.RecordObject(renderer, "Edit Sorting Layer ID");
             renderer.sortingLayerName = newSortingLayerName;
             //renderer.sortingLayerID = newSortingLayerId;
+
+			// if we have a sorting layer name of Player, let's try and add something else to this object as well
+			Debug.LogError("we are in here with sorting layer of " + newSortingLayerName);
+
 
             EditorUtility.SetDirty(renderer);
         }

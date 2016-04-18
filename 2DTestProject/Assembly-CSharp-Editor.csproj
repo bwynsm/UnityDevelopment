@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\Tiled2Unity\Scripts\Editor\CustomImporterAddComponent.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\CustomTiledImporterAttribute.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ICustomTiledImporter.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Material.cs" />
@@ -66,6 +67,7 @@
      <None Include="Assets\Tiled2Unity\Imported\FancyMap.tiled2unity.xml" />
      <None Include="Assets\Text\NPC_WOODS_OTHER_ROGUE.xml" />
      <None Include="Assets\Tiled2Unity\Imported\OutsideHouse.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\FireEmblemGameBoyGame.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Text\NPC_WOODS_ROGUE.xml" />

@@ -287,6 +287,7 @@ public class Menu : MonoBehaviour
 				{
 					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (255);
 					panelButtons [i].GetComponentInChildren<Text> ().color = Color.red;
+					panelButtons [i].GetComponentInChildren<Text> ().font = Font.
 				}
 
 				// otherwise, no alpha and clear button text
