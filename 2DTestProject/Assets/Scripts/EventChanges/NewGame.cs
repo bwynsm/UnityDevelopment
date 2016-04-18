@@ -27,7 +27,6 @@ public class NewGame
 		// LOAD THE GAME
 		SceneManager.LoadScene("LoadingScene");
 
-		Debug.Log ("NUMBER OF GAMES : " + SaveLoad.savedGames.Count);
 
 	}
 

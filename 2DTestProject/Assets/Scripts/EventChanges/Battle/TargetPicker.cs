@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEditor;
 
 /// <summary>
 /// Target picker : allows a player to select a target or an enemy to randomly
@@ -36,7 +35,7 @@ public class TargetPicker : MonoBehaviour
 
 
 	private GUIStyle style;
-	private Texture2D boxTexture;
+	public Texture2D boxTexture;
 
 	// once this function is done, we'll have a target. Either it will
 	// be a non-target, or an actual target
@@ -53,8 +52,7 @@ public class TargetPicker : MonoBehaviour
 		style.border.top = 3;
 		style.border.left = 3;
 		style.border.right = 3;
-		boxTexture = new Texture2D (1, 1);
-		boxTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Resources/Border.png", typeof(Texture2D));
+
 
 
 	}

@@ -15,6 +15,7 @@ public class SaveLoadMenu : MonoBehaviour
 	private Button[] mainMenuItems;
 
 	Toolbox instanceItem;
+	//private bool skipLoadGame;
 
 	public enum MENU_STATES
 	{
@@ -44,8 +45,9 @@ public class SaveLoadMenu : MonoBehaviour
 
 		saveFilesItems = loadGamePanels.GetComponentsInChildren<Button> (true);
 
+		//skipLoadGame = SaveLoad.isAnySavedGame ();
 
-
+		SaveLoad.Load ();
 
 		// load saved games
 		SaveLoad.CreatedSavedGamesArray();
@@ -105,13 +107,7 @@ public class SaveLoadMenu : MonoBehaviour
 			return;
 		}
 
-		// depending on what state we are in determines what we do.
-		// if we are locked, can't go forward
-		//if (instanceItem.isLocked)
-		//	return;
 
-		// lock our toolbox
-		//instanceItem.isLocked = true;
 
 		switch (currentState)
 		{
@@ -122,28 +118,24 @@ public class SaveLoadMenu : MonoBehaviour
 			// wait for keypress to see what our next state is
 			// see what we get for start menu button press.
 			// for now, we'll accept a click
-			Debug.Log ("we are in start");
 			MainMenuKeypress (action);
 
 			break;
 
 		// LOAD GAME STATE : LOAD MENU
 		case MENU_STATES.LOAD:
-			Debug.Log ("we are in load");
-
+			
 			GamePanelKeypress (action);
 
 			break;
 
 		// SAVE GAME STATE
 		case MENU_STATES.NEW_GAME:
-			Debug.Log("we are in new game");
 			GamePanelKeypress (action);
 			break;
 
 		// SETTINGS FOR THE GAME STATE
 		case MENU_STATES.SETTINGS:
-			Debug.Log("we are in settings");
 			break;
 
 
@@ -173,17 +165,6 @@ public class SaveLoadMenu : MonoBehaviour
 
 		saveFilesItems [0].Select ();
 
-
-		// we also want to update the display in here so that our buttons and stuff is showing some data
-		// about our game
-		// for each of the games, get some information about the player that is being stored in the game
-		foreach (Game gameObject in SaveLoad.savedGames)
-		{
-			
-		}
-
-
-
 	}
 
 	// display panel and allow selection of options for saving a game or 
@@ -204,6 +185,20 @@ public class SaveLoadMenu : MonoBehaviour
 		instanceItem.isLocked = false;
 
 		mainMenuItems [0].Select ();
+
+
+		// if we have no games to load, then make sure that we don't have our
+		// load game button working
+		if (!SaveLoad.isAnySavedGame ())
+		{
+			mainMenuItems [1].enabled = false;
+		} 
+		else
+		{
+			mainMenuItems [1].enabled = true;
+		}
+
+
 
 	}
 
@@ -229,10 +224,14 @@ public class SaveLoadMenu : MonoBehaviour
 				// right now, we have 2 save files
 				selectedItem = saveFilesItems.Length - 1;
 			}
+			
+
+
 			saveFilesItems [selectedItem].Select ();
 		} 
 		else if (keyPressed.Equals ("down"))
 		{
+		
 			selectedItem++;
 
 			if (selectedItem >= saveFilesItems.Length)
@@ -250,16 +249,20 @@ public class SaveLoadMenu : MonoBehaviour
 				// just overwrite the game here - we'll later on want to do a confirm if we have
 				// a legitimate game at this location
 				// for now, just overwrite.
-				NewGame newGame = new NewGame(selectedItem);
+				NewGame newGame = new NewGame (selectedItem);
 				newGame.CreateNewGame ();
-			}
-			else if (currentState == MENU_STATES.LOAD)
+			} 
+			else if (currentState == MENU_STATES.LOAD && SaveLoad.savedGames [selectedItem] != null)
 			{
 				// load game here
-				SaveLoad.Load(selectedItem);
+				SaveLoad.Load (selectedItem);
 
 				// toolbox scene
 				SceneManager.LoadScene ("LoadingScene");
+			} 
+			else if (currentState == MENU_STATES.LOAD && SaveLoad.savedGames [selectedItem] == null)
+			{
+				// display tiny error message briefly?
 			}
 
 
@@ -291,8 +294,12 @@ public class SaveLoadMenu : MonoBehaviour
 				selectedItem = mainMenuItems.Length - 1;
 			}
 
+			if (!SaveLoad.isAnySavedGame () && selectedItem == 1)
+			{
+				selectedItem = 0;
+			}
 
-			Debug.Log ("selected item up is..." + selectedItem);
+
 			mainMenuItems [selectedItem].Select ();
 		} 
 
@@ -307,7 +314,11 @@ public class SaveLoadMenu : MonoBehaviour
 				selectedItem = 0;
 			}
 
-			Debug.Log ("selected item down is..." + selectedItem);
+			if (!SaveLoad.isAnySavedGame () && selectedItem == 1)
+			{
+				selectedItem = 2;
+			}
+
 			mainMenuItems [selectedItem].Select ();
 		} 
 
@@ -320,12 +331,17 @@ public class SaveLoadMenu : MonoBehaviour
 				ShowGamePanel ();
 				currentState = MENU_STATES.NEW_GAME;
 			} 
-
 			else if (selectedItem == 1)
 			{
 				ShowGamePanel ();
 				currentState = MENU_STATES.LOAD;
 
+			}
+
+			// otherwise, if we select the last element, exit the game
+			else if (selectedItem == 3)
+			{
+				Application.Quit ();
 			}
 		}
 	}
@@ -333,6 +349,10 @@ public class SaveLoadMenu : MonoBehaviour
 
 
 
+
+	/// <summary>
+	/// Updates the game panel.
+	/// </summary>
 	private void updateGamePanel()
 	{
 

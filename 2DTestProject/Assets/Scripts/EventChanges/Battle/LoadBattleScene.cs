@@ -17,6 +17,7 @@ public class LoadBattleScene : MonoBehaviour
 	public Canvas gameCanvas;
 	public GameObject prefabButton;
 	public TextAsset tempPlayerXML;
+	public Texture2D border;
 
 
 	public List<CharacterConversable> turnOrder;
@@ -149,6 +150,7 @@ public class LoadBattleScene : MonoBehaviour
 				battleMenu.allCombatants = turnOrder;
 				battleMenu.battlePanel = GameObject.Find ("BattlePanel");
 				battleMenu.prefabButton = prefabButton;
+				battleMenu.texturePickerBorder = border;
 
 			}
 

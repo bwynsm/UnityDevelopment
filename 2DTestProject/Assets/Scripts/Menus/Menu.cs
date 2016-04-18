@@ -16,6 +16,7 @@ public class Menu : MonoBehaviour
 
 
 	public Texture2D background;		// unused at the moment - texture background for menu
+	public Texture2D texturePickerBorder;
 
 	public GameObject optionsBox;		// this is the options box panel that we are displaying in
 	public GameObject prefabButton;		// this is the current button we are using for display
@@ -392,6 +393,7 @@ public class Menu : MonoBehaviour
 				// player -> battle menu -> all combatants shoved into player -> add component -> targetpicker 
 				TargetPicker playerTargetPicker = attackingPlayer.GetOrAddComponent<TargetPicker>();
 				playerTargetPicker.currentPlayer = attackingPlayer;
+				playerTargetPicker.boxTexture = texturePickerBorder;
 				playerTargetPicker.battleList = attackingPlayer.GetComponent<BattleMenu> ().allCombatants;
 				playerTargetPicker.loadBattle ();
 

@@ -19,7 +19,6 @@ public class SaveLoad
 		bf.Serialize(file, SaveLoad.savedGames);
 		file.Close();
 
-		Debug.Log ("NUMBER OF GAMES : " + SaveLoad.savedGames.Count);
 	}	
 
 
@@ -29,7 +28,6 @@ public class SaveLoad
 	public static void Save(int overwriteGame) 
 	{
 
-		Debug.Log ("NUMBER OF GAMES : " + SaveLoad.savedGames.Count);
 
 		savedGames[overwriteGame] = Game.current;
 		BinaryFormatter bf = new BinaryFormatter();
@@ -37,7 +35,6 @@ public class SaveLoad
 		bf.Serialize(file, SaveLoad.savedGames);
 		file.Close();
 
-		Debug.Log ("NUMBER OF GAMES : " + SaveLoad.savedGames.Count);
 	}	
 
 
@@ -47,7 +44,6 @@ public class SaveLoad
 	public static void Load()
 	{
 
-		Debug.Log ("NUMBER OF GAMES : " + SaveLoad.savedGames.Count);
 		if (File.Exists (Application.persistentDataPath + "/savedGames.gd"))
 		{
 			BinaryFormatter bf = new BinaryFormatter ();
@@ -64,7 +60,6 @@ public class SaveLoad
 	public static void Load(int loadGame)
 	{
 
-		Debug.Log ("NUMBER OF GAMES : " + SaveLoad.savedGames.Count);
 		if (File.Exists (Application.persistentDataPath + "/savedGames.gd"))
 		{
 			BinaryFormatter bf = new BinaryFormatter ();
@@ -75,7 +70,6 @@ public class SaveLoad
 
 		Game.current = SaveLoad.savedGames [loadGame];
 		Toolbox.Instance.currentSaveSlot = loadGame;
-		Toolbox.Instance.positionInLastScene = new Vector2(Game.current.playerStats.playerLocationX, Game.current.playerStats.playerLocationY);
 	}
 
 	/// <summary>
@@ -93,6 +87,37 @@ public class SaveLoad
 			}
 		}
 	}
+
+
+	/// <summary>
+	/// Returns if there is any saved game
+	/// </summary>
+	/// <returns><c>true</c>, if saved game was ised, <c>false</c> otherwise.</returns>
+	public static bool isAnySavedGame()
+	{
+		int index = 0;
+		bool isAnySavedGame = false;
+
+		// check until we find a saved game or until we are done looking at all the slots
+		while (index < 3 && !isAnySavedGame)
+		{
+			if (index >= savedGames.Count)
+				break;
+
+			if (savedGames [index] != null)
+			{
+				isAnySavedGame = true;
+			}
+
+			index++;
+		}
+
+		return isAnySavedGame;
+	}
+
+
+
+
 
 
 }
