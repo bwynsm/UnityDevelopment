@@ -1,0 +1,4805 @@
+fileFormatVersion: 2
+guid: c2e32472bbc6b904b9454c4cd328f05e
+timeCreated: 1460229114
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cursed_grave_0
+    21300002: cursed_grave_1
+    21300004: cursed_grave_2
+    21300006: cursed_grave_3
+    21300008: cursed_grave_4
+    21300010: cursed_grave_5
+    21300012: cursed_grave_6
+    21300014: cursed_grave_7
+    21300016: cursed_grave_8
+    21300018: cursed_grave_9
+    21300020: cursed_grave_10
+    21300022: cursed_grave_11
+    21300024: cursed_grave_12
+    21300026: cursed_grave_13
+    21300028: cursed_grave_14
+    21300030: cursed_grave_15
+    21300032: cursed_grave_16
+    21300034: cursed_grave_17
+    21300036: cursed_grave_18
+    21300038: cursed_grave_19
+    21300040: cursed_grave_20
+    21300042: cursed_grave_21
+    21300044: cursed_grave_22
+    21300046: cursed_grave_23
+    21300048: cursed_grave_24
+    21300050: cursed_grave_25
+    21300052: cursed_grave_26
+    21300054: cursed_grave_27
+    21300056: cursed_grave_28
+    21300058: cursed_grave_29
+    21300060: cursed_grave_30
+    21300062: cursed_grave_31
+    21300064: cursed_grave_32
+    21300066: cursed_grave_33
+    21300068: cursed_grave_34
+    21300070: cursed_grave_35
+    21300072: cursed_grave_36
+    21300074: cursed_grave_37
+    21300076: cursed_grave_38
+    21300078: cursed_grave_39
+    21300080: cursed_grave_40
+    21300082: cursed_grave_41
+    21300084: cursed_grave_42
+    21300086: cursed_grave_43
+    21300088: cursed_grave_44
+    21300090: cursed_grave_45
+    21300092: cursed_grave_46
+    21300094: cursed_grave_47
+    21300096: cursed_grave_48
+    21300098: cursed_grave_49
+    21300100: cursed_grave_50
+    21300102: cursed_grave_51
+    21300104: cursed_grave_52
+    21300106: cursed_grave_53
+    21300108: cursed_grave_54
+    21300110: cursed_grave_55
+    21300112: cursed_grave_56
+    21300114: cursed_grave_57
+    21300116: cursed_grave_58
+    21300118: cursed_grave_59
+    21300120: cursed_grave_60
+    21300122: cursed_grave_61
+    21300124: cursed_grave_62
+    21300126: cursed_grave_63
+    21300128: cursed_grave_64
+    21300130: cursed_grave_65
+    21300132: cursed_grave_66
+    21300134: cursed_grave_67
+    21300136: cursed_grave_68
+    21300138: cursed_grave_69
+    21300140: cursed_grave_70
+    21300142: cursed_grave_71
+    21300144: cursed_grave_72
+    21300146: cursed_grave_73
+    21300148: cursed_grave_74
+    21300150: cursed_grave_75
+    21300152: cursed_grave_76
+    21300154: cursed_grave_77
+    21300156: cursed_grave_78
+    21300158: cursed_grave_79
+    21300160: cursed_grave_80
+    21300162: cursed_grave_81
+    21300164: cursed_grave_82
+    21300166: cursed_grave_83
+    21300168: cursed_grave_84
+    21300170: cursed_grave_85
+    21300172: cursed_grave_86
+    21300174: cursed_grave_87
+    21300176: cursed_grave_88
+    21300178: cursed_grave_89
+    21300180: cursed_grave_90
+    21300182: cursed_grave_91
+    21300184: cursed_grave_92
+    21300186: cursed_grave_93
+    21300188: cursed_grave_94
+    21300190: cursed_grave_95
+    21300192: cursed_grave_96
+    21300194: cursed_grave_97
+    21300196: cursed_grave_98
+    21300198: cursed_grave_99
+    21300200: cursed_grave_100
+    21300202: cursed_grave_101
+    21300204: cursed_grave_102
+    21300206: cursed_grave_103
+    21300208: cursed_grave_104
+    21300210: cursed_grave_105
+    21300212: cursed_grave_106
+    21300214: cursed_grave_107
+    21300216: cursed_grave_108
+    21300218: cursed_grave_109
+    21300220: cursed_grave_110
+    21300222: cursed_grave_111
+    21300224: cursed_grave_112
+    21300226: cursed_grave_113
+    21300228: cursed_grave_114
+    21300230: cursed_grave_115
+    21300232: cursed_grave_116
+    21300234: cursed_grave_117
+    21300236: cursed_grave_118
+    21300238: cursed_grave_119
+    21300240: cursed_grave_120
+    21300242: cursed_grave_121
+    21300244: cursed_grave_122
+    21300246: cursed_grave_123
+    21300248: cursed_grave_124
+    21300250: cursed_grave_125
+    21300252: cursed_grave_126
+    21300254: cursed_grave_127
+    21300256: cursed_grave_128
+    21300258: cursed_grave_129
+    21300260: cursed_grave_130
+    21300262: cursed_grave_131
+    21300264: cursed_grave_132
+    21300266: cursed_grave_133
+    21300268: cursed_grave_134
+    21300270: cursed_grave_135
+    21300272: cursed_grave_136
+    21300274: cursed_grave_137
+    21300276: cursed_grave_138
+    21300278: cursed_grave_139
+    21300280: cursed_grave_140
+    21300282: cursed_grave_141
+    21300284: cursed_grave_142
+    21300286: cursed_grave_143
+    21300288: cursed_grave_144
+    21300290: cursed_grave_145
+    21300292: cursed_grave_146
+    21300294: cursed_grave_147
+    21300296: cursed_grave_148
+    21300298: cursed_grave_149
+    21300300: cursed_grave_150
+    21300302: cursed_grave_151
+    21300304: cursed_grave_152
+    21300306: cursed_grave_153
+    21300308: cursed_grave_154
+    21300310: cursed_grave_155
+    21300312: cursed_grave_156
+    21300314: cursed_grave_157
+    21300316: cursed_grave_158
+    21300318: cursed_grave_159
+    21300320: cursed_grave_160
+    21300322: cursed_grave_161
+    21300324: cursed_grave_162
+    21300326: cursed_grave_163
+    21300328: cursed_grave_164
+    21300330: cursed_grave_165
+    21300332: cursed_grave_166
+    21300334: cursed_grave_167
+    21300336: cursed_grave_168
+    21300338: cursed_grave_169
+    21300340: cursed_grave_170
+    21300342: cursed_grave_171
+    21300344: cursed_grave_172
+    21300346: cursed_grave_173
+    21300348: cursed_grave_174
+    21300350: cursed_grave_175
+    21300352: cursed_grave_176
+    21300354: cursed_grave_177
+    21300356: cursed_grave_178
+    21300358: cursed_grave_179
+    21300360: cursed_grave_180
+    21300362: cursed_grave_181
+    21300364: cursed_grave_182
+    21300366: cursed_grave_183
+    21300368: cursed_grave_184
+    21300370: cursed_grave_185
+    21300372: cursed_grave_186
+    21300374: cursed_grave_187
+    21300376: cursed_grave_188
+    21300378: cursed_grave_189
+    21300380: cursed_grave_190
+    21300382: cursed_grave_191
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: cursed_grave_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 22.333374}
+        - {x: -1, y: 22.333374}
+        - {x: -7, y: 20.333374}
+        - {x: -7, y: 6.333374}
+        - {x: -14, y: -12.666626}
+        - {x: -14, y: -25.666626}
+        - {x: -13, y: -28.666626}
+        - {x: 6, y: -28.666626}
+        - {x: 15, y: -26.666626}
+        - {x: 17, y: -17.666626}
+        - {x: 17, y: -4.666626}
+        - {x: 15, y: 0.33337402}
+    - name: cursed_grave_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.666664, y: 22.333374}
+        - {x: -13.666664, y: 8.333374}
+        - {x: -13.666664, y: -26.666626}
+        - {x: -10.666664, y: -28.666626}
+        - {x: 14.333336, y: -28.666626}
+        - {x: 17.333336, y: -15.666626}
+        - {x: 17.333336, y: 1.333374}
+        - {x: 5.333336, y: 22.333374}
+    - name: cursed_grave_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.3333282, y: 23.333374}
+        - {x: -12.333328, y: 9.333374}
+        - {x: -12.333328, y: -28.666626}
+        - {x: 18.666672, y: -28.666626}
+        - {x: 18.666672, y: 6.333374}
+        - {x: 3.6666718, y: 23.333374}
+    - name: cursed_grave_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 24.333374}
+        - {x: -7, y: 22.333374}
+        - {x: -7, y: 8.333374}
+        - {x: -14, y: -11.666626}
+        - {x: -14, y: -25.666626}
+        - {x: -13, y: -28.666626}
+        - {x: 6, y: -28.666626}
+        - {x: 15, y: -26.666626}
+        - {x: 17, y: -21.666626}
+        - {x: 17, y: 2.333374}
+        - {x: 7, y: 24.333374}
+    - name: cursed_grave_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.6666565, y: 24.333374}
+        - {x: -13.6666565, y: 11.333374}
+        - {x: -13.6666565, y: -25.666626}
+        - {x: -11.6666565, y: -28.666626}
+        - {x: 6.3333435, y: -28.666626}
+        - {x: 17.333344, y: -26.666626}
+        - {x: 18.333344, y: -16.666626}
+        - {x: 18.333344, y: -0.666626}
+        - {x: 5.3333435, y: 24.333374}
+    - name: cursed_grave_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.333313, y: 24.333374}
+        - {x: -12.333313, y: 22.333374}
+        - {x: -12.333313, y: -28.666626}
+        - {x: 14.666687, y: -28.666626}
+        - {x: 16.666687, y: -27.666626}
+        - {x: 18.666687, y: -25.666626}
+        - {x: 18.666687, y: 15.333374}
+        - {x: 15.666687, y: 24.333374}
+    - name: cursed_grave_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 23.333374}
+        - {x: -9, y: 23.333374}
+        - {x: -14, y: 2.333374}
+        - {x: -14, y: -26.666626}
+        - {x: -13, y: -28.666626}
+        - {x: 5, y: -28.666626}
+        - {x: 15, y: -26.666626}
+        - {x: 17, y: -14.666626}
+        - {x: 17, y: 0.33337402}
+        - {x: 5, y: 22.333374}
+    - name: cursed_grave_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.666626, y: 22.333374}
+        - {x: -13.666626, y: 8.333374}
+        - {x: -13.666626, y: -26.666626}
+        - {x: -10.666626, y: -28.666626}
+        - {x: 14.333374, y: -28.666626}
+        - {x: 17.333374, y: -15.666626}
+        - {x: 17.333374, y: 1.333374}
+        - {x: 5.333374, y: 22.333374}
+    - name: cursed_grave_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.666687, y: 22.333374}
+        - {x: -9.333313, y: 22.333374}
+        - {x: -12.333313, y: 14.333374}
+        - {x: -12.333313, y: -28.666626}
+        - {x: 10.666687, y: -28.666626}
+        - {x: 15.666687, y: -25.666626}
+        - {x: 17.666687, y: -20.666626}
+        - {x: 17.666687, y: 6.333374}
+    - name: cursed_grave_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 24.333374}
+        - {x: -14, y: 9.333374}
+        - {x: -14, y: -27.666626}
+        - {x: -11, y: -28.666626}
+        - {x: 0, y: -28.666626}
+        - {x: 8, y: -27.666626}
+        - {x: 17, y: -22.666626}
+        - {x: 17, y: 7.333374}
+        - {x: 12, y: 24.333374}
+    - name: cursed_grave_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.333374, y: 28.333374}
+        - {x: -11.666626, y: 28.333374}
+        - {x: -13.666626, y: 21.333374}
+        - {x: -13.666626, y: -28.666626}
+        - {x: 16.333374, y: -28.666626}
+        - {x: 18.333374, y: -19.666626}
+        - {x: 18.333374, y: 5.333374}
+        - {x: 8.333374, y: 25.333374}
+    - name: cursed_grave_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.333313, y: 27.333374}
+        - {x: -12.333313, y: -7.666626}
+        - {x: -12.333313, y: -23.666626}
+        - {x: -9.333313, y: -28.666626}
+        - {x: 13.666687, y: -28.666626}
+        - {x: 19.666687, y: -25.666626}
+        - {x: 19.666687, y: 10.333374}
+        - {x: 13.666687, y: 27.333374}
+    - name: cursed_grave_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 25.333374}
+        - {x: -14, y: -2.666626}
+        - {x: -14, y: -23.666626}
+        - {x: -13, y: -28.666626}
+        - {x: 18, y: -28.666626}
+        - {x: 18, y: 11.333374}
+        - {x: 6, y: 25.333374}
+    - name: cursed_grave_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.333374, y: 23.333374}
+        - {x: -7.666626, y: 23.333374}
+        - {x: -13.666626, y: 7.333374}
+        - {x: -13.666626, y: -26.666626}
+        - {x: -10.666626, y: -28.666626}
+        - {x: 13.333374, y: -28.666626}
+        - {x: 18.333374, y: -21.666626}
+        - {x: 18.333374, y: -1.666626}
+        - {x: 8.333374, y: 21.333374}
+    - name: cursed_grave_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.833252, y: 23.333374}
+        - {x: -11.833252, y: 20.333374}
+        - {x: -12.833252, y: 5.333374}
+        - {x: -12.833252, y: -23.666626}
+        - {x: -9.833252, y: -28.666626}
+        - {x: 12.166748, y: -28.666626}
+        - {x: 17.166748, y: -23.666626}
+        - {x: 17.166748, y: -0.666626}
+        - {x: 9.166748, y: 23.333374}
+    - name: cursed_grave_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 22.333374}
+        - {x: -14, y: -4.666626}
+        - {x: -14, y: -25.666626}
+        - {x: -13, y: -28.666626}
+        - {x: 6, y: -28.666626}
+        - {x: 15, y: -26.666626}
+        - {x: 17, y: -8.666626}
+        - {x: 17, y: -2.666626}
+        - {x: 5, y: 22.333374}
+    - name: cursed_grave_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.333374, y: 26.333374}
+        - {x: -2.666626, y: 26.333374}
+        - {x: -8.666626, y: 18.333374}
+        - {x: -13.666626, y: 11.333374}
+        - {x: -13.666626, y: -28.666626}
+        - {x: 10.333374, y: -28.666626}
+        - {x: 13.333374, y: -27.666626}
+        - {x: 20.333374, y: -17.666626}
+        - {x: 20.333374, y: -0.666626}
+        - {x: 7.333374, y: 23.333374}
+    - name: cursed_grave_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.166748, y: -2.666626}
+        - {x: 14.166748, y: -2.666626}
+        - {x: 17.166748, y: -2.666626}
+        - {x: 20.166748, y: -1.666626}
+        - {x: 18.166748, y: 6.333374}
+        - {x: 3.166748, y: 19.333374}
+        - {x: -12.833252, y: 19.333374}
+        - {x: -12.833252, y: -28.666626}
+        - {x: 11.166748, y: -28.666626}
+        - {x: 23.166748, y: -12.666626}
+        - {x: 23.166748, y: -5.666626}
+      - - {x: 0.16674805, y: 30.333374}
+        - {x: -2.833252, y: 27.333374}
+        - {x: -2.833252, y: 22.333374}
+        - {x: 0.16674805, y: 19.333374}
+        - {x: 5.166748, y: 19.333374}
+        - {x: 8.166748, y: 22.333374}
+        - {x: 8.166748, y: 28.333374}
+        - {x: 3.166748, y: 30.333374}
+    - name: cursed_grave_18
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 17.333374}
+        - {x: -16, y: -28.666626}
+        - {x: 19, y: -28.666626}
+        - {x: 23, y: -18.666626}
+        - {x: 23, y: 15.333374}
+        - {x: 17, y: 17.333374}
+      - - {x: 3, y: 32.333374}
+        - {x: -2, y: 29.333374}
+        - {x: -2, y: 18.333374}
+        - {x: -1, y: 17.333374}
+        - {x: 9, y: 17.333374}
+        - {x: 9, y: 28.333374}
+        - {x: 7, y: 32.333374}
+    - name: cursed_grave_19
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.333374, y: -2.666626}
+        - {x: 10.333374, y: 6.333374}
+        - {x: -11.666626, y: 6.333374}
+        - {x: -19.666626, y: 2.333374}
+        - {x: -19.666626, y: -14.666626}
+        - {x: -18.666626, y: -15.666626}
+        - {x: -7.666626, y: -28.666626}
+        - {x: -0.666626, y: -32.666626}
+        - {x: 22.333374, y: -32.666626}
+        - {x: 25.333374, y: -31.666626}
+        - {x: 28.333374, y: -25.666626}
+        - {x: 28.333374, y: -16.666626}
+        - {x: 20.333374, y: -4.666626}
+      - - {x: -0.666626, y: 8.333374}
+        - {x: 2.333374, y: 4.333374}
+        - {x: 5.333374, y: 4.333374}
+        - {x: 10.333374, y: 6.333374}
+        - {x: 10.333374, y: 15.333374}
+        - {x: 9.333374, y: 20.333374}
+        - {x: 6.333374, y: 21.333374}
+        - {x: 0.33337402, y: 21.333374}
+        - {x: -0.666626, y: 18.333374}
+    - name: cursed_grave_20
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.166748, y: 6.333374}
+        - {x: -15.833252, y: 6.333374}
+        - {x: -23.833252, y: -5.666626}
+        - {x: -23.833252, y: -25.666626}
+        - {x: 1.166748, y: -34.666626}
+        - {x: 29.166748, y: -34.666626}
+        - {x: 29.166748, y: -21.666626}
+        - {x: 13.166748, y: 2.333374}
+    - name: cursed_grave_21
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 4.333374}
+        - {x: -17, y: 1.333374}
+        - {x: -17, y: -10.666626}
+        - {x: -15, y: -18.666626}
+        - {x: -8, y: -33.666626}
+        - {x: 3, y: -38.666626}
+        - {x: 19, y: -38.666626}
+        - {x: 30, y: -33.666626}
+        - {x: 30, y: -20.666626}
+        - {x: 6, y: 4.333374}
+      - - {x: -26, y: -12.666626}
+        - {x: -28, y: -14.666626}
+        - {x: -28, y: -18.666626}
+        - {x: -27, y: -22.666626}
+        - {x: -18, y: -22.666626}
+        - {x: -18, y: -14.666626}
+        - {x: -22, y: -12.666626}
+      - - {x: 1, y: 1.333374}
+        - {x: 1, y: -0.666626}
+        - {x: 2, y: -5.666626}
+        - {x: 6, y: -9.666626}
+        - {x: 13, y: -9.666626}
+        - {x: 16, y: -8.666626}
+        - {x: 16, y: -2.666626}
+        - {x: 15, y: -0.666626}
+        - {x: 8, y: 5.333374}
+        - {x: 5, y: 5.333374}
+    - name: cursed_grave_22
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.666626, y: -42.666626}
+        - {x: 26.333374, y: -42.666626}
+        - {x: 30.333374, y: -39.666626}
+        - {x: 30.333374, y: -19.666626}
+        - {x: 8.333374, y: 3.333374}
+        - {x: -17.666626, y: 3.333374}
+        - {x: -17.666626, y: -25.666626}
+      - - {x: -26.666626, y: -12.666626}
+        - {x: -31.666626, y: -14.666626}
+        - {x: -31.666626, y: -23.666626}
+        - {x: -22.666626, y: -23.666626}
+        - {x: -19.666626, y: -19.666626}
+        - {x: -19.666626, y: -16.666626}
+        - {x: -21.666626, y: -12.666626}
+      - - {x: 11.333374, y: 4.333374}
+        - {x: 6.333374, y: 4.333374}
+        - {x: 3.333374, y: 0.33337402}
+        - {x: 3.333374, y: -4.666626}
+        - {x: 5.333374, y: -7.666626}
+        - {x: 11.333374, y: -8.666626}
+        - {x: 17.333374, y: -8.666626}
+        - {x: 18.333374, y: -6.666626}
+        - {x: 18.333374, y: -3.666626}
+        - {x: 17.333374, y: 1.333374}
+    - name: cursed_grave_23
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.666748, y: -0.666626}
+        - {x: 8.666748, y: 3.333374}
+        - {x: -17.333252, y: 3.333374}
+        - {x: -17.333252, y: -30.666626}
+        - {x: -16.333252, y: -32.666626}
+        - {x: -7.333252, y: -34.666626}
+        - {x: -2.333252, y: -33.666626}
+        - {x: 3.666748, y: -42.666626}
+        - {x: 12.666748, y: -42.666626}
+        - {x: 13.666748, y: -41.666626}
+        - {x: 24.666748, y: -33.666626}
+        - {x: 31.666748, y: -27.666626}
+      - - {x: -27.333252, y: -12.666626}
+        - {x: -32.333252, y: -15.666626}
+        - {x: -32.333252, y: -20.666626}
+        - {x: -31.333252, y: -24.666626}
+        - {x: -25.333252, y: -24.666626}
+        - {x: -20.333252, y: -20.666626}
+        - {x: -20.333252, y: -16.666626}
+        - {x: -24.333252, y: -12.666626}
+      - - {x: 6.666748, y: 3.333374}
+        - {x: 5.666748, y: 1.333374}
+        - {x: 5.666748, y: -7.666626}
+        - {x: 18.666748, y: -7.666626}
+        - {x: 19.666748, y: -4.666626}
+        - {x: 19.666748, y: -2.666626}
+        - {x: 13.666748, y: 3.333374}
+    - name: cursed_grave_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 22}
+        - {x: -8, y: 22}
+        - {x: -17, y: 11}
+        - {x: -17, y: -30}
+        - {x: 5, y: -30}
+        - {x: 20, y: -23}
+        - {x: 20, y: 5}
+        - {x: 18, y: 19}
+    - name: cursed_grave_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.666664, y: 22}
+        - {x: -13.666664, y: 7}
+        - {x: -15.666664, y: -12}
+        - {x: -15.666664, y: -27}
+        - {x: -13.666664, y: -30}
+        - {x: 20.333336, y: -30}
+        - {x: 20.333336, y: 22}
+    - name: cursed_grave_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.3333282, y: 23}
+        - {x: -15.333328, y: 4}
+        - {x: -15.333328, y: -30}
+        - {x: 12.666672, y: -30}
+        - {x: 21.666672, y: -27}
+        - {x: 21.666672, y: 23}
+    - name: cursed_grave_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 24}
+        - {x: -17, y: 14}
+        - {x: -17, y: -30}
+        - {x: 5, y: -30}
+        - {x: 19, y: -21}
+        - {x: 21, y: -15}
+        - {x: 21, y: 4}
+        - {x: 6, y: 24}
+    - name: cursed_grave_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.6666565, y: 24}
+        - {x: -8.6666565, y: 22}
+        - {x: -15.6666565, y: 9}
+        - {x: -15.6666565, y: -24}
+        - {x: -8.6666565, y: -30}
+        - {x: 16.333344, y: -30}
+        - {x: 21.333344, y: -27}
+        - {x: 21.333344, y: 24}
+    - name: cursed_grave_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.666687, y: -2}
+        - {x: 20.666687, y: 0}
+        - {x: 17.666687, y: 0}
+        - {x: 12.666687, y: 19}
+        - {x: 4.666687, y: 24}
+        - {x: -12.333313, y: 24}
+        - {x: -15.333313, y: 13}
+        - {x: -15.333313, y: -28}
+        - {x: -7.333313, y: -30}
+        - {x: 10.666687, y: -30}
+        - {x: 17.666687, y: -21}
+        - {x: 17.666687, y: -19}
+        - {x: 21.666687, y: -10}
+    - name: cursed_grave_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 23}
+        - {x: -17, y: 19}
+        - {x: -17, y: -29}
+        - {x: -14, y: -30}
+        - {x: 12, y: -30}
+        - {x: 15, y: -29}
+        - {x: 20, y: -11}
+        - {x: 20, y: 5}
+        - {x: 13, y: 23}
+    - name: cursed_grave_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.666626, y: 22}
+        - {x: -8.666626, y: 20}
+        - {x: -13.666626, y: -3}
+        - {x: -15.666626, y: -15}
+        - {x: -15.666626, y: -26}
+        - {x: -11.666626, y: -30}
+        - {x: 12.333374, y: -30}
+        - {x: 20.333374, y: -25}
+        - {x: 20.333374, y: 9}
+        - {x: 10.333374, y: 22}
+    - name: cursed_grave_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.666687, y: 20}
+        - {x: 7.666687, y: 22}
+        - {x: -2.333313, y: 22}
+        - {x: -6.333313, y: 17}
+        - {x: -11.333313, y: 5}
+        - {x: -11.333313, y: -3}
+        - {x: -15.333313, y: -14}
+        - {x: -15.333313, y: -25}
+        - {x: -5.333313, y: -30}
+        - {x: 6.666687, y: -30}
+        - {x: 17.666687, y: -21}
+        - {x: 21.666687, y: -16}
+        - {x: 21.666687, y: 14}
+    - name: cursed_grave_33
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 23}
+        - {x: -7, y: 23}
+        - {x: -17, y: 13}
+        - {x: -17, y: -25}
+        - {x: -8, y: -30}
+        - {x: 5, y: -30}
+        - {x: 17, y: -20}
+        - {x: 21, y: -11}
+        - {x: 21, y: 8}
+    - name: cursed_grave_34
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.666626, y: 27}
+        - {x: -12.666626, y: 22}
+        - {x: -15.666626, y: 0}
+        - {x: -15.666626, y: -24}
+        - {x: -7.666626, y: -30}
+        - {x: 9.333374, y: -30}
+        - {x: 22.333374, y: -25}
+        - {x: 23.333374, y: -18}
+        - {x: 23.333374, y: 11}
+        - {x: 12.333374, y: 27}
+    - name: cursed_grave_35
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.333313, y: 26}
+        - {x: -15.333313, y: 20}
+        - {x: -15.333313, y: -27}
+        - {x: -14.333313, y: -29}
+        - {x: -11.333313, y: -30}
+        - {x: 14.666687, y: -30}
+        - {x: 23.666687, y: -16}
+        - {x: 23.666687, y: 14}
+        - {x: 13.666687, y: 26}
+    - name: cursed_grave_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 24}
+        - {x: -15, y: 19}
+        - {x: -17, y: -1}
+        - {x: -17, y: -24}
+        - {x: -11, y: -30}
+        - {x: 6, y: -30}
+        - {x: 14, y: -29}
+        - {x: 22, y: -16}
+        - {x: 22, y: 3}
+        - {x: 12, y: 24}
+    - name: cursed_grave_37
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.666626, y: 23}
+        - {x: -15.666626, y: 17}
+        - {x: -15.666626, y: -26}
+        - {x: -10.666626, y: -30}
+        - {x: 12.333374, y: -30}
+        - {x: 22.333374, y: -10}
+        - {x: 22.333374, y: 5}
+        - {x: 13.333374, y: 23}
+    - name: cursed_grave_38
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.833252, y: 22}
+        - {x: -15.833252, y: 6}
+        - {x: -15.833252, y: -30}
+        - {x: 14.166748, y: -30}
+        - {x: 21.166748, y: -19}
+        - {x: 21.166748, y: 4}
+        - {x: 9.166748, y: 22}
+    - name: cursed_grave_39
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 22}
+        - {x: -17, y: 11}
+        - {x: -17, y: -30}
+        - {x: 21, y: -30}
+        - {x: 21, y: 13}
+        - {x: 10, y: 22}
+    - name: cursed_grave_40
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.333374, y: 2}
+        - {x: 14.333374, y: 14}
+        - {x: 12.333374, y: 19}
+        - {x: 9.333374, y: 24}
+        - {x: 6.333374, y: 25}
+        - {x: -15.666626, y: 25}
+        - {x: -15.666626, y: -28}
+        - {x: -10.666626, y: -30}
+        - {x: 7.333374, y: -30}
+        - {x: 21.333374, y: -23}
+        - {x: 22.333374, y: -5}
+        - {x: 22.333374, y: -2}
+        - {x: 18.333374, y: 2}
+    - name: cursed_grave_41
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.833252, y: 28}
+        - {x: -13.833252, y: 20}
+        - {x: -15.833252, y: 7}
+        - {x: -15.833252, y: -26}
+        - {x: -6.833252, y: -30}
+        - {x: 6.166748, y: -30}
+        - {x: 25.166748, y: -16}
+        - {x: 25.166748, y: 28}
+      - - {x: -13.833252, y: 23}
+        - {x: -12.833252, y: 20}
+        - {x: -2.833252, y: 20}
+        - {x: -2.833252, y: 27}
+        - {x: -3.833252, y: 29}
+        - {x: -10.833252, y: 29}
+        - {x: -13.833252, y: 28}
+    - name: cursed_grave_42
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: -14}
+        - {x: -17, y: -26}
+        - {x: -13, y: -30}
+        - {x: 12, y: -30}
+        - {x: 27, y: -16}
+        - {x: 27, y: 7}
+        - {x: 22, y: 12}
+        - {x: 15, y: 15}
+        - {x: -1, y: 15}
+        - {x: -12, y: 5}
+      - - {x: -12, y: 30}
+        - {x: -17, y: 27}
+        - {x: -17, y: 21}
+        - {x: -15, y: 18}
+        - {x: -11, y: 18}
+        - {x: -5, y: 21}
+        - {x: -5, y: 28}
+        - {x: -6, y: 30}
+      - - {x: 6, y: 21}
+        - {x: 8, y: 18}
+        - {x: 13, y: 18}
+        - {x: 16, y: 19}
+        - {x: 16, y: 25}
+        - {x: 15, y: 28}
+        - {x: 7, y: 28}
+        - {x: 6, y: 25}
+    - name: cursed_grave_43
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.333374, y: 10}
+        - {x: -14.666626, y: 0}
+        - {x: -15.666626, y: -9}
+        - {x: -15.666626, y: -27}
+        - {x: -9.666626, y: -33}
+        - {x: 12.333374, y: -33}
+        - {x: 25.333374, y: -20}
+        - {x: 25.333374, y: -1}
+        - {x: 21.333374, y: 10}
+      - - {x: -13.666626, y: 24}
+        - {x: -18.666626, y: 21}
+        - {x: -18.666626, y: 12}
+        - {x: -15.666626, y: 10}
+        - {x: -10.666626, y: 10}
+        - {x: -7.666626, y: 17}
+        - {x: -7.666626, y: 21}
+        - {x: -9.666626, y: 23}
+    - name: cursed_grave_44
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.833252, y: 3}
+        - {x: -17.833252, y: -1}
+        - {x: -20.833252, y: -7}
+        - {x: -20.833252, y: -21}
+        - {x: -15.833252, y: -38}
+        - {x: 21.166748, y: -38}
+        - {x: 24.166748, y: -28}
+        - {x: 24.166748, y: 1}
+        - {x: 19.166748, y: 3}
+    - name: cursed_grave_45
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 4}
+        - {x: -23, y: -6}
+        - {x: -23, y: -39}
+        - {x: 8, y: -39}
+        - {x: 22, y: -28}
+        - {x: 31, y: -20}
+        - {x: 31, y: -4}
+        - {x: 12, y: 4}
+    - name: cursed_grave_46
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.666626, y: -34}
+        - {x: -26.666626, y: -36}
+        - {x: -24.666626, y: -40}
+        - {x: -18.666626, y: -40}
+        - {x: -13.666626, y: -38}
+        - {x: -13.666626, y: -34}
+        - {x: -16.666626, y: -30}
+        - {x: -22.666626, y: -30}
+      - - {x: -0.666626, y: 2}
+        - {x: -23.666626, y: -15}
+        - {x: -24.666626, y: -16}
+        - {x: -24.666626, y: -29}
+        - {x: -11.666626, y: -39}
+        - {x: 9.333374, y: -39}
+        - {x: 22.333374, y: -29}
+        - {x: 22.333374, y: -2}
+        - {x: 15.333374, y: 2}
+      - - {x: 26.333374, y: -4}
+        - {x: 23.333374, y: -5}
+        - {x: 23.333374, y: -11}
+        - {x: 26.333374, y: -18}
+        - {x: 33.333374, y: -18}
+        - {x: 34.333374, y: -15}
+        - {x: 34.333374, y: -7}
+        - {x: 31.333374, y: -4}
+      - - {x: -21.666626, y: -5}
+        - {x: -23.666626, y: -6}
+        - {x: -23.666626, y: -15}
+        - {x: -12.666626, y: -15}
+        - {x: -9.666626, y: -11}
+        - {x: -9.666626, y: -9}
+        - {x: -13.666626, y: -5}
+    - name: cursed_grave_47
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.333252, y: -30}
+        - {x: -26.333252, y: -33}
+        - {x: -28.333252, y: -38}
+        - {x: -24.333252, y: -42}
+        - {x: -20.333252, y: -42}
+        - {x: -14.333252, y: -37}
+        - {x: -14.333252, y: -34}
+        - {x: -17.333252, y: -30}
+      - - {x: 0.66674805, y: 2}
+        - {x: -22.333252, y: -17}
+        - {x: -24.333252, y: -20}
+        - {x: -24.333252, y: -28}
+        - {x: -7.333252, y: -39}
+        - {x: 11.666748, y: -39}
+        - {x: 14.666748, y: -37}
+        - {x: 22.666748, y: -21}
+        - {x: 22.666748, y: 1}
+        - {x: 19.666748, y: 2}
+      - - {x: 29.666748, y: -6}
+        - {x: 25.666748, y: -8}
+        - {x: 25.666748, y: -14}
+        - {x: 26.666748, y: -17}
+        - {x: 35.666748, y: -17}
+        - {x: 36.666748, y: -16}
+        - {x: 36.666748, y: -11}
+        - {x: 33.666748, y: -6}
+      - - {x: -18.333252, y: -4}
+        - {x: -24.333252, y: -6}
+        - {x: -24.333252, y: -12}
+        - {x: -22.333252, y: -14}
+        - {x: -13.333252, y: -14}
+        - {x: -10.333252, y: -13}
+        - {x: -10.333252, y: -8}
+        - {x: -11.333252, y: -4}
+      - - {x: 3.666748, y: 43}
+        - {x: 4.666748, y: 40}
+        - {x: 10.666748, y: 40}
+        - {x: 12.666748, y: 42}
+        - {x: 12.666748, y: 43}
+    - name: cursed_grave_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 22.666687}
+        - {x: -17, y: 17.666687}
+        - {x: -17, y: -19.333313}
+        - {x: -13, y: -27.333313}
+        - {x: 12, y: -27.333313}
+        - {x: 24, y: -23.333313}
+        - {x: 24, y: 21.666687}
+        - {x: 19, y: 22.666687}
+    - name: cursed_grave_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.333336, y: 22.666687}
+        - {x: -5.666664, y: 22.666687}
+        - {x: -15.666664, y: 17.666687}
+        - {x: -15.666664, y: -24.333313}
+        - {x: -14.666664, y: -27.333313}
+        - {x: 13.333336, y: -27.333313}
+        - {x: 14.333336, y: -24.333313}
+        - {x: 24.333336, y: -19.333313}
+        - {x: 24.333336, y: 18.666687}
+    - name: cursed_grave_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.6666718, y: 23.666687}
+        - {x: -8.333328, y: 23.666687}
+        - {x: -15.333328, y: 16.666687}
+        - {x: -15.333328, y: -27.333313}
+        - {x: 16.666672, y: -27.333313}
+        - {x: 25.666672, y: -14.333313}
+        - {x: 25.666672, y: -0.333313}
+        - {x: 17.666672, y: 19.666687}
+    - name: cursed_grave_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 3.666687}
+        - {x: 10, y: 24.666687}
+        - {x: -8, y: 24.666687}
+        - {x: -17, y: 20.666687}
+        - {x: -17, y: -22.333313}
+        - {x: -13, y: -27.333313}
+        - {x: 14, y: -27.333313}
+        - {x: 23, y: -14.333313}
+        - {x: 25, y: -8.333313}
+        - {x: 25, y: -1.333313}
+    - name: cursed_grave_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.6666565, y: 24.666687}
+        - {x: -15.6666565, y: 19.666687}
+        - {x: -15.6666565, y: -16.333313}
+        - {x: -11.6666565, y: -27.333313}
+        - {x: 16.333344, y: -27.333313}
+        - {x: 25.333344, y: -12.333313}
+        - {x: 25.333344, y: 2.666687}
+        - {x: 14.3333435, y: 24.666687}
+    - name: cursed_grave_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.666687, y: 15.666687}
+        - {x: 6.666687, y: 24.666687}
+        - {x: -13.333313, y: 24.666687}
+        - {x: -15.333313, y: 20.666687}
+        - {x: -15.333313, y: -16.333313}
+        - {x: -11.333313, y: -27.333313}
+        - {x: 13.666687, y: -27.333313}
+        - {x: 15.666687, y: -23.333313}
+        - {x: 25.666687, y: -10.333313}
+        - {x: 25.666687, y: 7.666687}
+    - name: cursed_grave_54
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 23.666687}
+        - {x: -13, y: 23.666687}
+        - {x: -17, y: 20.666687}
+        - {x: -17, y: -23.333313}
+        - {x: -16, y: -27.333313}
+        - {x: 13, y: -27.333313}
+        - {x: 24, y: -11.333313}
+        - {x: 24, y: 5.666687}
+        - {x: 20, y: 17.666687}
+    - name: cursed_grave_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.666626, y: 22.666687}
+        - {x: -15.666626, y: 14.666687}
+        - {x: -15.666626, y: -18.333313}
+        - {x: -12.666626, y: -27.333313}
+        - {x: 12.333374, y: -27.333313}
+        - {x: 18.333374, y: -26.333313}
+        - {x: 24.333374, y: -14.333313}
+        - {x: 24.333374, y: 5.666687}
+        - {x: 7.333374, y: 22.666687}
+    - name: cursed_grave_56
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.333313, y: 22.666687}
+        - {x: -15.333313, y: -6.333313}
+        - {x: -11.333313, y: -27.333313}
+        - {x: 13.666687, y: -27.333313}
+        - {x: 25.666687, y: -15.333313}
+        - {x: 25.666687, y: 12.666687}
+        - {x: 12.666687, y: 22.666687}
+    - name: cursed_grave_57
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 24.666687}
+        - {x: -17, y: 24.666687}
+        - {x: -18, y: 23.666687}
+        - {x: -18, y: -10.333313}
+        - {x: -15, y: -27.333313}
+        - {x: 15, y: -27.333313}
+        - {x: 26, y: -14.333313}
+        - {x: 26, y: 11.666687}
+        - {x: 25, y: 18.666687}
+    - name: cursed_grave_58
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.333374, y: 26.666687}
+        - {x: 5.333374, y: 26.666687}
+        - {x: 4.333374, y: 24.666687}
+        - {x: 4.333374, y: 18.666687}
+        - {x: 5.333374, y: 16.666687}
+        - {x: 2.333374, y: 13.666687}
+        - {x: 2.333374, y: 11.666687}
+        - {x: 3.333374, y: 21.666687}
+        - {x: 1.333374, y: 25.666687}
+        - {x: -8.666626, y: 25.666687}
+        - {x: -18.666626, y: 15.666687}
+        - {x: -18.666626, y: 5.666687}
+        - {x: -15.666626, y: 2.666687}
+        - {x: -7.666626, y: -2.333313}
+        - {x: -4.666626, y: -2.333313}
+        - {x: -1.666626, y: 0.666687}
+        - {x: -3.666626, y: -3.333313}
+        - {x: -7.666626, y: -3.333313}
+        - {x: -11.666626, y: -0.333313}
+        - {x: -15.666626, y: -0.333313}
+        - {x: -18.666626, y: -1.333313}
+        - {x: -18.666626, y: -3.333313}
+        - {x: -16.666626, y: -10.333313}
+        - {x: -10.666626, y: -27.333313}
+        - {x: 19.333374, y: -27.333313}
+        - {x: 28.333374, y: -10.333313}
+        - {x: 28.333374, y: 3.666687}
+        - {x: 15.333374, y: 23.666687}
+    - name: cursed_grave_59
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.333313, y: 25.666687}
+        - {x: -18.333313, y: 21.666687}
+        - {x: -18.333313, y: -2.333313}
+        - {x: -10.333313, y: -27.333313}
+        - {x: 14.666687, y: -27.333313}
+        - {x: 28.666687, y: -13.333313}
+        - {x: 28.666687, y: 20.666687}
+        - {x: 16.666687, y: 25.666687}
+    - name: cursed_grave_60
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 17.666687}
+        - {x: 26, y: 21.666687}
+        - {x: 14, y: 24.666687}
+        - {x: -21, y: 24.666687}
+        - {x: -21, y: 1.666687}
+        - {x: -12, y: -27.333313}
+        - {x: 12, y: -27.333313}
+        - {x: 14, y: -23.333313}
+        - {x: 26, y: -14.333313}
+        - {x: 27, y: -13.333313}
+    - name: cursed_grave_61
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.333374, y: 24.666687}
+        - {x: -15.666626, y: 24.666687}
+        - {x: -18.666626, y: 19.666687}
+        - {x: -18.666626, y: -21.333313}
+        - {x: -17.666626, y: -27.333313}
+        - {x: 18.333374, y: -27.333313}
+        - {x: 26.333374, y: -17.333313}
+        - {x: 26.333374, y: 3.666687}
+        - {x: 21.333374, y: 15.666687}
+    - name: cursed_grave_62
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.166748, y: 23.666687}
+        - {x: -3.833252, y: 23.666687}
+        - {x: -10.833252, y: 22.666687}
+        - {x: -16.833252, y: 12.666687}
+        - {x: -16.833252, y: -9.333313}
+        - {x: -12.833252, y: -27.333313}
+        - {x: 13.166748, y: -27.333313}
+        - {x: 25.166748, y: -18.333313}
+        - {x: 25.166748, y: 8.666687}
+        - {x: 23.166748, y: 14.666687}
+    - name: cursed_grave_63
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 22.666687}
+        - {x: -17, y: 16.666687}
+        - {x: -17, y: -6.333313}
+        - {x: -14, y: -22.333313}
+        - {x: -10, y: -27.333313}
+        - {x: 12, y: -27.333313}
+        - {x: 24, y: -12.333313}
+        - {x: 24, y: 2.666687}
+        - {x: 10, y: 22.666687}
+    - name: cursed_grave_64
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.333374, y: 17.666687}
+        - {x: 4.333374, y: 27.666687}
+        - {x: 3.333374, y: 22.666687}
+        - {x: 3.333374, y: 17.666687}
+        - {x: 3.333374, y: 18.666687}
+        - {x: 0.33337402, y: 22.666687}
+        - {x: -9.666626, y: 30.666687}
+        - {x: -14.666626, y: 30.666687}
+        - {x: -17.666626, y: 24.666687}
+        - {x: -17.666626, y: -2.333313}
+        - {x: -13.666626, y: -17.333313}
+        - {x: -11.666626, y: -23.333313}
+        - {x: -9.666626, y: -27.333313}
+        - {x: 17.333374, y: -27.333313}
+        - {x: 27.333374, y: -17.333313}
+        - {x: 28.333374, y: -14.333313}
+        - {x: 28.333374, y: 0.666687}
+    - name: cursed_grave_65
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.166748, y: 16.666687}
+        - {x: -16.833252, y: 16.666687}
+        - {x: -18.833252, y: 12.666687}
+        - {x: -18.833252, y: -8.333313}
+        - {x: -10.833252, y: -27.333313}
+        - {x: 17.166748, y: -27.333313}
+        - {x: 31.166748, y: -13.333313}
+        - {x: 31.166748, y: -2.333313}
+        - {x: 22.166748, y: 14.666687}
+      - - {x: 5.166748, y: 25.666687}
+        - {x: 5.166748, y: 15.666687}
+        - {x: 6.166748, y: 14.666687}
+        - {x: 17.166748, y: 14.666687}
+        - {x: 17.166748, y: 21.666687}
+        - {x: 12.166748, y: 25.666687}
+      - - {x: -11.833252, y: 35.666687}
+        - {x: -16.833252, y: 35.666687}
+        - {x: -20.833252, y: 33.666687}
+        - {x: -20.833252, y: 30.666687}
+        - {x: -14.833252, y: 24.666687}
+        - {x: -9.833252, y: 24.666687}
+        - {x: -7.833252, y: 25.666687}
+        - {x: -7.833252, y: 28.666687}
+        - {x: -9.833252, y: 33.666687}
+    - name: cursed_grave_66
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 11.666687}
+        - {x: -23, y: 1.666687}
+        - {x: -23, y: -16.333313}
+        - {x: -14, y: -27.333313}
+        - {x: 13, y: -27.333313}
+        - {x: 33, y: -15.333313}
+        - {x: 33, y: 11.666687}
+      - - {x: 8, y: 25.666687}
+        - {x: 7, y: 22.666687}
+        - {x: 7, y: 17.666687}
+        - {x: 9, y: 14.666687}
+        - {x: 16, y: 14.666687}
+        - {x: 18, y: 15.666687}
+        - {x: 18, y: 22.666687}
+        - {x: 13, y: 25.666687}
+      - - {x: -21, y: 36.666687}
+        - {x: -25, y: 33.666687}
+        - {x: -25, y: 26.666687}
+        - {x: -14, y: 26.666687}
+        - {x: -12, y: 28.666687}
+        - {x: -12, y: 32.666687}
+        - {x: -13, y: 36.666687}
+    - name: cursed_grave_67
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.666626, y: 5.666687}
+        - {x: -25.666626, y: -3.333313}
+        - {x: -25.666626, y: -21.333313}
+        - {x: -22.666626, y: -27.333313}
+        - {x: -20.666626, y: -28.333313}
+        - {x: 28.333374, y: -28.333313}
+        - {x: 35.333374, y: -22.333313}
+        - {x: 35.333374, y: 2.666687}
+        - {x: 32.333374, y: 5.666687}
+      - - {x: -15.666626, y: 2.666687}
+        - {x: -16.666626, y: -0.333313}
+        - {x: -16.666626, y: -6.333313}
+        - {x: -13.666626, y: -7.333313}
+        - {x: -6.666626, y: -7.333313}
+        - {x: -3.666626, y: -3.333313}
+        - {x: -3.666626, y: -0.333313}
+        - {x: -6.666626, y: 2.666687}
+      - - {x: -25.666626, y: 32.666687}
+        - {x: -28.666626, y: 26.666687}
+        - {x: -28.666626, y: 20.666687}
+        - {x: -26.666626, y: 18.666687}
+        - {x: -22.666626, y: 18.666687}
+        - {x: -18.666626, y: 23.666687}
+        - {x: -18.666626, y: 31.666687}
+        - {x: -19.666626, y: 32.666687}
+    - name: cursed_grave_68
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.833252, y: -3.333313}
+        - {x: -26.833252, y: -5.333313}
+        - {x: -26.833252, y: -26.333313}
+        - {x: -22.833252, y: -33.333313}
+        - {x: 10.166748, y: -33.333313}
+        - {x: 27.166748, y: -31.333313}
+        - {x: 35.166748, y: -20.333313}
+        - {x: 35.166748, y: -3.333313}
+      - - {x: -29.833252, y: 5.666687}
+        - {x: -31.833252, y: 4.666687}
+        - {x: -31.833252, y: -6.333313}
+        - {x: -27.833252, y: -7.333313}
+        - {x: -23.833252, y: -7.333313}
+        - {x: -22.833252, y: -5.333313}
+        - {x: -22.833252, y: 2.666687}
+        - {x: -23.833252, y: 5.666687}
+    - name: cursed_grave_69
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -1.333313}
+        - {x: -36, y: -13.333313}
+        - {x: -36, y: -23.333313}
+        - {x: -29, y: -34.333313}
+        - {x: 19, y: -34.333313}
+        - {x: 37, y: -22.333313}
+        - {x: 37, y: -2.333313}
+        - {x: 33, y: -1.333313}
+    - name: cursed_grave_70
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.333374, y: 0.666687}
+        - {x: -11.666626, y: 0.666687}
+        - {x: -24.666626, y: -3.333313}
+        - {x: -27.666626, y: -13.333313}
+        - {x: -27.666626, y: -28.333313}
+        - {x: -22.666626, y: -35.333313}
+        - {x: 32.333374, y: -35.333313}
+        - {x: 38.333374, y: -26.333313}
+        - {x: 38.333374, y: -6.333313}
+      - - {x: 40.333374, y: -25.333313}
+        - {x: 42.333374, y: -27.333313}
+        - {x: 43.333374, y: -27.333313}
+        - {x: 43.333374, y: -19.333313}
+        - {x: 40.333374, y: -20.333313}
+      - - {x: -41.666626, y: -17.333313}
+        - {x: -41.666626, y: -25.333313}
+        - {x: -38.666626, y: -26.333313}
+        - {x: -28.666626, y: -26.333313}
+        - {x: -27.666626, y: -25.333313}
+        - {x: -27.666626, y: -21.333313}
+        - {x: -29.666626, y: -17.333313}
+    - name: cursed_grave_71
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.333252, y: 0.666687}
+        - {x: -27.333252, y: -0.333313}
+        - {x: -27.333252, y: -35.333313}
+        - {x: 27.666748, y: -35.333313}
+        - {x: 38.666748, y: -30.333313}
+        - {x: 38.666748, y: -8.333313}
+        - {x: 21.666748, y: 0.666687}
+      - - {x: -40.333252, y: -17.333313}
+        - {x: -42.333252, y: -19.333313}
+        - {x: -42.333252, y: -27.333313}
+        - {x: -37.333252, y: -27.333313}
+        - {x: -30.333252, y: -24.333313}
+        - {x: -30.333252, y: -21.333313}
+        - {x: -34.333252, y: -16.333313}
+    - name: cursed_grave_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 22.333344}
+        - {x: -15, y: 14.3333435}
+        - {x: -16, y: 6.3333435}
+        - {x: -16, y: -22.666656}
+        - {x: -10, y: -29.666656}
+        - {x: 16, y: -29.666656}
+        - {x: 23, y: -14.6666565}
+        - {x: 23, y: -3.6666565}
+        - {x: 8, y: 22.333344}
+    - name: cursed_grave_73
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.333336, y: 23.333344}
+        - {x: -15.666664, y: 23.333344}
+        - {x: -15.666664, y: -25.666656}
+        - {x: -14.666664, y: -25.666656}
+        - {x: -2.6666641, y: -28.666656}
+        - {x: -1.6666641, y: -29.666656}
+        - {x: 8.333336, y: -29.666656}
+        - {x: 23.333336, y: -19.666656}
+        - {x: 23.333336, y: -2.6666565}
+        - {x: 19.333336, y: 11.3333435}
+    - name: cursed_grave_74
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.6666718, y: 24.333344}
+        - {x: -14.333328, y: 24.333344}
+        - {x: -14.333328, y: -29.666656}
+        - {x: 11.666672, y: -29.666656}
+        - {x: 24.666672, y: -14.6666565}
+        - {x: 24.666672, y: 0.3333435}
+        - {x: 19.666672, y: 12.3333435}
+    - name: cursed_grave_75
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 24.333344}
+        - {x: -15, y: 16.333344}
+        - {x: -15, y: 7.3333435}
+        - {x: -16, y: -9.6666565}
+        - {x: -16, y: -23.666656}
+        - {x: -3, y: -28.666656}
+        - {x: -1, y: -29.666656}
+        - {x: 4, y: -29.666656}
+        - {x: 14, y: -27.666656}
+        - {x: 23, y: -13.6666565}
+        - {x: 23, y: -0.6666565}
+        - {x: 8, y: 24.333344}
+    - name: cursed_grave_76
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.333344, y: -6.6666565}
+        - {x: 7.3333435, y: 23.333344}
+        - {x: 4.3333435, y: 25.333344}
+        - {x: -5.6666565, y: 25.333344}
+        - {x: -14.6666565, y: 22.333344}
+        - {x: -15.6666565, y: 18.333344}
+        - {x: -15.6666565, y: -28.666656}
+        - {x: -5.6666565, y: -29.666656}
+        - {x: 6.3333435, y: -29.666656}
+        - {x: 16.333344, y: -21.666656}
+        - {x: 20.333344, y: -17.666656}
+        - {x: 24.333344, y: -10.6666565}
+    - name: cursed_grave_77
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.666687, y: 25.333344}
+        - {x: -14.333313, y: 25.333344}
+        - {x: -14.333313, y: -29.666656}
+        - {x: 11.666687, y: -29.666656}
+        - {x: 24.666687, y: -14.6666565}
+        - {x: 24.666687, y: 1.3333435}
+        - {x: 19.666687, y: 12.3333435}
+    - name: cursed_grave_78
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 6.3333435}
+        - {x: -16, y: 2.3333435}
+        - {x: -16, y: -26.666656}
+        - {x: -9, y: -29.666656}
+        - {x: 8, y: -29.666656}
+        - {x: 23, y: -20.666656}
+        - {x: 23, y: -7.6666565}
+        - {x: 11, y: 23.333344}
+        - {x: -8, y: 23.333344}
+        - {x: -15, y: 16.333344}
+    - name: cursed_grave_79
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.666626, y: 23.333344}
+        - {x: -15.666626, y: -27.666656}
+        - {x: -13.666626, y: -29.666656}
+        - {x: 9.333374, y: -29.666656}
+        - {x: 23.333374, y: -22.666656}
+        - {x: 23.333374, y: -0.6666565}
+        - {x: 7.333374, y: 23.333344}
+    - name: cursed_grave_80
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.666687, y: 23.333344}
+        - {x: -4.333313, y: 23.333344}
+        - {x: -14.333313, y: 15.3333435}
+        - {x: -14.333313, y: -26.666656}
+        - {x: -7.333313, y: -29.666656}
+        - {x: 11.666687, y: -29.666656}
+        - {x: 23.666687, y: -13.6666565}
+        - {x: 23.666687, y: -3.6666565}
+        - {x: 5.666687, y: 22.333344}
+    - name: cursed_grave_81
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: -29.666656}
+        - {x: 11, y: -29.666656}
+        - {x: 25, y: -16.666656}
+        - {x: 25, y: 2.3333435}
+        - {x: 8, y: 25.333344}
+        - {x: -4, y: 25.333344}
+        - {x: -17, y: 22.333344}
+        - {x: -17, y: -27.666656}
+    - name: cursed_grave_82
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.333374, y: 19.333344}
+        - {x: 8.333374, y: 26.333344}
+        - {x: -13.666626, y: 26.333344}
+        - {x: -17.666626, y: 21.333344}
+        - {x: -17.666626, y: 6.3333435}
+        - {x: -15.666626, y: -2.6666565}
+        - {x: -16.666626, y: -18.666656}
+        - {x: -15.666626, y: -26.666656}
+        - {x: -0.666626, y: -29.666656}
+        - {x: 7.333374, y: -29.666656}
+        - {x: 26.333374, y: -16.666656}
+        - {x: 26.333374, y: -10.6666565}
+    - name: cursed_grave_83
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.666687, y: 19.333344}
+        - {x: 9.666687, y: 26.333344}
+        - {x: -13.333313, y: 26.333344}
+        - {x: -16.333313, y: 25.333344}
+        - {x: -16.333313, y: -25.666656}
+        - {x: -4.333313, y: -29.666656}
+        - {x: 10.666687, y: -29.666656}
+        - {x: 20.666687, y: -21.666656}
+        - {x: 27.666687, y: -13.6666565}
+        - {x: 27.666687, y: -4.6666565}
+    - name: cursed_grave_84
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 27.333344}
+        - {x: -18, y: -25.666656}
+        - {x: -5, y: -29.666656}
+        - {x: 22, y: -29.666656}
+        - {x: 25, y: -28.666656}
+        - {x: 25, y: 20.333344}
+        - {x: 10, y: 27.333344}
+    - name: cursed_grave_85
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.666626, y: 26.333344}
+        - {x: -16.666626, y: -25.666656}
+        - {x: -5.666626, y: -29.666656}
+        - {x: 8.333374, y: -29.666656}
+        - {x: 22.333374, y: -25.666656}
+        - {x: 24.333374, y: -20.666656}
+        - {x: 24.333374, y: 0.3333435}
+        - {x: 5.333374, y: 26.333344}
+    - name: cursed_grave_86
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.166748, y: 23.333344}
+        - {x: -14.833252, y: 23.333344}
+        - {x: -14.833252, y: -29.666656}
+        - {x: 12.166748, y: -29.666656}
+        - {x: 24.166748, y: -15.6666565}
+        - {x: 24.166748, y: 9.3333435}
+        - {x: 22.166748, y: 14.3333435}
+    - name: cursed_grave_87
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 21.333344}
+        - {x: 3, y: 23.333344}
+        - {x: -7, y: 23.333344}
+        - {x: -16, y: 17.333344}
+        - {x: -16, y: -23.666656}
+        - {x: -8, y: -29.666656}
+        - {x: 6, y: -29.666656}
+        - {x: 14, y: -27.666656}
+        - {x: 21, y: -17.666656}
+        - {x: 23, y: -12.6666565}
+        - {x: 23, y: -7.6666565}
+    - name: cursed_grave_88
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.666626, y: 22.333344}
+        - {x: -15.666626, y: 20.333344}
+        - {x: -15.666626, y: -26.666656}
+        - {x: -8.666626, y: -29.666656}
+        - {x: 19.333374, y: -29.666656}
+        - {x: 26.333374, y: -25.666656}
+        - {x: 26.333374, y: 16.333344}
+        - {x: 9.333374, y: 22.333344}
+      - - {x: -10.666626, y: 34.333344}
+        - {x: -13.666626, y: 33.333344}
+        - {x: -13.666626, y: 24.333344}
+        - {x: -10.666626, y: 21.333344}
+        - {x: -7.666626, y: 21.333344}
+        - {x: -3.666626, y: 24.333344}
+        - {x: -3.666626, y: 28.333344}
+        - {x: -5.666626, y: 34.333344}
+    - name: cursed_grave_89
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.833252, y: 18.333344}
+        - {x: -18.833252, y: -19.666656}
+        - {x: -13.833252, y: -29.666656}
+        - {x: 9.166748, y: -29.666656}
+        - {x: 28.166748, y: -17.666656}
+        - {x: 28.166748, y: 12.3333435}
+        - {x: 10.166748, y: 18.333344}
+      - - {x: 1.166748, y: 22.333344}
+        - {x: 1.166748, y: 11.3333435}
+        - {x: 6.166748, y: 9.3333435}
+        - {x: 12.166748, y: 9.3333435}
+        - {x: 13.166748, y: 10.3333435}
+        - {x: 13.166748, y: 15.3333435}
+        - {x: 9.166748, y: 22.333344}
+      - - {x: -13.833252, y: 41.333344}
+        - {x: -17.833252, y: 37.333344}
+        - {x: -16.833252, y: 33.333344}
+        - {x: -13.833252, y: 29.333344}
+        - {x: -10.833252, y: 28.333344}
+        - {x: -5.833252, y: 28.333344}
+        - {x: -5.833252, y: 36.333344}
+        - {x: -8.833252, y: 41.333344}
+    - name: cursed_grave_90
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: -42.666656}
+        - {x: 0, y: -39.666656}
+        - {x: -8, y: -39.666656}
+        - {x: -9, y: -42.666656}
+      - - {x: -23, y: -8.6666565}
+        - {x: -18, y: -24.666656}
+        - {x: -4, y: -29.666656}
+        - {x: 6, y: -29.666656}
+        - {x: 30, y: -21.666656}
+        - {x: 30, y: -8.6666565}
+        - {x: 27, y: -0.6666565}
+        - {x: 7, y: 11.3333435}
+        - {x: -17, y: 11.3333435}
+        - {x: -23, y: 8.3333435}
+      - - {x: 2, y: 21.333344}
+        - {x: 0, y: 20.333344}
+        - {x: 0, y: 14.3333435}
+        - {x: 4, y: 9.3333435}
+        - {x: 10, y: 9.3333435}
+        - {x: 13, y: 12.3333435}
+        - {x: 13, y: 14.3333435}
+        - {x: 8, y: 21.333344}
+      - - {x: -18, y: 43.333344}
+        - {x: -22, y: 39.333344}
+        - {x: -22, y: 36.333344}
+        - {x: -19, y: 33.333344}
+        - {x: -11, y: 33.333344}
+        - {x: -9, y: 37.333344}
+        - {x: -9, y: 41.333344}
+        - {x: -12, y: 42.333344}
+    - name: cursed_grave_91
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.666626, y: 0.3333435}
+        - {x: -28.666626, y: -1.6666565}
+        - {x: -28.666626, y: -22.666656}
+        - {x: -10.666626, y: -32.666656}
+        - {x: 29.333374, y: -32.666656}
+        - {x: 31.333374, y: -28.666656}
+        - {x: 31.333374, y: -17.666656}
+        - {x: 21.333374, y: -3.6666565}
+        - {x: 17.333374, y: -2.6666565}
+        - {x: 8.333374, y: 0.3333435}
+      - - {x: -2.666626, y: 10.3333435}
+        - {x: -10.666626, y: 10.3333435}
+        - {x: -12.666626, y: 6.3333435}
+        - {x: -12.666626, y: 2.3333435}
+        - {x: -10.666626, y: 1.3333435}
+        - {x: -3.666626, y: 1.3333435}
+        - {x: 0.33337402, y: 5.3333435}
+        - {x: 0.33337402, y: 9.3333435}
+      - - {x: -20.666626, y: 39.333344}
+        - {x: -24.666626, y: 38.333344}
+        - {x: -24.666626, y: 28.333344}
+        - {x: -23.666626, y: 27.333344}
+        - {x: -20.666626, y: 27.333344}
+        - {x: -14.666626, y: 30.333344}
+        - {x: -13.666626, y: 31.333344}
+        - {x: -13.666626, y: 39.333344}
+    - name: cursed_grave_92
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.833252, y: 1.3333435}
+        - {x: -32.833252, y: -10.6666565}
+        - {x: -32.833252, y: -24.666656}
+        - {x: -1.833252, y: -32.666656}
+        - {x: 27.166748, y: -32.666656}
+        - {x: 31.166748, y: -31.666656}
+        - {x: 31.166748, y: -12.6666565}
+        - {x: 3.166748, y: 1.3333435}
+      - - {x: -20.833252, y: 15.3333435}
+        - {x: -24.833252, y: 15.3333435}
+        - {x: -26.833252, y: 11.3333435}
+        - {x: -26.833252, y: 5.3333435}
+        - {x: -22.833252, y: 1.3333435}
+        - {x: -21.833252, y: 1.3333435}
+        - {x: -16.833252, y: 6.3333435}
+        - {x: -16.833252, y: 13.3333435}
+    - name: cursed_grave_93
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: -2.6666565}
+        - {x: -35, y: -6.6666565}
+        - {x: -35, y: -22.666656}
+        - {x: -32, y: -28.666656}
+        - {x: 1, y: -34.666656}
+        - {x: 16, y: -34.666656}
+        - {x: 30, y: -31.666656}
+        - {x: 31, y: -29.666656}
+        - {x: 31, y: -16.666656}
+        - {x: 21, y: -2.6666565}
+    - name: cursed_grave_94
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.666626, y: -3.6666565}
+        - {x: -35.666626, y: -19.666656}
+        - {x: -29.666626, y: -29.666656}
+        - {x: 4.333374, y: -29.666656}
+        - {x: 10.333374, y: -24.666656}
+        - {x: 19.333374, y: -24.666656}
+        - {x: 14.333374, y: -25.666656}
+        - {x: 11.333374, y: -26.666656}
+        - {x: 6.333374, y: -28.666656}
+        - {x: 8.333374, y: -36.666656}
+        - {x: 26.333374, y: -36.666656}
+        - {x: 34.333374, y: -32.666656}
+        - {x: 34.333374, y: -19.666656}
+        - {x: 28.333374, y: -3.6666565}
+    - name: cursed_grave_95
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.666748, y: -27.666656}
+        - {x: 8.666748, y: -31.666656}
+        - {x: 8.666748, y: -34.666656}
+        - {x: 12.666748, y: -38.666656}
+        - {x: 19.666748, y: -38.666656}
+        - {x: 22.666748, y: -36.666656}
+        - {x: 22.666748, y: -33.666656}
+        - {x: 19.666748, y: -27.666656}
+      - - {x: -38.333252, y: -3.6666565}
+        - {x: -38.333252, y: -18.666656}
+        - {x: -37.333252, y: -25.666656}
+        - {x: -23.333252, y: -31.666656}
+        - {x: 34.666748, y: -31.666656}
+        - {x: 34.666748, y: -13.6666565}
+        - {x: 33.666748, y: -12.6666565}
+        - {x: 23.666748, y: -3.6666565}
+    - name: cursed_grave_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 22}
+        - {x: -14, y: 1}
+        - {x: -14, y: -22}
+        - {x: -11, y: -29}
+        - {x: 13, y: -29}
+        - {x: 17, y: -18}
+        - {x: 17, y: -1}
+        - {x: 5, y: 22}
+    - name: cursed_grave_97
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.3333359, y: 22}
+        - {x: -9.666664, y: 22}
+        - {x: -13.666664, y: 10}
+        - {x: -13.666664, y: -26}
+        - {x: -9.666664, y: -29}
+        - {x: 14.333336, y: -29}
+        - {x: 17.333336, y: -16}
+        - {x: 17.333336, y: 0}
+        - {x: 7.333336, y: 18}
+    - name: cursed_grave_98
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.333328, y: 23}
+        - {x: -12.333328, y: 12}
+        - {x: -12.333328, y: -26}
+        - {x: -9.333328, y: -29}
+        - {x: 16.666672, y: -29}
+        - {x: 17.666672, y: -24}
+        - {x: 17.666672, y: 5}
+        - {x: 5.6666718, y: 23}
+    - name: cursed_grave_99
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 24}
+        - {x: -9, y: 24}
+        - {x: -14, y: -6}
+        - {x: -14, y: -19}
+        - {x: -11, y: -29}
+        - {x: 13, y: -29}
+        - {x: 16, y: -27}
+        - {x: 17, y: -21}
+        - {x: 17, y: 3}
+    - name: cursed_grave_100
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.3333435, y: 24}
+        - {x: -13.6666565, y: 24}
+        - {x: -13.6666565, y: -29}
+        - {x: 18.333344, y: -29}
+        - {x: 18.333344, y: 5}
+        - {x: 9.3333435, y: 21}
+    - name: cursed_grave_101
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.333313, y: 24}
+        - {x: -12.333313, y: 15}
+        - {x: -12.333313, y: -29}
+        - {x: 16.666687, y: -29}
+        - {x: 17.666687, y: -25}
+        - {x: 17.666687, y: 5}
+        - {x: 5.666687, y: 24}
+    - name: cursed_grave_102
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 23}
+        - {x: -14, y: 13}
+        - {x: -14, y: -26}
+        - {x: -12, y: -29}
+        - {x: 14, y: -29}
+        - {x: 17, y: -17}
+        - {x: 17, y: 2}
+        - {x: 4, y: 23}
+    - name: cursed_grave_103
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.333374, y: 22}
+        - {x: -9.666626, y: 22}
+        - {x: -13.666626, y: 9}
+        - {x: -13.666626, y: -26}
+        - {x: -9.666626, y: -29}
+        - {x: 13.333374, y: -29}
+        - {x: 17.333374, y: -25}
+        - {x: 17.333374, y: 2}
+        - {x: 11.333374, y: 21}
+    - name: cursed_grave_104
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.333313, y: 22}
+        - {x: -12.333313, y: 12}
+        - {x: -12.333313, y: -26}
+        - {x: -9.333313, y: -29}
+        - {x: 17.666687, y: -29}
+        - {x: 17.666687, y: 4}
+        - {x: 4.666687, y: 22}
+    - name: cursed_grave_105
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 24}
+        - {x: -9, y: 19}
+        - {x: -14, y: -6}
+        - {x: -14, y: -26}
+        - {x: -11, y: -29}
+        - {x: 13, y: -29}
+        - {x: 17, y: -26}
+        - {x: 17, y: 6}
+        - {x: 10, y: 24}
+    - name: cursed_grave_106
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.333374, y: 26}
+        - {x: -13.666626, y: 26}
+        - {x: -13.666626, y: -29}
+        - {x: 15.333374, y: -29}
+        - {x: 18.333374, y: -18}
+        - {x: 18.333374, y: 6}
+        - {x: 8.333374, y: 24}
+    - name: cursed_grave_107
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.666687, y: 28}
+        - {x: -2.333313, y: 28}
+        - {x: -7.333313, y: 26}
+        - {x: -12.333313, y: -2}
+        - {x: -12.333313, y: -25}
+        - {x: -9.333313, y: -29}
+        - {x: 14.666687, y: -29}
+        - {x: 18.666687, y: -25}
+        - {x: 18.666687, y: 2}
+        - {x: 10.666687, y: 27}
+    - name: cursed_grave_108
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 29}
+        - {x: -14, y: -6}
+        - {x: -14, y: -19}
+        - {x: -11, y: -29}
+        - {x: 13, y: -29}
+        - {x: 17, y: -25}
+        - {x: 17, y: 7}
+        - {x: 9, y: 29}
+    - name: cursed_grave_109
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.666626, y: -29}
+        - {x: 17.333374, y: -29}
+        - {x: 17.333374, y: 6}
+        - {x: 14.333374, y: 23}
+        - {x: 9.333374, y: 27}
+        - {x: -9.666626, y: 27}
+        - {x: -13.666626, y: 16}
+    - name: cursed_grave_110
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.833252, y: 23}
+        - {x: -12.833252, y: 11}
+        - {x: -12.833252, y: -28}
+        - {x: -10.833252, y: -29}
+        - {x: 15.166748, y: -29}
+        - {x: 17.166748, y: -25}
+        - {x: 17.166748, y: 2}
+        - {x: 7.166748, y: 23}
+    - name: cursed_grave_111
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: -28}
+        - {x: -12, y: -29}
+        - {x: 17, y: -29}
+        - {x: 17, y: 19}
+        - {x: 16, y: 22}
+        - {x: -10, y: 22}
+        - {x: -14, y: 9}
+    - name: cursed_grave_112
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.666626, y: -29}
+        - {x: 14.333374, y: -29}
+        - {x: 16.333374, y: -28}
+        - {x: 16.333374, y: 15}
+        - {x: 13.333374, y: 22}
+        - {x: -10.666626, y: 22}
+        - {x: -13.666626, y: 16}
+      - - {x: -2.666626, y: 36}
+        - {x: -5.666626, y: 35}
+        - {x: -5.666626, y: 25}
+        - {x: -3.666626, y: 23}
+        - {x: 0.33337402, y: 23}
+        - {x: 2.333374, y: 24}
+        - {x: 2.333374, y: 36}
+    - name: cursed_grave_113
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.166748, y: 21}
+        - {x: -3.833252, y: 21}
+        - {x: -9.833252, y: 19}
+        - {x: -12.833252, y: -6}
+        - {x: -12.833252, y: -23}
+        - {x: -9.833252, y: -29}
+        - {x: 14.166748, y: -29}
+        - {x: 19.166748, y: -20}
+        - {x: 19.166748, y: 12}
+        - {x: 16.166748, y: 14}
+      - - {x: -6.833252, y: 43}
+        - {x: -6.833252, y: 35}
+        - {x: -3.833252, y: 31}
+        - {x: 1.166748, y: 31}
+        - {x: 3.166748, y: 32}
+        - {x: 3.166748, y: 37}
+        - {x: 1.166748, y: 43}
+    - name: cursed_grave_114
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 20}
+        - {x: -16, y: -29}
+        - {x: 17, y: -29}
+        - {x: 21, y: -21}
+        - {x: 21, y: -1}
+        - {x: 7, y: 20}
+      - - {x: 6, y: 14}
+        - {x: 5, y: 11}
+        - {x: 5, y: 7}
+        - {x: 8, y: 5}
+        - {x: 17, y: 5}
+        - {x: 17, y: 13}
+        - {x: 14, y: 14}
+      - - {x: -9, y: 43}
+        - {x: -9, y: 41}
+        - {x: -5, y: 36}
+        - {x: -3, y: 36}
+        - {x: 1, y: 39}
+        - {x: 1, y: 43}
+    - name: cursed_grave_115
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.666626, y: 5}
+        - {x: -19.666626, y: 5}
+        - {x: -23.666626, y: 3}
+        - {x: -23.666626, y: -8}
+        - {x: -21.666626, y: -11}
+        - {x: -7.666626, y: -39}
+        - {x: 16.333374, y: -39}
+        - {x: 24.333374, y: -34}
+        - {x: 24.333374, y: -17}
+        - {x: 21.333374, y: -11}
+      - - {x: 12.333374, y: 14}
+        - {x: 5.333374, y: 14}
+        - {x: 3.333374, y: 11}
+        - {x: 3.333374, y: 8}
+        - {x: 5.333374, y: 6}
+        - {x: 11.333374, y: 6}
+        - {x: 15.333374, y: 9}
+        - {x: 15.333374, y: 13}
+      - - {x: -6.666626, y: 43}
+        - {x: -8.666626, y: 42}
+        - {x: -8.666626, y: 35}
+        - {x: -7.666626, y: 33}
+        - {x: -1.666626, y: 33}
+        - {x: 0.33337402, y: 34}
+        - {x: 0.33337402, y: 43}
+    - name: cursed_grave_116
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.833252, y: 5}
+        - {x: -26.833252, y: -20}
+        - {x: -17.833252, y: -39}
+        - {x: 16.166748, y: -39}
+        - {x: 25.166748, y: -34}
+        - {x: 25.166748, y: -15}
+        - {x: 14.166748, y: 5}
+      - - {x: -5.833252, y: 20}
+        - {x: -8.833252, y: 17}
+        - {x: -8.833252, y: 9}
+        - {x: -6.833252, y: 7}
+        - {x: -1.833252, y: 7}
+        - {x: 0.16674805, y: 9}
+        - {x: 0.16674805, y: 17}
+        - {x: -2.833252, y: 20}
+    - name: cursed_grave_117
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: -16}
+        - {x: -14, y: -40}
+        - {x: 12, y: -40}
+        - {x: 18, y: -35}
+        - {x: 18, y: -23}
+        - {x: 8, y: -3}
+        - {x: 1, y: 3}
+        - {x: -20, y: 3}
+        - {x: -29, y: 1}
+      - - {x: 20, y: -13}
+        - {x: 18, y: -14}
+        - {x: 17, y: -18}
+        - {x: 17, y: -23}
+        - {x: 20, y: -27}
+        - {x: 25, y: -27}
+        - {x: 29, y: -23}
+        - {x: 29, y: -19}
+        - {x: 26, y: -13}
+    - name: cursed_grave_118
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.666626, y: -15}
+        - {x: -18.666626, y: -40}
+        - {x: 20.333374, y: -40}
+        - {x: 20.333374, y: -18}
+        - {x: 16.333374, y: 0}
+        - {x: 6.333374, y: 3}
+        - {x: -16.666626, y: 3}
+        - {x: -28.666626, y: -4}
+      - - {x: 26.333374, y: -14}
+        - {x: 21.333374, y: -18}
+        - {x: 21.333374, y: -22}
+        - {x: 24.333374, y: -26}
+        - {x: 27.333374, y: -26}
+        - {x: 32.333374, y: -22}
+        - {x: 32.333374, y: -16}
+        - {x: 30.333374, y: -14}
+    - name: cursed_grave_119
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.333252, y: -29}
+        - {x: -13.333252, y: -29}
+        - {x: -16.333252, y: -31}
+        - {x: -16.333252, y: -34}
+        - {x: -14.333252, y: -41}
+        - {x: -4.333252, y: -41}
+        - {x: -2.333252, y: -40}
+        - {x: -2.333252, y: -34}
+        - {x: -4.333252, y: -30}
+      - - {x: -16.333252, y: 4}
+        - {x: -28.333252, y: -4}
+        - {x: -28.333252, y: -12}
+        - {x: -26.333252, y: -18}
+        - {x: 4.666748, y: -40}
+        - {x: 20.666748, y: -40}
+        - {x: 20.666748, y: -5}
+        - {x: 1.666748, y: 4}
+      - - {x: 25.666748, y: -15}
+        - {x: 22.666748, y: -16}
+        - {x: 22.666748, y: -21}
+        - {x: 25.666748, y: -25}
+        - {x: 32.666748, y: -25}
+        - {x: 34.666748, y: -22}
+        - {x: 34.666748, y: -15}
+    - name: cursed_grave_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 23.666672}
+        - {x: -15, y: 7.6666718}
+        - {x: -16, y: -9.333328}
+        - {x: -16, y: -24.333328}
+        - {x: -8, y: -29.333328}
+        - {x: 21, y: -29.333328}
+        - {x: 21, y: 23.666672}
+    - name: cursed_grave_121
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.333336, y: 23.666672}
+        - {x: -3.6666641, y: 23.666672}
+        - {x: -12.666664, y: 7.6666718}
+        - {x: -15.666664, y: -5.3333282}
+        - {x: -15.666664, y: -25.333328}
+        - {x: -4.666664, y: -29.333328}
+        - {x: 9.333336, y: -29.333328}
+        - {x: 17.333336, y: -21.333328}
+        - {x: 21.333336, y: -9.333328}
+        - {x: 21.333336, y: 4.6666718}
+    - name: cursed_grave_122
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333328, y: 9.666672}
+        - {x: -14.333328, y: -24.333328}
+        - {x: -7.3333282, y: -29.333328}
+        - {x: 22.666672, y: -29.333328}
+        - {x: 22.666672, y: 24.666672}
+        - {x: -2.3333282, y: 24.666672}
+    - name: cursed_grave_123
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 25.666672}
+        - {x: -16, y: 9.666672}
+        - {x: -16, y: -29.333328}
+        - {x: 14, y: -29.333328}
+        - {x: 21, y: -14.333328}
+        - {x: 21, y: 10.666672}
+        - {x: 8, y: 25.666672}
+    - name: cursed_grave_124
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.3333435, y: 25.666672}
+        - {x: -2.6666565, y: 25.666672}
+        - {x: -5.6666565, y: 21.666672}
+        - {x: -11.6666565, y: 7.6666718}
+        - {x: -15.6666565, y: -9.333328}
+        - {x: -15.6666565, y: -25.333328}
+        - {x: -4.6666565, y: -29.333328}
+        - {x: 10.3333435, y: -29.333328}
+        - {x: 19.333344, y: -22.333328}
+        - {x: 22.333344, y: -14.333328}
+        - {x: 22.333344, y: 3.6666718}
+    - name: cursed_grave_125
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.333313, y: 25.666672}
+        - {x: -9.333313, y: 24.666672}
+        - {x: -14.333313, y: 11.666672}
+        - {x: -14.333313, y: -27.333328}
+        - {x: -10.333313, y: -29.333328}
+        - {x: 10.666687, y: -29.333328}
+        - {x: 21.666687, y: -21.333328}
+        - {x: 22.666687, y: -15.333328}
+        - {x: 22.666687, y: 4.6666718}
+        - {x: 8.666687, y: 25.666672}
+    - name: cursed_grave_126
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 24.666672}
+        - {x: -12, y: 8.666672}
+        - {x: -16, y: -7.3333282}
+        - {x: -16, y: -27.333328}
+        - {x: -10, y: -29.333328}
+        - {x: 12, y: -29.333328}
+        - {x: 21, y: -14.333328}
+        - {x: 21, y: 10.666672}
+        - {x: 6, y: 24.666672}
+    - name: cursed_grave_127
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.666626, y: 23.666672}
+        - {x: -15.666626, y: 3.6666718}
+        - {x: -15.666626, y: -29.333328}
+        - {x: 13.333374, y: -29.333328}
+        - {x: 21.333374, y: -13.333328}
+        - {x: 21.333374, y: 8.666672}
+        - {x: 10.333374, y: 23.666672}
+    - name: cursed_grave_128
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.666687, y: 23.666672}
+        - {x: -6.333313, y: 20.666672}
+        - {x: -14.333313, y: 9.666672}
+        - {x: -14.333313, y: -28.333328}
+        - {x: -11.333313, y: -29.333328}
+        - {x: 12.666687, y: -29.333328}
+        - {x: 21.666687, y: -17.333328}
+        - {x: 21.666687, y: 12.666672}
+        - {x: 9.666687, y: 23.666672}
+    - name: cursed_grave_129
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 25.666672}
+        - {x: -16, y: 19.666672}
+        - {x: -16, y: -25.333328}
+        - {x: -9, y: -29.333328}
+        - {x: 17, y: -29.333328}
+        - {x: 22, y: -16.333328}
+        - {x: 22, y: 10.666672}
+        - {x: 14, y: 25.666672}
+    - name: cursed_grave_130
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.666626, y: 27.666672}
+        - {x: -15.666626, y: 2.6666718}
+        - {x: -15.666626, y: -27.333328}
+        - {x: -7.666626, y: -29.333328}
+        - {x: 17.333374, y: -29.333328}
+        - {x: 24.333374, y: -27.333328}
+        - {x: 24.333374, y: 27.666672}
+    - name: cursed_grave_131
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.666687, y: 27.666672}
+        - {x: -11.333313, y: 27.666672}
+        - {x: -14.333313, y: 20.666672}
+        - {x: -14.333313, y: -28.333328}
+        - {x: -4.333313, y: -29.333328}
+        - {x: 7.666687, y: -29.333328}
+        - {x: 20.666687, y: -20.333328}
+        - {x: 24.666687, y: -2.3333282}
+        - {x: 24.666687, y: 18.666672}
+    - name: cursed_grave_132
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 6.6666718}
+        - {x: 10, y: 7.6666718}
+        - {x: 7, y: 7.6666718}
+        - {x: 13, y: 11.666672}
+        - {x: 16, y: 22.666672}
+        - {x: 12, y: 29.666672}
+        - {x: -14, y: 29.666672}
+        - {x: -16, y: 18.666672}
+        - {x: -16, y: -29.333328}
+        - {x: 16, y: -29.333328}
+        - {x: 17, y: -28.333328}
+        - {x: 24, y: -14.333328}
+        - {x: 24, y: 5.6666718}
+    - name: cursed_grave_133
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.333374, y: -3.3333282}
+        - {x: 23.333374, y: -2.3333282}
+        - {x: 23.333374, y: 7.6666718}
+        - {x: 14.333374, y: 24.666672}
+        - {x: 10.333374, y: 27.666672}
+        - {x: 3.333374, y: 27.666672}
+        - {x: -2.666626, y: 25.666672}
+        - {x: -12.666626, y: 6.6666718}
+        - {x: -15.666626, y: -13.333328}
+        - {x: -15.666626, y: -24.333328}
+        - {x: -7.666626, y: -29.333328}
+        - {x: 4.333374, y: -29.333328}
+        - {x: 13.333374, y: -26.333328}
+        - {x: 16.333374, y: -20.333328}
+        - {x: 16.333374, y: -16.333328}
+        - {x: 14.333374, y: -14.333328}
+    - name: cursed_grave_134
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.833252, y: 24.666672}
+        - {x: -14.833252, y: 9.666672}
+        - {x: -14.833252, y: -29.333328}
+        - {x: 6.166748, y: -29.333328}
+        - {x: 17.166748, y: -26.333328}
+        - {x: 22.166748, y: -3.3333282}
+        - {x: 22.166748, y: -0.33332825}
+        - {x: 10.166748, y: 24.666672}
+    - name: cursed_grave_135
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 23.666672}
+        - {x: -16, y: 7.6666718}
+        - {x: -16, y: -23.333328}
+        - {x: -8, y: -29.333328}
+        - {x: 8, y: -29.333328}
+        - {x: 15, y: -27.333328}
+        - {x: 21, y: -8.333328}
+        - {x: 21, y: 1.6666718}
+        - {x: 8, y: 23.666672}
+    - name: cursed_grave_136
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.333374, y: -14.333328}
+        - {x: 21.333374, y: -5.3333282}
+        - {x: 25.333374, y: 3.6666718}
+        - {x: 25.333374, y: 16.666672}
+        - {x: 11.333374, y: 23.666672}
+        - {x: -15.666626, y: 23.666672}
+        - {x: -15.666626, y: -23.333328}
+        - {x: -3.666626, y: -29.333328}
+        - {x: 4.333374, y: -29.333328}
+        - {x: 11.333374, y: -24.333328}
+        - {x: 16.333374, y: -20.333328}
+        - {x: 16.333374, y: -16.333328}
+      - - {x: 2.333374, y: 35.66667}
+        - {x: 2.333374, y: 23.666672}
+        - {x: 5.333374, y: 22.666672}
+        - {x: 11.333374, y: 22.666672}
+        - {x: 11.333374, y: 35.66667}
+    - name: cursed_grave_137
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.833252, y: 19.666672}
+        - {x: -14.833252, y: 4.6666718}
+        - {x: -14.833252, y: -7.3333282}
+        - {x: -13.833252, y: -10.333328}
+        - {x: -9.833252, y: -8.333328}
+        - {x: -6.833252, y: -10.333328}
+        - {x: -6.833252, y: -9.333328}
+        - {x: -8.833252, y: -10.333328}
+        - {x: -13.833252, y: -14.333328}
+        - {x: -14.833252, y: -18.333328}
+        - {x: -14.833252, y: -24.333328}
+        - {x: -4.833252, y: -29.333328}
+        - {x: 8.166748, y: -29.333328}
+        - {x: 16.166748, y: -26.333328}
+        - {x: 20.166748, y: -15.333328}
+        - {x: 20.166748, y: -1.3333282}
+        - {x: 10.166748, y: 19.666672}
+      - - {x: 22.166748, y: 12.666672}
+        - {x: 16.166748, y: 8.666672}
+        - {x: 16.166748, y: 4.6666718}
+        - {x: 17.166748, y: 1.6666718}
+        - {x: 24.166748, y: 1.6666718}
+        - {x: 30.166748, y: 3.6666718}
+        - {x: 30.166748, y: 9.666672}
+        - {x: 28.166748, y: 11.666672}
+        - {x: 26.166748, y: 12.666672}
+      - - {x: -11.833252, y: 23.666672}
+        - {x: -12.833252, y: 19.666672}
+        - {x: -12.833252, y: 11.666672}
+        - {x: -9.833252, y: 10.666672}
+        - {x: -6.833252, y: 10.666672}
+        - {x: -2.833252, y: 14.666672}
+        - {x: -2.833252, y: 23.666672}
+      - - {x: 13.166748, y: 43.66667}
+        - {x: 8.166748, y: 43.66667}
+        - {x: 4.166748, y: 42.66667}
+        - {x: 3.166748, y: 39.66667}
+        - {x: 3.166748, y: 31.666672}
+        - {x: 7.166748, y: 30.666672}
+        - {x: 11.166748, y: 30.666672}
+        - {x: 15.166748, y: 36.66667}
+        - {x: 15.166748, y: 40.66667}
+    - name: cursed_grave_138
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 15.666672}
+        - {x: -19, y: 14.666672}
+        - {x: -19, y: -23.333328}
+        - {x: -18, y: -25.333328}
+        - {x: -5, y: -29.333328}
+        - {x: 12, y: -29.333328}
+        - {x: 17, y: -25.333328}
+        - {x: 17, y: 15.666672}
+      - - {x: 21, y: 13.666672}
+        - {x: 18, y: 9.666672}
+        - {x: 20, y: 4.6666718}
+        - {x: 26, y: 4.6666718}
+        - {x: 31, y: 8.666672}
+        - {x: 31, y: 13.666672}
+      - - {x: -10, y: 24.666672}
+        - {x: -14, y: 24.666672}
+        - {x: -17, y: 22.666672}
+        - {x: -17, y: 11.666672}
+        - {x: -9, y: 11.666672}
+        - {x: -7, y: 14.666672}
+        - {x: -7, y: 23.666672}
+      - - {x: 5, y: 43.66667}
+        - {x: 4, y: 39.66667}
+        - {x: 9, y: 35.66667}
+        - {x: 12, y: 35.66667}
+        - {x: 17, y: 39.66667}
+        - {x: 17, y: 41.66667}
+        - {x: 15, y: 43.66667}
+    - name: cursed_grave_139
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.333374, y: 10.666672}
+        - {x: -12.666626, y: 10.666672}
+        - {x: -21.666626, y: -19.333328}
+        - {x: -21.666626, y: -36.33333}
+        - {x: -7.666626, y: -36.33333}
+        - {x: 12.333374, y: -31.333328}
+        - {x: 18.333374, y: -19.333328}
+        - {x: 18.333374, y: -1.3333282}
+      - - {x: -14.666626, y: 5.6666718}
+        - {x: -18.666626, y: 3.6666718}
+        - {x: -18.666626, y: -5.3333282}
+        - {x: -17.666626, y: -8.333328}
+        - {x: -13.666626, y: -8.333328}
+        - {x: -9.666626, y: -5.3333282}
+        - {x: -9.666626, y: 2.6666718}
+        - {x: -10.666626, y: 5.6666718}
+      - - {x: 21.333374, y: 9.666672}
+        - {x: 21.333374, y: 8.666672}
+        - {x: 24.333374, y: 4.6666718}
+        - {x: 28.333374, y: 4.6666718}
+        - {x: 32.333374, y: 5.6666718}
+        - {x: 32.333374, y: 10.666672}
+        - {x: 29.333374, y: 13.666672}
+        - {x: 25.333374, y: 13.666672}
+      - - {x: 10.333374, y: 33.66667}
+        - {x: 12.333374, y: 31.666672}
+        - {x: 19.333374, y: 31.666672}
+        - {x: 19.333374, y: 38.66667}
+        - {x: 17.333374, y: 42.66667}
+        - {x: 11.333374, y: 42.66667}
+        - {x: 8.333374, y: 39.66667}
+    - name: cursed_grave_140
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.166748, y: 4.6666718}
+        - {x: -7.833252, y: 4.6666718}
+        - {x: -22.833252, y: -13.333328}
+        - {x: -22.833252, y: -35.33333}
+        - {x: -19.833252, y: -36.33333}
+        - {x: 11.166748, y: -36.33333}
+        - {x: 18.166748, y: -34.33333}
+        - {x: 18.166748, y: -7.3333282}
+        - {x: 16.166748, y: 1.6666718}
+      - - {x: 17.166748, y: 0.66667175}
+        - {x: 17.166748, y: -2.3333282}
+        - {x: 19.166748, y: -5.3333282}
+        - {x: 23.166748, y: -5.3333282}
+        - {x: 28.166748, y: -3.3333282}
+        - {x: 28.166748, y: 1.6666718}
+        - {x: 24.166748, y: 4.6666718}
+        - {x: 21.166748, y: 4.6666718}
+      - - {x: 16.166748, y: 19.666672}
+        - {x: 13.166748, y: 19.666672}
+        - {x: 11.166748, y: 14.666672}
+        - {x: 11.166748, y: 6.6666718}
+        - {x: 14.166748, y: 5.6666718}
+        - {x: 20.166748, y: 5.6666718}
+        - {x: 21.166748, y: 6.6666718}
+        - {x: 21.166748, y: 17.666672}
+    - name: cursed_grave_141
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -20.333328}
+        - {x: 17, y: -20.333328}
+        - {x: 21, y: -15.333328}
+        - {x: 24, y: -8.333328}
+        - {x: 24, y: 1.6666718}
+        - {x: 12, y: 3.6666718}
+        - {x: -15, y: 3.6666718}
+        - {x: -30, y: -13.333328}
+        - {x: -30, y: -23.333328}
+        - {x: -23, y: -36.33333}
+        - {x: 20, y: -36.33333}
+        - {x: 24, y: -21.333328}
+        - {x: 18, y: -20.333328}
+    - name: cursed_grave_142
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.666626, y: 2.6666718}
+        - {x: -19.666626, y: -20.333328}
+        - {x: -19.666626, y: -36.33333}
+        - {x: 0.33337402, y: -36.33333}
+        - {x: 28.333374, y: -16.333328}
+        - {x: 28.333374, y: -1.3333282}
+        - {x: 27.333374, y: 2.6666718}
+      - - {x: 15.333374, y: -23.333328}
+        - {x: 12.333374, y: -24.333328}
+        - {x: 12.333374, y: -30.333328}
+        - {x: 13.333374, y: -33.33333}
+        - {x: 24.333374, y: -33.33333}
+        - {x: 26.333374, y: -29.333328}
+        - {x: 26.333374, y: -28.333328}
+        - {x: 21.333374, y: -22.333328}
+      - - {x: -32.666626, y: -18.333328}
+        - {x: -32.666626, y: -24.333328}
+        - {x: -30.666626, y: -30.333328}
+        - {x: -21.666626, y: -30.333328}
+        - {x: -21.666626, y: -21.333328}
+        - {x: -25.666626, y: -18.333328}
+    - name: cursed_grave_143
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.333252, y: 2.6666718}
+        - {x: -19.333252, y: -27.333328}
+        - {x: -19.333252, y: -36.33333}
+        - {x: 19.666748, y: -36.33333}
+        - {x: 25.666748, y: -21.333328}
+        - {x: 25.666748, y: -2.3333282}
+        - {x: 18.666748, y: 2.6666718}
+      - - {x: 13.666748, y: -31.333328}
+        - {x: 14.666748, y: -33.33333}
+        - {x: 22.666748, y: -33.33333}
+        - {x: 27.666748, y: -32.33333}
+        - {x: 27.666748, y: -28.333328}
+        - {x: 24.666748, y: -23.333328}
+        - {x: 16.666748, y: -23.333328}
+        - {x: 13.666748, y: -24.333328}
+      - - {x: -32.333252, y: -19.333328}
+        - {x: -34.333252, y: -20.333328}
+        - {x: -34.333252, y: -23.333328}
+        - {x: -31.333252, y: -31.333328}
+        - {x: -25.333252, y: -31.333328}
+        - {x: -22.333252, y: -29.333328}
+        - {x: -22.333252, y: -26.333328}
+        - {x: -24.333252, y: -19.333328}
+      - - {x: 17.666748, y: 1.6666718}
+        - {x: 17.666748, y: -7.3333282}
+        - {x: 19.666748, y: -8.333328}
+        - {x: 24.666748, y: -8.333328}
+        - {x: 29.666748, y: -5.3333282}
+        - {x: 29.666748, y: 0.66667175}
+        - {x: 26.666748, y: 1.6666718}
+    - name: cursed_grave_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 22.333336}
+        - {x: -16, y: 18.333336}
+        - {x: -16, y: -29.666664}
+        - {x: 15, y: -29.666664}
+        - {x: 25, y: -12.666664}
+        - {x: 25, y: 1.3333359}
+        - {x: 9, y: 22.333336}
+    - name: cursed_grave_145
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.333336, y: 22.333336}
+        - {x: -9.666664, y: 22.333336}
+        - {x: -15.666664, y: 15.333336}
+        - {x: -15.666664, y: -26.666664}
+        - {x: -10.666664, y: -28.666664}
+        - {x: 18.333336, y: -28.666664}
+        - {x: 25.333336, y: -12.666664}
+        - {x: 25.333336, y: 7.333336}
+        - {x: 21.333336, y: 16.333336}
+    - name: cursed_grave_146
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333328, y: 23.333336}
+        - {x: -14.333328, y: -23.666664}
+        - {x: -10.333328, y: -29.666664}
+        - {x: 8.666672, y: -29.666664}
+        - {x: 19.666672, y: -26.666664}
+        - {x: 25.666672, y: -18.666664}
+        - {x: 25.666672, y: 17.333336}
+        - {x: 17.666672, y: 23.333336}
+    - name: cursed_grave_147
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 24.333336}
+        - {x: -16, y: 15.333336}
+        - {x: -16, y: -17.666664}
+        - {x: -12, y: -29.666664}
+        - {x: 6, y: -29.666664}
+        - {x: 11, y: -27.666664}
+        - {x: 25, y: -23.666664}
+        - {x: 25, y: 21.333336}
+        - {x: 12, y: 24.333336}
+    - name: cursed_grave_148
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.6666565, y: 24.333336}
+        - {x: -15.6666565, y: -25.666664}
+        - {x: -12.6666565, y: -28.666664}
+        - {x: 14.3333435, y: -28.666664}
+        - {x: 26.333344, y: -17.666664}
+        - {x: 26.333344, y: 1.3333359}
+        - {x: 14.3333435, y: 24.333336}
+    - name: cursed_grave_149
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333313, y: 24.333336}
+        - {x: -14.333313, y: 14.333336}
+        - {x: -14.333313, y: -18.666664}
+        - {x: -9.333313, y: -29.666664}
+        - {x: 7.666687, y: -29.666664}
+        - {x: 13.666687, y: -28.666664}
+        - {x: 26.666687, y: -16.666664}
+        - {x: 26.666687, y: 0.33333588}
+        - {x: 9.666687, y: 24.333336}
+    - name: cursed_grave_150
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 23.333336}
+        - {x: -6, y: 23.333336}
+        - {x: -16, y: 13.333336}
+        - {x: -16, y: -29.666664}
+        - {x: 15, y: -29.666664}
+        - {x: 25, y: -18.666664}
+        - {x: 25, y: -1.6666641}
+        - {x: 17, y: 13.333336}
+    - name: cursed_grave_151
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.333374, y: 22.333336}
+        - {x: -12.666626, y: 22.333336}
+        - {x: -15.666626, y: 20.333336}
+        - {x: -15.666626, y: -26.666664}
+        - {x: -14.666626, y: -28.666664}
+        - {x: 17.333374, y: -28.666664}
+        - {x: 25.333374, y: -13.666664}
+        - {x: 25.333374, y: 7.333336}
+        - {x: 21.333374, y: 16.333336}
+    - name: cursed_grave_152
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.333313, y: 22.333336}
+        - {x: -14.333313, y: 18.333336}
+        - {x: -14.333313, y: -29.666664}
+        - {x: 16.666687, y: -29.666664}
+        - {x: 25.666687, y: -21.666664}
+        - {x: 25.666687, y: 1.3333359}
+        - {x: 11.666687, y: 22.333336}
+    - name: cursed_grave_153
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 23.333336}
+        - {x: -17, y: 17.333336}
+        - {x: -17, y: -16.666664}
+        - {x: -11, y: -29.666664}
+        - {x: 13, y: -29.666664}
+        - {x: 27, y: -11.666664}
+        - {x: 27, y: 2.3333359}
+        - {x: 11, y: 23.333336}
+    - name: cursed_grave_154
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.333374, y: 25.333336}
+        - {x: -1.666626, y: 25.333336}
+        - {x: -3.666626, y: 23.333336}
+        - {x: -1.666626, y: 10.333336}
+        - {x: -3.666626, y: 22.333336}
+        - {x: -4.666626, y: 25.333336}
+        - {x: -6.666626, y: 25.333336}
+        - {x: -16.666626, y: 21.333336}
+        - {x: -18.666626, y: 17.333336}
+        - {x: -18.666626, y: -9.666664}
+        - {x: -10.666626, y: -28.666664}
+        - {x: 14.333374, y: -28.666664}
+        - {x: 28.333374, y: -13.666664}
+        - {x: 28.333374, y: -1.6666641}
+        - {x: 24.333374, y: 17.333336}
+    - name: cursed_grave_155
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.333313, y: 25.333336}
+        - {x: -1.333313, y: 24.333336}
+        - {x: -2.333313, y: 22.333336}
+        - {x: -1.333313, y: 12.333336}
+        - {x: -0.333313, y: 9.333336}
+        - {x: 3.666687, y: 3.3333359}
+        - {x: 3.666687, y: 0.33333588}
+        - {x: -2.333313, y: 13.333336}
+        - {x: -2.333313, y: 20.333336}
+        - {x: -5.333313, y: 23.333336}
+        - {x: -9.333313, y: 25.333336}
+        - {x: -18.333313, y: 17.333336}
+        - {x: -18.333313, y: -6.666664}
+        - {x: -13.333313, y: -27.666664}
+        - {x: -8.333313, y: -29.666664}
+        - {x: 2.666687, y: -29.666664}
+        - {x: 13.666687, y: -28.666664}
+        - {x: 30.666687, y: -13.666664}
+        - {x: 30.666687, y: 4.333336}
+        - {x: 20.666687, y: 25.333336}
+    - name: cursed_grave_156
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 1.3333359}
+        - {x: 14, y: 3.3333359}
+        - {x: 10, y: 3.3333359}
+        - {x: 15, y: 3.3333359}
+        - {x: 18, y: 6.333336}
+        - {x: 23, y: 15.333336}
+        - {x: 17, y: 25.333336}
+        - {x: 11, y: 25.333336}
+        - {x: 9, y: 23.333336}
+        - {x: 9, y: 17.333336}
+        - {x: 9, y: 20.333336}
+        - {x: 7, y: 25.333336}
+        - {x: 1, y: 25.333336}
+        - {x: -10, y: 24.333336}
+        - {x: -18, y: 12.333336}
+        - {x: -18, y: 2.3333359}
+        - {x: -16, y: 0.33333588}
+        - {x: -9, y: 0.33333588}
+        - {x: -18, y: 0.33333588}
+        - {x: -20, y: -0.6666641}
+        - {x: -20, y: -5.666664}
+        - {x: -14, y: -22.666664}
+        - {x: -9, y: -29.666664}
+        - {x: -1, y: -29.666664}
+        - {x: 11, y: -27.666664}
+        - {x: 14, y: -24.666664}
+        - {x: 30, y: -9.666664}
+        - {x: 30, y: -2.6666641}
+    - name: cursed_grave_157
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.666626, y: 24.333336}
+        - {x: -9.666626, y: 23.333336}
+        - {x: -17.666626, y: 17.333336}
+        - {x: -17.666626, y: -27.666664}
+        - {x: -7.666626, y: -28.666664}
+        - {x: 15.333374, y: -28.666664}
+        - {x: 29.333374, y: -11.666664}
+        - {x: 29.333374, y: -1.6666641}
+        - {x: 18.333374, y: 24.333336}
+    - name: cursed_grave_158
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.166748, y: 22.333336}
+        - {x: -5.833252, y: 22.333336}
+        - {x: -15.833252, y: 14.333336}
+        - {x: -15.833252, y: -27.666664}
+        - {x: -14.833252, y: -29.666664}
+        - {x: 17.166748, y: -29.666664}
+        - {x: 26.166748, y: -14.666664}
+        - {x: 26.166748, y: 3.3333359}
+        - {x: 12.166748, y: 21.333336}
+    - name: cursed_grave_159
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 22.333336}
+        - {x: -12, y: 22.333336}
+        - {x: -16, y: 19.333336}
+        - {x: -16, y: -17.666664}
+        - {x: -13, y: -29.666664}
+        - {x: 13, y: -29.666664}
+        - {x: 25, y: -13.666664}
+        - {x: 25, y: -0.6666641}
+        - {x: 21, y: 15.333336}
+    - name: cursed_grave_160
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.333374, y: 4.333336}
+        - {x: 24.333374, y: 4.333336}
+        - {x: 18.333374, y: 27.333336}
+        - {x: 14.333374, y: 32.333336}
+        - {x: 11.333374, y: 32.333336}
+        - {x: -17.666626, y: 20.333336}
+        - {x: -13.666626, y: 13.333336}
+        - {x: -11.666626, y: 11.333336}
+        - {x: -7.666626, y: 11.333336}
+        - {x: -3.666626, y: 15.333336}
+        - {x: -5.666626, y: 11.333336}
+        - {x: -11.666626, y: 11.333336}
+        - {x: -17.666626, y: 10.333336}
+        - {x: -19.666626, y: 9.333336}
+        - {x: -19.666626, y: 3.3333359}
+        - {x: -17.666626, y: -14.666664}
+        - {x: -10.666626, y: -28.666664}
+        - {x: 8.333374, y: -28.666664}
+        - {x: 16.333374, y: -27.666664}
+        - {x: 27.333374, y: -10.666664}
+        - {x: 29.333374, y: -5.666664}
+        - {x: 29.333374, y: 2.3333359}
+    - name: cursed_grave_161
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.166748, y: 18.333336}
+        - {x: -0.83325195, y: 18.333336}
+        - {x: -21.833252, y: 10.333336}
+        - {x: -21.833252, y: -27.666664}
+        - {x: -11.833252, y: -29.666664}
+        - {x: 20.166748, y: -29.666664}
+        - {x: 27.166748, y: -14.666664}
+        - {x: 27.166748, y: -4.666664}
+      - - {x: 25.166748, y: 6.333336}
+        - {x: 21.166748, y: 1.3333359}
+        - {x: 21.166748, y: -2.6666641}
+        - {x: 23.166748, y: -3.6666641}
+        - {x: 36.166748, y: -3.6666641}
+        - {x: 37.166748, y: -0.6666641}
+        - {x: 37.166748, y: 6.333336}
+      - - {x: -11.833252, y: 26.333336}
+        - {x: -15.833252, y: 22.333336}
+        - {x: -15.833252, y: 17.333336}
+        - {x: -13.833252, y: 14.333336}
+        - {x: -9.833252, y: 14.333336}
+        - {x: -4.833252, y: 17.333336}
+        - {x: -4.833252, y: 26.333336}
+      - - {x: 19.166748, y: 37.333336}
+        - {x: 12.166748, y: 37.333336}
+        - {x: 9.166748, y: 35.333336}
+        - {x: 9.166748, y: 28.333336}
+        - {x: 10.166748, y: 26.333336}
+        - {x: 16.166748, y: 26.333336}
+        - {x: 21.166748, y: 30.333336}
+        - {x: 21.166748, y: 36.333336}
+    - name: cursed_grave_162
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 13.333336}
+        - {x: -28, y: 7.333336}
+        - {x: -28, y: -5.666664}
+        - {x: -21, y: -9.666664}
+        - {x: -20, y: -9.666664}
+        - {x: -14, y: -4.666664}
+        - {x: -17, y: -9.666664}
+        - {x: -20, y: -9.666664}
+        - {x: -22, y: -11.666664}
+        - {x: -26, y: -26.666664}
+        - {x: -12, y: -29.666664}
+        - {x: 24, y: -29.666664}
+        - {x: 27, y: -24.666664}
+        - {x: 27, y: 6.333336}
+        - {x: 25, y: 13.333336}
+      - - {x: 29, y: 7.333336}
+        - {x: 25, y: 6.333336}
+        - {x: 25, y: 1.3333359}
+        - {x: 28, y: -1.6666641}
+        - {x: 38, y: -1.6666641}
+        - {x: 40, y: -0.6666641}
+        - {x: 40, y: 3.3333359}
+        - {x: 39, y: 7.333336}
+      - - {x: -14, y: 28.333336}
+        - {x: -19, y: 24.333336}
+        - {x: -19, y: 18.333336}
+        - {x: -18, y: 16.333336}
+        - {x: -13, y: 16.333336}
+        - {x: -8, y: 20.333336}
+        - {x: -8, y: 28.333336}
+      - - {x: 11, y: 33.333336}
+        - {x: 15, y: 29.333336}
+        - {x: 25, y: 29.333336}
+        - {x: 25, y: 35.333336}
+        - {x: 23, y: 39.333336}
+        - {x: 15, y: 39.333336}
+        - {x: 11, y: 35.333336}
+    - name: cursed_grave_163
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.333374, y: 8.333336}
+        - {x: -22.666626, y: -0.6666641}
+        - {x: -33.666626, y: -11.666664}
+        - {x: -33.666626, y: -28.666664}
+        - {x: 14.333374, y: -28.666664}
+        - {x: 28.333374, y: -22.666664}
+        - {x: 28.333374, y: -1.6666641}
+        - {x: 17.333374, y: 8.333336}
+      - - {x: 35.333374, y: 6.333336}
+        - {x: 31.333374, y: 4.333336}
+        - {x: 31.333374, y: 0.33333588}
+        - {x: 34.333374, y: -4.666664}
+        - {x: 38.333374, y: -4.666664}
+        - {x: 42.333374, y: -1.6666641}
+        - {x: 42.333374, y: 2.3333359}
+        - {x: 40.333374, y: 6.333336}
+      - - {x: -16.666626, y: 10.333336}
+        - {x: -21.666626, y: 3.3333359}
+        - {x: -21.666626, y: -0.6666641}
+        - {x: -18.666626, y: -1.6666641}
+        - {x: -14.666626, y: -1.6666641}
+        - {x: -9.666626, y: 1.3333359}
+        - {x: -9.666626, y: 6.333336}
+        - {x: -10.666626, y: 10.333336}
+      - - {x: 19.333374, y: 33.333336}
+        - {x: 19.333374, y: 27.333336}
+        - {x: 22.333374, y: 22.333336}
+        - {x: 26.333374, y: 22.333336}
+        - {x: 29.333374, y: 23.333336}
+        - {x: 29.333374, y: 28.333336}
+        - {x: 26.333374, y: 34.333336}
+        - {x: 21.333374, y: 35.333336}
+    - name: cursed_grave_164
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.166748, y: 1.3333359}
+        - {x: -30.833252, y: -7.666664}
+        - {x: -33.833252, y: -14.666664}
+        - {x: -33.833252, y: -23.666664}
+        - {x: -31.833252, y: -28.666664}
+        - {x: -15.833252, y: -33.666664}
+        - {x: 12.166748, y: -33.666664}
+        - {x: 28.166748, y: -23.666664}
+        - {x: 28.166748, y: -0.6666641}
+        - {x: 24.166748, y: 1.3333359}
+      - - {x: 31.166748, y: -4.666664}
+        - {x: 28.166748, y: -6.666664}
+        - {x: 28.166748, y: -10.666664}
+        - {x: 31.166748, y: -14.666664}
+        - {x: 36.166748, y: -13.666664}
+        - {x: 39.166748, y: -12.666664}
+        - {x: 39.166748, y: -7.666664}
+        - {x: 38.166748, y: -4.666664}
+      - - {x: 25.166748, y: 10.333336}
+        - {x: 23.166748, y: 6.333336}
+        - {x: 23.166748, y: -0.6666641}
+        - {x: 26.166748, y: -3.6666641}
+        - {x: 30.166748, y: -3.6666641}
+        - {x: 32.166748, y: -0.6666641}
+        - {x: 32.166748, y: 8.333336}
+        - {x: 28.166748, y: 10.333336}
+    - name: cursed_grave_165
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 0.33333588}
+        - {x: -36, y: -4.666664}
+        - {x: -36, y: -26.666664}
+        - {x: -34, y: -28.666664}
+        - {x: -18, y: -35.666664}
+        - {x: 7, y: -35.666664}
+        - {x: 37, y: -24.666664}
+        - {x: 37, y: -4.666664}
+        - {x: 26, y: 0.33333588}
+    - name: cursed_grave_166
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.333374, y: 0.33333588}
+        - {x: -6.666626, y: 0.33333588}
+        - {x: -31.666626, y: -5.666664}
+        - {x: -35.666626, y: -10.666664}
+        - {x: -35.666626, y: -31.666664}
+        - {x: -19.666626, y: -37.666664}
+        - {x: 23.333374, y: -37.666664}
+        - {x: 43.333374, y: -23.666664}
+        - {x: 43.333374, y: -10.666664}
+    - name: cursed_grave_167
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.333252, y: -11.666664}
+        - {x: -36.333252, y: -27.666664}
+        - {x: -13.333252, y: -38.666664}
+        - {x: 19.666748, y: -38.666664}
+        - {x: 30.666748, y: -32.666664}
+        - {x: 30.666748, y: -9.666664}
+        - {x: 29.666748, y: -1.6666641}
+        - {x: 23.666748, y: 0.33333588}
+        - {x: 2.666748, y: 0.33333588}
+        - {x: -33.333252, y: -6.666664}
+      - - {x: 33.666748, y: -13.666664}
+        - {x: 33.666748, y: -18.666664}
+        - {x: 38.666748, y: -21.666664}
+        - {x: 42.666748, y: -21.666664}
+        - {x: 43.666748, y: -20.666664}
+        - {x: 43.666748, y: -11.666664}
+        - {x: 35.666748, y: -11.666664}
+    - name: cursed_grave_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 21}
+        - {x: -16, y: 17}
+        - {x: -16, y: -28}
+        - {x: -3, y: -31}
+        - {x: 6, y: -31}
+        - {x: 23, y: -19}
+        - {x: 23, y: -7}
+        - {x: 11, y: 21}
+    - name: cursed_grave_169
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.666664, y: -12}
+        - {x: -15.666664, y: -24}
+        - {x: -4.666664, y: -31}
+        - {x: 20.333336, y: -31}
+        - {x: 24.333336, y: -30}
+        - {x: 24.333336, y: -3}
+        - {x: 17.333336, y: 22}
+        - {x: -3.6666641, y: 22}
+        - {x: -14.666664, y: 14}
+    - name: cursed_grave_170
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.6666718, y: 23}
+        - {x: -5.3333282, y: 23}
+        - {x: -14.333328, y: 14}
+        - {x: -14.333328, y: 11}
+        - {x: -13.333328, y: 6}
+        - {x: -14.333328, y: -2}
+        - {x: -14.333328, y: -25}
+        - {x: -12.333328, y: -30}
+        - {x: -6.3333282, y: -31}
+        - {x: 8.666672, y: -31}
+        - {x: 24.666672, y: -20}
+        - {x: 24.666672, y: -9}
+        - {x: 11.666672, y: 22}
+    - name: cursed_grave_171
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 23}
+        - {x: -16, y: 17}
+        - {x: -16, y: -27}
+        - {x: -7, y: -31}
+        - {x: 10, y: -31}
+        - {x: 24, y: -17}
+        - {x: 24, y: -3}
+        - {x: 7, y: 23}
+    - name: cursed_grave_172
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.6666565, y: 24}
+        - {x: -15.6666565, y: 17}
+        - {x: -15.6666565, y: -24}
+        - {x: -11.6666565, y: -28}
+        - {x: 1.3333435, y: -31}
+        - {x: 7.3333435, y: -31}
+        - {x: 24.333344, y: -21}
+        - {x: 24.333344, y: 0}
+        - {x: 12.3333435, y: 24}
+    - name: cursed_grave_173
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333313, y: -26}
+        - {x: -7.333313, y: -31}
+        - {x: 8.666687, y: -31}
+        - {x: 25.666687, y: -20}
+        - {x: 25.666687, y: -11}
+        - {x: 17.666687, y: 11}
+        - {x: 8.666687, y: 23}
+        - {x: -2.333313, y: 23}
+        - {x: -14.333313, y: 17}
+    - name: cursed_grave_174
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 23}
+        - {x: -12, y: 23}
+        - {x: -15, y: 13}
+        - {x: -16, y: 4}
+        - {x: -16, y: -26}
+        - {x: -4, y: -31}
+        - {x: 8, y: -31}
+        - {x: 23, y: -17}
+        - {x: 23, y: -11}
+        - {x: 16, y: 9}
+    - name: cursed_grave_175
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.666626, y: 22}
+        - {x: -15.666626, y: -27}
+        - {x: -14.666626, y: -31}
+        - {x: 5.333374, y: -31}
+        - {x: 22.333374, y: -23}
+        - {x: 24.333374, y: -21}
+        - {x: 24.333374, y: 3}
+        - {x: 7.333374, y: 22}
+    - name: cursed_grave_176
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.666687, y: 21}
+        - {x: -2.333313, y: 21}
+        - {x: -14.333313, y: 14}
+        - {x: -14.333313, y: -28}
+        - {x: -6.333313, y: -31}
+        - {x: 11.666687, y: -31}
+        - {x: 24.666687, y: -20}
+        - {x: 24.666687, y: -7}
+        - {x: 19.666687, y: 10}
+    - name: cursed_grave_177
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 23}
+        - {x: -16, y: -27}
+        - {x: -5, y: -31}
+        - {x: 10, y: -31}
+        - {x: 25, y: -20}
+        - {x: 25, y: 2}
+        - {x: 16, y: 23}
+    - name: cursed_grave_178
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.666626, y: 26}
+        - {x: -17.666626, y: 18}
+        - {x: -17.666626, y: -25}
+        - {x: -3.666626, y: -31}
+        - {x: 10.333374, y: -31}
+        - {x: 27.333374, y: -18}
+        - {x: 27.333374, y: -7}
+        - {x: 11.333374, y: 26}
+    - name: cursed_grave_179
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.666687, y: 1}
+        - {x: 24.666687, y: 16}
+        - {x: 6.666687, y: 25}
+        - {x: -15.333313, y: 25}
+        - {x: -16.333313, y: 24}
+        - {x: -16.333313, y: -22}
+        - {x: -14.333313, y: -31}
+        - {x: 9.666687, y: -31}
+        - {x: 28.666687, y: -19}
+        - {x: 28.666687, y: -7}
+        - {x: 26.666687, y: -3}
+        - {x: 16.666687, y: -1}
+        - {x: 14.666687, y: -1}
+    - name: cursed_grave_180
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: -31}
+        - {x: 6, y: -31}
+        - {x: 28, y: -14}
+        - {x: 28, y: 18}
+        - {x: 21, y: 23}
+        - {x: -18, y: 23}
+        - {x: -18, y: -27}
+    - name: cursed_grave_181
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.666626, y: -26}
+        - {x: -7.666626, y: -31}
+        - {x: 7.333374, y: -31}
+        - {x: 27.333374, y: -18}
+        - {x: 27.333374, y: -4}
+        - {x: 16.333374, y: 18}
+        - {x: 8.333374, y: 23}
+        - {x: -2.666626, y: 23}
+        - {x: -15.666626, y: 16}
+    - name: cursed_grave_182
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.833252, y: 22}
+        - {x: -14.833252, y: 19}
+        - {x: -14.833252, y: -29}
+        - {x: -11.833252, y: -31}
+        - {x: 16.166748, y: -31}
+        - {x: 25.166748, y: -20}
+        - {x: 25.166748, y: -5}
+        - {x: 11.166748, y: 22}
+    - name: cursed_grave_183
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 21}
+        - {x: -16, y: -26}
+        - {x: -12, y: -29}
+        - {x: -8, y: -31}
+        - {x: 11, y: -31}
+        - {x: 24, y: -16}
+        - {x: 24, y: 0}
+        - {x: 7, y: 21}
+    - name: cursed_grave_184
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.666626, y: 27}
+        - {x: -17.666626, y: -29}
+        - {x: -2.666626, y: -31}
+        - {x: 9.333374, y: -31}
+        - {x: 28.333374, y: -25}
+        - {x: 28.333374, y: 27}
+    - name: cursed_grave_185
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.833252, y: 15}
+        - {x: -18.833252, y: 12}
+        - {x: -18.833252, y: -6}
+        - {x: -16.833252, y: -26}
+        - {x: -3.833252, y: -31}
+        - {x: 5.166748, y: -31}
+        - {x: 27.166748, y: -21}
+        - {x: 35.166748, y: -8}
+        - {x: 35.166748, y: 0}
+        - {x: 14.166748, y: 15}
+      - - {x: -4.833252, y: 29}
+        - {x: -10.833252, y: 26}
+        - {x: -11.833252, y: 21}
+        - {x: -8.833252, y: 18}
+        - {x: -4.833252, y: 18}
+        - {x: 0.16674805, y: 21}
+        - {x: 0.16674805, y: 29}
+      - - {x: 13.166748, y: 31}
+        - {x: 7.166748, y: 30}
+        - {x: 7.166748, y: 21}
+        - {x: 15.166748, y: 21}
+        - {x: 19.166748, y: 25}
+        - {x: 19.166748, y: 27}
+        - {x: 16.166748, y: 31}
+    - name: cursed_grave_186
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 13}
+        - {x: -25, y: -8}
+        - {x: -19, y: -26}
+        - {x: -4, y: -31}
+        - {x: 6, y: -31}
+        - {x: 24, y: -27}
+        - {x: 37, y: -14}
+        - {x: 37, y: 9}
+        - {x: 25, y: 13}
+      - - {x: -7, y: 31}
+        - {x: -13, y: 26}
+        - {x: -13, y: 23}
+        - {x: -12, y: 21}
+        - {x: -9, y: 20}
+        - {x: -5, y: 20}
+        - {x: -1, y: 24}
+        - {x: -1, y: 29}
+        - {x: -3, y: 31}
+      - - {x: 13, y: 32}
+        - {x: 9, y: 30}
+        - {x: 9, y: 24}
+        - {x: 13, y: 21}
+        - {x: 19, y: 21}
+        - {x: 22, y: 24}
+        - {x: 21, y: 29}
+        - {x: 17, y: 32}
+    - name: cursed_grave_187
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.666626, y: 1}
+        - {x: -29.666626, y: -22}
+        - {x: -15.666626, y: -31}
+        - {x: 25.333374, y: -31}
+        - {x: 29.333374, y: -29}
+        - {x: 38.333374, y: -13}
+        - {x: 38.333374, y: -2}
+        - {x: 34.333374, y: 1}
+      - - {x: -8.666626, y: 13}
+        - {x: -14.666626, y: 8}
+        - {x: -12.666626, y: 3}
+        - {x: -5.666626, y: 3}
+        - {x: -1.666626, y: 6}
+        - {x: -0.666626, y: 10}
+        - {x: -3.666626, y: 13}
+      - - {x: 17.333374, y: 26}
+        - {x: 14.333374, y: 25}
+        - {x: 14.333374, y: 20}
+        - {x: 16.333374, y: 12}
+        - {x: 21.333374, y: 12}
+        - {x: 25.333374, y: 14}
+        - {x: 25.333374, y: 24}
+        - {x: 19.333374, y: 26}
+    - name: cursed_grave_188
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.833252, y: -27}
+        - {x: -27.833252, y: -31}
+        - {x: 35.166748, y: -31}
+        - {x: 35.166748, y: -9}
+        - {x: 30.166748, y: 0}
+        - {x: -27.833252, y: 0}
+        - {x: -28.833252, y: -4}
+    - name: cursed_grave_189
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 2}
+        - {x: -24, y: 2}
+        - {x: -31, y: -1}
+        - {x: -31, y: -20}
+        - {x: -25, y: -31}
+        - {x: -22, y: -33}
+        - {x: 35, y: -33}
+        - {x: 35, y: -14}
+        - {x: 33, y: -8}
+    - name: cursed_grave_190
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.666626, y: 2}
+        - {x: -20.666626, y: -5}
+        - {x: -17.666626, y: -9}
+        - {x: -20.666626, y: -5}
+        - {x: -30.666626, y: -3}
+        - {x: -31.666626, y: -7}
+        - {x: -31.666626, y: -33}
+        - {x: -13.666626, y: -36}
+        - {x: 37.333374, y: -36}
+        - {x: 37.333374, y: -10}
+        - {x: 15.333374, y: 2}
+      - - {x: -20.666626, y: -23}
+        - {x: -23.666626, y: -24}
+        - {x: -23.666626, y: -30}
+        - {x: -21.666626, y: -35}
+        - {x: -14.666626, y: -35}
+        - {x: -13.666626, y: -33}
+        - {x: -13.666626, y: -25}
+        - {x: -16.666626, y: -23}
+    - name: cursed_grave_191
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.333252, y: -20}
+        - {x: -5.333252, y: -37}
+        - {x: 40.666748, y: -37}
+        - {x: 40.666748, y: -18}
+        - {x: 34.666748, y: -8}
+        - {x: 11.666748, y: 1}
+        - {x: -21.333252, y: 1}
+        - {x: -31.333252, y: -4}
+      - - {x: -23.333252, y: -23}
+        - {x: -23.333252, y: -35}
+        - {x: -14.333252, y: -35}
+        - {x: -14.333252, y: -25}
+        - {x: -15.333252, y: -23}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

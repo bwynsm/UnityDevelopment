@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEditor;
 
-
+/// <summary>
+/// Target picker : allows a player to select a target or an enemy to randomly
+/// select a target to attack (if one)
+/// </summary>
 public class TargetPicker : MonoBehaviour 
 {
 
@@ -28,8 +30,12 @@ public class TargetPicker : MonoBehaviour
 	private List<CharacterConversable> teammateList;
 	private List<CharacterConversable> opponentList;
 
+	public bool canChooseDeadTarget = false;
+
+
+
 	private GUIStyle style;
-	private Texture2D boxTexture;
+	public Texture2D boxTexture;
 
 	// once this function is done, we'll have a target. Either it will
 	// be a non-target, or an actual target
@@ -46,8 +52,7 @@ public class TargetPicker : MonoBehaviour
 		style.border.top = 3;
 		style.border.left = 3;
 		style.border.right = 3;
-		boxTexture = new Texture2D (1, 1);
-		boxTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Resources/Border.png", typeof(Texture2D));
+
 
 
 	}
@@ -68,6 +73,9 @@ public class TargetPicker : MonoBehaviour
 	// in update, we want to go through and wait for input.
 	void Update()
 	{
+		if (!currentPlayer.isPlayerCharacter)
+			return;
+
 		// if we have chosen a target, return null
 		if (hasChosenTarget)
 			return;
@@ -197,7 +205,8 @@ public class TargetPicker : MonoBehaviour
 		if (hasChosenTarget)
 			return;
 
-
+		if (!currentPlayer.isPlayerCharacter)
+			return;
 
 
 		// get the current player selected by the index
@@ -264,7 +273,16 @@ public class TargetPicker : MonoBehaviour
 
 
 
+	public CharacterConversable RandomTarget()
+	{
 
+		// assuming for now that we are attacking, let's target one of our enemies
+		int chosenTargetIndex = Random.Range (0, opponentList.Count);
+		Debug.Log ("OPPONENT LIST LENGTH : " + opponentList.Count + " FIRST INDEX : " + opponentList [0].playerName);
+
+
+		return opponentList[chosenTargetIndex];
+	}
 
 
 	/// <summary>
@@ -311,11 +329,22 @@ public class TargetPicker : MonoBehaviour
 				// is a teammate
 				if (currentPlayer.isPlayerCharacter)
 				{
-					teammateList.Add (player);
+					// if the unit has health... we can target the unit
+					if (player.gameObject.GetComponent<PlayerHealth> ().currentHealth > 0)
+					{
+						teammateList.Add (player);
+					}
+
+
 				} 
 				else
 				{
-					opponentList.Add (player);
+					// if the unit has health... we can target the unit
+					if (player.gameObject.GetComponent<PlayerHealth> ().currentHealth > 0)
+					{
+						Debug.Log ("ADDING ENEMY : " + player.playerName);
+						opponentList.Add (player);
+					}
 				}
 
 			} 
@@ -328,14 +357,22 @@ public class TargetPicker : MonoBehaviour
 				// is a teammate
 				if (currentPlayer.isPlayerCharacter)
 				{
-					opponentList.Add (player);
+					// if the unit has health... we can target the unit
+					if (player.gameObject.GetComponent<EnemyHealth> ().currentHealth > 0)
+					{
+						opponentList.Add (player);
+					}
 
 				}
 
 				// if our current player is an enemy.... add to teammate list
 				else
 				{
-					teammateList.Add (player);	
+					// if the unit has health... we can target the unit
+					if (player.gameObject.GetComponent<EnemyHealth> ().currentHealth > 0)
+					{
+						teammateList.Add (player);
+					}
 				}
 			}
 		}

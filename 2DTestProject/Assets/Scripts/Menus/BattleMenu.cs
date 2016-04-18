@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 
 
-
+/// <summary>
+/// Battle menu.
+/// </summary>
 public class BattleMenu : MonoBehaviour
 {
 
@@ -14,6 +16,7 @@ public class BattleMenu : MonoBehaviour
 	public GameObject prefabButton;
 	public Menu optionsMenu;
 	public Conversation battleOptionsManager;
+	public Texture2D texturePickerBorder;
 
 
 	// get all of the players in this battle
@@ -152,6 +155,7 @@ public class BattleMenu : MonoBehaviour
 		optionsMenu = battlePanel.GetComponent<Menu>();
 
 		optionsMenu.prefabButton = prefabButton;
+		optionsMenu.texturePickerBorder = texturePickerBorder;
 		optionsMenu.optionsBox = battlePanel;
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "BattleMenu";
@@ -162,6 +166,7 @@ public class BattleMenu : MonoBehaviour
 		// hide our options buttons
 		optionsMenu.toggleOptionsDisplay(true);
 		toggled = false;
+
 
 
 		//optionsMenu.transform.localScale = new Vector3(1, 1, 1);

@@ -16,6 +16,7 @@ public class Menu : MonoBehaviour
 
 
 	public Texture2D background;		// unused at the moment - texture background for menu
+	public Texture2D texturePickerBorder;
 
 	public GameObject optionsBox;		// this is the options box panel that we are displaying in
 	public GameObject prefabButton;		// this is the current button we are using for display
@@ -61,7 +62,9 @@ public class Menu : MonoBehaviour
 	// and new updates from our new class of battle
 
 
-
+	/// <summary>
+	/// Initialize this instance.
+	/// </summary>
 	public IEnumerator Initialize()
 	{
 
@@ -106,7 +109,6 @@ public class Menu : MonoBehaviour
 		{
 			yield return StartCoroutine (waitingObject.WaitForKeyDown ());
 
-			Debug.Log ("we are in selection made false and options box live");
 			if (EventSystem.current.currentSelectedGameObject == null)
 			{
 				// if we have no more object
@@ -123,16 +125,20 @@ public class Menu : MonoBehaviour
 					optionsBox.GetComponentsInChildren<Button> () [0].Select ();
 				}
 			}
-
-			Debug.Log (selectionMade + " " + isActive);
+				
 
 			if (!selectionMade && isActive == true && Input.anyKeyDown) 
 			{
-
-				Debug.Log ("our selection made is false and we are active and have received a key press ");
+				
 
 				if (Input.GetKeyDown (KeyCode.DownArrow) == true) 
 				{
+					/// if we have stings and we are in a pause menu
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (sting);
+					}
+
 					if (indexSelected < menuOptions.Count - 1)
 					{
 						indexSelected += 1;
@@ -144,16 +150,19 @@ public class Menu : MonoBehaviour
 					}
 
 
+
+
+				}
+
+				/// INPUT KEY DOWN : MOVE DOWN THE LIST
+				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
+				{
 					/// if we have stings and we are in a pause menu
 					if (menuType == "PauseMenu" && stingSource != null) 
 					{
 						stingSource.PlayOneShot (sting);
 					}
 
-				}
-
-				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
-				{
 					if (indexSelected > 0) 
 					{
 						indexSelected -= 1;
@@ -165,11 +174,7 @@ public class Menu : MonoBehaviour
 					}
 
 
-					/// if we have stings and we are in a pause menu
-					if (menuType == "PauseMenu" && stingSource != null) 
-					{
-						stingSource.PlayOneShot (sting);
-					}
+
 				}
 
 				if (Input.GetKeyDown (KeyCode.Return)) {
@@ -179,8 +184,7 @@ public class Menu : MonoBehaviour
 
 				if (Input.GetKeyDown (KeyCode.X)) 
 				{
-
-					Debug.Log ("we have a keycode x");
+					
 					selectionMade = true;
 
 					yield return StartCoroutine( ButtonClicked (menuOptions [indexSelected]));
@@ -283,6 +287,7 @@ public class Menu : MonoBehaviour
 				{
 					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (255);
 					panelButtons [i].GetComponentInChildren<Text> ().color = Color.red;
+					panelButtons [i].GetComponentInChildren<Text> ().font = Font.
 				}
 
 				// otherwise, no alpha and clear button text
@@ -357,7 +362,6 @@ public class Menu : MonoBehaviour
 	{
 		isActive = false;
 		Destroy (waitingObject);
-		Debug.Log ("Button Clicked" + buttonCommand.command);
 
 		if (selectionMade)
 		{
@@ -381,8 +385,7 @@ public class Menu : MonoBehaviour
 			} 
 			else if (menuType == "BattleMenu")
 			{
-				Debug.Log ("we are here in button clicked : ");
-
+				
 
 				// yield on starting a new 
 				// add targetpicker to this player character, and then use that
@@ -391,6 +394,7 @@ public class Menu : MonoBehaviour
 				// player -> battle menu -> all combatants shoved into player -> add component -> targetpicker 
 				TargetPicker playerTargetPicker = attackingPlayer.GetOrAddComponent<TargetPicker>();
 				playerTargetPicker.currentPlayer = attackingPlayer;
+				playerTargetPicker.boxTexture = texturePickerBorder;
 				playerTargetPicker.battleList = attackingPlayer.GetComponent<BattleMenu> ().allCombatants;
 				playerTargetPicker.loadBattle ();
 
@@ -412,19 +416,16 @@ public class Menu : MonoBehaviour
 				// a character to attack (for now let's just assume it will be an enemy)
 				yield return StartCoroutine(playerTargetPicker.selectTarget());
 
-				Debug.Log ("we are here in menu awaiting a response");
 
 				while (!playerTargetPicker.hasChosenTarget)
 					yield return null;
 
 
 
-				Debug.Log ("we are here");
 
 				if (playerTargetPicker.chosenTarget == null)
 				{
 					Destroy (playerTargetPicker);
-					Debug.Log ("we are in here with a null response");
 
 					// if we get a null, make the buttons live again and we'll try again?
 					// disable button presses

@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+
+/// <summary>
+/// Method extension for mono behaviour transform.
+/// </summary>
 static public class MethodExtensionForMonoBehaviourTransform {
 	/// <summary>
 	/// Gets or add a component. Usage example:

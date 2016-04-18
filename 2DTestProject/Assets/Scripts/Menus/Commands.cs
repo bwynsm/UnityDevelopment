@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
-
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Commands Class that works with resolving string commands
@@ -37,6 +37,27 @@ public class Commands
 	public void resolvePauseMenuCommands(Options optionItem)
 	{
 		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<PauseMenu> ().unpauseGame();
+
+		// we'll only unpause game if we have to.
+		if (optionItem.command.Equals ("save"))
+		{
+			// save our game
+			Game.current.UpdateGame();
+			SaveLoad.Save (Toolbox.Instance.currentSaveSlot);
+		} 
+
+		// if we are exiting, we are going back to menu
+		else if (optionItem.command.Equals ("exit"))
+		{
+			SceneManager.LoadScene ("MainMenu");
+
+
+			// remove the current save slot item
+			Toolbox.Instance.currentSaveSlot = 0;
+		}
+
+
+
 	}
 
 	/// <summary>

@@ -4,6 +4,12 @@ using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 
+
+
+/// <summary>
+/// Load battle scene from battle managers first phase of battle
+/// Gets the player turns and sets them in their positions and starting animations
+/// </summary>
 public class LoadBattleScene : MonoBehaviour 
 {
 
@@ -11,6 +17,7 @@ public class LoadBattleScene : MonoBehaviour
 	public Canvas gameCanvas;
 	public GameObject prefabButton;
 	public TextAsset tempPlayerXML;
+	public Texture2D border;
 
 
 	public List<CharacterConversable> turnOrder;
@@ -19,15 +26,22 @@ public class LoadBattleScene : MonoBehaviour
 	private GameObject currentPlayer;
 	private GameObject currentEnemy;
 
+	BattleManager batMan;
+
 	// Use this for initialization
 	void Start () 
 	{
-
+		batMan = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<BattleManager> ();
 	}
 
 
+
+	/// <summary>
+	/// Loads the turns for the players in combat
+	/// </summary>
 	public void LoadTurns()
 	{
+		
 		// get our player character and our enemy character
 		currentPlayer = GameObject.FindGameObjectWithTag("PlayerCharacter");
 		currentEnemy = GameObject.FindGameObjectWithTag ("Enemy");
@@ -50,6 +64,7 @@ public class LoadBattleScene : MonoBehaviour
 			{
 				allCombatants.Add (enemyChildrenTemp [i].gameObject);
 				enemyChildrenTemp [i].gameObject.SetActive (true);
+				batMan.enemies.Add (enemyChildrenTemp [i].gameObject.GetComponent<EnemyUnit> ());
 			}
 
 			// if we have another player child in our player party
@@ -57,10 +72,10 @@ public class LoadBattleScene : MonoBehaviour
 			{
 				allCombatants.Add (playerChildrenTemp [i].gameObject);
 				playerChildrenTemp [i].gameObject.SetActive (true);
+				batMan.teammates.Add (playerChildrenTemp [i].gameObject.GetComponent<PlayerUnit> ());
 			}
 		}
 
-		Debug.Log ("There are no units left?");
 
 	}
 
@@ -83,8 +98,8 @@ public class LoadBattleScene : MonoBehaviour
 		// now that we have all combatants...
 		// loop over the objects?
 		// we can tell what they are by their tags
-		float playerIndex = 0;
-		float enemyIndex = 0;
+		float playerIndex = 0.8f;
+		float enemyIndex = 0.0f;
 
 		foreach (var combatant in allCombatants)
 		{
@@ -135,6 +150,7 @@ public class LoadBattleScene : MonoBehaviour
 				battleMenu.allCombatants = turnOrder;
 				battleMenu.battlePanel = GameObject.Find ("BattlePanel");
 				battleMenu.prefabButton = prefabButton;
+				battleMenu.texturePickerBorder = border;
 
 			}
 
@@ -142,10 +158,11 @@ public class LoadBattleScene : MonoBehaviour
 			// component anyway
 			else
 			{
-				enemyIndex += 1.5f;
+				
 
 				if (!combatant.Equals(currentEnemy))
 				{
+					enemyIndex += 0.8f;
 					// find positions for everyone.
 					combatant.transform.position = new Vector2 (5.2f, -3.40f + (enemyIndex)); 
 					Debug.Log ("ENEMY NAME : " + combatant.name + " POSITION : " + combatant.transform.position);

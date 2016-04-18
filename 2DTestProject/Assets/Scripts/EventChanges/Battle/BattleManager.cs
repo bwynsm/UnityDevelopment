@@ -4,6 +4,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// Battle manager : stores the state of the battle
+/// </summary>
 public class BattleManager : MonoBehaviour {
 
 	public enum BATTLE_STATES
@@ -30,8 +34,13 @@ public class BattleManager : MonoBehaviour {
 	public string attackDone;
 	public Text displayAttackText;
 	public GameObject attackTextPanel;
+	public List<EnemyUnit> enemies;
+	public List<PlayerUnit> teammates;
 
 	private bool turnsLoaded = false;
+
+	// maybe it should be up to the battle manager to store good guys and bad guys?
+
 
 
 	// Use this for initialization
@@ -102,9 +111,9 @@ public class BattleManager : MonoBehaviour {
 		// decide whose turn it is
 		case BATTLE_STATES.DECIDE_TURN:
 			
+			Debug.Log ("We are deciding turn : ");
+			currentState = BATTLE_STATES.DECIDE_ATTACK;
 
-			currentState = BATTLE_STATES.DECIDE_ATTACK;
-			currentState = BATTLE_STATES.DECIDE_ATTACK;
 			// pick the turn person
 			currentPlayerTurn = battleTurnOrder [currentTurn];
 
@@ -114,6 +123,9 @@ public class BattleManager : MonoBehaviour {
 			if (currentTurn >= battleTurnOrder.Count)
 				currentTurn = 0;
 
+
+			turnFinished = false;
+			waitingForTurn = false;
 			Toolbox.Instance.isLocked = false;
 
 
@@ -123,6 +135,24 @@ public class BattleManager : MonoBehaviour {
 
 		// decide which attack we are using on whoever's turn it is
 		case BATTLE_STATES.DECIDE_ATTACK:
+
+			// skip this turn if our player has no health
+			if (currentPlayerTurn.isPlayerCharacter && currentPlayerTurn.GetComponent<PlayerHealth> ().currentHealth <= 0)
+			{
+				waitingForTurn = true;
+				currentState = BATTLE_STATES.CHECK_CONDITIONS;
+				Toolbox.Instance.isLocked = false;
+			} 
+			else if (!currentPlayerTurn.isPlayerCharacter && currentPlayerTurn.GetComponent<EnemyHealth> ().currentHealth <= 0)
+			{
+				
+				waitingForTurn = true;
+				currentState = BATTLE_STATES.CHECK_CONDITIONS;
+				Toolbox.Instance.isLocked = false;
+			}
+
+
+
 			// get our battle manager if we are a good guy.
 			// Otherwise, perform an attack if we are a bad guy
 			if (!waitingForTurn)
@@ -147,8 +177,6 @@ public class BattleManager : MonoBehaviour {
 
 			if (turnFinished)
 			{
-				waitingForTurn = false;
-				turnFinished = false;
 				currentState = BATTLE_STATES.PERFORM_COMMANDS;
 				Toolbox.Instance.isLocked = false;
 
@@ -158,7 +186,6 @@ public class BattleManager : MonoBehaviour {
 
 		// perform commands of the attack
 		case BATTLE_STATES.PERFORM_COMMANDS:
-
 				// let's do a little enum in here
 				StartCoroutine (displayAttack ());
 
@@ -168,29 +195,94 @@ public class BattleManager : MonoBehaviour {
 		// check the conditions of the battle - has someone won? is any unit
 		// to be destroyed?
 		case BATTLE_STATES.CHECK_CONDITIONS:
+
+			bool playerStillAlive = false;
+			bool enemyStillAlive = false;
+
+			// if we have all of the enemies killed
+			// if we have the player characters all dead..
+			Debug.Log("ALLIES LENGTH : " + teammates.Count + " ENEMIES LENGTH : " + enemies.Count);
+
+			// check if any of our players are still alive
+			// if all are dead, we've lost this battle
+			foreach (var player in teammates)
+			{
+				if (player.playerHealth.currentHealth > 0)
+				{
+					playerStillAlive = true;
+				}
+			}
+
+			if (!playerStillAlive)
+			{
+				currentState = BATTLE_STATES.LOSE;
+				Toolbox.Instance.isLocked = false;
+				break;
+			}
+
+			// check if any of our enemies are still alive - if all are dead
+			// then we are done with this battle
+			foreach (var player in enemies)
+			{
+				if (player.enemyHealth.currentHealth > 0)
+				{
+					enemyStillAlive = true;
+				}
+			}
+
+			if (!enemyStillAlive)
+			{
+				currentState = BATTLE_STATES.WIN;
+				Toolbox.Instance.isLocked = false;
+				break;
+			}
+
+			// if we have all of the enemies killed
+			// if we have the player characters all dead..
+			Debug.Log("ALLIES LENGTH : " + teammates.Count + " ENEMIES LENGTH : " + enemies.Count);
+
+			// first check if the player characters are all dead
+			// then check if the enemy characters are all dead
+			Debug.Log("we are here in check condition");
+
+			// for each of the enemies in play - are we all dead?
+			// for each of the players in play, are we all dead?
+
+
 			currentState = BATTLE_STATES.DECIDE_TURN;
 			Toolbox.Instance.isLocked = false;
 			break;
 
 		// if the player side has won, hooray! victory conditions and experience
 		case BATTLE_STATES.WIN:
+			
+			toolboxInstance.sceneAlreadyLoaded = false;
+
 			changeCharacterStates ();
 
 			// load previous scene
 			toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
-			toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
 
+			// enemy defeated
+			GameObject enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
+			toolboxInstance.enemyDefeated = enemyDefeated.name;
+			Destroy (enemyDefeated);
+
+			// return to enemy position from last scene.
+			SceneManager.LoadScene("OpeningScene");
 
 
 			break;
 
 		// if the good side has lost, sad day. Penalties and teleport
 		case BATTLE_STATES.LOSE:
+			Debug.Log ("we have lost");
+			toolboxInstance.sceneAlreadyLoaded = false;
+
 			changeCharacterStates ();
 
 
-			// enemy defeated
-			toolboxInstance.enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
+
 
 
 			// spawn at least location?
@@ -211,9 +303,12 @@ public class BattleManager : MonoBehaviour {
 	}
 
 
+
+	/// <summary>
+	/// Changes the character states.
+	/// </summary>
 	private void changeCharacterStates()
 	{
-		Debug.Log ("Changing character states");
 
 		// print out sort order
 		foreach (var character in battleTurnOrder)
@@ -224,6 +319,10 @@ public class BattleManager : MonoBehaviour {
 	}
 
 
+	/// <summary>
+	/// Displays the attack in the text panel
+	/// </summary>
+	/// <returns>The attack.</returns>
 	private IEnumerator displayAttack()
 	{
 		// wait for a couple of seconds and then we'll change the state
