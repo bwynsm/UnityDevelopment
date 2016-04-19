@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\EventChanges\LoadGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MonoBehaviourExtended.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MusicChanger.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\EventChanges\NewGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\EventChanges\ScreenFader.cs" />

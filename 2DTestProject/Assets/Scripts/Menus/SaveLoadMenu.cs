@@ -14,6 +14,10 @@ public class SaveLoadMenu : MonoBehaviour
 	private Button[] saveFilesItems;
 	private Button[] mainMenuItems;
 
+	// different stings we can play
+	public AudioClip[] stings;
+	public AudioSource stingSource;
+
 	Toolbox instanceItem;
 	//private bool skipLoadGame;
 
@@ -81,12 +85,24 @@ public class SaveLoadMenu : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.UpArrow))
 		{
 			action = "up";
+
+			// if we have a sting source, play sting
+			if (stingSource != null)
+			{
+				stingSource.PlayOneShot (stings [0]);
+			}
 		} 
 
 		// go down
 		else if (Input.GetKeyDown (KeyCode.DownArrow))
 		{
 			action = "down";
+
+			// if we have a sting source, play sting
+			if (stingSource != null)
+			{
+				stingSource.PlayOneShot (stings [0]);
+			}
 		}
 
 		// go forward
@@ -99,6 +115,12 @@ public class SaveLoadMenu : MonoBehaviour
 		else if (Input.GetKeyDown (KeyCode.Z))
 		{
 			action = "back";
+
+			// if we have a sting source, play sting
+			if (stingSource != null)
+			{
+				stingSource.PlayOneShot (stings [3]);
+			}
 		} 
 
 		// otherwise, a key that doesn't matter
@@ -246,6 +268,13 @@ public class SaveLoadMenu : MonoBehaviour
 
 			if (currentState == MENU_STATES.NEW_GAME)
 			{
+
+				// if we have a sting source, play sting
+				if (stingSource != null)
+				{
+					stingSource.PlayOneShot (stings [1]);
+				}
+
 				// just overwrite the game here - we'll later on want to do a confirm if we have
 				// a legitimate game at this location
 				// for now, just overwrite.
@@ -254,6 +283,12 @@ public class SaveLoadMenu : MonoBehaviour
 			} 
 			else if (currentState == MENU_STATES.LOAD && SaveLoad.savedGames [selectedItem] != null)
 			{
+				// if we have a sting source, play sting
+				if (stingSource != null)
+				{
+					stingSource.PlayOneShot (stings [1]);
+				}
+
 				// load game here
 				SaveLoad.Load (selectedItem);
 
@@ -263,6 +298,11 @@ public class SaveLoadMenu : MonoBehaviour
 			else if (currentState == MENU_STATES.LOAD && SaveLoad.savedGames [selectedItem] == null)
 			{
 				// display tiny error message briefly?
+				// if we have a sting source, play sting
+				if (stingSource != null)
+				{
+					stingSource.PlayOneShot (stings [4]);
+				}
 			}
 
 
@@ -325,24 +365,40 @@ public class SaveLoadMenu : MonoBehaviour
 		// if moving forward: check our index and determine which item to load
 		else if (keyPressed.Equals ("forward"))
 		{
+
+
 			// check which number we are on
 			if (selectedItem == 0)
 			{
 				ShowGamePanel ();
 				currentState = MENU_STATES.NEW_GAME;
+
+				// if we have a sting source, play sting
+				if (stingSource != null)
+				{
+					stingSource.PlayOneShot (stings [2]);
+				}
 			} 
 			else if (selectedItem == 1)
 			{
 				ShowGamePanel ();
 				currentState = MENU_STATES.LOAD;
 
+
+				// if we have a sting source, play sting
+				if (stingSource != null)
+				{
+					stingSource.PlayOneShot (stings [2]);
+				}
 			}
 
 			// otherwise, if we select the last element, exit the game
 			else if (selectedItem == 3)
 			{
 				Application.Quit ();
-			}
+			} 
+
+
 		}
 	}
 
