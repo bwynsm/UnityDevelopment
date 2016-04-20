@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\EventChanges\Singleton.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Toolbox.cs" />
      <Compile Include="Assets\Scripts\EventChanges\WaitingForTime.cs" />
+     <Compile Include="Assets\Scripts\Menus\AcceptDecline.cs" />
      <Compile Include="Assets\Scripts\Menus\BattleMenu.cs" />
      <Compile Include="Assets\Scripts\Menus\Commands.cs" />
      <Compile Include="Assets\Scripts\Menus\Menu.cs" />
@@ -81,6 +82,7 @@
      <Compile Include="Assets\Scripts\Units\Enemies\EnemyCharacter.cs" />
      <Compile Include="Assets\Scripts\Units\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Units\Enemies\EnemyUnit.cs" />
+     <Compile Include="Assets\Scripts\Units\MiniGameUnits\GameBoyMiniGame.cs" />
      <Compile Include="Assets\Scripts\Units\Movement\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Units\Movement\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Units\Movement\NPC_Movement.cs" />
@@ -103,6 +105,7 @@
      <None Include="Assets\Text\NPC_ROGUE.xml" />
      <None Include="Assets\Tiled2Unity\Imported\ToCastle.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\FancyMap.tiled2unity.xml" />
+     <None Include="Assets\Text\AcceptDeclineGameBoy.xml" />
      <None Include="Assets\Text\NPC_WOODS_OTHER_ROGUE.xml" />
      <None Include="Assets\Tiled2Unity\Imported\OutsideHouse.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\FireEmblemGameBoyGame.tiled2unity.xml" />

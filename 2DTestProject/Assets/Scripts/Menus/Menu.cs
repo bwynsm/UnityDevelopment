@@ -502,6 +502,20 @@ public class Menu : MonoBehaviour
 
 
 
+	/// <summary>
+	/// Cleans the out options box - destroys all children buttons that could be selected
+	/// </summary>
+	public void cleanOutOptions()
+	{
+		foreach (Transform child in optionsBox.transform)
+		{
+			GameObject.Destroy (child.gameObject);
+		}
+
+		// destroy component;
+
+	}
+
 
 
 

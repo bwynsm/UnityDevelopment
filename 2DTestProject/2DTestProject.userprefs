@@ -1,9 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\SaveLoadMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Units\MiniGameUnits\GameBoyMiniGame.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menus\Menu.cs" Line="16" Column="8" />
-      <File FileName="Assets\Scripts\Menus\SaveLoadMenu.cs" Line="304" Column="40" />
+      <File FileName="Assets\Scripts\Menus\AcceptDecline.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menus\SaveLoadMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menus\Menu.cs" Line="517" Column="3" />
+      <File FileName="Assets\Scripts\Units\MiniGameUnits\GameBoyMiniGame.cs" Line="30" Column="1" />
+      <File FileName="Assets\Scripts\Menus\PauseMenu.cs" Line="109" Column="1" />
+      <File FileName="Assets\Text\AcceptDeclineGameBoy.xml" Line="7" Column="47" />
+      <File FileName="Assets\Scripts\Menus\Commands.cs" Line="264" Column="11" />
+      <File FileName="Assets\Scripts\Units\Movement\NPC_Movement.cs" Line="257" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

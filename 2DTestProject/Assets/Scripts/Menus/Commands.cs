@@ -251,7 +251,18 @@ public class Commands
 				// split our command our and send it to our function
 				string command = (commandItem.Split ('#')) [1];
 				branchConversation (command, playerToAlter);
-			} 
+			}
+			else if (commandItem.Contains ("playGameBoyMiniGame"))
+			{
+				// toolbox gameboy!
+
+				SceneManager.LoadScene ("BattleScene");
+			}
+			else if (commandItem.Contains ("exit"))
+			{
+				// end convo?
+				return;
+			}
 
 			// unrecognized command
 			else
