@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b4d65c43034429d45aa5f9f2b3ef7fd9
-timeCreated: 1461010968
+timeCreated: 1461204816
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,7 +63,7 @@ TextureImporter:
         height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 0, z: 7, w: 0}
       outline: []
     - name: FE7_ID_Battle2-1_2
       rect:

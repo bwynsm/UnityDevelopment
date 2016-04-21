@@ -56,8 +56,6 @@ public class ActivateTextAtLine : MonoBehaviour
 		// we also have to have text..
 		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation  && mainPlayer.isFrozen() == false) 
 		{
-			Debug.Log ("Input received");
-			
 			theTextBox.inConversation = true;
 			theTextBox.reloadScript (theText, dialogueID);
 
@@ -123,8 +121,6 @@ public class ActivateTextAtLine : MonoBehaviour
 		// if we aren't shouting, but waiting for the player to talk to us
 		if (requireButtonPress) 
 		{
-			Debug.Log ("we are colliding and require a button press to converse...");
-
 			if (other.name == "Player") 
 			{
 				isColliding = true;

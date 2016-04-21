@@ -224,8 +224,6 @@ public class Commands
 
 
 		// if player to alter is blank, debug that
-		Debug.Log("Player to alter : " + currentPlayer);
-
 		// next we need to take that command that we have and we need
 		// to parse it out. We'll split it by semicolon
 		string[] commandsList = commandsString.Split(';');
@@ -255,6 +253,7 @@ public class Commands
 			else if (commandItem.Contains ("playGameBoyMiniGame"))
 			{
 				// toolbox gameboy!
+				Toolbox.Instance.battleScene = "GameBoy";
 
 				SceneManager.LoadScene ("BattleScene");
 			}

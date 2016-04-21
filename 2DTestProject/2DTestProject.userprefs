@@ -1,15 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Units\MiniGameUnits\GameBoyMiniGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyUnit.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menus\AcceptDecline.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menus\SaveLoadMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menus\Menu.cs" Line="517" Column="3" />
-      <File FileName="Assets\Scripts\Units\MiniGameUnits\GameBoyMiniGame.cs" Line="30" Column="1" />
-      <File FileName="Assets\Scripts\Menus\PauseMenu.cs" Line="109" Column="1" />
-      <File FileName="Assets\Text\AcceptDeclineGameBoy.xml" Line="7" Column="47" />
-      <File FileName="Assets\Scripts\Menus\Commands.cs" Line="264" Column="11" />
-      <File FileName="Assets\Scripts\Units\Movement\NPC_Movement.cs" Line="257" Column="1" />
+      <File FileName="Assets\Scripts\ConversationControl\ActivateTextAtLine.cs" Line="59" Column="1" />
+      <File FileName="Assets\Scripts\EventChanges\Toolbox.cs" Line="119" Column="1" />
+      <File FileName="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyUnit.cs" Line="83" Column="2" />
+      <File FileName="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyLoadGame.cs" Line="81" Column="1" />
+      <File FileName="Assets\Scripts\Menus\Commands.cs" Line="227" Column="1" />
+      <File FileName="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyBattleManager.cs" Line="127" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -18,6 +16,7 @@
       <Breakpoint file="C:\Users\benjamin\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Menus\Menu.cs" line="206" column="50" />
       <Breakpoint file="C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Player\PlayerAttack.cs" line="109" column="1" />
       <Breakpoint file="C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\Menus\Menu.cs" line="475" column="1" />
+      <Breakpoint file="C:\Users\ben\Documents\GitHub\UnityDevelopment\2DTestProject\Assets\Scripts\EventChanges\GameBoyBattle\GameBoyLoadGame.cs" line="45" column="66" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

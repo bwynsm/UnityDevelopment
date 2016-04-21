@@ -359,8 +359,6 @@ public class TextBoxManager : MonoBehaviour
 	public void setPlayer(CharacterConversable talkToPlayer)
 	{
 		// we are in here
-		Debug.Log("we are setting player");
-
 		player = talkToPlayer;
 	}
 

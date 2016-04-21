@@ -20,8 +20,7 @@ public class BattleManager : MonoBehaviour {
 		WIN = 5,
 		LOSE = 6
 	};
-
-
+			
 	public BATTLE_STATES currentState;
 
 	// classes we use
@@ -46,6 +45,13 @@ public class BattleManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+
+		// if we have a gameboy game, delete this object
+		if (Toolbox.Instance.battleScene != null && Toolbox.Instance.battleScene != "")
+		{
+			Destroy (this);
+		}
+
 		// The battle manager contains a list of scripts as attached to objects
 		// INIT will get the list of objects and do some setup
 		// DECIDE ON TURN will call the queue and toggle at this point
@@ -66,6 +72,15 @@ public class BattleManager : MonoBehaviour {
 
 		currentState = BATTLE_STATES.START;
 		sceneInit = GameObject.Find ("LoadScene").GetComponent<LoadBattleScene> ();
+
+
+
+		Camera.main.orthographicSize = 2;
+		Camera.main.transform.position = new Vector3 (-4.30f, -1.50f, -10);
+
+
+			
+
 	}
 
 

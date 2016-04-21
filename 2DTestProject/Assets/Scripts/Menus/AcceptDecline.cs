@@ -8,7 +8,7 @@ public class AcceptDecline : Menu
 
 	public string MiniGame; // this is the mini game we'll play
 
-	private bool isDeciding = false;
+	//private bool isDeciding = false;
 	public bool hasDecided = false;
 
 	// Use this for initialization

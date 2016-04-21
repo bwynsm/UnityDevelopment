@@ -14,10 +14,11 @@ public class LoadBattleScene : MonoBehaviour
 {
 
 	public GameObject prefabSlider;
-	public Canvas gameCanvas;
+	public Canvas gameCanvasu;
 	public GameObject prefabButton;
 	public TextAsset tempPlayerXML;
 	public Texture2D border;
+
 
 
 	public List<CharacterConversable> turnOrder;
@@ -202,6 +203,11 @@ public class LoadBattleScene : MonoBehaviour
 
 
 	}
+
+
+
+
+
 
 
 }

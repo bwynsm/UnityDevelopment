@@ -19,6 +19,8 @@ public class Toolbox : Singleton<Toolbox> {
 	public bool sceneAlreadyLoaded = false;
 	public int currentSaveSlot;
 
+	public string battleScene;
+
 
 	public bool isLocked = false;
  
@@ -60,7 +62,7 @@ public class Toolbox : Singleton<Toolbox> {
 				positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;
 			} else
 			{
-				Debug.Log ("we are here with a position that is not null" + positionInLastScene);
+				//Debug.Log ("we are here with a position that is not null" + positionInLastScene);
 			}
 
 			if (level != 1 && level != 0)
@@ -96,29 +98,31 @@ public class Toolbox : Singleton<Toolbox> {
 
 				// this has to happen at the end here so that we don't get into multiple fights ideally
 				sceneAlreadyLoaded = false;
-			} else if (level != 0)
+				battleScene = "";
+
+			} 
+			else if (level == 1)
 			{
-				// for each enemy and player type tag?
-				foreach (Animator enemy in GameObject.FindGameObjectWithTag("Enemy").GetComponentsInChildren<Animator>(true))
+				if (GameObject.FindGameObjectWithTag ("Enemy") != null)
 				{
-					Debug.Log ("we are in here changing status for enemy : " + enemy.name);
-					enemy.gameObject.SetActive (true);
-					enemy.SetBool ("IsFighting", true);
+
+					// for each enemy and player type tag?
+					foreach (Animator enemy in GameObject.FindGameObjectWithTag("Enemy").GetComponentsInChildren<Animator>(true))
+					{
+						enemy.gameObject.SetActive (true);
+						enemy.SetBool ("IsFighting", true);
+					}
 				}
 
 				foreach (Animator player in GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponentsInChildren<Animator>(true))
 				{
-					Debug.Log ("we are in here changing status for player : " + player.name);
 					player.gameObject.SetActive (true);
 					player.SetBool ("IsFighting", true);
-
-					// set the other characters as not showing
-
 				}
 
 				// this has to happen at the end here so that we don't get into multiple fights ideally
 				sceneAlreadyLoaded = true;
-				
+
 			}
 
 

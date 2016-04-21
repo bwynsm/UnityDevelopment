@@ -17,16 +17,16 @@ public class MusicPlayer
 	public float bpm = 60;
 
 
-	private float m_TransitionIn;
-	private float m_TransitionOut;
-	private float m_QuarterNote;
+	//private float m_TransitionIn;
+	//private float m_TransitionOut;
+	//private float m_QuarterNote;
 
 	// Use this for initialization
 	public MusicPlayer () 
 	{
-		m_QuarterNote = 60 / bpm;
-		m_TransitionIn = m_QuarterNote * 6;
-		m_TransitionOut = m_QuarterNote * 8;
+		//m_QuarterNote = 60 / bpm;
+		//m_TransitionIn = m_QuarterNote * 6;
+		//m_TransitionOut = m_QuarterNote * 8;
 
 	}
 

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class DamageNumbers : MonoBehaviour
 {
 	public GameObject prefabDamage;
+	public RectTransform battleCanvas;
 
 
 	/// <summary>
@@ -23,8 +24,13 @@ public class DamageNumbers : MonoBehaviour
 
 		GameObject damageGameObject = (GameObject)Instantiate (prefabDamage, position, Quaternion.identity);
 
+		if (battleCanvas.Equals (null))
+		{
+			battleCanvas = GameObject.Find ("Canvas").GetComponent<RectTransform> ();
+		}
+
 		// set the parent to the canvas so it can display
-		damageGameObject.transform.SetParent (GameObject.Find("Canvas").GetComponent<RectTransform>(), false);
+		damageGameObject.transform.SetParent (battleCanvas, false);
 
 		// set the scale to 1
 		damageGameObject.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);

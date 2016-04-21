@@ -62,7 +62,11 @@
      <Compile Include="Assets\Scripts\EventChanges\Battle\TargetPicker.cs" />
      <Compile Include="Assets\Scripts\EventChanges\DestroyGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Game.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyBattleManager.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyLoadGame.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyUnit.cs" />
      <Compile Include="Assets\Scripts\EventChanges\LoadGame.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\LoadWhichBattle.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MonoBehaviourExtended.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MusicChanger.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MusicPlayer.cs" />
@@ -82,7 +86,6 @@
      <Compile Include="Assets\Scripts\Units\Enemies\EnemyCharacter.cs" />
      <Compile Include="Assets\Scripts\Units\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Units\Enemies\EnemyUnit.cs" />
-     <Compile Include="Assets\Scripts\Units\MiniGameUnits\GameBoyMiniGame.cs" />
      <Compile Include="Assets\Scripts\Units\Movement\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Units\Movement\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Units\Movement\NPC_Movement.cs" />
