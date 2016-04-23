@@ -25,6 +25,9 @@ public class GameBoyLoadGame : MonoBehaviour
 	private GameObject currentPlayer;
 	private GameObject currentEnemy;
 
+	public GameObject healthBarLostTick;
+	public GameObject healthBarTick;
+
 
 	// Use this for initialization
 	void Start () 
@@ -57,6 +60,19 @@ public class GameBoyLoadGame : MonoBehaviour
 
 		ourPlayerUnit.targetUnit = ourEnemyUnit;
 		ourEnemyUnit.targetUnit = ourPlayerUnit;
+		ourPlayerUnit.healthLeft = GameObject.Find("LeftHealthText").GetComponent<Text>();
+		ourEnemyUnit.healthLeft = GameObject.Find ("RightHealthText").GetComponent<Text>();
+		ourPlayerUnit.healthBarTick = healthBarTick;
+		ourEnemyUnit.healthBarTick = healthBarTick;
+
+
+		ourPlayerUnit.CreateHealth ();
+		ourEnemyUnit.CreateHealth ();
+
+
+
+		ourEnemyUnit.healthBarLostTick = healthBarLostTick;
+		ourPlayerUnit.healthBarLostTick = healthBarLostTick;
 
 		// characterconversable[]
 		allCombatants = new List<GameObject> ();
@@ -66,6 +82,9 @@ public class GameBoyLoadGame : MonoBehaviour
 		allCombatants.Add (currentEnemy);
 		turnOrder.Add (ourPlayerUnit);
 		turnOrder.Add (ourEnemyUnit);
+
+
+		// we need to be able to loop over and instantiate prefabs.
 
 
 	}

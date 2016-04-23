@@ -14,6 +14,9 @@ public class LoadWhichBattle : MonoBehaviour
 	public GameObject gameboyCharacter;
 	public GameObject gameboyEnemy;
 
+	public GameObject healthBarLostTick;
+	public GameObject healthBarTick;
+
 
 
 	// Use this for initialization
@@ -34,6 +37,9 @@ public class LoadWhichBattle : MonoBehaviour
 			gameBoy.gameboyCharacter = gameboyCharacter;
 			gameBoy.gameboyEnemy = gameboyEnemy;
 			gameBoy.tempPlayerXML = tempPlayerXML;
+
+			gameBoy.healthBarLostTick = healthBarLostTick;
+			gameBoy.healthBarTick = healthBarTick;
 
 			Camera.main.orthographicSize = 1;
 

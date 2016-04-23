@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameBoyUnit : MonoBehaviour 
 {
@@ -47,6 +49,9 @@ public class GameBoyUnit : MonoBehaviour
 	public string attackDone;
 	public string playerName;
 	public GameObject prefabDamage;
+	public Text healthLeft;
+	public GameObject healthBarLostTick;
+	public GameObject healthBarTick;
 
 
 	//bool damaged;
@@ -54,6 +59,7 @@ public class GameBoyUnit : MonoBehaviour
 	Animator anim;
 	bool attackFinished = false;
 	bool hasRetreated = false;
+	List<GameObject> healthBar; 
 
 
 
@@ -64,8 +70,9 @@ public class GameBoyUnit : MonoBehaviour
 	//bool attacking = false;
 	//bool retreating = false;
 	bool flashedScreen;
-
-
+	bool damaged = false;
+	int damageDealt;
+	int losingHealthCurrent;
 
 
 	// Use this for initialization
@@ -76,13 +83,25 @@ public class GameBoyUnit : MonoBehaviour
 		//playerInRange = false;
 		anim = GetComponent <Animator> ();
 		PrepareForBattle ();
+		damaged = false;
+		damageDealt = 0;
+		losingHealthCurrent = currentHealth;
+		healthBar = new List<GameObject> ();
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+
+
+	void Update()
 	{
-	
+		if (!damaged || damageDealt == 0)
+		{
+			return;
+		}
+
+		damaged = false;
+		// otherwise, let's lower the health until we have the proper health
 	}
+
 
 
 
@@ -103,7 +122,7 @@ public class GameBoyUnit : MonoBehaviour
 
 
 
-		int damageDealt = Mathf.RoundToInt(Random.Range (attackDamageBase * 0.8f, attackDamageBase * 1.2f));
+		damageDealt = Mathf.RoundToInt(Random.Range (attackDamageBase * 0.8f, attackDamageBase * 1.2f));
 
 
 		// If the player has health to lose...
@@ -136,7 +155,43 @@ public class GameBoyUnit : MonoBehaviour
 		yield return new WaitForSeconds (0.3f);
 	}
 
+	/// <summary>
+	/// Updates the health.
+	/// </summary>
+	public void UpdateHealth()
+	{
+		healthLeft.text = currentHealth.ToString();
+	
+	}
 
+
+
+
+	public void CreateHealth()
+	{
+		healthLeft.text = currentHealth.ToString();
+		GameObject healthPanel;
+
+		// if we are a player character, set parent to right side
+		// if we are not a player character, set damage to left side
+		if (isPlayerCharacter)
+		{
+			healthPanel = GameObject.Find ("LeftHealthBarPanel");
+		} 
+		else
+		{
+			healthPanel = GameObject.Find ("RightHealthBarPanel");
+		}
+
+		// panel for health that we'll update with a horizontal panel?
+		// max health of 60 or 90
+		for (int x = 0; x < maxHealth; x++) 
+		{
+			GameObject healthItem = (GameObject)Instantiate(healthBarTick, new Vector3(x, 0, 0), Quaternion.identity);
+			healthItem.transform.SetParent (healthPanel.transform);
+			healthBar.Add (healthItem);
+		}
+	}
 
 	/// <summary>
 	/// Takes the damage given it and updates slider and text
@@ -154,12 +209,16 @@ public class GameBoyUnit : MonoBehaviour
 		//damaged = true;
 
 		// Reduce the current health by the damage amount.
+		losingHealthCurrent = currentHealth;
 		currentHealth -= amount;
+		damaged = true;
 
 		if (currentHealth <= 0)
 		{
 			currentHealth = 0;
 		}
+
+		UpdateHealth ();
 
 		// Set the health bar's value to the current health.
 		//healthSlider.value = currentHealth;
