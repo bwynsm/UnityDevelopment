@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LoadWhichBattle : MonoBehaviour 
@@ -14,8 +15,8 @@ public class LoadWhichBattle : MonoBehaviour
 	public GameObject gameboyCharacter;
 	public GameObject gameboyEnemy;
 
-	public GameObject healthBarLostTick;
-	public GameObject healthBarTick;
+	public Sprite healthBarLostTick;
+	public Sprite healthBarTick;
 
 
 

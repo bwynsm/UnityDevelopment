@@ -25,8 +25,8 @@ public class GameBoyLoadGame : MonoBehaviour
 	private GameObject currentPlayer;
 	private GameObject currentEnemy;
 
-	public GameObject healthBarLostTick;
-	public GameObject healthBarTick;
+	public Sprite healthBarLostTick;
+	public Sprite healthBarTick;
 
 
 	// Use this for initialization

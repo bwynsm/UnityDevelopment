@@ -50,8 +50,9 @@ public class GameBoyUnit : MonoBehaviour
 	public string playerName;
 	public GameObject prefabDamage;
 	public Text healthLeft;
-	public GameObject healthBarLostTick;
-	public GameObject healthBarTick;
+	public Sprite healthBarLostTick;
+	public Sprite healthBarTick;
+	public bool underAttack;
 
 
 	//bool damaged;
@@ -87,10 +88,13 @@ public class GameBoyUnit : MonoBehaviour
 		damageDealt = 0;
 		losingHealthCurrent = currentHealth;
 		healthBar = new List<GameObject> ();
+		underAttack = false;
 	}
 
 
-
+	/// <summary>
+	/// Update this instance.
+	/// </summary>
 	void Update()
 	{
 		if (!damaged || damageDealt == 0)
@@ -98,8 +102,26 @@ public class GameBoyUnit : MonoBehaviour
 			return;
 		}
 
-		damaged = false;
+
+
+		// at losing health current, swap the image.
+		// then, once we swap the image, decrement damageDealt
+		// if damageDealt is 0, damage is turned off
+		Image currentImage = healthBar[losingHealthCurrent - 1].GetComponent<Image>();
+		currentImage.sprite = healthBarLostTick;
+
+
 		// otherwise, let's lower the health until we have the proper health
+		damageDealt--;
+		losingHealthCurrent--;
+
+		if (losingHealthCurrent <= 0)
+		{
+			damageDealt = 0;
+			damaged = false;
+		}
+
+
 	}
 
 
@@ -129,11 +151,16 @@ public class GameBoyUnit : MonoBehaviour
 		if (targetUnit.currentHealth > 0)
 		{
 			// ... damage the player.
-			targetUnit.TakeDamage (damageDealt);
-			ShakeCamera ();
+			targetUnit.underAttack = true;
+			StartCoroutine(targetUnit.TakeDamage (damageDealt));
+			while (targetUnit.underAttack)
+			{
+				yield return null;
+			}
 		}
 
 		attackDone = " attacks " + targetUnit.playerName;
+
 
 
 		// tell our battle manager that we are done
@@ -187,9 +214,13 @@ public class GameBoyUnit : MonoBehaviour
 		// max health of 60 or 90
 		for (int x = 0; x < maxHealth; x++) 
 		{
-			GameObject healthItem = (GameObject)Instantiate(healthBarTick, new Vector3(x, 0, 0), Quaternion.identity);
+			GameObject healthItem = new GameObject ();
 			healthItem.transform.SetParent (healthPanel.transform);
 			healthBar.Add (healthItem);
+			Image healthImage = healthItem.AddComponent<Image> ();
+			healthImage.sprite = healthBarTick;
+			healthImage.transform.localScale = new Vector3 (3, 3, 1);
+
 		}
 	}
 
@@ -197,13 +228,14 @@ public class GameBoyUnit : MonoBehaviour
 	/// Takes the damage given it and updates slider and text
 	/// </summary>
 	/// <param name="amount">Amount.</param>
-	public void TakeDamage (int amount)
+	public IEnumerator TakeDamage (int amount)
 	{
 
 		DamageNumbers damageNumbers = gameObject.AddComponent<DamageNumbers>();
 		damageNumbers.battleCanvas = GameObject.Find ("HUD").GetComponent<RectTransform>();
 		damageNumbers.prefabDamage = prefabDamage;
 		damageNumbers.CreateDamagePopup (amount, transform.position);
+		ShakeCamera ();
 
 		// Set the damaged flag so the screen will flash.
 		//damaged = true;
@@ -212,6 +244,14 @@ public class GameBoyUnit : MonoBehaviour
 		losingHealthCurrent = currentHealth;
 		currentHealth -= amount;
 		damaged = true;
+		damageDealt = amount;
+
+		while (damageDealt > 0)
+		{
+			yield return null;
+		}
+		damaged = false;
+
 
 		if (currentHealth <= 0)
 		{
@@ -233,6 +273,8 @@ public class GameBoyUnit : MonoBehaviour
 			// ... it should die.
 			Death ();
 		}
+
+		underAttack = false;
 	}
 
 
