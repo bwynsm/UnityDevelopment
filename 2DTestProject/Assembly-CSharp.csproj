@@ -62,6 +62,9 @@
      <Compile Include="Assets\Scripts\EventChanges\Battle\TargetPicker.cs" />
      <Compile Include="Assets\Scripts\EventChanges\DestroyGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Game.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\ARMOR_TYPE.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\DAMAGE_TYPE.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\DamageData.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyBattleManager.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyLoadGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyUnit.cs" />
