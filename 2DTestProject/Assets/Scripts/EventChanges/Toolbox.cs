@@ -58,6 +58,8 @@ public class Toolbox : Singleton<Toolbox> {
 
 			if ((positionInLastScene.Equals (null) || positionInLastScene.Equals (Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
 			{
+				Debug.Log ("WE NEED TO RESET POSITION" + positionInLastScene);
+
 				// find the starting point
 				positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;
 			} else
@@ -70,6 +72,8 @@ public class Toolbox : Singleton<Toolbox> {
 				// make sure our camera follow is set up to our main camera
 				Camera.main.GetComponent<CameraFollow> ().target = playerCharacter.transform;
 
+
+				Debug.Log ("PLAYER IN LAST POSITION : " + positionInLastScene);
 				playerCharacter.transform.position = positionInLastScene;
 				playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
 

@@ -253,6 +253,9 @@ public class Commands
 			else if (commandItem.Contains ("playGameBoyMiniGame"))
 			{
 				// toolbox gameboy!
+				Toolbox.Instance.battlePosition = GameObject.FindGameObjectWithTag("PlayerCharacter").transform.position;
+
+				Debug.Log ("PLAYER POSITION BEFORE LOADING : " + GameObject.FindGameObjectWithTag ("PlayerCharacter").transform.position);
 				Toolbox.Instance.battleScene = "GameBoy";
 
 				SceneManager.LoadScene ("BattleScene");

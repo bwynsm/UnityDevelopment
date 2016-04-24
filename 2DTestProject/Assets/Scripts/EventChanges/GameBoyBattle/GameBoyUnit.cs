@@ -43,8 +43,6 @@ public class GameBoyUnit : MonoBehaviour
 	public int currentHealth;
 	public int maxHealth;
 	public int attackDamageBase;
-	public string damageType;
-	public string armorType;
 	public bool isPlayerCharacter;
 	public string attackDone;
 	public string playerName;
@@ -53,6 +51,7 @@ public class GameBoyUnit : MonoBehaviour
 	public Sprite healthBarLostTick;
 	public Sprite healthBarTick;
 	public bool underAttack;
+	public int experience;
 
 
 	//bool damaged;
@@ -61,8 +60,11 @@ public class GameBoyUnit : MonoBehaviour
 	bool attackFinished = false;
 	bool hasRetreated = false;
 	List<GameObject> healthBar; 
+	bool attackDodged;
+	bool attackCritical;
 
-
+	public ARMOR_TYPE armorType;
+	public DAMAGE_TYPE damageType;
 
 	public GameBoyUnit targetUnit;                  	// Reference to the player's health.
 	//bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
@@ -134,9 +136,33 @@ public class GameBoyUnit : MonoBehaviour
 	/// </summary>
 	public IEnumerator Attack ()
 	{
+		float hitChance = calculateHitChance (targetUnit.armorType, damageType);
+
+
+		// tell our battle manager that we are done
+		GameBoyBattleManager batMan = Camera.main.GetComponent<GameBoyBattleManager> ();
+
+
+
+		double randomNum = Random.Range (0, 101) / 100.00;
+
+		Debug.Log ("MISS CHANCE : " + hitChance + " AND RANDOM ROLL :  " + randomNum);
+
+		if (randomNum <= hitChance)
+		{
+			attackDodged = true;
+
+
+			// start dodging
+			attackDone = "'s attack is dodged by " + targetUnit.playerName + "!";
+		} 
+
+
+
 		anim.SetTrigger ("IsAttacking");
 		attackFinished = false;
 		hasRetreated = false;
+
 
 		// until the animation is done.... keep moving
 		while (!attackFinished)
@@ -144,29 +170,31 @@ public class GameBoyUnit : MonoBehaviour
 
 
 
-		damageDealt = Mathf.RoundToInt(Random.Range (attackDamageBase * 0.8f, attackDamageBase * 1.2f));
+		damageDealt = Mathf.RoundToInt (Random.Range (attackDamageBase * 0.8f, attackDamageBase * 1.2f));
 
 
-		// If the player has health to lose...
-		if (targetUnit.currentHealth > 0)
+			// If the player has health to lose...
+		if (targetUnit.currentHealth > 0 && attackDodged == false)
 		{
 			// ... damage the player.
 			targetUnit.underAttack = true;
-			StartCoroutine(targetUnit.TakeDamage (damageDealt));
+			StartCoroutine (targetUnit.TakeDamage (damageDealt));
 			while (targetUnit.underAttack)
 			{
 				yield return null;
 			}
+
+			attackDone = " attacks " + targetUnit.playerName;
 		}
 
-		attackDone = " attacks " + targetUnit.playerName;
 
 
+		// reset our bool
+		attackDodged = false;
 
-		// tell our battle manager that we are done
-		GameBoyBattleManager batMan = Camera.main.GetComponent<GameBoyBattleManager> ();
 
 		anim.SetTrigger ("IsRetreating");
+
 
 		while (!hasRetreated)
 		{
@@ -174,6 +202,9 @@ public class GameBoyUnit : MonoBehaviour
 		}
 
 		anim.SetTrigger ("HasRetreated");
+
+		
+
 
 		batMan.turnFinished = true;
 		batMan.attackDone = attackDone;
@@ -316,11 +347,26 @@ public class GameBoyUnit : MonoBehaviour
 	/// </summary>
 	public void ShakeCamera()
 	{
-		// set a screen shake
-		Camera.main.GetComponent<CameraShake>().Shake();
 
-		// let's also make it white!
+		if (!attackDodged)
+		{
+			// set a screen shake
+			Camera.main.GetComponent<CameraShake> ().Shake ();
+		} 
 
+
+
+	}
+
+
+	/// <summary>
+	/// Dodges the attack.
+	/// </summary>
+	public void DodgeAttack()
+	{
+		Debug.Log ("we are dodging with " + playerName);
+		// do our dodge animation
+		anim.SetTrigger("Dodge");
 	}
 
 
@@ -341,6 +387,11 @@ public class GameBoyUnit : MonoBehaviour
 	/// </summary>
 	public void attackComplete()
 	{
+		if (attackDodged)
+		{
+			targetUnit.DodgeAttack ();
+		}
+
 		attackFinished = true;
 	}
 
@@ -354,6 +405,10 @@ public class GameBoyUnit : MonoBehaviour
 	}
 
 
+
+	/// <summary>
+	/// Prepares for battle ( gets into battle animations )
+	/// </summary>
 	public void PrepareForBattle()
 	{
 
@@ -361,4 +416,253 @@ public class GameBoyUnit : MonoBehaviour
 		anim.SetBool ("IsFighting", true);
 	}
 
+
+
+
+
+
+
+	/// <summary>
+	/// Calculates the hit chance for the player
+	/// </summary>
+	public float calculateHitChance(ARMOR_TYPE armor, DAMAGE_TYPE damage)
+	{
+		float hitChance = 0.0f;;
+
+		// these are just a list of hit chances in here
+		// heavy is slow
+		// medium splits the difference of light and heavy
+		// light is fast and dodges well, but takes more damage from hits
+		// barrier is mostly light armor, but deals better with spells and has less dodge (mages are less athletic)
+
+		// daggers - high chance to hit against all types : low damage on heavy and medium
+		// sword - pretty high chance to hit on all types : low damage on heavy
+		// heavy - lower chance to hit on light, medium on medium : good damage on all
+		// piercing : better damage on heavy, higher chance to miss on medium and light
+		// siege: high damage against all types - fair chance to miss on everything
+		// natural: good damage on everything except barrier
+		// spell: good damage on everything except barrier : can miss against barrier and light
+		switch (armor)
+		{
+		case ARMOR_TYPE.HEAVY:
+
+			switch (damage)
+			{
+
+			// hit chance is 1, damage is very low
+			case DAMAGE_TYPE.DAGGER:
+				hitChance = 1.0f; 
+				break;
+
+			// there is always a chance for a heavy attack to miss
+			case DAMAGE_TYPE.HEAVY: 
+				hitChance = 0.9f;
+				break;
+			
+			// natural hits heavy pretty easily
+			case DAMAGE_TYPE.NATURAL:
+				hitChance = 0.95f;
+				break;
+
+			// this should have a high chance of hitting, but a javelin might still miss
+			case DAMAGE_TYPE.PIERCING:
+				hitChance = 0.95f;
+				break;
+
+			// siege will always have a decent chance of missing, but with high damage
+			case DAMAGE_TYPE.SIEGE:
+				hitChance = 0.85f;
+				break;
+			
+			// spells are similar accuracy to natural
+			case DAMAGE_TYPE.SPELL:
+				hitChance = 0.95f;
+				break;
+
+			// hard to miss with a sword when someone is moving so slowly
+			case DAMAGE_TYPE.SWORD:
+				hitChance = 0.98f;
+				break;
+
+			default:
+				break;
+
+			}
+
+			break;
+
+
+		// BARRIER ARMOR is MAGICAL ARMOR. It doesn't dodge very much, because we're basically
+		// wearing cloth. But perhaps we can add a little evasion against natural and spells
+		case ARMOR_TYPE.BARRIER:
+			switch (damage)
+			{
+
+			// hit chance is 1, damage is very low
+			case DAMAGE_TYPE.DAGGER:
+				hitChance = 1.0f; 
+				break;
+
+			// there is always a chance for a heavy attack to miss
+			// mages are not lithe.. but even a mage can dodge a heavy attack sometimes
+			case DAMAGE_TYPE.HEAVY: 
+				hitChance = 0.85f;
+				break;
+
+			// natural is not good against mages
+			case DAMAGE_TYPE.NATURAL:
+				hitChance = 0.65f;
+				break;
+
+			// mages are very susceptible to projectiles
+			case DAMAGE_TYPE.PIERCING:
+				hitChance = 0.95f;
+				break;
+
+			// siege will always have a decent chance of missing, but with high damage
+			case DAMAGE_TYPE.SIEGE:
+				hitChance = 0.8f;
+				break;
+
+			// spells are similar accuracy to natural
+			case DAMAGE_TYPE.SPELL:
+				hitChance = 0.85f;
+				break;
+
+			// hard to miss with a sword when someone is moving so slowly
+			case DAMAGE_TYPE.SWORD:
+				hitChance = 1.0f;
+				break;
+
+			default:
+				break;
+
+			}
+
+
+			break;
+		case ARMOR_TYPE.LIGHT:
+
+			switch (damage)
+			{
+
+			// hit chance is high with a dagger, but a thief can evade a lot
+			case DAMAGE_TYPE.DAGGER:
+				hitChance = 0.9f; 
+				break;
+
+			// there is always a chance for a heavy attack to miss
+			// thief types are agile, and will dodge these attacks
+			case DAMAGE_TYPE.HEAVY: 
+				hitChance = 0.45f;
+				break;
+
+			// dragons are good against thieves in general
+			case DAMAGE_TYPE.NATURAL:
+				hitChance = 0.85f;
+				break;
+
+			// thieves are susceptible to projectiles a bit, but not as much as mages
+			case DAMAGE_TYPE.PIERCING:
+				hitChance = 0.70f;
+				break;
+
+			// siege will always have a decent chance of missing, but with high damage
+			case DAMAGE_TYPE.SIEGE:
+				hitChance = 0.3f;
+				break;
+
+			// spells are similar accuracy to natural
+			case DAMAGE_TYPE.SPELL:
+				hitChance = 0.75f;
+				break;
+
+			// hard to miss with a sword when someone is moving so slowly
+			case DAMAGE_TYPE.SWORD:
+				hitChance = 0.80f;
+				break;
+
+			default:
+				break;
+
+			}
+
+			break;
+
+
+		case ARMOR_TYPE.MEDIUM:
+
+			switch (damage)
+			{
+
+			// hit chance is 1, damage is very low
+			case DAMAGE_TYPE.DAGGER:
+				hitChance = 1.0f; 
+				break;
+
+				// there is always a chance for a heavy attack to miss
+				// mages are not lithe.. but even a mage can dodge a heavy attack sometimes
+			case DAMAGE_TYPE.HEAVY: 
+				hitChance = 0.80f;
+				break;
+
+				// natural is not good against mages
+			case DAMAGE_TYPE.NATURAL:
+				hitChance = 0.70f;
+				break;
+
+				// mages are very susceptible to projectiles
+			case DAMAGE_TYPE.PIERCING:
+				hitChance = 0.90f;
+				break;
+
+				// siege will always have a decent chance of missing, but with high damage
+			case DAMAGE_TYPE.SIEGE:
+				hitChance = 0.8f;
+				break;
+
+				// spells are similar accuracy to natural
+			case DAMAGE_TYPE.SPELL:
+				hitChance = 0.85f;
+				break;
+
+				// hard to miss with a sword when someone is moving so slowly
+			case DAMAGE_TYPE.SWORD:
+				hitChance = 1.0f;
+				break;
+
+			default:
+				break;
+
+			}
+			break;
+		default:
+			break;
+			
+		}
+
+		return hitChance;
+
+	}
+
+
+
+	/// <summary>
+	/// Calculates the hit damage.
+	/// </summary>
+	/// <returns>The hit damage.</returns>
+	public int calculateHitDamage()
+	{
+
+		return 0;
+	}
+
+
+	/// <summary>
+	/// Has dodged attack trigger animation.
+	/// </summary>
+	public void hasDodgedAttack()
+	{
+		anim.SetTrigger ("HasDodged");
+	}
 }

@@ -42,8 +42,8 @@ public class GameBoyLoadGame : MonoBehaviour
 		// FIRST ADD OUR CONTESTANTS
 		// we need to have a list of possible fighter prefabs loaded
 		// then we go through each of those and simply load one
-		Instantiate(gameboyCharacter, new Vector3(-4.4f, -1.5f, 0), Quaternion.identity);
-		Instantiate(gameboyEnemy, new Vector3(-3.0f, -1.5f, 0), Quaternion.identity);
+		Instantiate(gameboyCharacter, new Vector3(-4.4f, -1.40f, 0), Quaternion.identity);
+		Instantiate(gameboyEnemy, new Vector3(-3.0f, -1.40f, 0), Quaternion.identity);
 
 
 	}
@@ -85,6 +85,9 @@ public class GameBoyLoadGame : MonoBehaviour
 
 
 		// we need to be able to loop over and instantiate prefabs.
+		GameObject.Find("HeroText").GetComponent<Text>().text = ourPlayerUnit.playerName;
+		GameObject.Find("VillainText").GetComponent<Text>().text = ourEnemyUnit.playerName;
+
 
 
 	}

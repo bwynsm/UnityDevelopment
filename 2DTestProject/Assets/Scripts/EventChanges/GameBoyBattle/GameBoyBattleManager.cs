@@ -255,10 +255,20 @@ public class GameBoyBattleManager : BattleMenu {
 			// load previous scene
 			toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
 
+
+			// let's add that experience
 			// enemy defeated
 			GameObject enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
+			GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerUnit> ().playerExperience += enemyDefeated.GetComponent<GameBoyUnit> ().experience;
+
+
 			toolboxInstance.enemyDefeated = enemyDefeated.name;
 			Destroy (enemyDefeated);
+
+
+
+
+
 
 			// return to enemy position from last scene.
 			SceneManager.LoadScene("OpeningScene");
