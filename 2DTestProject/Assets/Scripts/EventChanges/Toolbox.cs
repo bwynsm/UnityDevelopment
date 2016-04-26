@@ -18,6 +18,8 @@ public class Toolbox : Singleton<Toolbox> {
 	public Language language = new Language();
 	public bool sceneAlreadyLoaded = false;
 	public int currentSaveSlot;
+	public DamageData damageCalculations;
+	public TextAsset damageDataText;
 
 	public string battleScene;
 
@@ -33,6 +35,7 @@ public class Toolbox : Singleton<Toolbox> {
 		// should rarely have to awaken here..
 		this.name = "Toolbox";
 		this.tag = "GameManager";
+		damageCalculations = new DamageData (damageDataText);
 	}
  
 

@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.IO;
 
 public class DamageData 
 {
 	Dictionary<DAMAGE_TYPE, Dictionary<ARMOR_TYPE, Damage>> damageData;
+
 
 	public DamageData()
 	{
@@ -291,9 +293,62 @@ public class DamageData
 
 
 
+	public DamageData (TextAsset file)
+	{
+		// open and read file in
+		string[] lines = file.text.Split('\n');
+
+		// for the population phase, we'll store a list of our header column
+		// so that we can use that for our dictionary
+		List<string> headerColumn = new List<string>();
+
+
+		int rowIndex = 0;
+
+		foreach (var line in lines)
+		{
+			
+
+			// split the line
+			string[] columns = line.Split(',');
+			int columnIndex = 0;
+
+			// walk over columns
+			foreach (var column in columns)
+			{
+				// split our column into its 3 values if that is appropriate (ie we are not in column 0 and we are not in row 0)
+				if (columnIndex != 0 && rowIndex != 0)
+				{
+					Debug.Log ("ROW > 0, COLUMN > 0 : " + column);
+				}
+				// if we are in here, we are in our first row, but we can ignore our first column
+				else if (columnIndex != 0 && rowIndex == 0)
+				{
+					Debug.Log ("ROW == 0, COLUMN > 0 : " + column);
+				}
+				// otherwise, if we are not in row 0, and we have a column index of 0... get our column name
+				else if (columnIndex == 0 && rowIndex != 0)
+				{
+					Debug.Log ("ROW > 0, COLUMN == 0 : " + column);
+				}
+
+
+				// update our column number
+				columnIndex++;
+			}
+
+			// update our line number
+			rowIndex++;
+		}
+
+	}
 
 
 
+
+	/// <summary>
+	/// Damage struct class.
+	/// </summary>
 	public struct Damage
 	{
 

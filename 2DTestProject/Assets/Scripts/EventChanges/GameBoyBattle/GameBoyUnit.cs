@@ -49,6 +49,7 @@ public class GameBoyUnit : MonoBehaviour
 	DamageData damageCalculations;
 
 
+
 	// Use this for initialization
 	void Start () 
 	{
