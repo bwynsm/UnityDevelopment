@@ -300,7 +300,10 @@ public class DamageData
 
 		// for the population phase, we'll store a list of our header column
 		// so that we can use that for our dictionary
-		List<string> headerColumn = new List<string>();
+		List<DAMAGE_TYPE> headerColumn = new List<DAMAGE_TYPE>();
+
+		// instantiate our dictionary
+		damageData = new Dictionary<DAMAGE_TYPE, Dictionary<ARMOR_TYPE, Damage>> ();
 
 
 		int rowIndex = 0;
@@ -312,6 +315,12 @@ public class DamageData
 			// split the line
 			string[] columns = line.Split(',');
 			int columnIndex = 0;
+			ARMOR_TYPE columnName = new ARMOR_TYPE();
+
+			if (columns.Length < 7)
+			{
+				continue;
+			}
 
 			// walk over columns
 			foreach (var column in columns)
@@ -319,17 +328,56 @@ public class DamageData
 				// split our column into its 3 values if that is appropriate (ie we are not in column 0 and we are not in row 0)
 				if (columnIndex != 0 && rowIndex != 0)
 				{
-					Debug.Log ("ROW > 0, COLUMN > 0 : " + column);
+					// get the damage type we are on from our header column (minus one, because our columns don't start at 0)
+					DAMAGE_TYPE tempDamageType = headerColumn[columnIndex - 1];
+
+					//Debug.Log ("ROW > 0, COLUMN > 0 : " + column);
+
+					string[] dataItems = column.Split ('\t');
+					Damage damageVal = new Damage();
+
+					// make a loop over the split details here
+					for (int i = 0; i < dataItems.Length; i++)
+					{
+						// let's trim and translate to float
+						float chanceItem = float.Parse(dataItems[i].Trim());
+
+						if (i == 0)
+						{
+							// add this item to our dictionary
+							damageVal.hitChance = chanceItem;
+						}
+						else if (i == 1)
+						{
+							damageVal.damage = chanceItem;
+						}
+						else
+						{
+							damageVal.critChance = chanceItem;
+						}
+
+						damageData [tempDamageType] [columnName] = damageVal;
+					}
+
 				}
 				// if we are in here, we are in our first row, but we can ignore our first column
 				else if (columnIndex != 0 && rowIndex == 0)
 				{
-					Debug.Log ("ROW == 0, COLUMN > 0 : " + column);
+					//Debug.Log ("ROW == 0, COLUMN > 0 : " + column);
+					DAMAGE_TYPE tempDamageType = (DAMAGE_TYPE)Enum.Parse (typeof(DAMAGE_TYPE), column);
+
+					// add to our list of columns
+					headerColumn.Add(tempDamageType);
+
+					// create a new dictionary for each item
+					damageData.Add (tempDamageType, new Dictionary<ARMOR_TYPE, Damage> ());
 				}
 				// otherwise, if we are not in row 0, and we have a column index of 0... get our column name
 				else if (columnIndex == 0 && rowIndex != 0)
 				{
-					Debug.Log ("ROW > 0, COLUMN == 0 : " + column);
+					//Debug.Log ("ROW > 0, COLUMN == 0 : " + column);
+
+					columnName =  (ARMOR_TYPE)Enum.Parse (typeof(ARMOR_TYPE), column);
 				}
 
 
@@ -363,7 +411,8 @@ public class DamageData
 	/// </summary>
 	public float calculateHitChance(ARMOR_TYPE armor, DAMAGE_TYPE damage)
 	{
-
+		Debug.Log (" GET THE LENGTH OF THE DICTIONARY : " + damageData.Count); 
+		Debug.Log("AND THE LENGTH OF THE SUB DICTIONARY : " + damageData [damage].Count);
 		Debug.Log (damageData [damage] [armor].critChance + " " + damageData [damage] [armor].damage + " " + damageData [damage] [armor].hitChance);
 
 
@@ -379,6 +428,8 @@ public class DamageData
 	/// <param name="damage">Damage.</param>
 	public float calculateCritChance(ARMOR_TYPE armor, DAMAGE_TYPE damage)
 	{
+		Debug.Log (" GET THE LENGTH OF THE DICTIONARY : " + damageData.Count + " + " + " AND THE LENGTH OF THE SUB DICTIONARY : " + damageData [damage].Count);
+
 		return damageData [damage] [armor].critChance; 
 	}
 

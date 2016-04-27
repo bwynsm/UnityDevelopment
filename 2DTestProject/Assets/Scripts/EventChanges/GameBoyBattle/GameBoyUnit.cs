@@ -63,7 +63,7 @@ public class GameBoyUnit : MonoBehaviour
 		losingHealthCurrent = currentHealth;
 		healthBar = new List<GameObject> ();
 		underAttack = false;
-		damageCalculations = new DamageData ();
+		damageCalculations = Toolbox.Instance.damageCalculations;
 	}
 
 
@@ -109,6 +109,7 @@ public class GameBoyUnit : MonoBehaviour
 	/// </summary>
 	public IEnumerator Attack ()
 	{
+		Debug.Log ("we are calculating hit chance : " + targetUnit.armorType.ToString() + " " + damageType.ToString());
 		float hitChance = damageCalculations.calculateHitChance (targetUnit.armorType, damageType);
 		bool criticalStrike = false;
 		float criticalDamage = 1.0f;

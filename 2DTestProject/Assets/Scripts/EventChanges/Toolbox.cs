@@ -35,7 +35,7 @@ public class Toolbox : Singleton<Toolbox> {
 		// should rarely have to awaken here..
 		this.name = "Toolbox";
 		this.tag = "GameManager";
-		damageCalculations = new DamageData (damageDataText);
+		//damageCalculations = new DamageData (damageDataText);
 	}
  
 
