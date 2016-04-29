@@ -137,6 +137,8 @@ public class GameBoyUnit : MonoBehaviour
 		// if we hit, then calculate to see if we got our crit
 		if (!attackDodged && (randomNum <= hitChance * critChance))
 		{
+			Debug.Log ("RANDOM NUM : " + randomNum + " <= " + (hitChance * critChance));
+
 			criticalStrike = true;
 			// otherwise, calculate crit chance
 
@@ -242,6 +244,18 @@ public class GameBoyUnit : MonoBehaviour
 			healthPanel = GameObject.Find ("RightHealthBarPanel");
 		}
 
+		// for each health tick 
+		Transform[] allTransforms = healthPanel.GetComponentsInChildren<Transform>();
+
+		foreach(Transform childObjects in allTransforms)
+		{
+			if (!childObjects.gameObject.Equals (healthPanel))
+			{
+				//Debug.Log ("CHILD NAME : " + childObjects.name);
+				Destroy (childObjects.gameObject);
+			}
+		}
+
 		// panel for health that we'll update with a horizontal panel?
 		// max health of 60 or 90
 		for (int x = 0; x < maxHealth; x++) 
@@ -251,7 +265,8 @@ public class GameBoyUnit : MonoBehaviour
 			healthBar.Add (healthItem);
 			Image healthImage = healthItem.AddComponent<Image> ();
 			healthImage.sprite = healthBarTick;
-			healthImage.transform.localScale = new Vector3 (3, 3, 1);
+			healthImage.transform.localScale = new Vector3 (2.5f, 2.5f, 1);
+			healthImage.gameObject.AddComponent<LayoutElement> ();
 
 		}
 	}
@@ -264,7 +279,7 @@ public class GameBoyUnit : MonoBehaviour
 	{
 
 		DamageNumbers damageNumbers = gameObject.AddComponent<DamageNumbers>();
-		damageNumbers.battleCanvas = GameObject.Find ("HUD").GetComponent<RectTransform>();
+		damageNumbers.battleCanvas = GameObject.Find ("GameBoyCanvas").GetComponent<RectTransform>();
 		damageNumbers.prefabDamage = prefabDamage;
 		damageNumbers.CreateDamagePopup (amount, transform.position);
 		ShakeCamera ();

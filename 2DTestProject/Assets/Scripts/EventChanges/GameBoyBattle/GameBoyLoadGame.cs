@@ -45,7 +45,7 @@ public class GameBoyLoadGame : MonoBehaviour
 		Instantiate(gameboyCharacter, new Vector3(-4.4f, -1.40f, 0), Quaternion.identity);
 		Instantiate(gameboyEnemy, new Vector3(-3.0f, -1.40f, 0), Quaternion.identity);
 
-
+		Debug.Log ("We are loading characters");
 	}
 
 	public void LoadGameBoyTurns()

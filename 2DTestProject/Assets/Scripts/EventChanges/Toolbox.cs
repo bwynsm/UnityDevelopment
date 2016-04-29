@@ -19,7 +19,6 @@ public class Toolbox : Singleton<Toolbox> {
 	public bool sceneAlreadyLoaded = false;
 	public int currentSaveSlot;
 	public DamageData damageCalculations;
-	public TextAsset damageDataText;
 
 	public string battleScene;
 

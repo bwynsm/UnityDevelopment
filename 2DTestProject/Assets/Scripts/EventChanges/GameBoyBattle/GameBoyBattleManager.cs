@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Battle manager : stores the state of the battle
 /// </summary>
-public class GameBoyBattleManager : BattleMenu {
+public class GameBoyBattleManager : MonoBehaviour {
 
 	public enum BATTLE_STATES
 	{
@@ -18,7 +18,9 @@ public class GameBoyBattleManager : BattleMenu {
 		PERFORM_COMMANDS = 3,
 		CHECK_CONDITIONS = 4,
 		WIN = 5,
-		LOSE = 6
+		LOSE = 6, 
+		CHARACTER_SELECTION,
+		END
 	};
 			
 	public BATTLE_STATES currentState;
@@ -35,6 +37,11 @@ public class GameBoyBattleManager : BattleMenu {
 	public GameObject attackTextPanel;
 
 	private bool turnsLoaded = false;
+	private int gainedExperience;
+	private bool gambling = false;
+	public Image gameboyImagePanel;
+	public GameObject victoryScreenPanel;
+	private bool playAgainChoiceMade = false;
 
 	// maybe it should be up to the battle manager to store good guys and bad guys?
 
@@ -105,6 +112,9 @@ public class GameBoyBattleManager : BattleMenu {
 		// load our scene and move our battle forward
 		case BATTLE_STATES.START:
 			Debug.Log ("We are in start here" + turnsLoaded);
+			playAgainChoiceMade = false;
+			currentTurn = 0;
+
 			if (!turnsLoaded)
 			{
 				sceneInit.LoadGameBoyTurns ();
@@ -124,12 +134,12 @@ public class GameBoyBattleManager : BattleMenu {
 			// decide whose turn it is
 		case BATTLE_STATES.DECIDE_TURN:
 
-			Debug.Log ("We are deciding turn ");
+			Debug.Log ("We are deciding turn " + currentTurn);
 			currentState = BATTLE_STATES.DECIDE_ATTACK;
 
 			// pick the turn person
 			currentPlayerTurn = battleTurnOrder [currentTurn];
-
+			Debug.Log ("we are having trouble in here" + battleTurnOrder.Count + " " + currentTurn);
 
 			// update our current turn to the next player in the queue
 			// and cycle if we are at the end.
@@ -248,40 +258,58 @@ public class GameBoyBattleManager : BattleMenu {
 			// if the player side has won, hooray! victory conditions and experience
 		case BATTLE_STATES.WIN:
 
-			toolboxInstance.sceneAlreadyLoaded = false;
-
-			changeCharacterStates ();
-
-			// load previous scene
-			toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
 
 
-			// let's add that experience
+
+			// let's add that experience to our tally
 			// enemy defeated
 			GameObject enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
-			GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerUnit> ().playerExperience += enemyDefeated.GetComponent<GameBoyUnit> ().experience;
-
-
-			toolboxInstance.enemyDefeated = enemyDefeated.name;
-			Destroy (enemyDefeated);
+			gainedExperience += enemyDefeated.GetComponent<GameBoyUnit> ().experience;
 
 
 
 
 
+			if (playAgainChoiceMade)
+			{
 
-			// return to enemy position from last scene.
-			SceneManager.LoadScene("OpeningScene");
-
+				// check if we are gambling or continuing on.
+				if (gambling)
+				{
+					currentState = BATTLE_STATES.START;
+					Toolbox.Instance.isLocked = false;
+				} else if (!gambling)
+				{
+					currentState = BATTLE_STATES.END;
+					Toolbox.Instance.isLocked = false;
+				}
+			} 
+			else
+			{
+				displayCharacterSelectionPanel ();
+			}
 
 			break;
 
 			// if the good side has lost, sad day. Penalties and teleport
 		case BATTLE_STATES.LOSE:
 			Debug.Log ("we have lost");
-			toolboxInstance.sceneAlreadyLoaded = false;
 
-			changeCharacterStates ();
+			currentState = BATTLE_STATES.END;
+			Toolbox.Instance.isLocked = false;
+
+			break;
+
+		case BATTLE_STATES.CHARACTER_SELECTION:
+			break;
+
+		case BATTLE_STATES.END:
+
+			// load previous scene
+			toolboxInstance.positionInLastScene = toolboxInstance.battlePosition;
+
+			toolboxInstance.sceneAlreadyLoaded = false;
+			GameObject.FindGameObjectWithTag ("PlayerCharacter").GetComponent<PlayerUnit> ().playerExperience += gainedExperience;
 
 
 
@@ -292,9 +320,8 @@ public class GameBoyBattleManager : BattleMenu {
 			// we'll get this in a moment.
 			SceneManager.LoadScene("OpeningScene");
 
-
 			break;
-
+		
 			// if we hit a non-existent case
 		default:
 			break;
@@ -339,4 +366,47 @@ public class GameBoyBattleManager : BattleMenu {
 	}
 
 
+
+	/// <summary>
+	/// Displays the character selection panel.
+	/// </summary>
+	/// <returns>The character selection panel.</returns>
+	private void displayCharacterSelectionPanel()
+	{
+		// until we get a response from our unit picker..
+		victoryScreenPanel.SetActive(true);
+
+	}
+
+
+	public void PlayAgain()
+	{
+		Destroy (GameObject.FindGameObjectWithTag ("GameBoyUnit"));
+		Destroy (GameObject.FindGameObjectWithTag ("Enemy"));
+
+		Debug.Log("we are playing again in here");
+		victoryScreenPanel.SetActive (false);
+
+		gambling = true;
+		playAgainChoiceMade = true;
+		turnsLoaded = false;
+
+		sceneInit.turnOrder.Clear ();
+		battleTurnOrder.Clear ();
+		sceneInit.LoadCharacters ();
+		Toolbox.Instance.isLocked = false;
+	}
+
+	public void QuitGameBoy()
+	{
+		Destroy (GameObject.FindGameObjectWithTag ("GameBoyUnit"));
+		Destroy (GameObject.FindGameObjectWithTag ("Enemy"));
+
+		Debug.Log("we are quitting instead in here");
+		victoryScreenPanel.SetActive (false);
+
+		gambling = false;
+		playAgainChoiceMade = true;
+		Toolbox.Instance.isLocked = false;
+	}
 }

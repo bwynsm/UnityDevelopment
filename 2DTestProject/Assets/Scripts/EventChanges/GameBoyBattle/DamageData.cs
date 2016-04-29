@@ -298,6 +298,8 @@ public class DamageData
 		// open and read file in
 		string[] lines = file.text.Split('\n');
 
+		Debug.Log ("we are in here with length of Lines : " + lines.Length);
+
 		// for the population phase, we'll store a list of our header column
 		// so that we can use that for our dictionary
 		List<DAMAGE_TYPE> headerColumn = new List<DAMAGE_TYPE>();
@@ -316,6 +318,8 @@ public class DamageData
 			string[] columns = line.Split(',');
 			int columnIndex = 0;
 			ARMOR_TYPE columnName = new ARMOR_TYPE();
+
+			Debug.Log ("we are in here with length of columns : " + columns.Length);
 
 			if (columns.Length < 7)
 			{
@@ -376,8 +380,18 @@ public class DamageData
 				else if (columnIndex == 0 && rowIndex != 0)
 				{
 					//Debug.Log ("ROW > 0, COLUMN == 0 : " + column);
-
 					columnName =  (ARMOR_TYPE)Enum.Parse (typeof(ARMOR_TYPE), column);
+
+					// foreach of our header columns, add new dictionary for this armor type
+					foreach (var columnItem in headerColumn)
+					{
+						damageData [columnItem].Add (columnName, new Damage ());
+					}
+
+
+					Debug.Log ("we are in here with column name : " + columnName.ToString ());
+
+
 				}
 
 
@@ -411,9 +425,7 @@ public class DamageData
 	/// </summary>
 	public float calculateHitChance(ARMOR_TYPE armor, DAMAGE_TYPE damage)
 	{
-		Debug.Log (" GET THE LENGTH OF THE DICTIONARY : " + damageData.Count); 
-		Debug.Log("AND THE LENGTH OF THE SUB DICTIONARY : " + damageData [damage].Count);
-		Debug.Log (damageData [damage] [armor].critChance + " " + damageData [damage] [armor].damage + " " + damageData [damage] [armor].hitChance);
+		Debug.Log (" CRIT CHANCE : " + damageData [damage] [armor].critChance + " DAMAGE AMOUNT : " + damageData [damage] [armor].damage + " HIT CHANCE : " + damageData [damage] [armor].hitChance);
 
 
 		return damageData [damage] [armor].hitChance;
@@ -428,7 +440,7 @@ public class DamageData
 	/// <param name="damage">Damage.</param>
 	public float calculateCritChance(ARMOR_TYPE armor, DAMAGE_TYPE damage)
 	{
-		Debug.Log (" GET THE LENGTH OF THE DICTIONARY : " + damageData.Count + " + " + " AND THE LENGTH OF THE SUB DICTIONARY : " + damageData [damage].Count);
+		Debug.Log (" CRIT CHANCE : " + damageData [damage] [armor].critChance);
 
 		return damageData [damage] [armor].critChance; 
 	}
@@ -448,6 +460,23 @@ public class DamageData
 		int damageCalculation = Mathf.RoundToInt(baseDamage * damageData [damage] [armor].damage);
 
 		return damageCalculation;
+	}
+
+
+	/// <summary>
+	/// Debugs the size of the dict.
+	/// </summary>
+	public void DebugDictSize()
+	{
+		
+		if (damageData.Count > 0)
+		{
+			Debug.Log ("DICTIONARY SIZE : " + damageData.Count + " INNER COUNT : " + damageData [DAMAGE_TYPE.DAGGER].Count);
+		} 
+		else
+		{
+			Debug.Log ("SIZE IS 0 FOR DICTIONARY");
+		}
 	}
 
 }

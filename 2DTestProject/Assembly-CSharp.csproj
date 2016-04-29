@@ -63,11 +63,13 @@
      <Compile Include="Assets\Scripts\EventChanges\DestroyGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\Game.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\ARMOR_TYPE.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\CharacterSelectionScreen.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\DAMAGE_TYPE.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\DamageData.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyBattleManager.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyLoadGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\GameBoyUnit.cs" />
+     <Compile Include="Assets\Scripts\EventChanges\GameBoyBattle\VictoryScreen.cs" />
      <Compile Include="Assets\Scripts\EventChanges\LoadGame.cs" />
      <Compile Include="Assets\Scripts\EventChanges\LoadWhichBattle.cs" />
      <Compile Include="Assets\Scripts\EventChanges\MonoBehaviourExtended.cs" />

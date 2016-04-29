@@ -25,11 +25,11 @@ public class LoadGame : MonoBehaviour {
 		// now we'll just load our opening scene
 		SceneManager.LoadScene("OpeningScene");
 		Toolbox.Instance.playerCharacter = player;
-		Toolbox.Instance.damageDataText = damageValues;
 		Toolbox.Instance.damageCalculations = new DamageData (damageValues);
 
-
+		Toolbox.Instance.damageCalculations.DebugDictSize ();
 		// get length of array
+		//Debug.Log("LENGTH OF DICTIONARY : " + );
 	}
 
 
