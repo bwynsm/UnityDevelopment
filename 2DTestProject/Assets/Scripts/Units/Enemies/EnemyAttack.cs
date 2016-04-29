@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
 
 
     Animator anim;                              // Reference to the animator component.
-    GameObject target;                          // Reference to the player GameObject.
+    public GameObject target;                          // Reference to the player GameObject.
     PlayerUnit targetUnit;                  	// Reference to the player's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     //float timer;                                // Timer for counting up to the next attack.
@@ -34,8 +34,12 @@ public class EnemyAttack : MonoBehaviour
     void Awake ()
     {
         // Setting up the references.
-        target = GameObject.FindGameObjectWithTag ("PlayerCharacter");
-		targetUnit = target.GetComponent <PlayerUnit> ();
+        
+
+		// THESE ARE SET NULL FOR NOW - THEY ARE DETERMINED BY RANDOM SELECTION OF TARGET
+		// PICKER
+		//target = GameObject.FindGameObjectWithTag ("PlayerCharacter");
+		//targetUnit = target.GetComponent <PlayerUnit> ();
 		playerInRange = false;
 		anim = this.GetComponent<Animator> ();
 
@@ -288,7 +292,7 @@ public class EnemyAttack : MonoBehaviour
 		EnemyUnit attackingPlayer = gameObject.GetComponent<EnemyUnit> ();
 		TargetPicker playerTargetPicker = gameObject.AddComponent<TargetPicker>();
 		playerTargetPicker.currentPlayer = attackingPlayer;
-		playerTargetPicker.battleList = GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<BattleMenu> ().allCombatants;
+		playerTargetPicker.battleList = Camera.main.GetComponent<BattleMenu> ().allCombatants;
 		playerTargetPicker.loadBattle ();
 		targetUnit = playerTargetPicker.RandomTarget ().gameObject.GetComponent<PlayerUnit> ();
 

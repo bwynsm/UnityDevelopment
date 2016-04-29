@@ -12,6 +12,7 @@ public class LoadGame : MonoBehaviour {
 	// this loads all of our prefabs that need to not be destroyed on load
 	// for now, we'll just have our character in here
 	public GameObject playerCharacter;
+	public TextAsset damageValues;
 
 	// Use this for initialization
 	void Start () 
@@ -24,6 +25,11 @@ public class LoadGame : MonoBehaviour {
 		// now we'll just load our opening scene
 		SceneManager.LoadScene("OpeningScene");
 		Toolbox.Instance.playerCharacter = player;
+		Toolbox.Instance.damageCalculations = new DamageData (damageValues);
+
+		Toolbox.Instance.damageCalculations.DebugDictSize ();
+		// get length of array
+		//Debug.Log("LENGTH OF DICTIONARY : " + );
 	}
 
 

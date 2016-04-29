@@ -140,6 +140,7 @@ public class TextBoxManager : MonoBehaviour
 			// get object by name now that we have the updated item
 			playerName = dialogueTree.getItem().name;
 			player = GameObject.Find(playerName).GetComponent<CharacterConversable>();
+			Debug.Log ("Player Name : " + playerName);
 			speakerText.text = player.playerName.Trim();
 
 			if (nextText.SpeechText != null && nextText.SpeechText != "")
@@ -358,8 +359,6 @@ public class TextBoxManager : MonoBehaviour
 	public void setPlayer(CharacterConversable talkToPlayer)
 	{
 		// we are in here
-		Debug.Log("we are setting player");
-
 		player = talkToPlayer;
 	}
 

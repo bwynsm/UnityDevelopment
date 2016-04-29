@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Dialogue>
+	<Speeches id="1">
+		<Speech  name="GameBoyPlay" type="options">
+        <Options>
+          <option command="playGameBoyMiniGame" playerToAlter="">Play Pocket Boy?</option>
+          <option command="exit" playerToAlter="">I'll game later.</option>
+        </Options>
+		</Speech>
+	</Speeches>
+</Dialogue>
+

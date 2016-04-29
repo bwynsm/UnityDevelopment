@@ -278,7 +278,8 @@ public class TargetPicker : MonoBehaviour
 
 		// assuming for now that we are attacking, let's target one of our enemies
 		int chosenTargetIndex = Random.Range (0, opponentList.Count);
-		Debug.Log ("OPPONENT LIST LENGTH : " + opponentList.Count + " FIRST INDEX : " + opponentList [0].playerName);
+		Debug.Log ("OPPONENT LIST LENGTH : " + opponentList.Count);
+		Debug.Log (" FIRST INDEX : " + opponentList [0].playerName);
 
 
 		return opponentList[chosenTargetIndex];

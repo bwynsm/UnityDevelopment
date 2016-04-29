@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: cf68d3e53d5fb2d42a1c300e01c3aa8d
-timeCreated: 1458967377
+timeCreated: 1461126422
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefabSlider: {instanceID: 0}
+  - gameCanvas: {instanceID: 0}
+  - prefabButton: {instanceID: 0}
+  - tempPlayerXML: {instanceID: 0}
+  - border: {instanceID: 0}
+  - gameboyCharacter: {fileID: 183086, guid: 13e5f66f61f6e1140bf51a1216e7e092, type: 2}
+  - gameboyEnemy: {fileID: 173956, guid: 52a4c50b600c24144aaa160e8726bf95, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

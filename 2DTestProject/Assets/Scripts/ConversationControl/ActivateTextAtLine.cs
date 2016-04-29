@@ -23,7 +23,7 @@ public class ActivateTextAtLine : MonoBehaviour
 	private bool waitForPress; // waiting for a button press to initiate talking
 	public CharacterConversable player; // a character that can hold a conversation
 
-
+	public bool isMotionlessObject;
 
 
 	// other character we are looking at - their location
@@ -56,8 +56,6 @@ public class ActivateTextAtLine : MonoBehaviour
 		// we also have to have text..
 		if (waitForPress && Input.GetKeyDown (KeyCode.X) && theTextBox.isActive != true && isColliding && !theTextBox.inConversation  && mainPlayer.isFrozen() == false) 
 		{
-			Debug.Log ("Input received");
-			
 			theTextBox.inConversation = true;
 			theTextBox.reloadScript (theText, dialogueID);
 
@@ -82,17 +80,23 @@ public class ActivateTextAtLine : MonoBehaviour
 	{
 		if (theTextBox.inConversation == true && !startedTalking && isColliding)
 		{
+			Animator anim;
+			Vector2 direction;
 			startedTalking = true;
-			Animator anim = player.GetComponent<Animator> ();
-			Vector2 direction = new Vector2 (mainPlayer.transform.position.x - 
-											player.transform.position.x, 
-											mainPlayer.transform.position.y - 
-											player.transform.position.y);
-			anim.SetBool ("isWalking", true);
-			anim.SetFloat ("input_x", direction.x);
-			anim.SetFloat ("input_y", direction.y);
-			anim.SetBool ("isWalking", false);
-			//rbody.MovePosition(rbody.position + direction * 0.01f);
+
+			if (!isMotionlessObject)
+			{
+				anim = player.GetComponent<Animator> ();
+				direction = new Vector2 (mainPlayer.transform.position.x - 
+												player.transform.position.x, 
+												mainPlayer.transform.position.y - 
+												player.transform.position.y);
+				anim.SetBool ("isWalking", true);
+				anim.SetFloat ("input_x", direction.x);
+				anim.SetFloat ("input_y", direction.y);
+				anim.SetBool ("isWalking", false);
+				//rbody.MovePosition(rbody.position + direction * 0.01f);
+			}
 
 			// do the same change for the main player in reverse
 			anim = mainPlayer.GetComponent<Animator> ();
@@ -117,8 +121,6 @@ public class ActivateTextAtLine : MonoBehaviour
 		// if we aren't shouting, but waiting for the player to talk to us
 		if (requireButtonPress) 
 		{
-			Debug.Log ("we are colliding and require a button press to converse...");
-
 			if (other.name == "Player") 
 			{
 				isColliding = true;

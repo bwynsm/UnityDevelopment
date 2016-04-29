@@ -1,0 +1,608 @@
+fileFormatVersion: 2
+guid: 1535616639878c34ab7076087ce7a340
+timeCreated: 1461195278
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rebecca_archer_bow_0
+    21300002: rebecca_archer_bow_1
+    21300004: rebecca_archer_bow_2
+    21300006: rebecca_archer_bow_3
+    21300008: rebecca_archer_bow_4
+    21300010: rebecca_archer_bow_5
+    21300012: rebecca_archer_bow_6
+    21300014: rebecca_archer_bow_7
+    21300016: rebecca_archer_bow_8
+    21300018: rebecca_archer_bow_9
+    21300020: rebecca_archer_bow_10
+    21300022: rebecca_archer_bow_11
+    21300024: rebecca_archer_bow_12
+    21300026: rebecca_archer_bow_13
+    21300028: rebecca_archer_bow_14
+    21300030: rebecca_archer_bow_15
+    21300032: rebecca_archer_bow_16
+    21300034: rebecca_archer_bow_17
+    21300036: rebecca_archer_bow_18
+    21300038: rebecca_archer_bow_19
+    21300040: rebecca_archer_bow_21
+    21300042: rebecca_archer_bow_22
+    21300044: rebecca_archer_bow_23
+    21300046: rebecca_archer_bow_24
+    21300048: rebecca_archer_bow_25
+    21300050: rebecca_archer_bow_26
+    21300052: rebecca_archer_bow_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rebecca_archer_bow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92.66667
+        width: 38.46154
+        height: 46.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.5, y: 21.166672}
+        - {x: -8.5, y: 16.166672}
+        - {x: -18.5, y: 5.1666718}
+        - {x: -18.5, y: -7.8333282}
+        - {x: -15.5, y: -15.833328}
+        - {x: -11.5, y: -16.833328}
+        - {x: 9.5, y: -16.833328}
+        - {x: 16.5, y: -2.8333282}
+        - {x: 16.5, y: 11.166672}
+        - {x: 9.5, y: 21.166672}
+    - name: rebecca_archer_bow_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 19}
+        - {x: -11.5, y: 19}
+        - {x: -16.5, y: 4}
+        - {x: -16.5, y: -16}
+        - {x: -10.5, y: -19}
+        - {x: 5.5, y: -19}
+        - {x: 15.5, y: -3}
+        - {x: 15.5, y: 2}
+    - name: rebecca_archer_bow_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 93
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rebecca_archer_bow_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 93
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 18}
+        - {x: -15, y: 3}
+        - {x: -21, y: -4}
+        - {x: -21, y: -11}
+        - {x: -6, y: -19}
+        - {x: 2, y: -20}
+        - {x: 10, y: -20}
+        - {x: 19, y: -9}
+        - {x: 19, y: 10}
+        - {x: 16, y: 18}
+    - name: rebecca_archer_bow_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 92.66667
+        width: 38.461548
+        height: 46.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 19.166672}
+        - {x: -19.5, y: 8.166672}
+        - {x: -19.5, y: -10.833328}
+        - {x: -6.5, y: -18.833328}
+        - {x: 14.5, y: -18.833328}
+        - {x: 17.5, y: -13.833328}
+        - {x: 17.5, y: 14.166672}
+        - {x: 15.5, y: 19.166672}
+    - name: rebecca_archer_bow_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 93
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 19}
+        - {x: -1, y: 18}
+        - {x: -20, y: -3}
+        - {x: -20, y: -9}
+        - {x: -6, y: -19}
+        - {x: 11, y: -19}
+        - {x: 16, y: -18}
+        - {x: 20, y: -5}
+        - {x: 20, y: 15}
+        - {x: 19, y: 19}
+    - name: rebecca_archer_bow_6
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 93
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 18}
+        - {x: -0.5, y: 16}
+        - {x: -20.5, y: -4}
+        - {x: -20.5, y: -15}
+        - {x: -12.5, y: -20}
+        - {x: 13.5, y: -20}
+        - {x: 18.5, y: -16}
+        - {x: 18.5, y: 17}
+        - {x: 15.5, y: 18}
+    - name: rebecca_archer_bow_7
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 93
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: -4}
+        - {x: -19, y: -17}
+        - {x: -12, y: -21}
+        - {x: 16, y: -21}
+        - {x: 20, y: -19}
+        - {x: 20, y: 17}
+        - {x: 0, y: 17}
+    - name: rebecca_archer_bow_8
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 93
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 17}
+        - {x: 1, y: 15}
+        - {x: -7, y: 13}
+        - {x: -19, y: -4}
+        - {x: -19, y: -14}
+        - {x: -6, y: -21}
+        - {x: 13, y: -21}
+        - {x: 19, y: -17}
+        - {x: 20, y: -8}
+        - {x: 20, y: 16}
+        - {x: 17, y: 17}
+    - name: rebecca_archer_bow_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 93
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -10, y: 13}
+        - {x: -18, y: -2}
+        - {x: -18, y: -22}
+        - {x: 16, y: -22}
+        - {x: 18, y: -16}
+        - {x: 18, y: 15}
+        - {x: 17, y: 16}
+    - name: rebecca_archer_bow_10
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 93
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 16}
+        - {x: -11.5, y: 14}
+        - {x: -10.5, y: 4}
+        - {x: -16.5, y: -5}
+        - {x: -16.5, y: -12}
+        - {x: -15.5, y: -14}
+        - {x: -0.5, y: -22}
+        - {x: 12.5, y: -22}
+        - {x: 17.5, y: -20}
+        - {x: 17.5, y: -2}
+        - {x: 8.5, y: 16}
+    - name: rebecca_archer_bow_11
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 90
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 19.5}
+        - {x: -16, y: 5.5}
+        - {x: -16, y: -8.5}
+        - {x: -8, y: -22.5}
+        - {x: -2, y: -23.5}
+        - {x: 17, y: -23.5}
+        - {x: 17, y: -0.5}
+        - {x: 10, y: 19.5}
+    - name: rebecca_archer_bow_12
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 91
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 19}
+        - {x: -17, y: -24}
+        - {x: 14, y: -24}
+        - {x: 14, y: 8}
+        - {x: 1, y: 19}
+    - name: rebecca_archer_bow_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 47
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 22}
+        - {x: -20, y: 10}
+        - {x: -20, y: 2}
+        - {x: -5, y: -18}
+        - {x: 5, y: -21}
+        - {x: 19, y: -21}
+        - {x: 20, y: -20}
+        - {x: 20, y: 16}
+        - {x: 3, y: 22}
+    - name: rebecca_archer_bow_14
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 47
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 20}
+        - {x: -10, y: 20}
+        - {x: -17, y: 10}
+        - {x: -17, y: -14}
+        - {x: -6, y: -23}
+        - {x: 14, y: -23}
+        - {x: 17, y: -16}
+        - {x: 17, y: 11}
+        - {x: 15, y: 15}
+    - name: rebecca_archer_bow_15
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 45
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 18}
+        - {x: -16, y: -7}
+        - {x: -7, y: -22}
+        - {x: 15, y: -22}
+        - {x: 15, y: 10}
+        - {x: 13, y: 18}
+    - name: rebecca_archer_bow_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 47
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rebecca_archer_bow_17
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 47
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rebecca_archer_bow_18
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 47
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 18}
+        - {x: 3.5, y: 17}
+        - {x: -0.5, y: 20}
+        - {x: -13.5, y: 20}
+        - {x: -21.5, y: 14}
+        - {x: -21.5, y: -4}
+        - {x: -14.5, y: -16}
+        - {x: -0.5, y: -21}
+        - {x: 19.5, y: -21}
+        - {x: 24.5, y: -10}
+        - {x: 24.5, y: 16}
+        - {x: 20.5, y: 19}
+    - name: rebecca_archer_bow_19
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 45
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 20}
+        - {x: -13.5, y: 20}
+        - {x: -21.5, y: 13}
+        - {x: -21.5, y: 6}
+        - {x: -19.5, y: 3}
+        - {x: -16.5, y: 5}
+        - {x: -4.5, y: 8}
+        - {x: -1.5, y: 9}
+        - {x: -1.5, y: 14}
+        - {x: -1.5, y: 10}
+        - {x: -2.5, y: 6}
+        - {x: -9.5, y: 1}
+        - {x: -7.5, y: -19}
+        - {x: -1.5, y: -22}
+        - {x: 19.5, y: -22}
+        - {x: 22.5, y: -14}
+        - {x: 22.5, y: 16}
+        - {x: 19.5, y: 19}
+    - name: rebecca_archer_bow_21
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 46
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 2}
+        - {x: -19.5, y: -11}
+        - {x: -17.5, y: -15}
+        - {x: -6.5, y: -21}
+        - {x: 12.5, y: -21}
+        - {x: 19.5, y: -17}
+        - {x: 19.5, y: 14}
+        - {x: 16.5, y: 17}
+        - {x: -0.5, y: 17}
+    - name: rebecca_archer_bow_22
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 45
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 14}
+        - {x: -3, y: 11}
+        - {x: 0, y: 15}
+        - {x: -1, y: 18}
+        - {x: -14, y: 18}
+        - {x: -21, y: 11}
+        - {x: -21, y: -8}
+        - {x: -15, y: -18}
+        - {x: -5, y: -22}
+        - {x: 18, y: -22}
+        - {x: 21, y: -15}
+        - {x: 21, y: 16}
+        - {x: 19, y: 18}
+    - name: rebecca_archer_bow_23
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 47
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 17}
+        - {x: -21, y: 10}
+        - {x: -21, y: 1}
+        - {x: -19, y: 1}
+        - {x: -16, y: 2}
+        - {x: -8, y: -21}
+        - {x: -1, y: -23}
+        - {x: 19, y: -23}
+        - {x: 21, y: -20}
+        - {x: 21, y: 17}
+    - name: rebecca_archer_bow_24
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 47
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 18}
+        - {x: -5, y: 15}
+        - {x: -19, y: -6}
+        - {x: -19, y: -11}
+        - {x: -9, y: -19}
+        - {x: 6, y: -20}
+        - {x: 13, y: -20}
+        - {x: 18, y: -15}
+        - {x: 19, y: -10}
+        - {x: 19, y: 18}
+    - name: rebecca_archer_bow_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 21
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.5, y: -2.833332}
+        - {x: 18.5, y: -4.833332}
+        - {x: 19.5, y: -4.833332}
+        - {x: 19.5, y: 0.16666794}
+        - {x: 17.5, y: 0.16666794}
+      - - {x: -10.5, y: 11.166668}
+        - {x: -11.5, y: 10.166668}
+        - {x: -11.5, y: 6.166668}
+        - {x: -9.5, y: 2.166668}
+        - {x: 11.5, y: 2.166668}
+        - {x: 11.5, y: 11.166668}
+    - name: rebecca_archer_bow_26
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0.66666794
+        width: 38.46154
+        height: 46.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 21.166668}
+        - {x: -19.5, y: 11.166668}
+        - {x: -19.5, y: -13.833332}
+        - {x: -18.5, y: -15.833332}
+        - {x: -9.5, y: -19.833332}
+        - {x: 19.5, y: -19.833332}
+        - {x: 19.5, y: 21.166668}
+    - name: rebecca_archer_bow_27
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0.66666794
+        width: 38.46154
+        height: 46.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 17.166668}
+        - {x: -18.5, y: 0.16666794}
+        - {x: -18.5, y: -14.833332}
+        - {x: -9.5, y: -19.833332}
+        - {x: 6.5, y: -19.833332}
+        - {x: 13.5, y: -18.833332}
+        - {x: 18.5, y: -7.833332}
+        - {x: 18.5, y: 17.166668}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

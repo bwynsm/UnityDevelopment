@@ -1,10 +1,21 @@
 fileFormatVersion: 2
 guid: a2f31a59f419d7f4197e31fd29e8b774
-timeCreated: 1458605545
+timeCreated: 1461044042
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sting: {fileID: 8300000, guid: f088d93dd00fb4d4d934977047181596, type: 3}
+  - stingSource: {instanceID: 0}
+  - background: {instanceID: 0}
+  - texturePickerBorder: {instanceID: 0}
+  - optionsBox: {instanceID: 0}
+  - prefabButton: {instanceID: 0}
+  - defaultFont: {fileID: 12800000, guid: e577cf1ab4900fa4cb7d8a929a67605c, type: 3}
+  - attackingPlayer: {instanceID: 0}
+  - targetPlayer: {instanceID: 0}
+  - buffPlayer: {instanceID: 0}
+  - waitingObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

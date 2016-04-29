@@ -12,6 +12,7 @@ using UnityEngine.EventSystems;
 public class Menu : MonoBehaviour 
 {
 	public AudioClip sting;
+	public AudioClip selectItemSting;
 	public AudioSource stingSource;
 
 
@@ -21,6 +22,7 @@ public class Menu : MonoBehaviour
 	public GameObject optionsBox;		// this is the options box panel that we are displaying in
 	public GameObject prefabButton;		// this is the current button we are using for display
 	//public Texture2D wip3Logo;
+	public Font defaultFont;
 
 
 	public List<Options> menuOptions;	// list of all the options in menu
@@ -54,7 +56,6 @@ public class Menu : MonoBehaviour
 
 			yield return StartCoroutine (Initialize ());
 		} 
-
 	}
 
 
@@ -134,9 +135,13 @@ public class Menu : MonoBehaviour
 				if (Input.GetKeyDown (KeyCode.DownArrow) == true) 
 				{
 					/// if we have stings and we are in a pause menu
-					if (menuType == "PauseMenu" && stingSource != null) 
+					if (menuType == "PauseMenu" && stingSource != null)
 					{
 						stingSource.PlayOneShot (sting);
+					} 
+					else
+					{
+						Debug.Log ("Sting source is null");
 					}
 
 					if (indexSelected < menuOptions.Count - 1)
@@ -179,6 +184,14 @@ public class Menu : MonoBehaviour
 
 				if (Input.GetKeyDown (KeyCode.Return)) {
 					selectionMade = true;
+
+					// play selection made sting if possible
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (selectItemSting);
+					}
+
+
 					yield return StartCoroutine( ButtonClicked (menuOptions [indexSelected]));
 				}
 
@@ -186,6 +199,12 @@ public class Menu : MonoBehaviour
 				{
 					
 					selectionMade = true;
+
+					// play selection made sting if possible
+					if (menuType == "PauseMenu" && stingSource != null) 
+					{
+						stingSource.PlayOneShot (selectItemSting);
+					}
 
 					yield return StartCoroutine( ButtonClicked (menuOptions [indexSelected]));
 				}
@@ -287,7 +306,7 @@ public class Menu : MonoBehaviour
 				{
 					panelButtons [i].GetComponentInChildren<CanvasRenderer> ().SetAlpha (255);
 					panelButtons [i].GetComponentInChildren<Text> ().color = Color.red;
-					panelButtons [i].GetComponentInChildren<Text> ().font = Font.
+					panelButtons [i].GetComponentInChildren<Text> ().font = defaultFont;
 				}
 
 				// otherwise, no alpha and clear button text
@@ -482,6 +501,20 @@ public class Menu : MonoBehaviour
 	}
 
 
+
+	/// <summary>
+	/// Cleans the out options box - destroys all children buttons that could be selected
+	/// </summary>
+	public void cleanOutOptions()
+	{
+		foreach (Transform child in optionsBox.transform)
+		{
+			GameObject.Destroy (child.gameObject);
+		}
+
+		// destroy component;
+
+	}
 
 
 

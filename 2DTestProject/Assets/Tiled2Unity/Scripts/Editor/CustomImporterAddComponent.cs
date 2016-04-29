@@ -32,7 +32,7 @@ class CustomImporterAddComponent : Tiled2Unity.ICustomTiledImporter
 
 			if (rendererItem.sortingLayerName == "Player")
 			{
-				rendererItem.gameObject.AddComponent<SortObjects> ();
+				gameObjectItem.AddComponent<SortObjects> ();
 			}
 		}
 
