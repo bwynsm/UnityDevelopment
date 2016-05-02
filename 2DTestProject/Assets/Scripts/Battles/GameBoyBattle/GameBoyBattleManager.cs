@@ -111,16 +111,19 @@ public class GameBoyBattleManager : MonoBehaviour {
 
 		// load our scene and move our battle forward
 		case BATTLE_STATES.START:
-			Debug.Log ("We are in start here" + turnsLoaded);
 			playAgainChoiceMade = false;
 			currentTurn = 0;
 
+			// if we don't have turns loaded, load the turns
 			if (!turnsLoaded)
 			{
 				sceneInit.LoadGameBoyTurns ();
 				turnsLoaded = true;
 				Toolbox.Instance.isLocked = false;
 			}
+
+			// if we have turns loaded, load the battle scene and move into deciding
+			// whose turn it is
 			else
 			{
 				sceneInit.LoadBattleSceneItems ();
@@ -139,7 +142,6 @@ public class GameBoyBattleManager : MonoBehaviour {
 
 			// pick the turn person
 			currentPlayerTurn = battleTurnOrder [currentTurn];
-			Debug.Log ("we are having trouble in here" + battleTurnOrder.Count + " " + currentTurn);
 
 			// update our current turn to the next player in the queue
 			// and cycle if we are at the end.
@@ -167,6 +169,8 @@ public class GameBoyBattleManager : MonoBehaviour {
 				currentState = BATTLE_STATES.LOSE;
 				Toolbox.Instance.isLocked = false;
 			} 
+			// if the current player is an enemy and is dead, victory! (for now - later on we'll just skip this turn
+			// and add in a "CHECK" phase
 			else if (!currentPlayerTurn.isPlayerCharacter && currentPlayerTurn.GetComponent<GameBoyUnit> ().currentHealth <= 0)
 			{
 
@@ -184,8 +188,6 @@ public class GameBoyBattleManager : MonoBehaviour {
 				waitingForTurn = true;
 				turnFinished = false;
 
-				Debug.Log ("Whose turn is it? : " + currentPlayerTurn.name + " " + currentPlayerTurn.isPlayerCharacter);
-
 				if (currentPlayerTurn.isPlayerCharacter)
 				{
 					// get their battle mode and start gaming
@@ -200,6 +202,8 @@ public class GameBoyBattleManager : MonoBehaviour {
 				}
 			}
 
+
+			// if the turn is finished, perform our commands
 			if (turnFinished)
 			{
 				currentState = BATTLE_STATES.PERFORM_COMMANDS;
@@ -225,7 +229,7 @@ public class GameBoyBattleManager : MonoBehaviour {
 			bool enemyStillAlive = true;
 
 
-
+			// if our player is dead, we have lost
 			if (!playerStillAlive)
 			{
 				currentState = BATTLE_STATES.LOSE;
@@ -234,7 +238,7 @@ public class GameBoyBattleManager : MonoBehaviour {
 			}
 
 		
-
+			// if our enemy is dead, we have won
 			if (!enemyStillAlive)
 			{
 				currentState = BATTLE_STATES.WIN;
@@ -266,10 +270,7 @@ public class GameBoyBattleManager : MonoBehaviour {
 			GameObject enemyDefeated = GameObject.FindGameObjectWithTag ("Enemy");
 			gainedExperience += enemyDefeated.GetComponent<GameBoyUnit> ().experience;
 
-
-
-
-
+			// if we have received a choice - we can choose to play again
 			if (playAgainChoiceMade)
 			{
 
@@ -278,12 +279,17 @@ public class GameBoyBattleManager : MonoBehaviour {
 				{
 					currentState = BATTLE_STATES.START;
 					Toolbox.Instance.isLocked = false;
-				} else if (!gambling)
+				} 
+
+				// we have decided we are done gambling on experience
+				else if (!gambling)
 				{
 					currentState = BATTLE_STATES.END;
 					Toolbox.Instance.isLocked = false;
 				}
 			} 
+
+			// display character selection panel
 			else
 			{
 				displayCharacterSelectionPanel ();
@@ -379,30 +385,39 @@ public class GameBoyBattleManager : MonoBehaviour {
 	}
 
 
+	/// <summary>
+	/// Play the game again.
+	/// </summary>
 	public void PlayAgain()
 	{
+		// destroy both our current units so we can make some new ones
 		Destroy (GameObject.FindGameObjectWithTag ("GameBoyUnit"));
 		Destroy (GameObject.FindGameObjectWithTag ("Enemy"));
 
-		Debug.Log("we are playing again in here");
+		// remove our panel
 		victoryScreenPanel.SetActive (false);
 
 		gambling = true;
 		playAgainChoiceMade = true;
 		turnsLoaded = false;
 
+		// clear our lists
 		sceneInit.turnOrder.Clear ();
 		battleTurnOrder.Clear ();
 		sceneInit.LoadCharacters ();
 		Toolbox.Instance.isLocked = false;
 	}
 
+
+	/// <summary>
+	/// Quits the game boy.
+	/// </summary>
 	public void QuitGameBoy()
 	{
+		// destroy our units
 		Destroy (GameObject.FindGameObjectWithTag ("GameBoyUnit"));
 		Destroy (GameObject.FindGameObjectWithTag ("Enemy"));
 
-		Debug.Log("we are quitting instead in here");
 		victoryScreenPanel.SetActive (false);
 
 		gambling = false;

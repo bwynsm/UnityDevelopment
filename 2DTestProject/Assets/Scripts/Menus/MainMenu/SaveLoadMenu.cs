@@ -4,6 +4,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
+/// <summary>
+/// Save load menu
+/// This class is the manager for the main menu on the game startup
+/// It controls loading, sounds, back and forward, new game, and settings
+/// </summary>
 public class SaveLoadMenu : MonoBehaviour 
 {
 
@@ -21,6 +26,10 @@ public class SaveLoadMenu : MonoBehaviour
 	Toolbox instanceItem;
 	//private bool skipLoadGame;
 
+
+	/// <summary>
+	/// MENU STATES : defines the states the menu can be in
+	/// </summary>
 	public enum MENU_STATES
 	{
 		START = 0,
@@ -30,7 +39,7 @@ public class SaveLoadMenu : MonoBehaviour
 		EXIT
 	};
 
-	public MENU_STATES currentState;
+	public MENU_STATES currentState; // our current menu state
 
 	public int selectedItem;
 
@@ -40,6 +49,8 @@ public class SaveLoadMenu : MonoBehaviour
 	/// </summary>
 	void Awake()
 	{
+
+		//  gets the panels and displays them for the main menu
 		instanceItem = Toolbox.Instance;
 		currentState = MENU_STATES.START;
 		selectedItem = 0;
@@ -51,6 +62,7 @@ public class SaveLoadMenu : MonoBehaviour
 
 		//skipLoadGame = SaveLoad.isAnySavedGame ();
 
+		// load our current save load
 		SaveLoad.Load ();
 
 		// load saved games
@@ -130,7 +142,7 @@ public class SaveLoadMenu : MonoBehaviour
 		}
 
 
-
+		// based on our current state, make an update
 		switch (currentState)
 		{
 
@@ -147,13 +159,13 @@ public class SaveLoadMenu : MonoBehaviour
 		// LOAD GAME STATE : LOAD MENU
 		case MENU_STATES.LOAD:
 			
-			GamePanelKeypress (action);
+			StartCoroutine( GamePanelKeypress (action));
 
 			break;
 
 		// SAVE GAME STATE
 		case MENU_STATES.NEW_GAME:
-			GamePanelKeypress (action);
+			StartCoroutine( GamePanelKeypress (action));
 			break;
 
 		// SETTINGS FOR THE GAME STATE
@@ -233,7 +245,7 @@ public class SaveLoadMenu : MonoBehaviour
 	/// Key was pressed in new game menu
 	/// </summary>
 	/// <param name="keyPressed">Key pressed.</param>
-	public void GamePanelKeypress(string keyPressed)
+	public IEnumerator GamePanelKeypress(string keyPressed)
 	{
 		if (keyPressed.Equals ("up"))
 		{
@@ -275,6 +287,12 @@ public class SaveLoadMenu : MonoBehaviour
 					stingSource.PlayOneShot (stings [1]);
 				}
 
+				WaitingForTime pauseItem = gameObject.AddComponent<WaitingForTime> ();
+				ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
+
+				StartCoroutine (sf.FadeToBlack ());
+				yield return StartCoroutine (pauseItem.WaitForTime (0.9f));
+
 				// just overwrite the game here - we'll later on want to do a confirm if we have
 				// a legitimate game at this location
 				// for now, just overwrite.
@@ -291,6 +309,12 @@ public class SaveLoadMenu : MonoBehaviour
 
 				// load game here
 				SaveLoad.Load (selectedItem);
+
+				WaitingForTime pauseItem = gameObject.AddComponent<WaitingForTime> ();
+				ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
+
+				StartCoroutine (sf.FadeToBlack ());
+				yield return StartCoroutine (pauseItem.WaitForTime (0.9f));
 
 				// toolbox scene
 				SceneManager.LoadScene ("LoadingScene");

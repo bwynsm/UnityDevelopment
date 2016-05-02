@@ -227,7 +227,9 @@ public class GameBoyUnit : MonoBehaviour
 
 
 
-
+	/// <summary>
+	/// Creates the health bar panel information.
+	/// </summary>
 	public void CreateHealth()
 	{
 		healthLeft.text = currentHealth.ToString();

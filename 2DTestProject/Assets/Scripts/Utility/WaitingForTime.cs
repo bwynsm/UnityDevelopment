@@ -17,11 +17,6 @@ public class WaitingForTime : MonoBehaviour
 	{
 	}
 
-	// Use this for initialization
-	void Start () 
-	{
-		isPaused = true;
-	}
 
 
 
@@ -34,6 +29,15 @@ public class WaitingForTime : MonoBehaviour
 	public IEnumerator PauseBeforeInput()
 	{
 		yield return new WaitForSeconds (0.15f);
+	}
+
+	/// <summary>
+	/// Waits for time.
+	/// </summary>
+	/// <returns>The for time.</returns>
+	public IEnumerator WaitForTime(float timeToWait)
+	{
+		yield return new WaitForSeconds (timeToWait);
 	}
 
 	/// <summary>

@@ -8,6 +8,10 @@ public class Game
 	public static Game current;
 	public PlayerStats playerStats;
 
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Game"/> class.
+	/// </summary>
 	public Game () {
 		//player = new CharacterConversable ();
 		playerStats = new PlayerStats();

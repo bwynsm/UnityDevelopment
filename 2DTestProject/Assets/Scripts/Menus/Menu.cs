@@ -73,8 +73,13 @@ public class Menu : MonoBehaviour
 		selectionMade = false;
 		isActive = true;
 
+
+		// we need to be careful with this - because some menus won't have this few
+		// indices. We need to remove the hardcoding for this. What if a menu has more
+		// options here?
 		if (indexSelected <= 0 || indexSelected >= 4)
 			indexSelected = 0;
+
 
 		if (optionsBox == null)
 		{
@@ -85,6 +90,9 @@ public class Menu : MonoBehaviour
 		optionsBox.AddComponent<WaitingForTime> ();
 		waitingObject = optionsBox.GetComponent<WaitingForTime> ();
 
+
+		// wait for input if we are dealing with a pause menu - might want to replace
+		// this with a flag
 		if (menuType != "PauseMenu")
 		{
 			yield return StartCoroutine (waitingObject.PauseBeforeInput ());
@@ -106,6 +114,9 @@ public class Menu : MonoBehaviour
 				currentButton.Select ();
 		}
 
+
+		// until we have made a selection and while we still have an options box,
+		// wait for input
 		while (selectionMade == false && optionsBox.activeInHierarchy) 
 		{
 			yield return StartCoroutine (waitingObject.WaitForKeyDown ());
