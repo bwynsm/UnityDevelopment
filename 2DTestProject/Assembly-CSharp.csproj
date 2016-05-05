@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Battles\GameBoyBattle\GameBoyUnit.cs" />
      <Compile Include="Assets\Scripts\Battles\GameBoyBattle\VictoryScreen.cs" />
      <Compile Include="Assets\Scripts\Battles\LoadWhichBattle.cs" />
+     <Compile Include="Assets\Scripts\CanvasController\BattleCanvasController.cs" />
      <Compile Include="Assets\Scripts\ConversationControl\ActivateTextAtLine.cs" />
      <Compile Include="Assets\Scripts\ConversationControl\Dialogue\CharacterConversable.cs" />
      <Compile Include="Assets\Scripts\ConversationControl\Dialogue\Conversation.cs" />
@@ -72,6 +73,8 @@
      <Compile Include="Assets\Scripts\Menus\AcceptDecline.cs" />
      <Compile Include="Assets\Scripts\Menus\BattleMenu\BattleMenu.cs" />
      <Compile Include="Assets\Scripts\Menus\Commands.cs" />
+     <Compile Include="Assets\Scripts\Menus\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Menus\Item.cs" />
      <Compile Include="Assets\Scripts\Menus\MainMenu\DestroyGame.cs" />
      <Compile Include="Assets\Scripts\Menus\MainMenu\Game.cs" />
      <Compile Include="Assets\Scripts\Menus\MainMenu\LoadGame.cs" />
