@@ -150,8 +150,6 @@ public class LoadBattleScene : MonoBehaviour
 				BattleMenu battleMenu = combatant.GetComponent<BattleMenu> ();
 				battleMenu.allCombatants = turnOrder;
 				battleMenu.battlePanel = GameObject.Find ("BattlePanel");
-				battleMenu.prefabButton = prefabButton;
-				battleMenu.texturePickerBorder = border;
 
 			}
 

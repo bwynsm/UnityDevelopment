@@ -19,9 +19,7 @@ public class SaveLoadMenu : MonoBehaviour
 	private Button[] saveFilesItems;
 	private Button[] mainMenuItems;
 
-	// different stings we can play
-	public AudioClip[] stings;
-	public AudioSource stingSource;
+
 
 	Toolbox instanceItem;
 	//private bool skipLoadGame;
@@ -42,13 +40,15 @@ public class SaveLoadMenu : MonoBehaviour
 	public MENU_STATES currentState; // our current menu state
 
 	public int selectedItem;
-
+	private StingPlayer stingPlayer;
 
 	/// <summary>
 	/// Awake this instance.
 	/// </summary>
 	void Awake()
 	{
+		stingPlayer = GameObject.FindGameObjectWithTag("GameTools").GetComponent<StingPlayer>();
+
 
 		//  gets the panels and displays them for the main menu
 		instanceItem = Toolbox.Instance;
@@ -99,9 +99,9 @@ public class SaveLoadMenu : MonoBehaviour
 			action = "up";
 
 			// if we have a sting source, play sting
-			if (stingSource != null)
+			if (stingPlayer != null)
 			{
-				stingSource.PlayOneShot (stings [0]);
+				stingPlayer.playMenuUpSound ();
 			}
 		} 
 
@@ -111,9 +111,9 @@ public class SaveLoadMenu : MonoBehaviour
 			action = "down";
 
 			// if we have a sting source, play sting
-			if (stingSource != null)
+			if (stingPlayer != null)
 			{
-				stingSource.PlayOneShot (stings [0]);
+				stingPlayer.playMenuDownSound ();
 			}
 		}
 
@@ -129,9 +129,9 @@ public class SaveLoadMenu : MonoBehaviour
 			action = "back";
 
 			// if we have a sting source, play sting
-			if (stingSource != null)
+			if (stingPlayer != null)
 			{
-				stingSource.PlayOneShot (stings [3]);
+				stingPlayer.playBackButtonSound ();
 			}
 		} 
 
@@ -282,9 +282,9 @@ public class SaveLoadMenu : MonoBehaviour
 			{
 
 				// if we have a sting source, play sting
-				if (stingSource != null)
+				if (stingPlayer != null)
 				{
-					stingSource.PlayOneShot (stings [1]);
+					stingPlayer.playSelectItemSound ();
 				}
 
 				WaitingForTime pauseItem = gameObject.AddComponent<WaitingForTime> ();
@@ -302,9 +302,9 @@ public class SaveLoadMenu : MonoBehaviour
 			else if (currentState == MENU_STATES.LOAD && SaveLoad.savedGames [selectedItem] != null)
 			{
 				// if we have a sting source, play sting
-				if (stingSource != null)
+				if (stingPlayer != null)
 				{
-					stingSource.PlayOneShot (stings [1]);
+					stingPlayer.playLoadGameSound ();
 				}
 
 				// load game here
@@ -323,9 +323,9 @@ public class SaveLoadMenu : MonoBehaviour
 			{
 				// display tiny error message briefly?
 				// if we have a sting source, play sting
-				if (stingSource != null)
+				if (stingPlayer != null)
 				{
-					stingSource.PlayOneShot (stings [4]);
+					stingPlayer.playBackButtonSound ();
 				}
 			}
 
@@ -398,9 +398,9 @@ public class SaveLoadMenu : MonoBehaviour
 				currentState = MENU_STATES.NEW_GAME;
 
 				// if we have a sting source, play sting
-				if (stingSource != null)
+				if (stingPlayer != null)
 				{
-					stingSource.PlayOneShot (stings [2]);
+					stingPlayer.playSelectItemSound ();
 				}
 			} 
 			else if (selectedItem == 1)
@@ -410,9 +410,9 @@ public class SaveLoadMenu : MonoBehaviour
 
 
 				// if we have a sting source, play sting
-				if (stingSource != null)
+				if (stingPlayer != null)
 				{
-					stingSource.PlayOneShot (stings [2]);
+					stingPlayer.playSelectItemSound ();
 				}
 			}
 

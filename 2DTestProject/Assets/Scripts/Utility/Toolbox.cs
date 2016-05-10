@@ -78,6 +78,7 @@ public class Toolbox : Singleton<Toolbox> {
 				Debug.Log ("PLAYER IN LAST POSITION : " + positionInLastScene);
 				playerCharacter.transform.position = positionInLastScene;
 				playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
+				playerCharacter.GetComponent<PlayerUnit>().isTalkingd = false;
 
 				// just set a basic 1 health if we are a dead character
 				if (playerCharacter.GetComponent<PlayerHealth> ().currentHealth <= 0)

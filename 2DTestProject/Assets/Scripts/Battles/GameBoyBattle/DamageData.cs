@@ -298,7 +298,6 @@ public class DamageData
 		// open and read file in
 		string[] lines = file.text.Split('\n');
 
-		Debug.Log ("we are in here with length of Lines : " + lines.Length);
 
 		// for the population phase, we'll store a list of our header column
 		// so that we can use that for our dictionary
@@ -319,7 +318,6 @@ public class DamageData
 			int columnIndex = 0;
 			ARMOR_TYPE columnName = new ARMOR_TYPE();
 
-			Debug.Log ("we are in here with length of columns : " + columns.Length);
 
 			if (columns.Length < 7)
 			{
@@ -388,8 +386,6 @@ public class DamageData
 						damageData [columnItem].Add (columnName, new Damage ());
 					}
 
-
-					Debug.Log ("we are in here with column name : " + columnName.ToString ());
 
 
 				}
@@ -471,11 +467,11 @@ public class DamageData
 		
 		if (damageData.Count > 0)
 		{
-			Debug.Log ("DICTIONARY SIZE : " + damageData.Count + " INNER COUNT : " + damageData [DAMAGE_TYPE.DAGGER].Count);
+//			Debug.Log ("DICTIONARY SIZE : " + damageData.Count + " INNER COUNT : " + damageData [DAMAGE_TYPE.DAGGER].Count);
 		} 
 		else
 		{
-			Debug.Log ("SIZE IS 0 FOR DICTIONARY");
+//			Debug.Log ("SIZE IS 0 FOR DICTIONARY");
 		}
 	}
 

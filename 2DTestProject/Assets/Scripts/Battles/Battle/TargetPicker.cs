@@ -33,9 +33,8 @@ public class TargetPicker : MonoBehaviour
 	public bool canChooseDeadTarget = false;
 
 
-
+	public GUIDisplayItems guiDisplayItems;
 	private GUIStyle style;
-	public Texture2D boxTexture;
 
 	// once this function is done, we'll have a target. Either it will
 	// be a non-target, or an actual target
@@ -47,6 +46,8 @@ public class TargetPicker : MonoBehaviour
 
 	void Start()
 	{
+		guiDisplayItems = GameObject.FindGameObjectWithTag ("GameTools").GetComponent<GUIDisplayItems> ();
+
 		style = new GUIStyle ();
 		style.border.bottom = 3;
 		style.border.top = 3;
@@ -265,7 +266,7 @@ public class TargetPicker : MonoBehaviour
 		//GUI.color = Color.green;
      	//Render the box
 		//GUI.Box (rectanglePlayer, boxTexture);
-		GUI.DrawTexture (rectanglePlayer, boxTexture);
+		GUI.DrawTexture (rectanglePlayer, guiDisplayItems.texturePickerBorder);
 
 
 		//ShadowAndOutline.DrawOutline (rectanglePlayer, "hello this is our text", style, Color.black, Color.blue, rectanglePlayer.height);

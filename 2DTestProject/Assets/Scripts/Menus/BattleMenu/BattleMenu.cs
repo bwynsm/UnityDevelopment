@@ -13,10 +13,8 @@ public class BattleMenu : MonoBehaviour
 
 	public TextAsset battleXML;
 	public GameObject battlePanel;
-	public GameObject prefabButton;
 	public Menu optionsMenu;
 	public Conversation battleOptionsManager;
-	public Texture2D texturePickerBorder;
 
 
 	// get all of the players in this battle
@@ -153,9 +151,6 @@ public class BattleMenu : MonoBehaviour
 
 		// let's get the player character their menu back
 		optionsMenu = battlePanel.GetComponent<Menu>();
-
-		optionsMenu.prefabButton = prefabButton;
-		optionsMenu.texturePickerBorder = texturePickerBorder;
 		optionsMenu.optionsBox = battlePanel;
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "BattleMenu";

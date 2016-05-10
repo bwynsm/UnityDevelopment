@@ -18,14 +18,13 @@ public class TextBoxManager : MonoBehaviour
 	public GameObject textBox;
 	public GameObject optionsBox;
 
-	public Canvas canvasItem;
+
 	Menu optionsMenu;
 
 	public Text theText;
 
 	public TextAsset textFile;
 
-	public GameObject prefabButton;
 	public bool inConversation = false;
 
 	// the other items.
@@ -392,7 +391,6 @@ public class TextBoxManager : MonoBehaviour
 		optionsBox.AddComponent<Menu>();
 
 		optionsMenu = optionsBox.GetComponent<Menu>();
-		optionsMenu.prefabButton = prefabButton;
 		optionsMenu.optionsBox = optionsBox;
 		optionsMenu.menuOptions = options;
 		optionsMenu.menuType = "conversation";

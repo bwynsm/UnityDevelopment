@@ -99,9 +99,10 @@
      <Compile Include="Assets\Scripts\Units\Player\PlayerUnit.cs" />
      <Compile Include="Assets\Scripts\Utility\EventChanges\MusicChanger.cs" />
      <Compile Include="Assets\Scripts\Utility\EventChanges\ScreenFader.cs" />
+     <Compile Include="Assets\Scripts\Utility\GUIDisplayItems.cs" />
      <Compile Include="Assets\Scripts\Utility\MonoBehaviourExtended.cs" />
-     <Compile Include="Assets\Scripts\Utility\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\Utility\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Utility\StingPlayer.cs" />
      <Compile Include="Assets\Scripts\Utility\Toolbox.cs" />
      <Compile Include="Assets\Scripts\Utility\WaitingForTime.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
