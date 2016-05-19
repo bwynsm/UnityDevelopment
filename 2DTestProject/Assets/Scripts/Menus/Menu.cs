@@ -19,13 +19,16 @@ public class Menu : MonoBehaviour
 	private bool isActive = true; 		// if our menu is active
 	private string commands;			// string of commands made by choosing something
 	private int indexSelected = 0;     	// button selected
-
-
+	private int minWidth;
+	private int minHeight;
+	private bool hasAccepted;
 
 	// PUBLIC VARIABLES
 	public GameObject optionsBox;		// this is the options box panel that we are displaying in
 	public List<Options> menuOptions;	// list of all the options in menu
 	public string menuType;				// conversation, main menu, etc
+	public bool isHorizontal;
+	public bool requiresLayout;
 
 	public PlayerUnit attackingPlayer;
 	public EnemyUnit targetPlayer;
@@ -54,6 +57,8 @@ public class Menu : MonoBehaviour
 		{
 			yield return StartCoroutine (Initialize ());
 		} 
+
+		hasAccepted = false;
 	}
 
 
@@ -68,6 +73,7 @@ public class Menu : MonoBehaviour
 	{
 		selectionMade = false;
 		isActive = true;
+		hasAccepted = false;
 
 		if (GUIdisplayItems == null)
 		{
@@ -140,50 +146,36 @@ public class Menu : MonoBehaviour
 			}
 				
 
+
+			// if we haven't made a selection yet - 
 			if (!selectionMade && isActive == true && Input.anyKeyDown) 
 			{
-				
-
-				if (Input.GetKeyDown (KeyCode.DownArrow) == true) 
+				if (!isHorizontal)
 				{
-					/// if we have stings and we are in a pause menu
-					if (menuType == "PauseMenu" && stingPlayer != null)
+					
+					if (Input.GetKeyDown (KeyCode.DownArrow) == true)
 					{
-						stingPlayer.playMenuDownSound ();
-					} 
-
-					if (indexSelected < menuOptions.Count - 1)
-					{
-						indexSelected += 1;
-					} 
-					else 
-					{
-						indexSelected = 0;
-						optionsBox.GetComponentsInChildren<Button> () [0].Select ();
+						incrementIndex ();
 					}
 
-
-
-
+					/// INPUT KEY DOWN : MOVE DOWN THE LIST
+					if (Input.GetKeyDown (KeyCode.UpArrow) == true)
+					{
+						decrementIndex ();
+					}
 				}
-
-				/// INPUT KEY DOWN : MOVE DOWN THE LIST
-				if (Input.GetKeyDown (KeyCode.UpArrow) == true) 
+				else
 				{
-					/// if we have stings and we are in a pause menu
-					if (menuType == "PauseMenu" && stingPlayer != null) 
+					// if we are on a horizontal menu, right should go right
+					if (Input.GetKeyDown (KeyCode.RightArrow) == true)
 					{
-						stingPlayer.playMenuDownSound ();
+						incrementIndex ();
 					}
 
-					if (indexSelected > 0) 
+					// if we are on a horizontal menu, left should go left
+					else if (Input.GetKeyDown (KeyCode.LeftArrow) == true)
 					{
-						indexSelected -= 1;
-					} 
-					else 
-					{
-						indexSelected = menuOptions.Count - 1;
-						optionsBox.GetComponentsInChildren<Button> () [indexSelected].Select ();
+						decrementIndex ();
 					}
 				}
 
@@ -372,9 +364,34 @@ public class Menu : MonoBehaviour
 			goButton.transform.localScale = new Vector3(1, 1, 1);
 			goButton.GetComponent<Button> ().interactable = false; 
 
+			// if there is a minimum height and width set
+			if (requiresLayout)
+			{
+				LayoutElement layEle = goButton.AddComponent<LayoutElement> ();
+				layEle.minWidth = minWidth;
+				layEle.minHeight = minHeight;
+			}
 		}
 			
 			
+	}
+
+
+
+	/// <summary>
+	/// Sets the layout options for width and height of the layout element
+	/// </summary>
+	/// <param name="width">Width.</param>
+	/// <param name="height">Height.</param>
+	public void setLayoutOptions(int width, int height)
+	{
+		requiresLayout = true;
+
+		Debug.Log ("WIDTH : " + width + "  HEIGHT : " + height);
+		minWidth = width;
+		minHeight = height;
+		indexSelected = 0;
+		selectionMade = false;
 	}
 
 
@@ -390,9 +407,23 @@ public class Menu : MonoBehaviour
 
 		if (selectionMade)
 		{
+
 			/// what type of options list do we have? conversation or more main menu?
 			if (menuType == "conversation")
 			{
+				if (buttonCommand.command == "exit")
+				{
+
+
+
+					yield break;
+				}
+				else if (buttonCommand.command == "accept")
+				{
+					hasAccepted = true;
+					yield break;
+				}
+
 				Commands command = new Commands ();
 				command.resolveConversationCommands (buttonCommand);
 
@@ -522,8 +553,59 @@ public class Menu : MonoBehaviour
 	}
 
 
+	/// <summary>
+	/// Increments the index.
+	/// </summary>
+	public void incrementIndex()
+	{
+		/// if we have stings and we are in a pause menu
+		if (menuType == "PauseMenu" && stingPlayer != null)
+		{
+			stingPlayer.playMenuDownSound ();
+		} 
+
+		if (indexSelected < menuOptions.Count - 1)
+		{
+			indexSelected += 1;
+		}
+		else
+		{
+			indexSelected = 0;
+			optionsBox.GetComponentsInChildren<Button> () [0].Select ();
+		}
+	}
 
 
+	/// <summary>
+	/// Decrements the index.
+	/// </summary>
+	public void decrementIndex()
+	{
+		/// if we have stings and we are in a pause menu
+		if (menuType == "PauseMenu" && stingPlayer != null)
+		{
+			stingPlayer.playMenuDownSound ();
+		}
 
+		if (indexSelected > 0)
+		{
+			indexSelected -= 1;
+		}
+		else
+		{
+			indexSelected = menuOptions.Count - 1;
+			optionsBox.GetComponentsInChildren<Button> () [indexSelected].Select ();
+		}
+	}
+
+
+	/// <summary>
+	/// Returns if the user has accepted or declined.
+	/// </summary>
+	/// <returns><c>true</c>, if accepted, <c>false</c> otherwise.</returns>
+	public bool userHasAccepted()
+	{
+		return hasAccepted;
+	}
 
 }

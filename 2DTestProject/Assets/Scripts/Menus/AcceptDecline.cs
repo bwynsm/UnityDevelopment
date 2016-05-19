@@ -9,12 +9,52 @@ public class AcceptDecline : Menu
 	// has two options
 	// is vertical or horizontal
 
-	public bool isVertical; // if it is vertical, true. Otherwise, false.
 
 	public string acceptString;
 	public string cancelString;
+	public bool canCollide;
+
+
+	public int minWidth;
+	public int minHeight;
+
 
 	bool isColliding = false;
+	bool isActive;
+
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="AcceptDecline"/> class.
+	/// </summary>
+	/// <param name="accept">Accept.</param>
+	/// <param name="cancel">Cancel.</param>
+	public AcceptDecline(string accept, string cancel)
+	{
+		acceptString = accept;
+		cancelString = cancel;
+	}
+
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="AcceptDecline"/> class.
+	/// </summary>
+	/// <param name="accept">Accept.</param>
+	/// <param name="cancel">Cancel.</param>
+	/// <param name="minWidth">Minimum width.</param>
+	/// <param name="minHeight">Minimum height.</param>
+	public AcceptDecline (string accept, string cancel, int mWidth, int mHeight)
+	{
+		acceptString = accept;
+		cancelString = cancel;
+		minWidth = mWidth;
+		minHeight = mHeight;
+
+		menuOptions = new List<Options> () 
+		{
+			new Options("", acceptString, "", "Player", ""),
+			new Options("exit", cancelString, "", "Player", "")
+		};
+	}
 
 
 	// wait until we have input
@@ -25,12 +65,21 @@ public class AcceptDecline : Menu
 	{
 		menuOptions = new List<Options> () 
 		{
-			new Options("playGameBoyMiniGame", acceptString, "", "Player", ""),
+			//new Options("playGameBoyMiniGame", acceptString, "", "Player", ""),
+			new Options("accept", acceptString, "", "Player", ""),
 			new Options("exit", cancelString, "", "Player", "")
 
 		};
 
 		menuType = "conversation";
+
+		// if we require layout options... which most of the time we should not
+		if (requiresLayout)
+		{
+			setLayoutOptions (minWidth, minHeight);
+		}
+
+		selectionMade = false;
 	}
 
 
@@ -41,38 +90,64 @@ public class AcceptDecline : Menu
 	{
 		// if we are colliding and we have a key hit, then we load menu
 		// otherwise, nothing
-		if (isColliding && Input.anyKeyDown)
+		if (((canCollide && isColliding) || !canCollide) && Input.anyKeyDown)
 		{
+			
 			// check for key. Otherwise... nothing
 			if (Input.GetKeyDown (KeyCode.X) && Time.timeScale > 0 && GameObject.Find ("Player").GetComponent<PlayerUnit> ().isTalking == false)
 			{
-
-				Debug.Log ("we are pushing down a key" + menuOptions.Count);
 				// display our menu
 				// set to "talking"
 				// set commands of conversation (like "battle" for gameboy)
-				loadAcceptDeclineDisplay();
+				loadAcceptDeclineDisplay ();
 			}
 			// check for key. Otherwise... nothing
 			else if (Input.GetKeyDown (KeyCode.Z) && Time.timeScale > 0 && GameObject.Find ("Player").GetComponent<PlayerUnit> ().isTalking == true)
 			{
-
-				Debug.Log ("we are pushing down a key" + menuOptions.Count);
 				// display our menu
 				// set to "talking"
 				// set commands of conversation (like "battle" for gameboy)
-				closeAcceptDeclineDisplay();
+				closeAcceptDeclineDisplay ();
 			}
+				
+		}
+		else if (((canCollide && isColliding) || !canCollide) && isActive == true && menuIsActive () == false)
+		{
+			closeAcceptDeclineDisplay ();
 		}
 	}
 
+
+	/// <summary>
+	/// Creates the options for the list if we do not use a constructor
+	/// </summary>
+	public void createOptions()
+	{
+		menuOptions = new List<Options> () 
+		{
+			new Options("accept", acceptString, "", "Player", ""),
+			new Options("exit", cancelString, "", "Player", "")
+
+		};
+
+		menuType = "conversation";
+
+		// if we require layout options... which most of the time we should not
+		if (requiresLayout)
+		{
+			Debug.Log (" we require layout options and are setting them in here");
+			setLayoutOptions (minWidth, minHeight);
+		}
+
+		selectionMade = false;
+	}
 
 	/// <summary>
 	/// Loads the accept decline display.
 	/// </summary>
 	public void loadAcceptDeclineDisplay()
 	{
-		Debug.Log ("we are here");
+		isActive = true;
 
 		GameObject.Find ("Player").GetComponent<PlayerMovement> ().setFrozen ();
 		GameObject.Find ("Player").GetComponent<PlayerUnit> ().isTalking = true;
@@ -87,7 +162,9 @@ public class AcceptDecline : Menu
 
 
 		loadOptions (menuOptions);
+
 		StartCoroutine (Initialize ());
+
 
 	}
 
@@ -105,6 +182,7 @@ public class AcceptDecline : Menu
 		//Destroy (optionsMenu);
 
 		cleanOutOptions ();
+		isActive = false;
 	}
 
 
@@ -134,7 +212,7 @@ public class AcceptDecline : Menu
 	/// <returns>The clicked.</returns>
 	public new IEnumerator ButtonClicked(Options buttonCommand)
 	{
-		Debug.Log ("we are in this button clicked");
+		Debug.Log ("we are here in button clicked");
 
 		yield return null;
 	}

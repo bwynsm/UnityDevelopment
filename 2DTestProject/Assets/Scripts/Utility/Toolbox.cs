@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// Toolbox Instance: controls our data
 /// </summary>
-public class Toolbox : Singleton<Toolbox> {
+public class Toolbox : Singleton<Toolbox> 
+{
 	protected Toolbox () {} // guarantee this will be always a singleton only - can't use the constructor!
  
 
@@ -60,7 +61,6 @@ public class Toolbox : Singleton<Toolbox> {
 
 			if ((positionInLastScene.Equals (null) || positionInLastScene.Equals (Vector2.zero)) && GameObject.FindGameObjectWithTag ("Respawn"))
 			{
-				Debug.Log ("WE NEED TO RESET POSITION" + positionInLastScene);
 
 				// find the starting point
 				positionInLastScene = GameObject.FindGameObjectWithTag ("Respawn").transform.position;
@@ -75,10 +75,9 @@ public class Toolbox : Singleton<Toolbox> {
 				Camera.main.GetComponent<CameraFollow> ().target = playerCharacter.transform;
 
 
-				Debug.Log ("PLAYER IN LAST POSITION : " + positionInLastScene);
 				playerCharacter.transform.position = positionInLastScene;
 				playerCharacter.GetComponent<PlayerUnit> ().freeze = false;
-				playerCharacter.GetComponent<PlayerUnit>().isTalkingd = false;
+				playerCharacter.GetComponent<PlayerUnit>().isTalking = false;
 
 				// just set a basic 1 health if we are a dead character
 				if (playerCharacter.GetComponent<PlayerHealth> ().currentHealth <= 0)

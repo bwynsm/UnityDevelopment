@@ -8,7 +8,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Battle manager : stores the state of the battle
 /// </summary>
-public class GameBoyBattleManager : MonoBehaviour {
+public class GameBoyBattleManager : MonoBehaviour 
+{
 
 	public enum BATTLE_STATES
 	{
@@ -299,7 +300,6 @@ public class GameBoyBattleManager : MonoBehaviour {
 
 			// if the good side has lost, sad day. Penalties and teleport
 		case BATTLE_STATES.LOSE:
-			Debug.Log ("we have lost");
 
 			currentState = BATTLE_STATES.END;
 			Toolbox.Instance.isLocked = false;
@@ -381,7 +381,9 @@ public class GameBoyBattleManager : MonoBehaviour {
 	{
 		// until we get a response from our unit picker..
 		victoryScreenPanel.SetActive(true);
-
+		AcceptDecline acceptDeclineObject = victoryScreenPanel.GetComponent<AcceptDecline> ();
+		acceptDeclineObject.createOptions ();
+		acceptDeclineObject.loadAcceptDeclineDisplay ();
 	}
 
 
