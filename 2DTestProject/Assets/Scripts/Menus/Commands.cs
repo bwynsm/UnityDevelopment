@@ -263,6 +263,8 @@ public class Commands
 			else if (commandItem.Contains ("exit"))
 			{
 				// end convo?
+
+
 				return;
 			}
 
